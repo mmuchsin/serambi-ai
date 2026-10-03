@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "lf-lsa_ibm_hackathon": {
+      "command": "uvx",
+      "args": [
+        "--with",
+        "mcp<2.0.0",
+        "mcp-proxy",
+        "--transport",
+        "streamablehttp",
+        "--headers",
+        "x-api-key",
+        "${env:LANGFLOW_API_KEY}",
+        "http://localhost:7860/api/v1/mcp/project/4264a312-49f1-4286-9edc-366496ebc4f2/streamable"
+      ]
+    },
+    "drawio": {
+         "command": "npx",
+         "args": ["-y", "@drawio/mcp"],
+         "disabled": false,
+         "alwaysAllow": []
+       }
+  }
+}
