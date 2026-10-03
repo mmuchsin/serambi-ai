@@ -136,7 +136,7 @@ See [`mcp/README.md`](mcp/README.md) for full details on how Bob connects to Lan
 This project uses **Bob** (IBM AI Agent Harness) with structured skills that guide the agent through specific tasks. Skills are Markdown instruction files loaded on-demand via `use_skill <name>`.
 
 ### Engineering Workflow Skills
-> Source: [Matt Pocock — AI Coding for Real Engineers](https://ai.hero.dev)
+> Source: [mattpocock/skills](https://github.com/mattpocock/skills) — AI Coding for Real Engineers
 
 | Skill | Purpose |
 |-------|---------|
@@ -157,7 +157,14 @@ This project uses **Bob** (IBM AI Agent Harness) with structured skills that gui
 | `plan-launch` | Go-to-market strategy and beachhead segment |
 | `write-prd` | Product Requirements Document from feature idea |
 
-> Full skill list: `.bob/skills/` · Skills follow the [Bob Skill spec](https://www.ibm.com/products/bob)
+### Diagram Skills
+> Source: [Agents365-ai/drawio-skill](https://github.com/Agents365-ai/drawio-skill)
+
+| Skill | Purpose |
+|-------|---------|
+| `drawio-skill` | Create and edit draw.io architecture, UML, BPMN, network, and swimlane diagrams as editable `.drawio` files |
+
+> Full skill list: `.bob/skills/` and `.agents/skills/` · Skills follow the [Bob Skill spec](https://www.ibm.com/products/bob)
 
 ---
 
