@@ -137,4 +137,4 @@ MIT © 2026 Serambi.ai Team
 
 ---
 
-*Also available in: Bahasa Indonesia (README.id.md — coming soon)*
+*Also available in: [Bahasa Indonesia](README.id.md)*
