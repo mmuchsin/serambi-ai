@@ -75,35 +75,49 @@ bb5670a chore(repo): initial commit — project scaffold and goal_decomposer flo
 ## Phase 7 — Submission Materials
 
 ### ISS-06 — README.md + mcp/README.md
-**Status:** `[ ]` pending (depends on ISS-03)  
-**Scope:** 1 session, ≤ 30 turns  
-**Rule:** Tulis SETELAH e2e terbukti — bukan spekulatif
+**Status:** `[x]` DONE
+**Scope:** 1 session
 
-**Contents README.md:**
-- Project description (Serambi.ai)
-- Quick start (setup, env, jalankan Langflow, jalankan Bob)
-- Architecture diagram
-- How it works (Bob → MCP → Langflow)
-
-**Contents mcp/README.md:**
-- MCP server config explanation
-- Tool list (nama + deskripsi)
-- How Bob uses tools
+**What was done:**
+- `README.md` (English) — quick start, architecture, agents, repo structure
+- `README.id.md` (Bahasa Indonesia) — full translation
+- `mcp/README.md` — config detail, tools table, env setup, troubleshooting
+- `flows/README.md` — flow export convention, endpoint name guide
+- `agents/README.md` — planned system prompts, pedagogical constraints
+- `apps/README.md` — monorepo surfaces, web placeholder
+- `packages/README.md` — shared lib conventions
+- `docs/README.md` — reading order + research summary table
+- `assets/README.md` — screenshot inventory + diagram suggestions
+- `slides/README.md` — 11-slide structure + generate guide
+- `AGENTS.md` — lean agent harness guide with PM skills section
+- `docs/PRD.md` — added Research Grounding table + monorepo module map
 
 ---
 
 ### ISS-07 — Submission form fill
-**Status:** `[ ]` pending (depends on ISS-06)  
-**Scope:** 1 session  
+**Status:** `[ ]` pending
+**Scope:** 1 session
 **Fields:** Lihat PRD.md bagian "Submission Requirements"
+
+**Suggested workflow:**
+1. `use_skill value-proposition` → draft "Mengapa Solusi Dibutuhkan" + "Diferensiasi"
+2. `use_skill north-star` → draft "Dampak" + "Fitur Utama"
+3. `use_skill plan-launch` → draft "Target User" + "Alur Penggunaan"
+4. Isi semua field di submission form, save ke `docs/submission-draft.md`
 
 ---
 
 ### ISS-08 — Pitch deck (11 slides)
-**Status:** `[ ]` pending (dapat paralel dengan ISS-06)  
-**Scope:** 1 session  
-**Structure:** Cover → Problem → Solution → Target User → How It Works → AI & Technology → Key Features → Prototype/Demo → Impact/Value → Future Development → Team  
-**Format:** Keynote / PowerPoint / Canva — simpan di `slides/`
+**Status:** `[ ]` pending
+**Scope:** 1 session
+**Structure:** Cover → Problem → Solution → Target User → How It Works → AI & Technology → Key Features → Prototype/Demo → Impact/Value → Future Development → Team
+**Format:** PowerPoint/Keynote/PDF — simpan di `slides/`
+
+**Suggested workflow:**
+1. `use_skill pitch-deck` → generate 11-slide outline
+2. `use_skill competitive-analysis` → isi slide Diferensiasi
+3. Fill content dari research papers (lihat `docs/research-papers-and-abstracts.md`)
+4. Export ke `slides/serambi-pitch-deck.pptx` + `slides/serambi-pitch-deck.pdf`
 
 ---
 
@@ -114,6 +128,9 @@ bb5670a chore(repo): initial commit — project scaffold and goal_decomposer flo
 | 2026-10-03 | ISS-01 complete. MCP config written di `.bob/mcp.json`. Global MCP config di `~/.bob/settings/mcp.json` dikosongkan. |
 | 2026-10-03 | Brand dipilih: Serambi.ai. Jangan pakai EduFlow (nama contoh Team Aurora). |
 | 2026-10-03 | PRD dan ISSUES dibuat untuk session continuity. |
+| 2026-10-03 | Monorepo structure diadopsi: `apps/`, `packages/`. ISS-06 complete — semua dir punya README. |
+| 2026-10-03 | 43 PM skills dari phuryn/pm-skills diinstall ke `.bob/skills/` (format SKILL.md per dir). |
+| 2026-10-03 | Custom `pitch-deck` skill dibuat karena tidak ada di pm-skills. |
 
 ---
 
