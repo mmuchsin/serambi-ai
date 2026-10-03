@@ -284,7 +284,9 @@
             "beta": false,
             "conditional_paths": [],
             "custom_fields": {
-              "template": []
+              "template": [
+                "user_goal"
+              ]
             },
             "description": "Create a prompt template with dynamic variables.",
             "display_name": "Prompt Template",
@@ -292,7 +294,8 @@
             "field_order": [
               "template",
               "use_double_brackets",
-              "tool_placeholder"
+              "tool_placeholder",
+              "user_goal"
             ],
             "frozen": false,
             "icon": "prompts",
@@ -410,6 +413,29 @@
                 "track_in_telemetry": true,
                 "type": "bool",
                 "value": false
+              },
+              "user_goal": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "user_goal",
+                "dynamic": false,
+                "info": "",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "user_goal",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
               }
             },
             "tool_mode": false
