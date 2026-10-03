@@ -6,9 +6,9 @@
 
 ## Status Sekarang
 
-**Phase:** 6b → 6c (MCP wired, e2e belum ditest)
-**Current issue:** ISS-02 `[~]` BLOCKED — butuh manual step di Langflow UI
-**Next issue after unblock:** ISS-03 — e2e test Bob → MCP → Langflow
+**Phase:** 6c → 7 (e2e DONE, masuk submission materials)
+**Current issue:** ISS-06 `[ ]` README.md + mcp/README.md
+**Completed this session:** ISS-02 ✅ + ISS-03 ✅ (e2e verified — Bob → MCP → Langflow works)
 
 **Session infra (baru):** Turn counter hook aktif — lihat `.bob/hooks/turn-counter.mjs` + `.bob/settings.json`.
 **Reset counter** saat mulai session baru: hapus `.bob/turn-counter.json`.
@@ -17,13 +17,12 @@
 
 ## Next Action (1 langkah)
 
-**ISS-02 — Set Langflow Endpoint Name (manual):**
-1. Buka http://localhost:7860 → open flow `goal_decomposer`
-2. Klik settings flow → set **Endpoint Name** = `goal_decomposer` → Save
-3. `source ~/.bashrc` → restart Bob di workspace ini
-4. Cek MCP panel: server `langflow` + tool `decompose_learning_goal` muncul
+**ISS-06 — Tulis README.md + mcp/README.md:**
+1. Buat `README.md` di root: deskripsi proyek, quick start, architecture, how it works
+2. Buat `mcp/README.md`: penjelasan MCP server config, tool list, cara Bob pakai tools
+3. Commit: `docs: add README and mcp/README for submission`
 
-Setelah ISS-02 done → lanjut ISS-03 (e2e test Bob → MCP → Langflow → screenshot).
+Setelah ISS-06 done → ISS-08 (pitch deck) paralel dengan ISS-07 (submission form).
 
 ---
 
