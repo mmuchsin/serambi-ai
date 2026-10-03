@@ -95,15 +95,22 @@ bb5670a chore(repo): initial commit — project scaffold and goal_decomposer flo
 ---
 
 ### ISS-07 — Submission form fill
-**Status:** `[ ]` pending
+**Status:** `[x]` DONE (draft siap; upload ke form = aksi user)
 **Scope:** 1 session
-**Fields:** Lihat PRD.md bagian "Submission Requirements"
 
-**Suggested workflow:**
-1. `use_skill value-proposition` → draft "Mengapa Solusi Dibutuhkan" + "Diferensiasi"
-2. `use_skill north-star` → draft "Dampak" + "Fitur Utama"
-3. `use_skill plan-launch` → draft "Target User" + "Alur Penggunaan"
-4. Isi semua field di submission form, save ke `docs/submission-draft.md`
+**What was done:**
+- Seluruh field form dijawab (17 field teks) dan disimpan ke [`submission-draft.md`](submission-draft.md) — Bahasa Indonesia, siap copy-paste
+- Deskripsi Singkat: 2 versi (231 kata / 191 kata) — keduanya di dalam rentang 150–300 kata
+- Semua klaim teknis diverifikasi ke repo: flow `goal_decomposer` (Chat Input → Prompt → LLM → Chat Output), MCP server `lf-lsa_ibm_hackathon`, tool `goal_decomposer`, angka riset (GenMentor FWCI 47.3, Feynman 80%+, Zaidi +15–20%, BJET cited 694)
+- Screenshot disalin ke `docs/submission/screenshots/` dengan nama sesuai form: `01-user-interface.png`, `02-langflow-workflow.png`, `03-langflow-endpoint.png`, `04-output.png`
+- Checklist sebelum submit ditambahkan di akhir draft
+
+**Remaining user actions (bukan issue):** paste jawaban ke form, pastikan repo public, selesaikan pitch deck (ISS-08), upload deck + screenshot
+
+**Commit:**
+```
+docs: add hackathon submission form draft (ISS-07)
+```
 
 ---
 
@@ -131,6 +138,7 @@ bb5670a chore(repo): initial commit — project scaffold and goal_decomposer flo
 | 2026-10-03 | Monorepo structure diadopsi: `apps/`, `packages/`. ISS-06 complete — semua dir punya README. |
 | 2026-10-03 | 43 PM skills dari phuryn/pm-skills diinstall ke `.bob/skills/` (format SKILL.md per dir). |
 | 2026-10-03 | Custom `pitch-deck` skill dibuat karena tidak ada di pm-skills. |
+| 2026-10-03 | ISS-07 complete — `docs/submission-draft.md` berisi jawaban lengkap 17 field form + `docs/submission/screenshots/` (file 01–04 siap upload). Next: ISS-08 pitch deck. |
 
 ---
 

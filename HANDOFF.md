@@ -6,9 +6,10 @@
 
 ## Status Sekarang
 
-**Phase:** 7 — Submission Materials (ISS-06 ✅ done, next: ISS-07 + ISS-08)
-**Current issue:** ISS-07 `[ ]` Submission form fill  
-**Completed this session:** ISS-02, ISS-03, ISS-06 ✅ — e2e verified + semua README + PM skills installed
+**Phase:** 7 — Submission Materials (ISS-07 draft ✅ done, next: ISS-08 + user submits form)
+**Current issue:** ISS-08 `[ ]` Pitch deck 11 slides
+**Completed this session:** ISS-07 ✅ — submission-draft.md (17 field) + screenshots 01–04
+**User actions pending:** paste jawaban ke form, pastikan repo `https://github.com/mmuchsin/serambi-ai` public, upload deck + screenshot
 
 **Session infra:** Turn counter hook aktif — lihat `.bob/hooks/turn-counter.mjs` + `.bob/settings.json`.
 **Reset counter** saat mulai session baru: hapus `.bob/turn-counter.json`.
@@ -17,18 +18,12 @@
 
 ## Next Action (1 langkah)
 
-**ISS-07 + ISS-08 (dapat paralel) — Submission form + Pitch deck:**
-
-ISS-07 (submission form):
-1. `use_skill value-proposition` → draft "Mengapa Solusi Dibutuhkan" + "Diferensiasi"
-2. `use_skill north-star` → draft "Dampak" + "Fitur Utama"
-3. `use_skill plan-launch` → draft "Target User" + "Alur Penggunaan"
-4. Save ke `docs/submission-draft.md`
-
-ISS-08 (pitch deck):
+**ISS-08 — Pitch deck (11 slides):**
 1. `use_skill pitch-deck` → generate 11-slide outline
-2. `use_skill competitive-analysis` → isi slide Diferensiasi
-3. Export ke `slides/serambi-pitch-deck.pptx`
+2. `use_skill competitive-analysis` → isi slide Diferensiasi (bahan: `docs/submission-draft.md` §17)
+3. Export ke `slides/serambi-pitch-deck.pptx` + `.pdf`
+
+Setelah deck selesai + user submit form → ISS-04 (Tutor Agent) bisa dibuka.
 
 ---
 
