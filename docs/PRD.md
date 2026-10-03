@@ -1,6 +1,6 @@
 # PRD — Serambi.ai (Smart Learning Assistant)
 
-**Project:** sla-ibm-hackathon
+**Project:** serambi-ai
 **Event:** IBM SkillsBuild University Education National Hackathon (Hacktiv8 + IBM + Komdigi)
 **Deadline Stage 1:** 11 Oktober
 **Status:** 🟢 Phase 7 — e2e verified, submission materials in progress
@@ -64,7 +64,7 @@ NaraRouter / longcat-2.5  ←── LLM provider
 Repo ini adalah **monorepo** — semua sub-proyek (agents, webapp, dll) akan ada di sini.
 
 ```
-sla-ibm-hackathon/                    # monorepo root
+serambi-ai/                        # monorepo root
 ├── .bob/
 │   └── mcp.json                      # Project-scope MCP config (SSE → Langflow)
 ├── .env                              # LANGFLOW_API_KEY (gitignored)

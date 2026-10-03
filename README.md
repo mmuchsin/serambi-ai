@@ -67,8 +67,8 @@ longcat-2.5 via NaraRouter ── LLM provider
 ### 1. Clone & configure
 
 ```bash
-git clone https://github.com/<your-org>/sla-ibm-hackathon.git
-cd sla-ibm-hackathon
+git clone https://github.com/mmuchsin/serambi-ai.git
+cd serambi-ai
 cp .env.example .env
 # Edit .env: set LANGFLOW_API_KEY
 ```
@@ -106,7 +106,7 @@ Bob will call the `goal_decomposer` tool and return a structured 12-week roadmap
 ## Repository Structure
 
 ```
-sla-ibm-hackathon/          monorepo root
+serambi-ai/                monorepo root
 ├── .bob/
 │   ├── mcp.json            MCP server config
 │   └── skills/             43 PM skills (pm-skills + custom pitch-deck)
