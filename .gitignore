@@ -1,3 +1,4 @@
 .env
 .bob/turn-counter.json
 .pi/
+.handoff*
