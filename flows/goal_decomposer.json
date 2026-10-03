@@ -1,0 +1,227 @@
+{
+  "id": "goal_decomposer_v1",
+  "name": "goal_decomposer",
+  "description": "Decomposes a user's career learning goal into a structured roadmap with weekly milestones.",
+  "data": {
+    "nodes": [
+      {
+        "id": "ChatInput-001",
+        "type": "genericNode",
+        "position": { "x": 100, "y": 300 },
+        "data": {
+          "type": "ChatInput",
+          "node": {
+            "template": {
+              "input_value": {
+                "value": "",
+                "type": "str",
+                "show": true,
+                "name": "input_value",
+                "display_name": "Text",
+                "required": false,
+                "placeholder": "Ceritakan goal belajar kamu..."
+              },
+              "should_store_message": {
+                "value": true,
+                "type": "bool",
+                "show": false
+              },
+              "sender": {
+                "value": "User",
+                "type": "str",
+                "show": false
+              },
+              "sender_name": {
+                "value": "User",
+                "type": "str",
+                "show": false
+              },
+              "session_id": {
+                "value": "",
+                "type": "str",
+                "show": false
+              }
+            },
+            "description": "User's raw learning goal input",
+            "display_name": "Chat Input",
+            "documentation": "",
+            "base_classes": ["Message"]
+          }
+        }
+      },
+      {
+        "id": "Prompt-001",
+        "type": "genericNode",
+        "position": { "x": 450, "y": 300 },
+        "data": {
+          "type": "Prompt",
+          "node": {
+            "template": {
+              "template": {
+                "value": "You are a learning goal coach helping career switchers in Indonesia.\nGiven the user's career goal below, extract and structure it into a learning roadmap.\n\nUser goal: {user_goal}\n\nRespond ONLY with valid JSON in this exact format (no markdown, no explanation):\n{{\n  \"goal\": \"<cleaned goal statement in Bahasa Indonesia>\",\n  \"deadline_weeks\": <number>,\n  \"milestones\": [\n    {{ \"week_range\": \"1-2\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" }},\n    {{ \"week_range\": \"3-4\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" }},\n    {{ \"week_range\": \"5-6\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" }},\n    {{ \"week_range\": \"7-8\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" }},\n    {{ \"week_range\": \"9-10\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" }},\n    {{ \"week_range\": \"11-12\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" }}\n  ],\n  \"first_action\": \"<one concrete thing the user can do TODAY to start>\"\n}}",
+                "type": "prompt",
+                "show": true,
+                "name": "template",
+                "display_name": "Template",
+                "required": true
+              },
+              "user_goal": {
+                "value": "",
+                "type": "str",
+                "show": true,
+                "name": "user_goal",
+                "display_name": "user_goal",
+                "required": true,
+                "input_types": ["Message", "Text"]
+              }
+            },
+            "description": "Prompt template for goal decomposition",
+            "display_name": "Prompt",
+            "documentation": "",
+            "base_classes": ["Prompt"]
+          }
+        }
+      },
+      {
+        "id": "OpenAIModel-001",
+        "type": "genericNode",
+        "position": { "x": 800, "y": 300 },
+        "data": {
+          "type": "OpenAIModel",
+          "node": {
+            "template": {
+              "input": {
+                "value": "",
+                "type": "str",
+                "show": false,
+                "name": "input",
+                "display_name": "Input",
+                "required": false,
+                "input_types": ["Prompt", "Message"]
+              },
+              "model_name": {
+                "value": "gpt-4o-mini",
+                "type": "str",
+                "show": true,
+                "name": "model_name",
+                "display_name": "Model Name",
+                "options": ["gpt-4o", "gpt-4o-mini", "gpt-4-turbo", "gpt-3.5-turbo"],
+                "required": false
+              },
+              "openai_api_key": {
+                "value": "",
+                "type": "str",
+                "show": true,
+                "name": "openai_api_key",
+                "display_name": "OpenAI API Key",
+                "required": false,
+                "password": true
+              },
+              "temperature": {
+                "value": 0.3,
+                "type": "float",
+                "show": true,
+                "name": "temperature",
+                "display_name": "Temperature",
+                "required": false
+              },
+              "max_tokens": {
+                "value": 1024,
+                "type": "int",
+                "show": true,
+                "name": "max_tokens",
+                "display_name": "Max Tokens",
+                "required": false
+              },
+              "stream": {
+                "value": false,
+                "type": "bool",
+                "show": false,
+                "name": "stream",
+                "display_name": "Stream",
+                "required": false
+              }
+            },
+            "description": "LLM that generates structured roadmap JSON",
+            "display_name": "OpenAI",
+            "documentation": "",
+            "base_classes": ["Message", "Text"]
+          }
+        }
+      },
+      {
+        "id": "ChatOutput-001",
+        "type": "genericNode",
+        "position": { "x": 1150, "y": 300 },
+        "data": {
+          "type": "ChatOutput",
+          "node": {
+            "template": {
+              "input_value": {
+                "value": "",
+                "type": "str",
+                "show": false,
+                "name": "input_value",
+                "display_name": "Text",
+                "required": false,
+                "input_types": ["Message"]
+              },
+              "should_store_message": {
+                "value": true,
+                "type": "bool",
+                "show": false
+              },
+              "sender": {
+                "value": "Machine",
+                "type": "str",
+                "show": false
+              },
+              "sender_name": {
+                "value": "AI",
+                "type": "str",
+                "show": false
+              },
+              "session_id": {
+                "value": "",
+                "type": "str",
+                "show": false
+              }
+            },
+            "description": "Outputs the structured JSON roadmap",
+            "display_name": "Chat Output",
+            "documentation": "",
+            "base_classes": ["Message"]
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge-ChatInput-001-Prompt-001",
+        "source": "ChatInput-001",
+        "target": "Prompt-001",
+        "sourceHandle": "ChatInput-001-Message",
+        "targetHandle": "Prompt-001-user_goal"
+      },
+      {
+        "id": "edge-Prompt-001-OpenAIModel-001",
+        "source": "Prompt-001",
+        "target": "OpenAIModel-001",
+        "sourceHandle": "Prompt-001-Prompt",
+        "targetHandle": "OpenAIModel-001-input"
+      },
+      {
+        "id": "edge-OpenAIModel-001-ChatOutput-001",
+        "source": "OpenAIModel-001",
+        "target": "ChatOutput-001",
+        "sourceHandle": "OpenAIModel-001-Message",
+        "targetHandle": "ChatOutput-001-input_value"
+      }
+    ],
+    "viewport": {
+      "x": 0,
+      "y": 0,
+      "zoom": 0.8
+    }
+  }
+}
