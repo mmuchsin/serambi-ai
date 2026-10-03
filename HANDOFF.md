@@ -32,9 +32,11 @@ Setelah ISS-06 done → ISS-08 (pitch deck) paralel dengan ISS-07 (submission fo
 |------|-----|
 | [`docs/PRD.md`](docs/PRD.md) | Product requirements, architecture, submission checklist |
 | [`docs/ISSUES.md`](docs/ISSUES.md) | Issue tracker — cari status `[-]` atau `[ ]` teratas |
-| [`flows/goal_decomposer.json`](flows/goal_decomposer.json) | Langflow flow Agent 1 (verified) |
-| [`.bob/mcp.json`](.bob/mcp.json) | MCP config: `langflow` SSE + `drawio` stdio |
+| [`flows/goal_decomposer.json`](flows/goal_decomposer.json) | Langflow flow Agent 1 (e2e verified) |
+| [`.bob/mcp.json`](.bob/mcp.json) | MCP config: `lf-lsa_ibm_hackathon` SSE + `drawio` stdio |
 | [`.env.example`](.env.example) | Template env — copy ke `.env`, isi `LANGFLOW_API_KEY` |
+| `apps/` | Monorepo: future webapp (Next.js / React) |
+| `packages/` | Monorepo: future shared libs |
 
 ---
 

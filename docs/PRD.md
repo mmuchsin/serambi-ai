@@ -1,9 +1,9 @@
 # PRD — Serambi.ai (Smart Learning Assistant)
 
-**Project:** sla-ibm-hackathon  
-**Event:** IBM SkillsBuild University Education National Hackathon (Hacktiv8 + IBM + Komdigi)  
-**Deadline Stage 1:** 11 Oktober  
-**Status:** 🟡 Phase 6b — MCP wired, e2e belum ditest
+**Project:** sla-ibm-hackathon
+**Event:** IBM SkillsBuild University Education National Hackathon (Hacktiv8 + IBM + Komdigi)
+**Deadline Stage 1:** 11 Oktober
+**Status:** 🟢 Phase 7 — e2e verified, submission materials in progress
 
 ---
 
@@ -44,40 +44,56 @@ NaraRouter / longcat-2.5  ←── LLM provider
 
 ## Agents (Langflow flows = MCP tools)
 
-| # | Agent | MCP Tool Name | Status |
-|---|-------|--------------|--------|
-| 1 | Goal Agent | `decompose_learning_goal` | ✅ Flow verified |
-| 2 | Tutor Agent | `explain_concept` | ⬜ Not started |
-| 3 | Assessment Agent | `generate_quiz` | ⬜ Not started |
-| 4 | Progress Agent | `check_progress` | ⬜ Not started |
-| 5 | Motivator Agent | `send_reminder` | ⬜ Not started |
-| 6 | Wellbeing Agent | `check_wellbeing` | ⬜ Not started |
+| # | Agent | Endpoint Name (Langflow) | MCP Tool ID (Bob) | Status |
+|---|-------|--------------------------|-------------------|--------|
+| 1 | Goal Agent | `goal_decomposer` | `mcp__lf-lsa_ibm_hackathon__goal_decomposer` | ✅ e2e verified |
+| 2 | Tutor Agent | `explain_concept` | `mcp__lf-lsa_ibm_hackathon__explain_concept` | ⬜ Not started |
+| 3 | Assessment Agent | `generate_quiz` | `mcp__lf-lsa_ibm_hackathon__generate_quiz` | ⬜ Not started |
+| 4 | Progress Agent | `check_progress` | `mcp__lf-lsa_ibm_hackathon__check_progress` | ⬜ Not started |
+| 5 | Motivator Agent | `send_reminder` | `mcp__lf-lsa_ibm_hackathon__send_reminder` | ⬜ Not started |
+| 6 | Wellbeing Agent | `check_wellbeing` | `mcp__lf-lsa_ibm_hackathon__check_wellbeing` | ⬜ Not started |
 
-> **MVP scope:** Agent 1 (Goal Agent) is tracer bullet. Agents 2-6 are stretch goals — build **only after e2e is proven**.
+> **MVP scope:** Agent 1 (Goal Agent) is tracer bullet — **e2e proven**. Agents 2-6 are stretch goals.
 
 ---
 
-## Module Map
+## Module Map (Monorepo)
+
+Repo ini adalah **monorepo** — semua sub-proyek (agents, webapp, dll) akan ada di sini.
 
 ```
-sla-ibm-hackathon/
+sla-ibm-hackathon/                    # monorepo root
 ├── .bob/
-│   └── mcp.json              # Project-scope MCP config (SSE → Langflow)
-├── .env                      # LANGFLOW_API_KEY (gitignored)
+│   └── mcp.json                      # Project-scope MCP config (SSE → Langflow)
+├── .env                              # LANGFLOW_API_KEY (gitignored)
 ├── .env.example
-├── flows/
-│   └── goal_decomposer.json  # ✅ Agent 1 — verified in Langflow Playground
-├── agents/                   # future: agent configs / system prompts
+│
+├── flows/                            # Langflow flow exports
+│   └── goal_decomposer.json          # ✅ Agent 1 — e2e verified
+│
+├── agents/                           # Agent configs / system prompts (future)
+│
+├── apps/                             # future: webapp, mobile, etc.
+│   └── web/                          # future: Next.js / React frontend
+│
+├── packages/                         # future: shared libs across apps
+│
 ├── mcp/
-│   └── README.md             # planned: MCP integration docs for submission
+│   └── README.md                     # MCP integration docs (ISS-06)
+│
 ├── docs/
-│   ├── PRD.md                # this file
-│   └── ISSUES.md             # issue tracker per session
-├── slides/                   # pitch deck assets
+│   ├── PRD.md                        # this file
+│   ├── ISSUES.md                     # issue tracker per session
+│   └── research-papers-and-abstracts.md
+│
+├── slides/                           # pitch deck assets
+│
 └── assets/
-    ├── screenshots/          # demo screenshots for submission
+    ├── screenshots/                  # demo screenshots for submission
     └── diagrams/
 ```
+
+> **Konvensi monorepo:** Apps masuk `apps/`, shared packages masuk `packages/`, Langflow flows masuk `flows/`, agent configs masuk `agents/`. Setiap sub-proyek punya `README.md` sendiri.
 
 ---
 
