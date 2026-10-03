@@ -11,6 +11,8 @@
 
 Career switchers yang belajar tech skills secara mandiri kehilangan arah dan burn out karena tidak ada tutor yang adaptif terhadap learning style mereka atau yang melacak progres ke arah career goal mereka — menyia-nyiakan waktu belajar dan menunda pencapaian target role.
 
+**Market gap:** OECD (2024) mengidentifikasi kesenjangan yang terus melebar antara demand tech skills dan output institusi pendidikan tradisional — reskilling mandiri adalah solusi utama, tapi minim dukungan adaptif.
+
 ## Target User
 
 Career switchers / upskillers Indonesia (contoh: "jadi data analyst dalam 3 bulan")
@@ -124,6 +126,24 @@ Cover → Problem → Solution → Target User → How It Works → AI & Technol
 
 ---
 
+## Research Grounding
+
+Setiap agent Serambi.ai didukung oleh landasan riset:
+
+| Agent | Landasan Riset | Sumber |
+|-------|---------------|--------|
+| Goal Agent | Goal-to-skill mapping; skill gap identification; efficient learning path scheduling | GenMentor (W4410636983, FWCI 47.3) |
+| Tutor Agent | Feynman technique: explain → AI identifies gap → probing questions; 80%+ prefer over passive re-reading | Feynman Bot (arXiv 2506.09055) |
+| Tutor Agent | Protégé effect: learners who teach a teachable agent learn more | Chase et al. 2009 (DOI 10.1007/s10956-009-9180-4) |
+| Assessment Agent | Adaptive quiz + graduated hinting — bukan direct answer | IntelliCode (W7140122680, FWCI 23.5) |
+| Progress Agent | Learner-specific forgetting curves; 15-20% improvement vs fixed-schedule spaced repetition | Zaidi et al. (arXiv 2004.11327) |
+| All agents | LLMs paling efektif sebagai **adaptive scaffold**, bukan autonomous instructor | Role of LLMs in Personalized Learning (W4409189317, cited 142) |
+| All agents | Hindari **cognitive offloading** — AI tidak langsung jawab, tapi pancing refleksi | Metacognitive Laziness (W4405211386, cited 694) |
+
+**Arsitektur multi-agent** (centralized learner state + specialized agents) mengikuti pola IntelliCode (W7140122680) dan ITAS (W7157788799).
+
+---
+
 ## Guardrails
 
 - Setiap Langflow node/component harus bisa dijelaskan satu per satu
@@ -131,6 +151,7 @@ Cover → Problem → Solution → Target User → How It Works → AI & Technol
 - Jangan expand scope sebelum e2e terbukti bekerja
 - Brand: **Serambi.ai** (preferred) — jangan pakai "EduFlow" (nama proyek contoh Team Aurora)
 - README/docs: tulis SETELAH e2e proven, bukan spekulatif sebelumnya
+- **Pedagogical constraint:** AI = adaptive scaffold, bukan oracle (dari riset) — hindari langsung jawab, gunakan graduated hinting + probing questions
 
 ---
 
