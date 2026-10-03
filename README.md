@@ -4,7 +4,7 @@
 
 **IBM SkillsBuild University Education National Hackathon** · Hacktiv8 × IBM × Komdigi
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 ---
 
@@ -131,9 +131,39 @@ See [`mcp/README.md`](mcp/README.md) for full details on how Bob connects to Lan
 
 ---
 
+## AI Agent Skills
+
+This project uses **Bob** (IBM AI Agent Harness) with structured skills that guide the agent through specific tasks. Skills are Markdown instruction files loaded on-demand via `use_skill <name>`.
+
+### Engineering Workflow Skills
+> Source: [Matt Pocock — AI Coding for Real Engineers](https://ai.hero.dev)
+
+| Skill | Purpose |
+|-------|---------|
+| `ai-engineering-workflow` | Orchestrates the full 7-phase engineering workflow (Grill → Research → Prototype → PRD → Issues → Implement → Review) |
+| `ai-agent-workflow` | Patterns for executing work with AI agents — Do Work loop, tracer bullets, AFK agents |
+| `ai-coding-best-practices` | Deep modules, TDD/red-green-refactor, feedback loops, module awareness |
+
+### Product Management Skills
+> Source: [phuryn/pm-skills](https://github.com/phuryn/pm-skills) — 43 PM skills
+
+| Skill | Purpose |
+|-------|---------|
+| `value-proposition` | 6-part JTBD template — Who, Why, What Before/After, Alternatives |
+| `north-star` | Define the North Star Metric and input metrics |
+| `competitive-analysis` | Map competitors, find differentiation opportunities |
+| `business-model` | Lean Canvas, Business Model Canvas, Startup Canvas |
+| `pitch-deck` | 11-slide pitch deck outline *(custom skill for this project)* |
+| `plan-launch` | Go-to-market strategy and beachhead segment |
+| `write-prd` | Product Requirements Document from feature idea |
+
+> Full skill list: `.bob/skills/` · Skills follow the [Bob Skill spec](https://www.ibm.com/products/bob)
+
+---
+
 ## License
 
-MIT © 2026 Serambi.ai Team
+Apache 2.0 © 2025 Serambi.ai Contributors — see [LICENSE](LICENSE)
 
 ---
 
