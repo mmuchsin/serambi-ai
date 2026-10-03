@@ -107,6 +107,9 @@ Bob will call the `goal_decomposer` tool and return a structured 12-week roadmap
 
 ```
 sla-ibm-hackathon/          monorepo root
+├── .bob/
+│   ├── mcp.json            MCP server config
+│   └── skills/             43 PM skills (pm-skills + custom pitch-deck)
 ├── flows/                  Langflow flow exports
 ├── agents/                 Agent configs / system prompts
 ├── apps/web/               Future: web frontend
@@ -134,4 +137,4 @@ MIT © 2026 Serambi.ai Team
 
 ---
 
-*Also available in: [Bahasa Indonesia](README.id.md)*
+*Also available in: Bahasa Indonesia (README.id.md — coming soon)*

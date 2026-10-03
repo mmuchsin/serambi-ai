@@ -61,7 +61,21 @@ These apply to all agents and any prompt written for this project:
 
 ## Skills to Load
 
+**Built-in Bob skills** (load when needed):
 ```
 use_skill configure-mcp        # MCP troubleshooting
 use_skill conventional-commits # before any commit
 ```
+
+**Project PM skills** (43 skills in `.bob/skills/`):
+```
+use_skill value-proposition    # submission form: why this solution
+use_skill competitive-analysis # differentiation vs competitors
+use_skill north-star           # impact metrics
+use_skill pitch-deck           # 11-slide outline
+use_skill red-team-prd         # stress-test PRD before submitting
+use_skill business-model       # lean canvas / monetization
+use_skill plan-launch          # GTM / beachhead segment
+use_skill strategy             # product strategy canvas
+```
+Full list: `.bob/skills/` — source: github.com/phuryn/pm-skills
