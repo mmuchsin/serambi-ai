@@ -139,6 +139,18 @@ Lihat [`mcp/README.md`](mcp/README.md) untuk detail bagaimana Bob terhubung ke L
 
 ---
 
+## Alat Pengembangan
+
+**Bob** menangani orkestrasi agent, tool-calling MCP, dan verifikasi flow Langflow. Untuk tugas yang tidak dicover Bob — riset dan generation aset gambar — proyek ini juga menggunakan:
+
+| Tool | Tujuan | Model / Sumber |
+|------|---------|----------------|
+| [pi agent](https://pi.dev/) + [feynman extension](https://pi.dev/packages/@companion-ai/feynman) | Riset akademik, pencarian paper, literature grounding | — |
+| Qwen3.8-27B-UD-Q6_K_XL | Reasoning riset | [unsloth/Qwen3.8-27B-GGUF](https://huggingface.co/unsloth/Qwen3.8-27B-GGUF) |
+| Qwen-Image-2.1 | Generation aset gambar (slides, diagram, ilustrasi) | [unsloth/Qwen-Image-2.1](https://huggingface.co/unsloth/Qwen-Image-2.1) |
+
+---
+
 ## Lisensi
 
 MIT © 2026 Tim Serambi.ai

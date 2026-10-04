@@ -183,7 +183,7 @@ This project uses **Bob** (IBM AI Agent Harness) with structured skills that gui
 | Tool | Purpose | Model / Source |
 |------|---------|----------------|
 | [pi agent](https://pi.dev/) + [feynman extension](https://pi.dev/packages/@companion-ai/feynman) | Academic research, paper search, literature grounding | — |
-| Qwen3.8-27B-GGUF (q6) | Research reasoning | [unsloth/Qwen3.8-27B-GGUF](https://huggingface.co/unsloth/Qwen3.8-27B-GGUF) |
+| Qwen3.8-27B-UD-Q6_K_XL | Research reasoning | [unsloth/Qwen3.8-27B-GGUF](https://huggingface.co/unsloth/Qwen3.8-27B-GGUF) |
 | Qwen-Image-2.1 | Image asset generation (slides, diagrams, illustrations) | [unsloth/Qwen-Image-2.1](https://huggingface.co/unsloth/Qwen-Image-2.1) |
 
 ---
