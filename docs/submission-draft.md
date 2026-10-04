@@ -59,7 +59,7 @@ Career switcher Indonesia yang ingin pindah ke role teknologi belajar secara man
 
 **Mengapa masalah ini penting untuk diselesaikan.**
 
-OECD mengidentifikasi kesenjangan yang terus melebar antara permintaan keterampilan teknologi dan output institusi pendidikan tradisional; reskilling mandiri menjadi salah satu solusi utama, tetapi nyatanya minim dukungan adaptif. Akibatnya, transisi karier tertunda, waktu belajar terbuang, dan burnout menurunkan jumlah profesional yang berhasil menyelesaikan perpindahan karier — memperkuh kesenjangan talent digital nasional.
+OECD mengidentifikasi kesenjangan yang terus melebar antara permintaan keterampilan teknologi dan output institusi pendidikan tradisional; reskilling mandiri menjadi salah satu solusi utama, tetapi nyatanya minim dukungan adaptif. Pasar bergerak searah — market upskilling global tumbuh 11–14% CAGR, tetapi sebagian besar pertumbuhannya B2B/korporasi: career switcher individu secara eksplisit terlewat dari cakupan riset market utama. Akibatnya, transisi karier tertunda, waktu belajar terbuang, dan burnout menurunkan jumlah profesional yang berhasil menyelesaikan perpindahan karier — memperkuh kesenjangan talent digital nasional.
 
 ---
 
@@ -91,7 +91,7 @@ Karena cara yang digunakan saat ini memiliki kelemahan yang sama-sama tidak terp
 **Empat keunggulan utama:**
 
 1. **Adaptif & goal-first.** Setiap respons diarahkan ke target karier yang dinyatakan pengguna — pola yang terbukti pada GenMentor (goal-to-skill mapping, FWCI 47.3).
-2. **Dilandasi riset, bukan intuisi.** Teknik Feynman (80%+ peserta lebih memilih daripada membaca pasif), graduated hinting, spaced repetition adaptif (+15–20% retensi vs jadwal tetap, Zaidi et al.), dan guardrail anti-cognitive-offloading.
+2. **Dilandasi riset, bukan intuisi.** Teknik Feynman (80%+ peserta lebih memilih daripada membaca pasif), graduated hinting, spaced repetition adaptif (+15–20% retensi vs jadwal tetap, Zaidi et al.), efek besar intervensi AI pada self-regulated learning (meta-analisis 32 studi, g = 1.613), dan guardrail anti-cognitive-offloading.
 3. **Bahasa Indonesia & konteks lokal.** Dirancang untuk career switcher Indonesia, bukan terjemahan produk global.
 4. **Arsitektur yang benar-benar modular (Bob × Langflow × MCP).** Setiap agent adalah satu Langflow flow yang diekspos sebagai MCP tool bernama; agent bisa dikembangkan, diuji, dan diganti secara independen tanpa menyentuh lapisan percakapan.
 
@@ -302,7 +302,7 @@ Target indikator terukur (guna menghindari klaim berlebihan: MVP sudah e2e verif
 ## 17. Apa yang Membuat Project Ini Berbeda?
 
 **1. Pedagogi berbasis riset, bukan sekadar "AI chatbot edukasi".**
-Setiap fitur didasarkan pada paper dan angka: GenMentor (goal-to-skill mapping, FWCI 47.3), Feynman Bot (arXiv 2506.09055 — 80%+ peserta lebih memilih daripada membaca pasif), Protégé Effect (Chase et al. 2009), IntelliCode (graduated hinting, FWCI 23.5), Zaidi et al. (spaced repetition adaptif, +15–20% retensi), dan guardrail anti-cognitive-offloading dari BJET (cited 694). Seluruh 30+ referensi terarsip lengkap dengan abstract dan DOI di repo — sesuatu yang jarang dimiliki prototype hackathon.
+Setiap fitur didasarkan pada paper dan angka: GenMentor (goal-to-skill mapping, FWCI 47.3), Feynman Bot (arXiv 2506.09055 — 80%+ peserta lebih memilih daripada membaca pasif), Protégé Effect (Chase et al. 2009), IntelliCode (graduated hinting, FWCI 23.5), Zaidi et al. (spaced repetition adaptif, +15–20% retensi), dan guardrail anti-cognitive-offloading dari BJET (cited 694), paradigma *Cognitive Mirror* (Frontiers in Education 2025, FWCI 21.9 — AI sebagai *teachable novice* yang mencerminkan kualitas penjelasan pengguna, diimplementasikan langsung pada desain Assessment Agent), dan meta-analisis intervensi AI terhadap self-regulated learning (Frontiers in Education 2025, 32 studi, g = 1.613). Seluruh 30+ referensi terarsip lengkap dengan abstract dan DOI di repo — sesuatu yang jarang dimiliki prototype hackathon.
 
 **2. Arsitektur integrasi Bob × Langflow × MCP yang benar-benar modular dan teruji.**
 Setiap agent hidup sebagai satu Langflow flow yang diekspos sebagai named MCP tool, sementara pemanggil — Bob saat pengembangan, backend web app di produksi — hanya berbicara lewat kontrak tool. Kontrak tool membuat agent bisa dikembangkan, diuji, dan diganti secara independen — bukan monolit satu prompt raksasa. Rantai integrasinya sudah **terverifikasi end-to-end** (Bob memanggil `goal_decomposer` → Langflow mengembalikan JSON roadmap).
