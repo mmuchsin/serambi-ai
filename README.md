@@ -144,7 +144,7 @@ See [`mcp/README.md`](mcp/README.md) for full details on how Bob connects to Lan
 This project uses **Bob** (IBM AI Agent Harness) with structured skills that guide the agent through specific tasks. Skills are Markdown instruction files loaded on-demand via `use_skill <name>`.
 
 ### Engineering Workflow Skills
-> Source: [mattpocock/skills](https://github.com/mattpocock/skills) — AI Coding for Real Engineers
+> **Custom skills** built to implement the [Matt Pocock](https://github.com/mattpocock/skills) AI Engineering Workflow. Upstream skill catalog: [docs/engineering](https://github.com/mattpocock/skills/tree/main/docs/engineering) (20 skills) + [docs/productivity](https://github.com/mattpocock/skills/tree/main/docs/productivity) (7 skills).
 
 | Skill | Purpose |
 |-------|---------|
@@ -173,6 +173,18 @@ This project uses **Bob** (IBM AI Agent Harness) with structured skills that gui
 | `drawio-skill` | Create and edit draw.io architecture, UML, BPMN, network, and swimlane diagrams as editable `.drawio` files |
 
 > Full skill list: `.bob/skills/` and `.agents/skills/` · Skills follow the [Bob Skill spec](https://www.ibm.com/products/bob)
+
+---
+
+## Development Tools
+
+**Bob** handles agent orchestration, MCP tool-calling, and Langflow flow verification. For tasks Bob doesn't cover — research and image asset generation — this project also uses:
+
+| Tool | Purpose | Model / Source |
+|------|---------|----------------|
+| [pi agent](https://pi.dev/) + [feynman extension](https://pi.dev/packages/@companion-ai/feynman) | Academic research, paper search, literature grounding | — |
+| Qwen3.8-27B-GGUF (q6) | Research reasoning | [unsloth/Qwen3.8-27B-GGUF](https://huggingface.co/unsloth/Qwen3.8-27B-GGUF) |
+| Qwen-Image-2.1 | Image asset generation (slides, diagrams, illustrations) | [unsloth/Qwen-Image-2.1](https://huggingface.co/unsloth/Qwen-Image-2.1) |
 
 ---
 
