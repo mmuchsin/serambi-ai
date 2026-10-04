@@ -151,17 +151,31 @@ chore(repo): add flow + e2e verification scripts (ISS-09)
 
 ---
 
+### ISS-10 — ADRs untuk keputusan arsitektur mayor
+**Status:** `[x]` DONE
+**Scope:** 1 session
+**Motivation:** audit P0-2 — keputusan "kenapa Langflow/MCP/Bob/NaraRouter" tidak terdokumentasi (framework §085)
+
+**What was done:**
+- `docs/adr/README.md` — index + aturan penulisan ADR
+- `docs/adr/0001-langflow-as-flow-engine.md`
+- `docs/adr/0002-mcp-streamablehttp-via-mcp-proxy.md`
+- `docs/adr/0003-bob-tui-as-dev-harness.md`
+- `docs/adr/0004-llm-providers.md`
+- `docs/adr/0005-project-decisions-log.md` — keputusan non-arsitektur (brand, monorepo, skills, tooling), dipindah dari tabel lama di file ini
+- Tabel Notes & Decisions Log di file ini diganti link ke `docs/adr/`
+
+**Commit:**
+```
+docs(adr): add architecture decision records 0001-0005 (ISS-10)
+```
+
+---
+
 ## Notes & Decisions Log
 
-| Date | Note |
-|------|------|
-| 2026-10-03 | ISS-01 complete. MCP config written di `.bob/mcp.json`. Global MCP config di `~/.bob/settings/mcp.json` dikosongkan. |
-| 2026-10-03 | Brand dipilih: Serambi.ai. Jangan pakai EduFlow (nama contoh Team Aurora). |
-| 2026-10-03 | PRD dan ISSUES dibuat untuk session continuity. |
-| 2026-10-03 | Monorepo structure diadopsi: `apps/`, `packages/`. ISS-06 complete — semua dir punya README. |
-| 2026-10-03 | 43 PM skills dari phuryn/pm-skills diinstall ke `.bob/skills/` (format SKILL.md per dir). |
-| 2026-10-03 | Custom `pitch-deck` skill dibuat karena tidak ada di pm-skills. |
-| 2026-10-03 | ISS-07 complete — `docs/submission-draft.md` berisi jawaban lengkap 17 field form + `assets/screenshots/` (file 01–04 siap upload). Next: ISS-08 pitch deck. |
+> Dipindah ke [`docs/adr/0005-project-decisions-log.md`](adr/0005-project-decisions-log.md) (2026-10-04, ISS-10).
+> Keputusan arsitektur mayor: [`docs/adr/`](adr/README.md).
 
 ---
 
