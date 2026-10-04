@@ -128,6 +128,29 @@ docs: add hackathon submission form draft (ISS-07)
 
 ---
 
+### ISS-09 — Verification scripts (flow + e2e)
+**Status:** `[x]` DONE
+**Scope:** 1 session
+**Motivation:** audit `docs/audit-ai-engineering-best-practices.md` P0-1 — feedback loop (046–054) tidak ada; "e2e verified" sebelumnya hanya klaim manual
+
+**What was done:**
+- `scripts/verify-flow.sh` — validasi statis `flows/*.json`: JSON valid, field wajib (`id`, `endpoint_name`, `data.nodes` non-kosong), `endpoint_name` unik antar flow
+- `scripts/verify-e2e.sh` — cek live: MCP streamable endpoint terjangkau + auth valid (JSON-RPC `tools/list`), lalu assert tiap `endpoint_name` di `flows/*` terekspos sebagai MCP tool; URL dibaca dari `.bob/mcp.json` (single source of truth)
+- 2026-10-04: kedua script PASS (Langflow 1.12 live, tool `goal_decomposer` terekspos)
+- Steering rule ditambahkan ke `AGENTS.md` §Session Rules
+
+**Definition of Done (terpenuhi):**
+- [x] `bash scripts/verify-flow.sh` exit 0
+- [x] `bash scripts/verify-e2e.sh` exit 0 (dengan Langflow hidup)
+- [x] Rule verifikasi ada di AGENTS.md
+
+**Commit:**
+```
+chore(repo): add flow + e2e verification scripts (ISS-09)
+```
+
+---
+
 ## Notes & Decisions Log
 
 | Date | Note |

@@ -58,6 +58,9 @@ These apply to all agents and any prompt written for this project:
 - Commit atomically with conventional commits (`feat(flow):`, `feat(mcp):`, `docs:`)
 - Do not expand to Agent 2-6 until the current issue's Definition of Done is met
 - Turn limit: 100/session
+- **Verification (feedback loop):** sebelum commit perubahan `flows/*.json` atau `.bob/mcp.json`, jalankan:
+  - `bash scripts/verify-flow.sh` — selalu wajib, exit 0
+  - `bash scripts/verify-e2e.sh` — wajib jika Langflow server hidup (exit 0/1; exit 2 = server mati, catat di issue)
 
 ## Skills to Load
 
