@@ -11,11 +11,15 @@ Bob (AI agent harness) is the **development harness** — it orchestrates Langfl
 
 ```
 flows/          Langflow flow exports (one file = one agent)
-agents/         Agent configs and system prompts
+agents/         Agent configs and system prompts (one file = one agent)
 apps/           Future: webapp and other surfaces
 packages/       Future: shared libraries
-mcp/            MCP server docs
-docs/           PRD, issues, research
+mcp/            MCP integration docs and tool contracts
+docs/           PRD, ISSUES, submission, adr/
+research/       Research papers and literature (grounding per agent)
+scripts/        Verification scripts (verify-flow.sh, verify-e2e.sh)
+slides/         Pitch deck (PPTX + PDF)
+assets/         Screenshots and diagrams
 ```
 
 Full structure → see [`docs/PRD.md`](docs/PRD.md#module-map-monorepo).

@@ -138,19 +138,27 @@ Cover → Problem → Solution → Target User → How It Works → AI & Technol
 
 ## Research Grounding
 
-Setiap agent Serambi.ai didukung oleh landasan riset:
+Setiap agent Serambi.ai didukung oleh landasan riset. Detail lengkap + abstract + DOI:
+[`research/research-papers-and-abstracts.md`](../research/research-papers-and-abstracts.md) ·
+[`research/feedback-loop-papers-additional.md`](../research/feedback-loop-papers-additional.md)
 
 | Agent | Landasan Riset | Sumber |
 |-------|---------------|--------|
 | Goal Agent | Goal-to-skill mapping; skill gap identification; efficient learning path scheduling | GenMentor (W4410636983, FWCI 47.3) |
+| Goal Agent | AI intervention pada fase SRL forethought/planning memiliki efek terbesar (g = 1.613, 32 studi) | SRL meta-analysis, Frontiers in Education 2025 |
 | Tutor Agent | Feynman technique: explain → AI identifies gap → probing questions; 80%+ prefer over passive re-reading | Feynman Bot (arXiv 2506.09055) |
 | Tutor Agent | Protégé effect: learners who teach a teachable agent learn more | Chase et al. 2009 (DOI 10.1007/s10956-009-9180-4) |
 | Assessment Agent | Adaptive quiz + graduated hinting — bukan direct answer | IntelliCode (W7140122680, FWCI 23.5) |
+| Assessment Agent | **Cognitive Mirror** paradigm — AI sebagai *teachable novice* yang mencerminkan kualitas penjelasan pengguna; efek Protégé terstruktur | Frontiers in Education 2025 (FWCI 21.9) |
 | Progress Agent | Learner-specific forgetting curves; 15-20% improvement vs fixed-schedule spaced repetition | Zaidi et al. (arXiv 2004.11327) |
+| Progress Agent + Reminder Agent | **Loop closure**: feedback harus di-act-upon oleh learner — risiko *blind loop* (feedback diterima tapi diabaikan) | Komarica 2024; Willis 2020; Boud & Molloy |
 | All agents | LLMs paling efektif sebagai **adaptive scaffold**, bukan autonomous instructor | Role of LLMs in Personalized Learning (W4409189317, cited 142) |
 | All agents | Hindari **cognitive offloading** — AI tidak langsung jawab, tapi pancing refleksi | Metacognitive Laziness (W4405211386, cited 694) |
+| All agents | **Iterative & dialogic feedback** — feedback efektif ketika berkelanjutan dan bersifat percakapan, bukan satu kali | Willis 2020; AI-EDL 2025 |
 
 **Arsitektur multi-agent** (centralized learner state + specialized agents) mengikuti pola IntelliCode (W7140122680) dan ITAS (W7157788799).
+
+> *Multimodal & real-time feedback (video, voice) sengaja tidak masuk scope MVP — direncanakan di Future Development setelah web app rilis.*
 
 ---
 
