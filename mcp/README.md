@@ -9,7 +9,7 @@ How IBM Bob connects to Langflow via Model Context Protocol (MCP).
 Serambi.ai uses MCP to bridge Bob (AI agent harness) and Langflow (flow execution engine). Each Langflow flow with a named endpoint becomes a callable tool in Bob.
 
 ```
-Bob ──MCP (SSE/streamable-http)──► Langflow project endpoint
+Bob ──MCP (streamable HTTP, via uvx mcp-proxy)──► Langflow project endpoint
                                         │
                                         ├── goal_decomposer  (tool 1)
                                         ├── explain_concept  (tool 2, planned)
@@ -40,9 +40,13 @@ File: [`.bob/mcp.json`](../.bob/mcp.json)
 ```
 
 **How it works:**
-- `uvx mcp-proxy` spawns a local MCP process that proxies to Langflow's SSE endpoint
+- `uvx mcp-proxy` spawns a local stdio MCP process that bridges to Langflow's **streamable HTTP** MCP endpoint (Langflow 1.12+)
 - `${env:LANGFLOW_API_KEY}` is read from the shell environment — never stored in the file
 - All Langflow flows in the project with an Endpoint Name set are exposed as MCP tools
+
+> The same file also defines a second, unrelated server: `drawio`
+> (`npx -y @drawio/mcp`, stdio) — a diagramming tool for agent sessions, not
+> part of the Serambi.ai flow bridge.
 
 ---
 
@@ -65,6 +69,17 @@ File: [`.bob/mcp.json`](../.bob/mcp.json)
 2. Open flow settings → set **Endpoint Name** (e.g. `explain_concept`) → Save
 3. The tool is immediately available as `mcp__lf-serambi_ai__explain_concept` in Bob
 4. No changes needed to `.bob/mcp.json` — project-level endpoint auto-discovers all flows
+
+---
+
+## Verification (feedback loop)
+
+```bash
+bash scripts/verify-flow.sh   # statis: flows/*.json valid, field wajib, endpoint_name unik
+bash scripts/verify-e2e.sh    # live: MCP tools/list — tiap flow terekspos sebagai tool
+```
+
+`verify-e2e.sh` exit codes: `0` OK · `1` tool tidak terekspos (set Endpoint Name di Langflow UI) · `2` endpoint/auth tidak terjangkau (Langflow tidak hidup, atau key salah). URL dibaca dari `.bob/mcp.json` (single source of truth).
 
 ---
 
@@ -92,7 +107,7 @@ curl -s --compressed "http://localhost:7860/api/v1/flows/" \
 | Symptom | Cause | Fix |
 |---------|-------|-----|
 | Tool not appearing in Bob | Endpoint Name not set in Langflow | Open flow → Settings → set Endpoint Name → Save |
-| `406 Not Acceptable` from curl | Expected — curl doesn't send `Accept: text/event-stream` | Use Bob (mcp-proxy handles SSE), not curl directly |
+| `406 Not Acceptable` from curl | Expected — curl tidak mengirim header Accept streamable HTTP yang benar | Use Bob (mcp-proxy handles streamable HTTP) atau `scripts/verify-e2e.sh`, bukan curl langsung |
 | `Authentication error` | `LANGFLOW_API_KEY` not loaded | `source ~/.bashrc` then restart Bob |
 | `uvx: command not found` | uv not installed | `pip install uv` |
 

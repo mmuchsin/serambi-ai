@@ -172,6 +172,23 @@ docs(adr): add architecture decision records 0001-0005 (ISS-10)
 
 ---
 
+### ISS-11 — Fix stale mcp/README.md
+**Status:** `[x]` DONE
+**Scope:** < 1 session (follow-up ISS-06)
+**Motivation:** audit P0-3 — README bilang "SSE" padahal transport `streamablehttp`; server `drawio` tidak terdokumentasi
+
+**What was done:**
+- `mcp/README.md` §Overview + §Configuration + Troubleshooting: "SSE" → "streamable HTTP" (sesuai `.bob/mcp.json` actual)
+- §Configuration: note server `drawio` (`npx -y @drawio/mcp`) — diagramming tool, bukan bagian flow bridge
+- §Verification (baru): `scripts/verify-flow.sh` + `scripts/verify-e2e.sh` dengan exit codes
+
+**Commit:**
+```
+docs(mcp): correct streamablehttp transport, document drawio server + verification (ISS-11)
+```
+
+---
+
 ## Notes & Decisions Log
 
 > Dipindah ke [`docs/adr/0005-project-decisions-log.md`](adr/0005-project-decisions-log.md) (2026-10-04, ISS-10).
