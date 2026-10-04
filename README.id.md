@@ -4,7 +4,7 @@
 
 **IBM SkillsBuild University Education National Hackathon** · Hacktiv8 × IBM × Komdigi
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 ---
 
@@ -153,7 +153,7 @@ Lihat [`mcp/README.md`](mcp/README.md) untuk detail bagaimana Bob terhubung ke L
 
 ## Lisensi
 
-MIT © 2026 Tim Serambi.ai
+Apache 2.0 © 2026 Tim Serambi.ai
 
 ---
 

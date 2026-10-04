@@ -190,7 +190,7 @@ This project uses **Bob** (IBM AI Agent Harness) with structured skills that gui
 
 ## License
 
-Apache 2.0 © 2025 Serambi.ai Contributors — see [LICENSE](LICENSE)
+Apache 2.0 © 2026 Serambi.ai Contributors — see [LICENSE](LICENSE)
 
 ---
 
