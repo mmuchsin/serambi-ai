@@ -6,12 +6,17 @@
 
 ## Status Sekarang
 
-**Phase:** 7 — Submission Materials ✅ DONE (ISS-07 + ISS-08 selesai)
-**Current issue:** ISS-08 `[x]` DONE — Pitch deck 11 slides (`slides/serambi-pitch-deck.pptx`)
-**Completed this session:** ISS-08 ✅ — 11-slide PPTX, validated, speaker notes, IBM Blue color scheme
-**User actions pending:**
+**Phase:** 7 — Submission Materials ✅ DONE (ISS-07 + ISS-08 + competitive analysis v3)
+**Last commit:** `8fcfaf9` — `docs(business): update competitive analysis v3 with verified data — Dicoding 1.3M+, Boot.dev Socratic AI`
+**Completed this session:**
+- ISS-08 ✅ — 11-slide PPTX, 3 draw.io diagrams, 4 PNGs exported
+- Competitive analysis v3 ✅ — Dicoding 1,327,000+ (verified from scraped page), Boot.dev "Avoid AI" + Socratic Boots chatbot documented
+- Pitch deck slide 09 ✅ — updated Dicoding 1.3M+ + Boot.dev Socratic angle
+- verify-flow.sh ✅ | verify-e2e.sh ✅
+
+**User actions still pending:**
 - Isi nama tim di slide 11 (`slides/serambi-pitch-deck.pptx`)
-- Insert 4 screenshot ke slide 08 (drag & drop dari `submission/screenshots/`)
+- Insert 4 screenshot ke slide 08 (dari `assets/screenshots/`)
 - Export PDF: File → Export as PDF → `slides/serambi-pitch-deck.pdf`
 - Paste jawaban ke form, pastikan repo `https://github.com/mmuchsin/serambi-ai` public
 - Upload deck + screenshot ke form
@@ -25,7 +30,7 @@
 
 **Submission Materials selesai — saatnya submit:**
 1. Buka `slides/serambi-pitch-deck.pptx` → isi nama tim di slide 11
-2. Insert 4 screenshot (dari `submission/screenshots/`) ke slide 08
+2. Insert 4 screenshot (dari `assets/screenshots/`) ke slide 08
 3. Export PDF → `slides/serambi-pitch-deck.pdf`
 4. Paste `docs/submission-draft.md` ke form, upload deck + screenshots
 5. Pastikan repo public: `https://github.com/mmuchsin/serambi-ai`
