@@ -126,8 +126,11 @@ serambi-ai/                monorepo root
 ├── docs/
 │   ├── PRD.md
 │   ├── ISSUES.md
-│   └── research-papers-and-abstracts.md
-├── slides/                 Pitch deck
+│   └── adr/                ADR 0001–0005
+├── research/               Riset: papers (multi-agent tutoring, feedback loop)
+│   ├── research-papers-and-abstracts.md
+│   └── feedback-loop-papers-additional.md
+├── slides/                 Pitch deck (PPTX, 11 slides — ISS-08)
 └── assets/screenshots/     Screenshot demo
 ```
 

@@ -33,7 +33,7 @@ Setelah deck selesai + user submit form → ISS-04 (Tutor Agent) bisa dibuka.
 |------|-----|
 | [`docs/PRD.md`](docs/PRD.md) | Product requirements, architecture, research grounding, submission checklist |
 | [`docs/ISSUES.md`](docs/ISSUES.md) | Issue tracker — cari status `[-]` atau `[ ]` teratas |
-| [`docs/research-papers-and-abstracts.md`](docs/research-papers-and-abstracts.md) | 30+ papers: research grounding tiap agent |
+| [`research/research-papers-and-abstracts.md`](research/research-papers-and-abstracts.md) | 30+ papers: research grounding tiap agent |
 | [`flows/goal_decomposer.json`](flows/goal_decomposer.json) | Langflow flow Agent 1 (e2e verified) |
 | [`.bob/mcp.json`](.bob/mcp.json) | MCP config: `lf-serambi_ai` SSE + `drawio` stdio |
 | [`.bob/skills/`](.bob/skills/) | 43 PM skills (pm-skills + custom pitch-deck) |

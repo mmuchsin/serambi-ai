@@ -9,7 +9,9 @@ Internal documentation for Serambi.ai. Not end-user docs — these are for the t
 | [`PRD.md`](PRD.md) | Agent + Team | Product requirements, architecture, module map, research grounding |
 | [`ISSUES.md`](ISSUES.md) | Agent + Team | Issue tracker — find current `[-]` or `[ ]` to continue work |
 | [`submission-draft.md`](submission-draft.md) | Team | Copy-paste answers for every field of the hackathon submission form (ISS-07) |
-| [`research-papers-and-abstracts.md`](research-papers-and-abstracts.md) | Team | Literature base: multi-agent tutoring, spaced repetition, Feynman technique, market gap |
+| [`adr/`](adr/README.md) | Team + Judge | Architecture decision records (0001–0005) — why Langflow, MCP, Bob |
+
+> Literature base (30+ papers) lives in [`research/`](../research/) at repo root — it is a reference library, not project documentation.
 
 ## Reading Order (new session)
 

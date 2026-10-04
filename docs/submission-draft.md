@@ -229,7 +229,7 @@ Isi yang membantu reviewer:
 |---|---|
 | `README.md` / `README.id.md` | Ringkasan solusi, arsitektur, cara menjalankan (quick start), status agent |
 | [`docs/PRD.md`](PRD.md) | Product requirements, arsitektur Bob × MCP × Langflow, tabel agent, research grounding |
-| [`docs/research-papers-and-abstracts.md`](research-papers-and-abstracts.md) | Landasan riset: 30+ jurnal/paper dengan abstract lengkap, jumlah sitasi, dan DOI/link |
+| [`research/research-papers-and-abstracts.md`](../research/research-papers-and-abstracts.md) | Landasan riset: 30+ jurnal/paper dengan abstract lengkap, jumlah sitasi, dan DOI/link |
 | [`flows/goal_decomposer.json`](../flows/goal_decomposer.json) | Export flow Langflow yang bisa di-import dan direplikasi |
 | [`.bob/mcp.json`](../.bob/mcp.json) | Konfigurasi integrasi Bob → Langflow via MCP |
 | [`docs/business/`](business/) | Value proposition, north star metric, competitive framing |

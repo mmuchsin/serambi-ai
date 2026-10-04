@@ -126,7 +126,10 @@ serambi-ai/                monorepo root
 ├── docs/
 │   ├── PRD.md
 │   ├── ISSUES.md
-│   └── research-papers-and-abstracts.md
+│   └── adr/                Architecture decision records (0001–0005)
+├── research/               Riset: papers (multi-agent tutoring, feedback loop)
+│   ├── research-papers-and-abstracts.md
+│   └── feedback-loop-papers-additional.md
 ├── slides/                 Pitch deck
 └── assets/screenshots/     Demo screenshots
 ```

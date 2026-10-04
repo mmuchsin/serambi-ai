@@ -352,7 +352,7 @@ Only the tools actually invoked during this session to produce this file.
 
 ### 6. `write`
 - **Purpose:** Create the initial markdown document
-- **Path:** `docs/research-papers-and-abstracts.md`
+- **Path:** `research/research-papers-and-abstracts.md`
 - **Content:** Full document with 43 papers organized in 7 sections + summary statistics + key themes
 
 ### 7. `edit`

@@ -92,9 +92,13 @@ serambi-ai/                        # monorepo root
 ├── docs/
 │   ├── PRD.md                        # this file
 │   ├── ISSUES.md                     # issue tracker per session
-│   └── research-papers-and-abstracts.md
+│   └── adr/                          # architecture decision records (0001–0005)
 │
-├── slides/                           # pitch deck assets
+├── research/                         # library literature (bukan dokumentasi proyek)
+│   ├── research-papers-and-abstracts.md
+│   └── feedback-loop-papers-additional.md
+│
+├── slides/                           # pitch deck (PPTX, 11 slides — ISS-08)
 │
 └── assets/
     ├── screenshots/                  # demo screenshots for submission

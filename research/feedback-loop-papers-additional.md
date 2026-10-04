@@ -241,7 +241,7 @@ The research by Willis et al. (2020) and the AI-EDL framework (2025) emphasize t
 
 ### 5. `write`
 - **Purpose:** Create the additional papers document
-- **Path:** `docs/feedback-loop-papers-additional.md`
+- **Path:** `research/feedback-loop-papers-additional.md`
 
 ---
 
