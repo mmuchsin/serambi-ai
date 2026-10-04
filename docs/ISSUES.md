@@ -121,8 +121,8 @@ docs: add hackathon submission form draft (ISS-07)
 **Format:** PowerPoint/Keynote/PDF — simpan di `slides/`
 
 **Suggested workflow:**
-1. `use_skill pitch-deck` → generate 11-slide outline
-2. `use_skill competitive-analysis` → isi slide Diferensiasi
+1. `$pitch-deck` → generate 11-slide outline
+2. `$competitive-analysis` → isi slide Diferensiasi
 3. Fill content dari research papers (lihat `docs/research-papers-and-abstracts.md`)
 4. Export ke `slides/serambi-pitch-deck.pptx` + `slides/serambi-pitch-deck.pdf`
 

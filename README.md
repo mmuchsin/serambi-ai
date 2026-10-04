@@ -141,7 +141,7 @@ See [`mcp/README.md`](mcp/README.md) for full details on how Bob connects to Lan
 
 ## AI Agent Skills
 
-This project uses **Bob** (IBM AI Agent Harness) with structured skills that guide the agent through specific tasks. Skills are Markdown instruction files loaded on-demand via `use_skill <name>`.
+This project uses **Bob** (IBM AI Agent Harness) with structured skills that guide the agent through specific tasks. Skills are invoked on-demand via `$skill-name` (e.g. `$pitch-deck`).
 
 ### Engineering Workflow Skills
 > **Custom skills** built to implement the [Matt Pocock](https://github.com/mattpocock/skills) AI Engineering Workflow. Upstream skill catalog: [docs/engineering](https://github.com/mattpocock/skills/tree/main/docs/engineering) (20 skills) + [docs/productivity](https://github.com/mattpocock/skills/tree/main/docs/productivity) (7 skills).

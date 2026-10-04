@@ -254,7 +254,7 @@ Belum dibuat saat draft ini ditulis (tercatat sebagai **ISS-08**). Struktur yang
 10. Future Development — lengkapi agent, web app, B2B
 11. Team
 
-Prosedur: `use_skill pitch-deck` di Bob (skill custom tersedia di `.bob/skills/pitch-deck`) → isi konten dari `docs/business/` + research doc → export ke `slides/serambi-pitch-deck.pptx` + `.pdf`.
+Prosedur: `$pitch-deck` di Bob (skill custom tersedia di `.bob/skills/pitch-deck`) → isi konten dari `docs/business/` + research doc → export ke `slides/serambi-pitch-deck.pptx` + `.pdf`.
 
 ---
 

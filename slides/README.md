@@ -30,6 +30,6 @@ Place exported pitch deck files here:
 
 Use the `pitch-deck` skill in Bob:
 ```
-use_skill pitch-deck
+$pitch-deck
 ```
 Then follow the guided outline to fill each slide.

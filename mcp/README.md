@@ -96,4 +96,4 @@ curl -s --compressed "http://localhost:7860/api/v1/flows/" \
 | `Authentication error` | `LANGFLOW_API_KEY` not loaded | `source ~/.bashrc` then restart Bob |
 | `uvx: command not found` | uv not installed | `pip install uv` |
 
-For deeper MCP issues: `use_skill configure-mcp` in Bob.
+For deeper MCP issues: `$configure-mcp` in Bob.

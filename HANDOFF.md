@@ -19,8 +19,8 @@
 ## Next Action (1 langkah)
 
 **ISS-08 — Pitch deck (11 slides):**
-1. `use_skill pitch-deck` → generate 11-slide outline
-2. `use_skill competitive-analysis` → isi slide Diferensiasi (bahan: `docs/submission-draft.md` §17)
+1. `$pitch-deck` → generate 11-slide outline
+2. `$competitive-analysis` → isi slide Diferensiasi (bahan: `docs/submission-draft.md` §17)
 3. Export ke `slides/serambi-pitch-deck.pptx` + `.pdf`
 
 Setelah deck selesai + user submit form → ISS-04 (Tutor Agent) bisa dibuka.
@@ -44,12 +44,12 @@ Setelah deck selesai + user submit form → ISS-04 (Tutor Agent) bisa dibuka.
 ## Skills untuk Session Ini
 
 ```
-use_skill value-proposition    # submission form: why this solution
-use_skill north-star           # impact metrics
-use_skill pitch-deck           # 11-slide outline
-use_skill competitive-analysis # diferensiasi vs kompetitor
-use_skill plan-launch          # GTM / target user
-use_skill conventional-commits # sebelum commit apapun
+$value-proposition    # submission form: why this solution
+$north-star           # impact metrics
+$pitch-deck           # 11-slide outline
+$competitive-analysis # diferensiasi vs kompetitor
+$plan-launch          # GTM / target user
+$conventional-commits # sebelum commit apapun
 ```
 
 Jangan load: `grilling`, `prototype`, `research` — fase itu sudah selesai.
