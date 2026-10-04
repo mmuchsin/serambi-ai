@@ -7,3 +7,6 @@ skills-lock.json
 docs/ai-engineering-best-practices.md
 .audit/
 .envrc
+.firecrawl
+.bob/skills/
+.bob/tmp/
