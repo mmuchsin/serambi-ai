@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Calibri, Arial" data-pptx-page-role="content">
+  <rect id="p10-bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+  <g id="p10-header" data-pptx-bounds="56 56 1168 108">
+    <text x="56" y="95" font-family="Trebuchet MS, Arial" font-size="42" font-weight="bold" fill="#1E2761">MVP live — 5 Agent + web app dalam 3–6 bulan</text>
+    <image href="../images/logo-blue.png" x="1196" y="56" width="28" height="28" preserveAspectRatio="xMidYMid meet" />
+  </g>
+  <g id="p10-done-card" data-pptx-bounds="56 168 560 400">
+    <rect x="56" y="168" width="560" height="400" rx="20" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/check" x="80" y="198" width="32" height="32" fill="#4A5FC1" stroke-width="2" />
+    <text x="120" y="224" font-size="32" font-weight="bold" fill="#1E2761">Selesai</text>
+    <use data-icon="tabler-outline/check" x="80" y="268" width="24" height="24" fill="#4A5FC1" stroke-width="2" />
+    <text x="120" y="290" font-size="20" fill="#23283D">Goal Agent e2e verified</text>
+    <use data-icon="tabler-outline/check" x="80" y="328" width="24" height="24" fill="#4A5FC1" stroke-width="2" />
+    <text x="120" y="350" font-size="20" fill="#23283D">Infra MCP + Langflow + Bob</text>
+    <use data-icon="tabler-outline/check" x="80" y="388" width="24" height="24" fill="#4A5FC1" stroke-width="2" />
+    <text x="120" y="410" font-size="20" fill="#23283D">Dokumentasi + submission draft</text>
+    <use data-icon="tabler-outline/check" x="80" y="448" width="24" height="24" fill="#4A5FC1" stroke-width="2" />
+    <text x="120" y="470" font-size="20" fill="#23283D">Verification scripts (flow + e2e)</text>
+  </g>
+  <g id="p10-next-card" data-pptx-bounds="656 168 568 400">
+    <rect x="656" y="168" width="568" height="400" rx="20" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/rocket" x="680" y="198" width="32" height="32" fill="#4A5FC1" stroke-width="2" />
+    <text x="720" y="224" font-size="32" font-weight="bold" fill="#1E2761">3–6 bulan</text>
+    <rect x="680" y="268" width="24" height="24" rx="6" fill="none" stroke="#4A5FC1" stroke-width="2" />
+    <text x="720" y="290" font-size="20" fill="#23283D">Tutor (Feynman)</text>
+    <rect x="680" y="318" width="24" height="24" rx="6" fill="none" stroke="#4A5FC1" stroke-width="2" />
+    <text x="720" y="340" font-size="20" fill="#23283D">Assessment (hinting)</text>
+    <rect x="680" y="368" width="24" height="24" rx="6" fill="none" stroke="#4A5FC1" stroke-width="2" />
+    <text x="720" y="390" font-size="20" fill="#23283D">Progress (spaced rep)</text>
+    <rect x="680" y="418" width="24" height="24" rx="6" fill="none" stroke="#4A5FC1" stroke-width="2" />
+    <text x="720" y="440" font-size="20" fill="#23283D">Motivator + Wellbeing</text>
+    <rect x="680" y="468" width="24" height="24" rx="6" fill="none" stroke="#4A5FC1" stroke-width="2" />
+    <text x="720" y="490" font-size="20" fill="#23283D">Web App</text>
+    <rect x="680" y="518" width="24" height="24" rx="6" fill="none" stroke="#4A5FC1" stroke-width="2" />
+    <text x="720" y="540" font-size="20" fill="#23283D">WhatsApp bot surface</text>
+  </g>
+  <g id="p10-b2b" data-pptx-bounds="56 570 376 94">
+    <rect x="56" y="570" width="376" height="94" rx="20" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/building" x="80" y="594" width="32" height="32" fill="#4A5FC1" stroke-width="2" />
+    <text x="120" y="620" font-size="20" font-weight="bold" fill="#1E2761">B2B roadmap</text>
+    <text x="120" y="644" font-size="16" fill="#5A6178">Whitelabel bootcamp &amp; kampus</text>
+  </g>
+  <g id="p10-skala" data-pptx-bounds="452 570 376 94">
+    <rect x="452" y="570" width="376" height="94" rx="20" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/chart-line" x="476" y="594" width="32" height="32" fill="#4A5FC1" stroke-width="2" />
+    <text x="516" y="620" font-size="20" font-weight="bold" fill="#1E2761">Skala teknis</text>
+    <text x="516" y="644" font-size="16" fill="#5A6178">Langflow Cloud multi-tenant</text>
+  </g>
+  <g id="p10-moat" data-pptx-bounds="848 570 376 94">
+    <rect x="848" y="570" width="376" height="94" rx="20" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/shield" x="872" y="594" width="32" height="32" fill="#4A5FC1" stroke-width="2" />
+    <text x="912" y="620" font-size="20" font-weight="bold" fill="#1E2761">Moat</text>
+    <text x="912" y="644" font-size="16" fill="#5A6178">Forgetting curve per domain</text>
+  </g>
+  <g id="p10-footer" data-pptx-bounds="56 680 1168 28">
+    <rect x="56" y="696" width="20" height="8" rx="4" fill="#D8DDEB" />
+    <rect x="80" y="692" width="20" height="12" rx="4" fill="#D8DDEB" />
+    <rect x="104" y="688" width="20" height="16" rx="4" fill="#D8DDEB" />
+    <rect x="128" y="684" width="20" height="20" rx="4" fill="#D8DDEB" />
+    <rect x="152" y="680" width="20" height="24" rx="4" fill="#F2A93B" />
+    <rect x="1160" y="680" width="64" height="28" rx="14" fill="#EEF1F9" />
+    <text x="1192" y="699" font-size="18" fill="#5A6178" text-anchor="middle">10</text>
+  </g>
+</svg>

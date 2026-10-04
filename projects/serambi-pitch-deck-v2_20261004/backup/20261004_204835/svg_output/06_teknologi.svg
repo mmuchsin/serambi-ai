@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Calibri, Arial" data-pptx-page-role="content">
+  <rect id="p06-bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+  <g id="p06-header" data-pptx-bounds="56 56 1168 108">
+    <text x="56" y="95" font-family="Trebuchet MS, Arial" font-size="42" font-weight="bold" fill="#1E2761">IBM Bob × Langflow × MCP — kontrak yang sama<tspan x="56" dy="52">di dev dan produksi</tspan></text>
+    <image href="../images/logo-blue.png" x="1196" y="56" width="28" height="28" preserveAspectRatio="xMidYMid meet" />
+  </g>
+  <g id="p06-row-1" data-pptx-bounds="56 168 440 96">
+    <rect x="56" y="168" width="440" height="96" rx="16" fill="#EEF1F9" />
+    <use data-icon="simple-icons/ibm" x="80" y="200" width="32" height="32" fill="#4A5FC1" />
+    <text x="128" y="210" font-size="24" font-weight="bold" fill="#23283D">IBM Bob — agent harness</text>
+    <text x="128" y="238" font-size="18" fill="#5A6178">build, test, verifikasi agent e2e</text>
+  </g>
+  <g id="p06-row-2" data-pptx-bounds="56 268 440 96">
+    <rect x="56" y="268" width="440" height="96" rx="16" fill="#EEF1F9" />
+    <use data-icon="simple-icons/python" x="80" y="300" width="32" height="32" fill="#4A5FC1" />
+    <text x="128" y="310" font-size="24" font-weight="bold" fill="#23283D">IBM Langflow — flow engine</text>
+    <text x="128" y="338" font-size="18" fill="#5A6178">tiap flow = 1 MCP tool</text>
+  </g>
+  <g id="p06-row-3" data-pptx-bounds="56 376 440 96">
+    <rect x="56" y="376" width="440" height="96" rx="16" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/route" x="80" y="408" width="32" height="32" fill="#4A5FC1" stroke-width="2" />
+    <text x="128" y="418" font-size="24" font-weight="bold" fill="#23283D">MCP — streamable HTTP</text>
+    <text x="128" y="446" font-size="18" fill="#5A6178">bridge Bob ↔ Langflow; kontrak produksi</text>
+  </g>
+  <g id="p06-row-4" data-pptx-bounds="56 484 440 96">
+    <rect x="56" y="484" width="440" height="96" rx="16" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/brain" x="80" y="516" width="32" height="32" fill="#4A5FC1" stroke-width="2" />
+    <text x="128" y="526" font-size="24" font-weight="bold" fill="#23283D">NaraRouter / longcat-2.5</text>
+    <text x="128" y="554" font-size="18" fill="#5A6178">LLM backbone, temperature 0.3</text>
+  </g>
+  <g id="p06-arch" data-pptx-bounds="536 168 688 412">
+    <image href="../images/architecture-light.png" x="536" y="177" width="688" height="402" preserveAspectRatio="xMidYMid meet" />
+  </g>
+  <g id="p06-anchor" data-pptx-bounds="56 584 1168 80">
+    <rect x="56" y="584" width="1168" height="80" rx="20" fill="#EEF1F9" />
+    <text x="80" y="618" font-size="24" fill="#23283D"><tspan font-weight="bold" fill="#1E2761">Anchor riset: </tspan>GenMentor (FWCI 47.3) · IntelliCode (FWCI 23.5) · Feynman Bot</text>
+    <text x="80" y="650" font-size="24" fill="#23283D">(arXiv 2506.09055) · Zaidi et al. (arXiv 2004.11327) · BJET (694× dikutip)</text>
+  </g>
+  <g id="p06-footer" data-pptx-bounds="56 680 1168 28">
+    <rect x="56" y="696" width="20" height="8" rx="4" fill="#D8DDEB" />
+    <rect x="80" y="692" width="20" height="12" rx="4" fill="#D8DDEB" />
+    <rect x="104" y="688" width="20" height="16" rx="4" fill="#D8DDEB" />
+    <rect x="128" y="684" width="20" height="20" rx="4" fill="#D8DDEB" />
+    <rect x="152" y="680" width="20" height="24" rx="4" fill="#F2A93B" />
+    <rect x="1160" y="680" width="64" height="28" rx="14" fill="#EEF1F9" />
+    <text x="1192" y="699" font-size="18" fill="#5A6178" text-anchor="middle">06</text>
+  </g>
+</svg>

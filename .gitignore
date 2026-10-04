@@ -1,4 +1,5 @@
 .env
+.venv
 .bob/turn-counter.json
 .pi/
 .agents/

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Calibri, Arial" data-pptx-page-role="content">
+  <rect id="p08-bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+  <g id="p08-header" data-pptx-bounds="56 56 760 108">
+    <text x="56" y="95" font-family="Trebuchet MS, Arial" font-size="42" font-weight="bold" fill="#1E2761">Bukti, bukan janji: agent Langflow<tspan x="56" dy="52">benar-benar dieksekusi</tspan></text>
+    <image href="../images/logo-blue.png" x="1196" y="56" width="28" height="28" preserveAspectRatio="xMidYMid meet" />
+  </g>
+  <g id="p08-shot-1" data-pptx-bounds="56 168 568 194">
+    <rect x="56" y="168" width="568" height="194" rx="16" fill="#EEF1F9" />
+    <image href="../images/01-user-interface.png" x="218" y="178" width="243" height="140" preserveAspectRatio="xMidYMid meet" />
+    <text x="56" y="346" font-size="18" fill="#5A6178">[01] Bob TUI — harness dev memanggil goal_decomposer</text>
+  </g>
+  <g id="p08-shot-2" data-pptx-bounds="656 168 568 194">
+    <rect x="656" y="168" width="568" height="194" rx="16" fill="#EEF1F9" />
+    <image href="../images/02-langflow-workflow.png" x="820" y="178" width="241" height="140" preserveAspectRatio="xMidYMid meet" />
+    <text x="656" y="346" font-size="18" fill="#5A6178">[02] Canvas Langflow — flow goal_decomposer</text>
+  </g>
+  <g id="p08-shot-3" data-pptx-bounds="56 390 568 194">
+    <rect x="56" y="390" width="568" height="194" rx="16" fill="#EEF1F9" />
+    <image href="../images/03-langflow-endpoint.png" x="218" y="400" width="241" height="140" preserveAspectRatio="xMidYMid meet" />
+    <text x="56" y="568" font-size="18" fill="#5A6178">[03] Endpoint Langflow — nama flow + deskripsi agent</text>
+  </g>
+  <g id="p08-shot-4" data-pptx-bounds="656 390 568 194">
+    <rect x="656" y="390" width="568" height="194" rx="16" fill="#EEF1F9" />
+    <image href="../images/04-output.png" x="797" y="400" width="286" height="140" preserveAspectRatio="xMidYMid meet" />
+    <text x="656" y="568" font-size="18" fill="#5A6178">[04] Output nyata — JSON roadmap 12 minggu</text>
+  </g>
+  <g id="p08-conclusion" data-pptx-bounds="56 600 1168 64">
+    <rect x="56" y="600" width="1168" height="64" rx="20" fill="#1E2761" />
+    <text x="640" y="640" font-size="24" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Bukan dijawab LLM Bob — agent Langflow yang dieksekusi via MCP</text>
+  </g>
+  <g id="p08-footer" data-pptx-bounds="56 680 1168 28">
+    <rect x="56" y="696" width="20" height="8" rx="4" fill="#D8DDEB" />
+    <rect x="80" y="692" width="20" height="12" rx="4" fill="#D8DDEB" />
+    <rect x="104" y="688" width="20" height="16" rx="4" fill="#D8DDEB" />
+    <rect x="128" y="684" width="20" height="20" rx="4" fill="#D8DDEB" />
+    <rect x="152" y="680" width="20" height="24" rx="4" fill="#F2A93B" />
+    <rect x="1160" y="680" width="64" height="28" rx="14" fill="#EEF1F9" />
+    <text x="1192" y="699" font-size="18" fill="#5A6178" text-anchor="middle">08</text>
+  </g>
+</svg>

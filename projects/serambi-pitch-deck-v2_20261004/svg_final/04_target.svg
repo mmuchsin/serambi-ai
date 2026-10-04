@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Calibri, Arial" data-pptx-page-role="content">
+  <rect id="p04-bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+  <g id="p04-header" data-pptx-bounds="56 56 760 108">
+    <text font-family="Trebuchet MS, Arial" font-size="42" font-weight="bold" fill="#1E2761" x="56" y="95">Career switcher Indonesia:</text><text font-family="Trebuchet MS, Arial" font-size="42" font-weight="bold" fill="#1E2761" x="56" y="147">22–35, non-tech, belajar mandiri</text><image href="data:image/png;base64,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" x="1196" y="56" width="28" height="28" />
+  </g>
+  <g id="p04-persona" data-pptx-bounds="56 168 560 372">
+    <rect x="56" y="168" width="560" height="372" rx="20" fill="#EEF1F9" />
+    
+  <g transform="translate(88, 200) scale(1.66667)" fill="none" stroke="#4A5FC1" stroke-width="2">
+    <path d="M5 7a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+    <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+  </g>
+    <text x="144" y="228" font-size="18" fill="#5A6178">Persona primer</text>
+    <text x="88" y="272" font-size="24" font-weight="bold" fill="#23283D">Profesional 22–35, background non-tech</text>
+    <text font-size="18" fill="#5A6178" x="88" y="308">Guru, admin, marketing — mau pivot ke</text><text font-size="18" fill="#5A6178" x="88" y="334">AI engineer, data analyst, backend dev</text><text font-size="18" fill="#5A6178" x="88" y="360">belajar mandiri, 1–6 bulan.</text><rect x="88" y="380" width="137" height="32" rx="16" fill="#FFFFFF" />
+    <text x="102" y="401" font-size="18" fill="#23283D">Waktu terbatas</text>
+    <rect x="239" y="380" width="153" height="32" rx="16" fill="#FFFFFF" />
+    <text x="253" y="401" font-size="18" fill="#23283D">Bahasa Indonesia</text>
+    <rect x="406" y="380" width="161" height="32" rx="16" fill="#FFFFFF" />
+    <text x="420" y="401" font-size="18" fill="#23283D">Anggaran terbatas</text>
+    <text x="88" y="462" font-size="18" font-weight="bold" fill="#1E2761">Beachhead: individu yang tidak terlayani pasar B2B</text>
+  </g>
+  <g id="p04-card-sekunder" data-pptx-bounds="656 168 568 112">
+    <rect x="656" y="168" width="568" height="112" rx="20" fill="#FFFFFF" stroke="#D8DDEB" stroke-width="1" />
+    
+  <g transform="translate(688, 185.186) scale(1.33333)" fill="none" stroke="#4A5FC1" stroke-width="2">
+    <path d="M5 7a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+    <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+  </g>
+    <text x="736" y="209.316" font-size="24" font-weight="bold" fill="#23283D">Pengguna sekunder</text>
+    <text x="688" y="244" font-size="18" fill="#5A6178">Tech worker naik level / pivot domain</text>
+  </g>
+  <g id="p04-card-pasar" data-pptx-bounds="656 298 568 112">
+    <rect x="656" y="298" width="568" height="112" rx="20" fill="#FFFFFF" stroke="#D8DDEB" stroke-width="1" />
+    
+  <g transform="translate(688, 316.528) scale(1.33333)" fill="none" stroke="#4A5FC1" stroke-width="2">
+    <path d="M4 19l16 0" />
+    <path d="M4 15l4 -6l4 2l4 -5l4 4" />
+  </g>
+    <text x="736" y="339.316" font-size="24" font-weight="bold" fill="#23283D">Pasar &amp; willingness-to-pay</text>
+    <text x="688" y="374" font-size="18" fill="#5A6178">OECD 2024: kesenjangan tech skills melebar;</text>
+    <text x="688" y="398" font-size="18" fill="#5A6178">upskilling CAGR 11–14% fokus B2B (studi Politecnico)</text>
+  </g>
+  <g id="p04-card-revenue" data-pptx-bounds="656 428 568 112">
+    <rect x="656" y="428" width="568" height="112" rx="20" fill="#FFFFFF" stroke="#D8DDEB" stroke-width="1" />
+    
+  <g transform="translate(688, 441.16) scale(1.33333)" fill="none" stroke="#4A5FC1" stroke-width="2">
+    <path d="M9 14c0 1.657 2.686 3 6 3s6 -1.343 6 -3s-2.686 -3 -6 -3s-6 1.343 -6 3" />
+    <path d="M9 14v4c0 1.656 2.686 3 6 3s6 -1.344 6 -3v-4" />
+    <path d="M3 6c0 1.072 1.144 2.062 3 2.598s4.144 .536 6 0c1.856 -.536 3 -1.526 3 -2.598c0 -1.072 -1.144 -2.062 -3 -2.598s-4.144 -.536 -6 0c-1.856 .536 -3 1.526 -3 2.598" />
+    <path d="M3 6v10c0 .888 .772 1.45 2 2" />
+    <path d="M3 11c0 .888 .772 1.45 2 2" />
+  </g>
+    <text x="736" y="465.29" font-size="24" font-weight="bold" fill="#23283D">Revenue (skenario)</text>
+    <rect x="1108" y="444" width="88" height="26" rx="13" fill="#F2A93B" />
+    <text x="1152" y="462" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Skenario</text>
+    <text font-size="18" fill="#5A6178" x="688" y="504">Freemium: roadmap gratis · pro = kuis + spaced repetition</text><text font-size="18" fill="#5A6178" x="688" y="528">B2B whitelabel: bootcamp, kampus, program reskilling</text></g>
+  <g id="p04-jtbd" data-pptx-bounds="56 560 1168 96">
+    <rect x="56" y="560" width="1168" height="96" rx="20" fill="#1E2761" />
+    <text x="80" y="608" font-size="24" fill="#FFFFFF">“Saya guru, mau pakai AI untuk switch ke AI engineer — sudah coba-coba, tapi tidak tahu mulai dari mana.”</text>
+    <text x="80" y="640" font-size="16" fill="#EEF1F9">— Job-to-be-done, submission draft</text>
+  </g>
+  <g id="p04-footer" data-pptx-bounds="56 680 1168 28">
+    <rect x="56" y="696" width="20" height="8" rx="4" fill="#D8DDEB" />
+    <rect x="80" y="692" width="20" height="12" rx="4" fill="#D8DDEB" />
+    <rect x="104" y="688" width="20" height="16" rx="4" fill="#D8DDEB" />
+    <rect x="128" y="684" width="20" height="20" rx="4" fill="#D8DDEB" />
+    <rect x="152" y="680" width="20" height="24" rx="4" fill="#F2A93B" />
+    <rect x="1160" y="680" width="64" height="28" rx="14" fill="#EEF1F9" />
+    <text x="1192" y="699" font-size="18" fill="#5A6178" text-anchor="middle">04</text>
+  </g>
+</svg>

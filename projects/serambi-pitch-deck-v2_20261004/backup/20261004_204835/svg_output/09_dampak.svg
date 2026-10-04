@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Calibri, Arial" data-pptx-page-role="content">
+  <rect id="p09-bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+  <g id="p09-header" data-pptx-bounds="56 56 900 68">
+    <text x="56" y="95" font-family="Trebuchet MS, Arial" font-size="42" font-weight="bold" fill="#1E2761">Dampak terukur, AI yang bertanggung jawab</text>
+    <image href="../images/logo-blue.png" x="1196" y="56" width="28" height="28" preserveAspectRatio="xMidYMid meet" />
+  </g>
+  <g id="p09-kpi-1" data-pptx-bounds="56 160 560 76">
+    <rect x="56" y="160" width="560" height="76" rx="14" fill="#EEF1F9" />
+    <text x="80" y="204" font-family="Trebuchet MS, Arial" font-size="32" font-weight="bold" fill="#1E2761">≥ 15%</text>
+    <text x="80" y="224" font-size="16" fill="#5A6178">Career Goal Progress Rate per minggu (North Star — target)</text>
+    <rect x="512" y="188" width="84" height="20" rx="10" fill="#F2A93B" />
+    <text x="554" y="202" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Skenario</text>
+  </g>
+  <g id="p09-kpi-2" data-pptx-bounds="56 246 560 76">
+    <rect x="56" y="246" width="560" height="76" rx="14" fill="#EEF1F9" />
+    <text x="80" y="290" font-family="Trebuchet MS, Arial" font-size="32" font-weight="bold" fill="#1E2761">&lt; 1 menit</text>
+    <text x="80" y="310" font-size="16" fill="#5A6178">Roadmap personal — dari 2–4 jam riset (bukti demo e2e)</text>
+  </g>
+  <g id="p09-kpi-3" data-pptx-bounds="56 332 560 76">
+    <rect x="56" y="332" width="560" height="76" rx="14" fill="#EEF1F9" />
+    <text x="80" y="376" font-family="Trebuchet MS, Arial" font-size="32" font-weight="bold" fill="#1E2761">+15–20%</text>
+    <text x="80" y="396" font-size="16" fill="#5A6178">Retensi vs spaced repetition tetap (Zaidi et al.)</text>
+  </g>
+  <g id="p09-kpi-4" data-pptx-bounds="56 418 560 76">
+    <rect x="56" y="418" width="560" height="76" rx="14" fill="#EEF1F9" />
+    <text x="80" y="462" font-family="Trebuchet MS, Arial" font-size="32" font-weight="bold" fill="#1E2761">g = 1.613</text>
+    <text x="80" y="482" font-size="16" fill="#5A6178">Meta-analisis AI &amp; self-regulated learning (32 studi)</text>
+  </g>
+  <g id="p09-kpi-5" data-pptx-bounds="56 504 560 76">
+    <rect x="56" y="504" width="560" height="76" rx="14" fill="#EEF1F9" />
+    <text x="80" y="548" font-family="Trebuchet MS, Arial" font-size="32" font-weight="bold" fill="#1E2761">80%+</text>
+    <text x="80" y="568" font-size="16" fill="#5A6178">Peserta memilih Feynman vs membaca pasif (arXiv 2506.09055)</text>
+  </g>
+  <g id="p09-kpi-6" data-pptx-bounds="56 590 560 76">
+    <rect x="56" y="590" width="560" height="76" rx="14" fill="#EEF1F9" />
+    <text x="80" y="634" font-family="Trebuchet MS, Arial" font-size="32" font-weight="bold" fill="#1E2761">1.000</text>
+    <text x="80" y="654" font-size="16" fill="#5A6178">Pengguna aktif per bulan pada bulan ke-6 (target)</text>
+    <rect x="512" y="618" width="84" height="20" rx="10" fill="#F2A93B" />
+    <text x="554" y="632" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Skenario</text>
+  </g>
+  <g id="p09-guard-1" data-pptx-bounds="656 160 568 114">
+    <rect x="656" y="160" width="568" height="114" rx="16" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/lock" x="680" y="188" width="32" height="32" fill="#4A5FC1" stroke-width="2" />
+    <text x="728" y="200" font-size="24" font-weight="bold" fill="#23283D">Privasi</text>
+    <text x="728" y="230" font-size="18" fill="#5A6178">data progres milik user, tanpa penjualan PII</text>
+  </g>
+  <g id="p09-guard-2" data-pptx-bounds="656 286 568 114">
+    <rect x="656" y="286" width="568" height="114" rx="16" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/users" x="680" y="314" width="32" height="32" fill="#4A5FC1" stroke-width="2" />
+    <text x="728" y="326" font-size="24" font-weight="bold" fill="#23283D">Human-in-loop</text>
+    <text x="728" y="356" font-size="18" fill="#5A6178">scaffold memaksa berpikir (counter offloading, BJET)</text>
+  </g>
+  <g id="p09-guard-3" data-pptx-bounds="656 412 568 114">
+    <rect x="656" y="412" width="568" height="114" rx="16" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/activity-heartbeat" x="680" y="440" width="32" height="32" fill="#4A5FC1" stroke-width="2" />
+    <text x="728" y="452" font-size="24" font-weight="bold" fill="#23283D">Wellbeing</text>
+    <text x="728" y="482" font-size="18" fill="#5A6178">deteksi burnout + rujukan manusia, bukan nasihat medis</text>
+  </g>
+  <g id="p09-guard-4" data-pptx-bounds="656 538 568 114">
+    <rect x="656" y="538" width="568" height="114" rx="16" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/shield" x="680" y="566" width="32" height="32" fill="#4A5FC1" stroke-width="2" />
+    <text x="728" y="578" font-size="24" font-weight="bold" fill="#23283D">Transparansi</text>
+    <text x="728" y="608" font-size="18" fill="#5A6178">setiap pilihan pedagogis tertaut paper terpublikasi</text>
+  </g>
+  <g id="p09-footer" data-pptx-bounds="56 680 1168 28">
+    <rect x="56" y="696" width="20" height="8" rx="4" fill="#D8DDEB" />
+    <rect x="80" y="692" width="20" height="12" rx="4" fill="#D8DDEB" />
+    <rect x="104" y="688" width="20" height="16" rx="4" fill="#D8DDEB" />
+    <rect x="128" y="684" width="20" height="20" rx="4" fill="#D8DDEB" />
+    <rect x="152" y="680" width="20" height="24" rx="4" fill="#F2A93B" />
+    <rect x="1160" y="680" width="64" height="28" rx="14" fill="#EEF1F9" />
+    <text x="1192" y="699" font-size="18" fill="#5A6178" text-anchor="middle">09</text>
+  </g>
+</svg>

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Calibri, Arial" data-pptx-page-role="content">
+  <rect id="p07-bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+  <g id="p07-header" data-pptx-bounds="56 56 700 68">
+    <text x="56" y="95" font-family="Trebuchet MS, Arial" font-size="42" font-weight="bold" fill="#1E2761">6 agent, 5 fitur — 1 sudah live e2e</text>
+    <image href="../images/logo-blue.png" x="1196" y="56" width="28" height="28" preserveAspectRatio="xMidYMid meet" />
+  </g>
+  <g id="p07-fit-1" data-pptx-bounds="56 160 600 88">
+    <rect x="56" y="160" width="600" height="88" rx="16" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/check" x="80" y="188" width="32" height="32" fill="#4A5FC1" stroke-width="2" />
+    <text x="128" y="198" font-size="24" font-weight="bold" fill="#23283D">Goal Decomposer</text>
+    <text x="128" y="226" font-size="18" fill="#5A6178">goal → roadmap JSON mingguan (MCP tool goal_decomposer)</text>
+    <rect x="512" y="169.866" width="64" height="28" rx="14" fill="#F2A93B" />
+    <text x="542.658" y="187.524" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">LIVE</text>
+  </g>
+  <g id="p07-fit-2" data-pptx-bounds="56 256 600 88">
+    <rect x="56" y="256" width="600" height="88" rx="16" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/message" x="80" y="284" width="32" height="32" fill="#4A5FC1" stroke-width="2" />
+    <text x="128" y="294" font-size="24" font-weight="bold" fill="#23283D">Tutor (Feynman)</text>
+    <text x="128" y="322" font-size="18" fill="#5A6178">probing questions — AI memancing refleksi, bukan menjawab</text>
+  </g>
+  <g id="p07-fit-3" data-pptx-bounds="56 352 600 88">
+    <rect x="56" y="352" width="600" height="88" rx="16" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/help-circle" x="80" y="380" width="32" height="32" fill="#4A5FC1" stroke-width="2" />
+    <text x="128" y="390" font-size="24" font-weight="bold" fill="#23283D">Assessment (hinting)</text>
+    <text x="128" y="418" font-size="18" fill="#5A6178">kuis adaptif; salah → hint terkecil dulu (IntelliCode)</text>
+  </g>
+  <g id="p07-fit-4" data-pptx-bounds="56 448 600 88">
+    <rect x="56" y="448" width="600" height="88" rx="16" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/refresh" x="80" y="476" width="32" height="32" fill="#4A5FC1" stroke-width="2" />
+    <text x="128" y="486" font-size="24" font-weight="bold" fill="#23283D">Progress (spaced rep)</text>
+    <text x="128" y="514" font-size="18" fill="#5A6178">jadwal review per forgetting curve — +15–20% retensi (Zaidi et al.)</text>
+  </g>
+  <g id="p07-fit-5" data-pptx-bounds="56 544 600 88">
+    <rect x="56" y="544" width="600" height="88" rx="16" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/activity-heartbeat" x="80" y="572" width="32" height="32" fill="#4A5FC1" stroke-width="2" />
+    <text x="128" y="582" font-size="24" font-weight="bold" fill="#23283D">Motivator &amp; Wellbeing</text>
+    <text x="128" y="610" font-size="18" fill="#5A6178">nudge kontekstual + cek burnout berkala</text>
+  </g>
+  <g id="p07-flow" data-pptx-bounds="696 160 528 472">
+    <image href="../images/agent-flow.png" x="696" y="180" width="528" height="432" preserveAspectRatio="xMidYMid meet" />
+  </g>
+  <g id="p07-footer" data-pptx-bounds="56 680 1168 28">
+    <rect x="56" y="696" width="20" height="8" rx="4" fill="#D8DDEB" />
+    <rect x="80" y="692" width="20" height="12" rx="4" fill="#D8DDEB" />
+    <rect x="104" y="688" width="20" height="16" rx="4" fill="#D8DDEB" />
+    <rect x="128" y="684" width="20" height="20" rx="4" fill="#D8DDEB" />
+    <rect x="152" y="680" width="20" height="24" rx="4" fill="#F2A93B" />
+    <rect x="1160" y="680" width="64" height="28" rx="14" fill="#EEF1F9" />
+    <text x="1192" y="699" font-size="18" fill="#5A6178" text-anchor="middle">07</text>
+  </g>
+</svg>

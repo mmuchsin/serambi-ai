@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Calibri, Arial" data-pptx-page-role="content">
+  <defs>
+    <marker id="p05-arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#F2A93B" />
+    </marker>
+  </defs>
+  <rect id="p05-bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+  <g id="p05-header" data-pptx-bounds="56 56 1168 68">
+    <text x="56" y="95" font-family="Trebuchet MS, Arial" font-size="42" font-weight="bold" fill="#1E2761">3 langkah: goal → roadmap → belajar terpandu</text>
+    <image href="../images/logo-blue.png" x="1196" y="56" width="28" height="28" preserveAspectRatio="xMidYMid meet" />
+  </g>
+  <g id="p05-step-1" data-pptx-bounds="56 150 340 180">
+    <rect x="56" y="150" width="340" height="120" rx="20" fill="#EEF1F9" />
+    <circle cx="104" cy="179.186" r="20" fill="#1E2761" />
+    <text x="104" y="187.186" font-size="24" font-weight="bold" fill="#FFFFFF" text-anchor="middle">1</text>
+    <text x="88" y="226.398" font-size="24" font-weight="bold" fill="#23283D">Ketik goal</text>
+    <text x="88" y="262.45" font-size="18" fill="#5A6178">“Guru mau switch ke AI engineer”</text>
+  </g>
+  <g id="p05-step-2" data-pptx-bounds="470 150 340 180">
+    <rect x="470" y="150" width="340" height="180" rx="20" fill="#EEF1F9" />
+    <circle cx="518" cy="179.186" r="20" fill="#1E2761" />
+    <text x="518" y="187.186" font-size="24" font-weight="bold" fill="#FFFFFF" text-anchor="middle">2</text>
+    <text x="502" y="229.082" font-size="24" font-weight="bold" fill="#23283D">Dapat roadmap mingguan</text>
+    <text x="502" y="262.45" font-size="18" fill="#5A6178">Deadline, milestones, first<tspan x="502" dy="24">action — &lt; 1 menit</tspan></text>
+  </g>
+  <g id="p05-step-3" data-pptx-bounds="884 150 340 180">
+    <rect x="884" y="150" width="340" height="180" rx="20" fill="#EEF1F9" />
+    <circle cx="932" cy="202" r="20" fill="#1E2761" />
+    <text x="932" y="210" font-size="24" font-weight="bold" fill="#FFFFFF" text-anchor="middle">3</text>
+    <text x="916" y="268" font-size="24" font-weight="bold" fill="#23283D">Belajar terpandu</text>
+    <text x="916" y="296" font-size="18" fill="#5A6178">6 agent: Feynman, kuis adaptif,<tspan x="916" dy="24">spaced repetition, wellbeing</tspan></text>
+  </g>
+  <g id="p05-arrow-1" data-pptx-bounds="404 236 58 8" stroke="#F2A93B" stroke-width="3">
+    <line x1="404" y1="240" x2="462" y2="240" marker-end="url(#p05-arrow)" />
+  </g>
+  <g id="p05-arrow-2" data-pptx-bounds="818 236 58 8" stroke="#F2A93B" stroke-width="3">
+    <line x1="818" y1="240" x2="876" y2="240" marker-end="url(#p05-arrow)" />
+  </g>
+  <g id="p05-journey" data-pptx-bounds="56 370 1168 180">
+    <rect x="56" y="370" width="1168" height="180" rx="20" fill="#EEF1F9" />
+    <image href="../images/learning-journey.png" x="451" y="386" width="377" height="148" preserveAspectRatio="xMidYMid meet" />
+  </g>
+  <g id="p05-verified" data-pptx-bounds="56 584 680 44">
+    <rect x="56" y="584" width="680" height="44" rx="22" fill="#EEF1F9" />
+    <use data-icon="tabler-outline/check" x="80" y="595" width="28" height="28" fill="#F2A93B" stroke-width="2" />
+    <text x="120" y="612" font-size="18" font-weight="bold" fill="#1E2761">E2E verified: Bob → MCP goal_decomposer → JSON roadmap 12 minggu</text>
+  </g>
+  <g id="p05-footer" data-pptx-bounds="56 680 1168 28">
+    <rect x="56" y="696" width="20" height="8" rx="4" fill="#D8DDEB" />
+    <rect x="80" y="692" width="20" height="12" rx="4" fill="#D8DDEB" />
+    <rect x="104" y="688" width="20" height="16" rx="4" fill="#D8DDEB" />
+    <rect x="128" y="684" width="20" height="20" rx="4" fill="#D8DDEB" />
+    <rect x="152" y="680" width="20" height="24" rx="4" fill="#F2A93B" />
+    <rect x="1160" y="680" width="64" height="28" rx="14" fill="#EEF1F9" />
+    <text x="1192" y="699" font-size="18" fill="#5A6178" text-anchor="middle">05</text>
+  </g>
+</svg>

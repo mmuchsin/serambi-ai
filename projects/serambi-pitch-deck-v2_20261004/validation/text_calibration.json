@@ -1,0 +1,82 @@
+{
+  "roles": {
+    "body": {
+      "family": "Calibri, Arial",
+      "size": 24.0,
+      "weight": "normal",
+      "cjk_chars_per_100px": 3.9,
+      "latin_chars_per_100px": 9.7,
+      "caps_chars_per_100px": 8.3,
+      "digits_chars_per_100px": 7.8,
+      "citation_chars_per_100px": 9.3,
+      "script_clusters_per_100px": {},
+      "longest_planned_line": {
+        "px": 1443.3,
+        "slide": "P10",
+        "text": "B2B roadmap: whitelabel untuk bootcamp,…"
+      }
+    },
+    "title": {
+      "family": "Trebuchet MS, Arial",
+      "size": 42.0,
+      "weight": "normal",
+      "cjk_chars_per_100px": 2.2,
+      "latin_chars_per_100px": 5.0,
+      "caps_chars_per_100px": 4.3,
+      "digits_chars_per_100px": 4.3,
+      "citation_chars_per_100px": 4.8,
+      "script_clusters_per_100px": {},
+      "longest_planned_line": {
+        "px": 1366.3,
+        "slide": "P06",
+        "text": "IBM Bob × Langflow × MCP — kontrak yang…"
+      }
+    },
+    "subtitle": {
+      "family": "Trebuchet MS, Arial",
+      "size": 32.0,
+      "weight": "normal",
+      "cjk_chars_per_100px": 2.9,
+      "latin_chars_per_100px": 6.5,
+      "caps_chars_per_100px": 5.7,
+      "digits_chars_per_100px": 5.6,
+      "citation_chars_per_100px": 6.3,
+      "script_clusters_per_100px": {},
+      "longest_planned_line": {
+        "px": 1394.2,
+        "slide": "P08",
+        "text": "Bob memanggil MCP tool → Langflow menja…"
+      }
+    },
+    "annotation": {
+      "family": "Calibri, Arial",
+      "size": 18.0,
+      "weight": "normal",
+      "cjk_chars_per_100px": 5.2,
+      "latin_chars_per_100px": 12.9,
+      "caps_chars_per_100px": 11.1,
+      "digits_chars_per_100px": 10.3,
+      "citation_chars_per_100px": 12.4,
+      "script_clusters_per_100px": {},
+      "longest_planned_line": null
+    },
+    "footnote": {
+      "family": "Calibri, Arial",
+      "size": 16.0,
+      "weight": "normal",
+      "cjk_chars_per_100px": 5.9,
+      "latin_chars_per_100px": 14.5,
+      "caps_chars_per_100px": 12.4,
+      "digits_chars_per_100px": 11.6,
+      "citation_chars_per_100px": 13.9,
+      "script_clusters_per_100px": {},
+      "longest_planned_line": null
+    }
+  },
+  "script_samples": {},
+  "source": "spec_lock.md",
+  "generated_at": "2026-10-04T09:17:48Z",
+  "notes": [
+    "every role is measured at normal weight; recalibrate a role realized as bold deck-wide with --role NAME:FAMILY:SIZE:bold: bold widens Latin and digits about 7%, while the bundled advance table gives CJK one width for both weights"
+  ]
+}

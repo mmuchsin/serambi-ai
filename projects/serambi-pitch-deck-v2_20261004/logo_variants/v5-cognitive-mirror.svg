@@ -1,0 +1,9 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- V5: Cognitive Mirror — the learner at the core, adaptive feedback echoing outward -->
+  <g fill="none" stroke="currentColor" stroke-linecap="round">
+    <path d="M 50 34 A 16 16 0 1 0 66 50" stroke-width="3"/>
+    <path d="M 50 24 A 26 26 0 1 0 76 50" stroke-width="2.5" opacity="0.75"/>
+    <path d="M 50 14 A 36 36 0 1 0 86 50" stroke-width="2" opacity="0.5"/>
+  </g>
+  <circle cx="50" cy="50" r="6" fill="currentColor"/>
+</svg>

@@ -1,0 +1,28 @@
+{
+  "schema": "ppt-master.source_to_md.profile.v1",
+  "converter": "ppt_to_md.py",
+  "conversion_type": "pptx",
+  "source": {
+    "path": "serambi-pitch-deck.pptx",
+    "name": "serambi-pitch-deck.pptx",
+    "suffix": ".pptx",
+    "kind": "file",
+    "exists": true,
+    "size_bytes": 40281
+  },
+  "outputs": {
+    "markdown": "serambi-pitch-deck.md",
+    "asset_dir": "",
+    "image_manifest": "",
+    "image_count": 0
+  },
+  "markdown": {
+    "line_count": 242,
+    "char_count": 9148,
+    "heading_count": 23,
+    "table_count": 0,
+    "image_ref_count": 0,
+    "link_count": 0
+  },
+  "warnings": []
+}

@@ -1,0 +1,444 @@
+{
+  "schema": "ppt-master.svg-quality-report.v1",
+  "stage": "early",
+  "target": "/home/adm_ub24/projects/ibm/serambi-ai/projects/serambi-pitch-deck-v2_20261004",
+  "source_fingerprint": {
+    "algorithm": "sha256",
+    "digest": "4597adb8188df34aa85f2107172ab3830dea888e63ce6d844a3a53c44c92d9a8",
+    "file_count": 5,
+    "files": [
+      {
+        "file": "01_cover.svg",
+        "sha256": "a9772eca272bce16523cd4874d5e0a6f19f5fe713795d8d874c65476eac0de7c"
+      },
+      {
+        "file": "02_problem.svg",
+        "sha256": "40357a3ac893c3d166310888b6e14f1ea4444ac086aa6814c9ab58533a5afe7f"
+      },
+      {
+        "file": "03_solution.svg",
+        "sha256": "e95c7440c1a44cf72df54562218c5009f952ec76f96c00e8715effb188469a2c"
+      },
+      {
+        "file": "04_target.svg",
+        "sha256": "138b01e69c0ff7e6833f0c9b8f7ec847eee10c23598846b6194672df2608ff52"
+      },
+      {
+        "file": "05_cara_kerja.svg",
+        "sha256": "5ea9f035c3c561e51bfc95bcf283c17bf00e31663b9c21319e2722ba9f530411"
+      }
+    ]
+  },
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "warnings": 0,
+    "errors": 0
+  },
+  "issue_types": {},
+  "categories": {
+    "blocking": {
+      "count": 0,
+      "issues": []
+    },
+    "introduced": {
+      "count": 0,
+      "issues": []
+    },
+    "inherited": {
+      "count": 0,
+      "issues": []
+    },
+    "source-import": {
+      "count": 0,
+      "summary": {
+        "warning_count": 0,
+        "by_code": {}
+      }
+    }
+  },
+  "drift": {
+    "colors": {},
+    "fonts": {},
+    "sizes": {
+      "54": [
+        "01_cover.svg"
+      ]
+    }
+  },
+  "carrier_receipt": {
+    "scope": "informational-not-a-quota",
+    "pages": 5,
+    "totals": {
+      "text_elements": 70,
+      "image_placements": 12,
+      "icons": 9,
+      "svg_geometry_elements": 60,
+      "preset_shapes": 0,
+      "page_frame_elements": 5,
+      "marker_uses": 2,
+      "inline_emphasis_runs": 1,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "pages_with": {
+      "images": 5,
+      "icons": 3,
+      "presets": 0,
+      "charts": 0,
+      "tables": 0,
+      "formulas": 0,
+      "inline_emphasis_runs": 1,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "relationship_pages": 0,
+    "geometry_elements": {
+      "circle": 9,
+      "ellipse": 0,
+      "line": 3,
+      "path": 0,
+      "polygon": 0,
+      "polyline": 0,
+      "rect": 48
+    },
+    "preset_names": {},
+    "native_objects": {
+      "chart": 0,
+      "formula_block": 0,
+      "formula_inline": 0,
+      "other": 0,
+      "table": 0
+    },
+    "image_page_max_frame_share_range": [
+      0.0009,
+      0.4182
+    ]
+  },
+  "project_issues": {
+    "template": [],
+    "animation": [],
+    "illustration": [],
+    "communication_trace": [],
+    "pptx_structure": []
+  },
+  "files": [
+    {
+      "file": "01_cover.svg",
+      "path": "projects/serambi-pitch-deck-v2_20261004/svg_output/01_cover.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 5,
+          "images": {
+            "placements": 5,
+            "files": [
+              "cover-hero.png",
+              "hacktiv8-logo.png",
+              "ibm-logo.png",
+              "komdigi-logo.png",
+              "logo-blue.png"
+            ],
+            "max_frame_share": 0.4182
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 3,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Calibri, Arial",
+          "Trebuchet MS, Arial"
+        ],
+        "text_elements": 5,
+        "tspan_elements": 0,
+        "sparse_typography_sizes": {
+          "54": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "a9772eca272bce16523cd4874d5e0a6f19f5fe713795d8d874c65476eac0de7c"
+    },
+    {
+      "file": "02_problem.svg",
+      "path": "projects/serambi-pitch-deck-v2_20261004/svg_output/02_problem.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 12,
+          "images": {
+            "placements": 2,
+            "files": [
+              "logo-blue.png",
+              "problem-illustration.png"
+            ],
+            "max_frame_share": 0.2739
+          },
+          "icons": 4,
+          "effects": {
+            "inline_emphasis_runs": 1,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 9,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Calibri, Arial",
+          "Trebuchet MS, Arial"
+        ],
+        "text_elements": 12,
+        "tspan_elements": 6
+      },
+      "passed": true,
+      "source_sha256": "40357a3ac893c3d166310888b6e14f1ea4444ac086aa6814c9ab58533a5afe7f"
+    },
+    {
+      "file": "03_solution.svg",
+      "path": "projects/serambi-pitch-deck-v2_20261004/svg_output/03_solution.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 22,
+          "images": {
+            "placements": 2,
+            "files": [
+              "logo-blue.png",
+              "solution-illustration.png"
+            ],
+            "max_frame_share": 0.1963
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 8,
+              "circle": 6,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Calibri, Arial",
+          "Trebuchet MS, Arial"
+        ],
+        "text_elements": 22,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "e95c7440c1a44cf72df54562218c5009f952ec76f96c00e8715effb188469a2c"
+    },
+    {
+      "file": "04_target.svg",
+      "path": "projects/serambi-pitch-deck-v2_20261004/svg_output/04_target.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 19,
+          "images": {
+            "placements": 1,
+            "files": [
+              "logo-blue.png"
+            ],
+            "max_frame_share": 0.0009
+          },
+          "icons": 4,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 16,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Calibri, Arial",
+          "Trebuchet MS, Arial"
+        ],
+        "text_elements": 19,
+        "tspan_elements": 4
+      },
+      "passed": true,
+      "source_sha256": "138b01e69c0ff7e6833f0c9b8f7ec847eee10c23598846b6194672df2608ff52"
+    },
+    {
+      "file": "05_cara_kerja.svg",
+      "path": "projects/serambi-pitch-deck-v2_20261004/svg_output/05_cara_kerja.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 12,
+          "images": {
+            "placements": 2,
+            "files": [
+              "learning-journey.png",
+              "logo-blue.png"
+            ],
+            "max_frame_share": 0.0605
+          },
+          "icons": 1,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 12,
+              "circle": 3,
+              "ellipse": 0,
+              "line": 2,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 2
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Calibri, Arial",
+          "Trebuchet MS, Arial"
+        ],
+        "text_elements": 12,
+        "tspan_elements": 2
+      },
+      "passed": true,
+      "source_sha256": "5ea9f035c3c561e51bfc95bcf283c17bf00e31663b9c21319e2722ba9f530411"
+    }
+  ]
+}

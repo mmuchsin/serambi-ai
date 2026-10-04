@@ -1,0 +1,14 @@
+No,Filename,Width,Height,AspectRatio,PixelAspectRatio,SourceDisplayRatio,RatioSource,Format,HasTransparentPixels,UsageCount,DisplayRatioVariants,AssetKind,SvgRenderable,PptxNativeSupported,SizeKB,Category
+1,01-user-interface.png,1850,1067,1.73,1.73,,native,PNG,False,1,,bitmap,True,True,198.3,Wide landscape
+2,02-langflow-workflow.png,1841,1069,1.72,1.72,,native,PNG,False,1,,bitmap,True,True,171.8,Wide landscape
+3,03-langflow-endpoint.png,1843,1070,1.72,1.72,,native,PNG,False,1,,bitmap,True,True,139.2,Wide landscape
+4,04-output.png,1610,787,2.05,2.05,,native,PNG,False,1,,bitmap,True,True,158.9,Ultra-wide
+5,agent-flow.png,820,671,1.22,1.22,,native,PNG,True,1,,bitmap,True,True,92.4,Standard landscape
+6,architecture-dark.png,1057,617,1.71,1.71,,native,PNG,True,1,,bitmap,True,True,64.9,Wide landscape
+7,architecture-light.png,1057,617,1.71,1.71,,native,PNG,True,1,,bitmap,True,True,64.7,Wide landscape
+8,cover-hero.png,1536,864,1.78,1.78,,native,PNG,True,1,,bitmap,True,True,1076.5,Wide landscape
+9,learning-journey.png,1202,472,2.55,2.55,,native,PNG,True,1,,bitmap,True,True,76.1,Ultra-wide
+10,logo-blue.png,1024,1024,1.00,1.00,,native,PNG,True,1,,bitmap,True,True,22.9,Near square
+11,logo-white.png,1024,1024,1.00,1.00,,native,PNG,True,1,,bitmap,True,True,18.6,Near square
+12,problem-illustration.png,1536,864,1.78,1.78,,native,PNG,True,1,,bitmap,True,True,1299.4,Wide landscape
+13,solution-illustration.png,1536,864,1.78,1.78,,native,PNG,True,1,,bitmap,True,True,943.7,Wide landscape

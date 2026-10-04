@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serambi.ai — Logo Design Exploration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: #FAFAFA;
+            color: #1A1A1A;
+            overflow-x: hidden;
+        }
+        .font-mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+        }
+        html { scroll-behavior: smooth; }
+        .logo-card { transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+        .logo-card:hover { transform: translateY(-4px); }
+        .logo-canvas { position: relative; transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+        .logo-aura {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle, rgba(30,39,97,0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: scale(0.5);
+            opacity: 0;
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: blur(40px);
+            pointer-events: none;
+        }
+        .logo-card:hover .logo-aura { transform: scale(1); opacity: 1; }
+        .divider-line {
+            width: 0;
+            height: 1px;
+            background: #1A1A1A;
+            opacity: 0.2;
+            transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .logo-card:hover .divider-line { width: 100%; }
+        .tracking-ultra-wide { letter-spacing: 0.2em; }
+        .text-balance { text-wrap: balance; }
+    </style>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        const Variant1 = () => (
+            <svg viewBox="0 0 100 100" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 25 88 L 25 50 A 25 25 0 0 1 75 50 L 75 88" stroke="#1E2761" strokeWidth="9" strokeLinecap="round"/>
+                <circle cx="40" cy="72" r="5" fill="#4A5FC1"/>
+                <circle cx="50" cy="62" r="5" fill="#4A5FC1"/>
+                <circle cx="60" cy="52" r="5" fill="#F2A93B"/>
+            </svg>
+        );
+
+        const Variant2 = () => (
+            <svg viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 22 90 L 22 45 A 28 28 0 0 1 78 45 L 78 90 Z" fill="#1E2761"/>
+                <rect x="32" y="73" width="13" height="7" rx="3.5" fill="#FFFFFF"/>
+                <rect x="44" y="61" width="13" height="7" rx="3.5" fill="#FFFFFF"/>
+                <rect x="56" y="49" width="13" height="7" rx="3.5" fill="#F2A93B"/>
+            </svg>
+        );
+
+        const Variant3 = () => (
+            <svg viewBox="0 0 100 100" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 30 88 L 30 48 A 20 20 0 0 1 70 48 L 70 88" stroke="#1E2761" strokeWidth="7" strokeLinecap="round"/>
+                <line x1="40" y1="88" x2="60" y2="88" stroke="#1E2761" strokeWidth="7" strokeLinecap="round"/>
+                <circle cx="70" cy="48" r="6" fill="#F2A93B"/>
+            </svg>
+        );
+
+        const Variant4 = () => (
+            <svg viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="68" width="17" height="11" rx="5.5" fill="#4A5FC1"/>
+                <rect x="34" y="52" width="17" height="11" rx="5.5" fill="#4A5FC1"/>
+                <rect x="52" y="38" width="17" height="11" rx="5.5" fill="#4A5FC1"/>
+                <rect x="70" y="26" width="17" height="11" rx="5.5" fill="#F2A93B"/>
+            </svg>
+        );
+
+        const Variant5 = () => (
+            <svg viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="16" width="68" height="68" rx="18" fill="#1E2761"/>
+                <path d="M 40 76 L 40 52 A 10 10 0 0 1 60 52 L 60 76 Z" fill="#FFFFFF"/>
+                <circle cx="50" cy="38" r="5" fill="#F2A93B"/>
+            </svg>
+        );
+
+        const Variant6 = () => (
+            <svg viewBox="0 0 100 100" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 32 36 A 20 20 0 1 1 50 58" stroke="#1E2761" strokeWidth="8" strokeLinecap="round"/>
+                <path d="M 68 64 A 20 20 0 1 1 50 42" stroke="#F2A93B" strokeWidth="8" strokeLinecap="round"/>
+                <circle cx="50" cy="50" r="5" fill="#4A5FC1"/>
+            </svg>
+        );
+
+        const Variant7S = () => (
+            <svg viewBox="0 0 100 100" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 68 36 A 20 20 0 1 0 50 58" stroke="#1E2761" strokeWidth="8" strokeLinecap="round"/>
+                <path d="M 32 64 A 20 20 0 1 0 50 42" stroke="#1E2761" strokeWidth="8" strokeLinecap="round"/>
+            </svg>
+        );
+
+        const LogoShowcase = () => {
+            const logos = [
+                {
+                    title: "Serambi Door",
+                    subtitle: "ARCH + STEPPING DOTS",
+                    philosophy: "Gerbang serambi dengan tiga batu loncatan yang menanjak — ambang karier baru yang dilalui satu langkah demi langkah. Langkah terakhir menyala amber: di titik itu, AI-nya bekerja untukmu.",
+                    Component: Variant1
+                },
+                {
+                    title: "Porch & Steps",
+                    subtitle: "FILLED DOOR, CARVED STAIRS",
+                    philosophy: "Pintu solid; anak tangga terukir keluar dari dalam pintu ke atas. Belajar bersama Serambi adalah jalan yang dibuat untukmu, bukan jalur yang kamu temukan sendiri.",
+                    Component: Variant2
+                },
+                {
+                    title: "Threshold Light",
+                    subtitle: "OPEN DOORWAY + LIGHT",
+                    philosophy: "Kerangka pintu terbuka dengan titik cahaya amber di ambangnya — jalan keluar dari kebingungan itu terlihat jelas, tinggal melangkah. Minimalis, mudah diingat, kuat di ukuran kecil.",
+                    Component: Variant3
+                },
+                {
+                    title: "Stone Arc",
+                    subtitle: "FOUR RISING STONES",
+                    philosophy: "Empat batu loncatan membentuk lengkung serambi — progres belajar yang kelihatan dan terukur, bukan abstrak. Batu paling atas amber: milestone berikutnya.",
+                    Component: Variant4
+                },
+                {
+                    title: "App Doorway",
+                    subtitle: "APP-READY MARK",
+                    philosophy: "Persegi untuk ikon aplikasi: pintu putih di dalam mark utama, titik amber di atasnya — 'masuk dari sini'. Versi paling aman untuk favicon, app icon, dan merchandise.",
+                    Component: Variant5
+                },
+                {
+                    title: "Passage",
+                    subtitle: "ABSTRACT S-PASSAGE",
+                    philosophy: "Dua lengkung membentuk S — serambi sebagai perlintasan (passage) antara karier lama dan karier baru. Abstrak, modern, dan terbaca sebagai huruf S untuk Serambi.",
+                    Component: Variant6
+                },
+                {
+                    title: "Serambi S — ADOPTED",
+                    subtitle: "FLIPPED PASSAGE, NO DOT",
+                    philosophy: "Huruf S dari Serambi, dibangun dari dua lengkung terbuka 270° — dua ambang serambi yang bertemu di pinggang S. Satu garis tak putus dari titik awal (kiri-bawah) ke tujuan (kanan-atas): roadmap sebagai letterform. Tanpa titik: titik temu adalah strukturnya sendiri, bukan dekorasi.",
+                    Component: Variant7S
+                }
+            ];
+
+            return (
+                <div className="min-h-screen flex flex-col items-center py-20 px-6">
+
+                    {/* Header */}
+                    <div className="text-center mb-20 max-w-3xl">
+                        <h1 className="text-6xl md:text-7xl font-extralight tracking-wider mb-6">
+                            Serambi.ai
+                        </h1>
+                        <p className="font-mono text-xs opacity-40 uppercase tracking-ultra-wide mb-8">
+                            Belajar mandiri, tapi nggak sendirian
+                        </p>
+                        <div className="w-12 h-[1px] bg-[#1A1A1A] mx-auto opacity-30"></div>
+                    </div>
+
+                    {/* Logo Grid */}
+                    <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-32">
+                        {logos.map((logo, index) => (
+                            <div key={index} className="flex flex-col items-center logo-card cursor-pointer">
+
+                                {/* Logo Canvas */}
+                                <div className="w-64 h-64 mb-10 flex items-center justify-center relative">
+                                    <div className="logo-aura"></div>
+                                    <div className="w-32 h-32 relative z-10 logo-canvas">
+                                        <logo.Component />
+                                    </div>
+                                </div>
+
+                                {/* Text Description */}
+                                <div className="text-center w-full px-4">
+                                    <h2 className="text-xl font-medium tracking-wider mb-2 uppercase">
+                                        {index + 1}. {logo.title}
+                                    </h2>
+                                    <h3 className="text-xs font-mono opacity-50 tracking-widest mb-6">
+                                        {logo.subtitle}
+                                    </h3>
+                                    <p className="text-sm leading-relaxed opacity-70 text-left font-light text-balance">
+                                        {logo.philosophy}
+                                    </p>
+                                </div>
+
+                                {/* Bottom Divider */}
+                                <div className="divider-line mt-8 mx-auto"></div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Showcase Images Section */}
+
+                    {/* Footer */}
+                    <div className="mt-32 max-w-2xl text-center">
+                        <p className="font-mono text-xs opacity-40 uppercase tracking-ultra-wide leading-loose">
+                            Logo exploration — 6 candidates<br/>
+                            2026
+                        </p>
+                    </div>
+
+                </div>
+            );
+        };
+
+        ReactDOM.render(<LogoShowcase />, document.getElementById('root'));
+    </script>
+
+</body>
+</html>

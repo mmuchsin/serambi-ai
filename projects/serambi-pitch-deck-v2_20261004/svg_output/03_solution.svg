@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Calibri, Arial" data-pptx-page-role="content">
+  <rect id="p03-bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+  <g id="p03-header" data-pptx-bounds="56 56 1168 100">
+    <text x="56" y="95" font-family="Trebuchet MS, Arial" font-size="42" font-weight="bold" fill="#1E2761">Scaffold, Bukan Oracle</text>
+    <text x="56" y="142" font-family="Trebuchet MS, Arial" font-size="32" fill="#4A5FC1">Serambi.ai memandu learner ke jawaban — tidak menjawab untuk mereka.</text>
+    <image href="../images/logo-blue.png" x="1196" y="56" width="28" height="28" preserveAspectRatio="xMidYMid meet" />
+  </g>
+  <g id="p03-step-1" data-pptx-bounds="56 190 560 60">
+    <circle cx="73" cy="220" r="17" fill="#1E2761" />
+    <text x="73" y="228" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">1</text>
+    <text x="112" y="216" font-size="24" font-weight="bold" fill="#23283D">Ketik goal</text>
+    <text x="112" y="240" font-size="18" fill="#5A6178">“Guru mau switch ke AI engineer”</text>
+  </g>
+  <g id="p03-step-2" data-pptx-bounds="56 262 560 60">
+    <circle cx="73" cy="292" r="17" fill="#1E2761" />
+    <text x="73" y="300" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">2</text>
+    <text x="112" y="288" font-size="24" font-weight="bold" fill="#23283D">Roadmap mingguan</text>
+    <text x="112" y="312" font-size="18" fill="#5A6178">Goal Agent memecah goal jadi peta</text>
+  </g>
+  <g id="p03-step-3" data-pptx-bounds="56 334 560 60">
+    <circle cx="73" cy="364" r="17" fill="#1E2761" />
+    <text x="73" y="372" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">3</text>
+    <text x="112" y="360" font-size="24" font-weight="bold" fill="#23283D">Feynman tutoring</text>
+    <text x="112" y="384" font-size="18" fill="#5A6178">Tutor Agent memancing, bukan menjawab</text>
+  </g>
+  <g id="p03-step-4" data-pptx-bounds="56 406 560 60">
+    <circle cx="73" cy="436" r="17" fill="#1E2761" />
+    <text x="73" y="444" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">4</text>
+    <text x="112" y="432" font-size="24" font-weight="bold" fill="#23283D">Kuis adaptif</text>
+    <text x="112" y="456" font-size="18" fill="#5A6178">Assessment Agent + graduated hints</text>
+  </g>
+  <g id="p03-step-5" data-pptx-bounds="56 478 560 60">
+    <circle cx="73" cy="508" r="17" fill="#1E2761" />
+    <text x="73" y="516" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">5</text>
+    <text x="112" y="504" font-size="24" font-weight="bold" fill="#23283D">Spaced repetition</text>
+    <text x="112" y="528" font-size="18" fill="#5A6178">Review sesuai forgetting curve pribadi</text>
+  </g>
+  <g id="p03-step-6" data-pptx-bounds="56 550 560 60">
+    <circle cx="73" cy="580" r="17" fill="#F2A93B" />
+    <text x="73" y="588" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">6</text>
+    <text x="112" y="576" font-size="24" font-weight="bold" fill="#23283D">Pantau wellbeing</text>
+    <text x="112" y="600" font-size="18" fill="#5A6178">Wellbeing Agent: motivasi, cegah burnout</text>
+  </g>
+  <g id="p03-panel" data-pptx-bounds="656 190 568 430">
+    <rect x="656" y="190" width="568" height="430" rx="20" fill="#EEF1F9" />
+    <image href="../images/solution-illustration.png" x="656" y="245" width="567" height="319" preserveAspectRatio="xMidYMid meet" id="_edit_28" data-edit-target="true" data-edit-annotation="create new better image" />
+  </g>
+  <g id="p03-anchor" data-pptx-bounds="56 628 920 34">
+    <text x="56" y="650" font-size="16" fill="#5A6178">Anchor pedagogis: GenMentor (FWCI 47.3) · IntelliCode (FWCI 23.5) · Feynman Bot (arXiv 2506.09055) · Spaced Repetition</text>
+  </g>
+  <g id="p03-footer" data-pptx-bounds="56 680 1168 28">
+    <rect x="56" y="696" width="20" height="8" rx="4" fill="#D8DDEB" />
+    <rect x="80" y="692" width="20" height="12" rx="4" fill="#D8DDEB" />
+    <rect x="104" y="688" width="20" height="16" rx="4" fill="#D8DDEB" />
+    <rect x="128" y="684" width="20" height="20" rx="4" fill="#D8DDEB" />
+    <rect x="152" y="680" width="20" height="24" rx="4" fill="#F2A93B" />
+    <rect x="1160" y="680" width="64" height="28" rx="14" fill="#EEF1F9" />
+    <text x="1192" y="699" font-size="18" fill="#5A6178" text-anchor="middle">03</text>
+  </g>
+</svg>
