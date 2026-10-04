@@ -6,24 +6,31 @@
 
 ## Status Sekarang
 
-**Phase:** 7 — Submission Materials (ISS-07 draft ✅ done, next: ISS-08 + user submits form)
-**Current issue:** ISS-08 `[ ]` Pitch deck 11 slides
-**Completed this session:** ISS-07 ✅ — submission-draft.md (17 field) + screenshots 01–04
-**User actions pending:** paste jawaban ke form, pastikan repo `https://github.com/mmuchsin/serambi-ai` public, upload deck + screenshot
+**Phase:** 7 — Submission Materials ✅ DONE (ISS-07 + ISS-08 selesai)
+**Current issue:** ISS-08 `[x]` DONE — Pitch deck 11 slides (`slides/serambi-pitch-deck.pptx`)
+**Completed this session:** ISS-08 ✅ — 11-slide PPTX, validated, speaker notes, IBM Blue color scheme
+**User actions pending:**
+- Isi nama tim di slide 11 (`slides/serambi-pitch-deck.pptx`)
+- Insert 4 screenshot ke slide 08 (drag & drop dari `submission/screenshots/`)
+- Export PDF: File → Export as PDF → `slides/serambi-pitch-deck.pdf`
+- Paste jawaban ke form, pastikan repo `https://github.com/mmuchsin/serambi-ai` public
+- Upload deck + screenshot ke form
 
 **Session infra:** Turn counter hook aktif — lihat `.bob/hooks/turn-counter.mjs` + `.bob/settings.json`.
 **Reset counter** saat mulai session baru: hapus `.bob/turn-counter.json`.
 
 ---
 
-## Next Action (1 langkah)
+## Next Action
 
-**ISS-08 — Pitch deck (11 slides):**
-1. `$pitch-deck` → generate 11-slide outline
-2. `$competitive-analysis` → isi slide Diferensiasi (bahan: `docs/submission-draft.md` §17)
-3. Export ke `slides/serambi-pitch-deck.pptx` + `.pdf`
+**Submission Materials selesai — saatnya submit:**
+1. Buka `slides/serambi-pitch-deck.pptx` → isi nama tim di slide 11
+2. Insert 4 screenshot (dari `submission/screenshots/`) ke slide 08
+3. Export PDF → `slides/serambi-pitch-deck.pdf`
+4. Paste `docs/submission-draft.md` ke form, upload deck + screenshots
+5. Pastikan repo public: `https://github.com/mmuchsin/serambi-ai`
 
-Setelah deck selesai + user submit form → ISS-04 (Tutor Agent) bisa dibuka.
+Setelah form terkirim → buka ISS-04 (Tutor Agent / `explain_concept`).
 
 ---
 

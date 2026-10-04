@@ -115,16 +115,30 @@ docs: add hackathon submission form draft (ISS-07)
 ---
 
 ### ISS-08 — Pitch deck (11 slides)
-**Status:** `[ ]` pending
+**Status:** `[x]` DONE
 **Scope:** 1 session
 **Structure:** Cover → Problem → Solution → Target User → How It Works → AI & Technology → Key Features → Prototype/Demo → Impact/Value → Future Development → Team
-**Format:** PowerPoint/Keynote/PDF — simpan di `slides/`
+**Format:** PowerPoint — simpan di `slides/`
 
-**Suggested workflow:**
-1. `$pitch-deck` → generate 11-slide outline
-2. `$competitive-analysis` → isi slide Diferensiasi
-3. Fill content dari research papers (lihat `research/research-papers-and-abstracts.md`)
-4. Export ke `slides/serambi-pitch-deck.pptx` + `slides/serambi-pitch-deck.pdf`
+**What was done:**
+- `slides/serambi-pitch-deck.pptx` — 11 slide, validated (no OpenXML errors)
+- Content sourced dari: `docs/submission-draft.md`, `research/research-papers-and-abstracts.md`, `docs/PRD.md`
+- Setiap slide punya speaker notes
+- Competitive analysis baked in ke slide 09 (Impact/Value)
+- Slide 08 (Demo) berisi placeholder untuk insert 4 screenshot dari `submission/screenshots/`
+- Slide 11 (Team) berisi placeholder nama anggota tim — **isi sebelum submit**
+- Color scheme: `#1E2761` (IBM Blue dark) alternating dengan putih
+- `bash scripts/verify-flow.sh` ✅ | `bash scripts/verify-e2e.sh` ✅
+
+**Remaining user actions:**
+- Isi nama tim di slide 11
+- Insert 4 screenshot ke slide 08 (dari `submission/screenshots/`)
+- Export PDF: buka PPTX di PowerPoint/LibreOffice → File → Export as PDF → `slides/serambi-pitch-deck.pdf`
+
+**Commit:**
+```
+feat(slides): add 11-slide pitch deck PPTX (ISS-08)
+```
 
 ---
 

@@ -1,0 +1,112 @@
+<mxfile>
+  <diagram name="User Journey" id="user-journey-serambi-ai">
+    <mxGraphModel adaptiveColors="auto">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Title -->
+        <mxCell id="title" value="Serambi.ai — Career Switcher Learning Journey" style="text;html=1;fontStyle=1;fontSize=18;fontColor=1E2761;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="10" width="1100" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Lane 1: Career Switcher -->
+        <mxCell id="lane1" value="Career Switcher" style="swimlane;horizontal=0;startSize=110;fillColor=#f5f5f5;strokeColor=#999999;fontStyle=1;fontSize=13;html=1;" vertex="1" parent="1">
+          <mxGeometry x="0" y="60" width="1200" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="n1" value="Tulis goal karier&#xa;dalam bahasa natural" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E2761;fontColor=#FFFFFF;strokeColor=#1E2761;fontSize=12;" vertex="1" parent="lane1">
+          <mxGeometry x="120" y="40" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="n2" value="Terima roadmap&#xa;mingguan personal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7DFFB0;strokeColor=#27ae60;fontSize=12;" vertex="1" parent="lane1">
+          <mxGeometry x="320" y="40" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="n3" value="Pelajari konsep&#xa;milestone ini" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="lane1">
+          <mxGeometry x="520" y="40" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="n4" value="Jawab kuis adaptif&#xa;&amp; cek pemahaman" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="lane1">
+          <mxGeometry x="720" y="40" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="n5" value="Review terjadwal&#xa;&amp; milestone selesai" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="lane1">
+          <mxGeometry x="920" y="40" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="eu1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" source="n1" target="n2" parent="lane1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eu2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" source="n2" target="n3" parent="lane1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eu3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" source="n3" target="n4" parent="lane1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eu4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" source="n4" target="n5" parent="lane1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Lane 2: Serambi.ai Agents -->
+        <mxCell id="lane2" value="Serambi.ai Agents (MCP)" style="swimlane;horizontal=0;startSize=110;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;html=1;" vertex="1" parent="1">
+          <mxGeometry x="0" y="200" width="1200" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="a1n" value="Goal Agent&#xa;goal_decomposer&#xa;LIVE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7DFFB0;strokeColor=#27ae60;fontSize=12;fontStyle=1;" vertex="1" parent="lane2">
+          <mxGeometry x="300" y="50" width="140" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="a2n" value="Tutor Agent&#xa;explain_concept&#xa;Feynman" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="lane2">
+          <mxGeometry x="490" y="50" width="140" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="a3n" value="Assessment Agent&#xa;generate_quiz&#xa;Graduated hints" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="lane2">
+          <mxGeometry x="680" y="50" width="140" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="a4n" value="Progress Agent&#xa;check_progress&#xa;Spaced repetition" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="lane2">
+          <mxGeometry x="870" y="50" width="140" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="ea1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6c8ebf;" edge="1" source="a1n" target="a2n" parent="lane2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ea2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6c8ebf;" edge="1" source="a2n" target="a3n" parent="lane2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ea3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6c8ebf;" edge="1" source="a3n" target="a4n" parent="lane2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Lane 3: Support Loop -->
+        <mxCell id="lane3" value="Support Loop" style="swimlane;horizontal=0;startSize=110;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=13;html=1;" vertex="1" parent="1">
+          <mxGeometry x="0" y="360" width="1200" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="wb1" value="Wellbeing Agent&#xa;Burnout detection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="lane3">
+          <mxGeometry x="490" y="30" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="wb2" value="Motivator Agent&#xa;Contextual nudge" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="lane3">
+          <mxGeometry x="710" y="30" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Cross-lane edges -->
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1E2761;strokeWidth=2;" edge="1" source="n1" target="a1n" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="roadmap" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#27ae60;strokeWidth=2;" edge="1" source="a1n" target="n2" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" source="n3" target="a2n" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" source="n4" target="a3n" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" source="a4n" target="n5" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="loop: next milestone" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82b366;strokeWidth=2;dashed=1;" edge="1" source="n5" target="n3" parent="1">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1010" y="55"/><mxPoint x="1010" y="30"/><mxPoint x="590" y="30"/></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="ewb" value="nudge / alert" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#d6b656;strokeWidth=2;dashed=1;" edge="1" source="wb2" target="n3" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Footer -->
+        <mxCell id="time-label" value="&lt; 1 menit untuk roadmap  |  Ongoing learning loop per milestone  |  Review dijadwalkan adaptif (Zaidi et al. +15-20% retensi)" style="text;html=1;fontStyle=2;fontSize=12;fontColor=555555;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="500" width="1100" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -25,9 +25,17 @@ Screenshots demonstrating the working system. Used in:
 
 ## diagrams/
 
-Architecture diagrams. Currently empty — add draw.io exports (`.drawio`, `.svg`, `.png`) here.
+Architecture and flow diagrams for the pitch deck and documentation.
 
-Suggested diagrams to create:
-- `architecture.png` — Bob → MCP → Langflow → LLM stack
-- `agent-flow.png` — how the 6 agents interact
-- `user-journey.png` — career switcher → goal → roadmap → learn → quiz → progress
+| File | Shows |
+|------|-------|
+| `architecture.drawio` | Bob/MCP/Langflow/LLM stack — dev harness vs production (identical MCP contract) |
+| `agent-flow.drawio` | 6-agent interaction flow — how Goal → Tutor → Assessment → Progress → Motivator → Wellbeing hand off context |
+| `user-journey.drawio` | Career switcher learning loop — swimlane: user actions × agents × support loop |
+
+**Usage in pitch deck:**
+- Open `.drawio` files in draw.io desktop or https://app.diagrams.net
+- Export as PNG (File → Export as → PNG, 2× scale) → save to `assets/diagrams/`
+- Insert PNG into `slides/serambi-pitch-deck.pptx` slide 05 (How It Works) and slide 06 (AI & Technology)
+
+**WSL2 export gotcha:** draw.io desktop may not open directly from WSL path. Use `xdg-open assets/diagrams/architecture.drawio` or copy file to Windows side first, then export from there.
