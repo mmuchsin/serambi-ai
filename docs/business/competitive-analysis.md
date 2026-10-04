@@ -1,6 +1,6 @@
 # Competitive Analysis — Serambi.ai
 
-**Tanggal:** 2026-10-04 (updated with Dicoding, Boot.dev, DataCamp)
+**Tanggal:** 2026-10-04 (v3 — verified scraped data: Dicoding 1.3M+, Boot.dev Socratic AI)
 **Framework:** Competitive Landscape Analysis + Battlecard framing
 **Skills applied:** `competitive-analysis`, `battlecard`, `value-proposition`
 **Lens:** Hackathon pitch + investor positioning
@@ -14,7 +14,7 @@ The global EdTech & upskilling market grows at 11–14% CAGR, but growth is conc
 
 OECD (2024) identifies a widening gap between tech skill demand and output from traditional educational institutions. Reskilling independently is increasingly the primary solution, but lacks adaptive support infrastructure — the exact gap Serambi.ai fills.
 
-**Key market signal:** Dicoding has 800K+ registered users in Indonesia — proof that Indonesian developers will use structured online learning. The gap is that none of these platforms are *adaptive to the individual's career goal*.
+**Key market signal:** Dicoding has **1,327,000+ registered developers** from **523 cities** across Indonesia, with 843,000+ active learners in Dicoding Academy — proof that Indonesian developers will use structured online learning at scale. The gap is that none of these platforms are *adaptive to the individual's career goal*.
 
 ---
 
@@ -25,8 +25,8 @@ OECD (2024) identifies a widening gap between tech skill demand and output from 
 | **ChatGPT / Gemini** | General AI chatbot | Everyone | Universal assistant | Instant answers, free, multilingual | Oracle mode — no scaffold, no goal anchoring, promotes cognitive offloading (BJET, cited 694×) |
 | **Ruangguru / Zenius** | Local EdTech | Indonesian students | Structured curriculum + live tutors | Strong local brand, Bahasa Indonesia, affordable | Fixed curriculum, not career-goal-anchored, no adaptive roadmap |
 | **Coursera / Udemy** | MOOC platform | Global learners | Certificate courses | Huge catalog, employer recognition | One-size-fits-all, ~90% dropout, no personal roadmap |
-| **Dicoding** | Local dev education | Indonesian developers | Structured coding path + certification | Large Indonesian community (800K+), Bahasa Indonesia, industry-relevant tracks | Fixed learning paths, not personalized to career goal, no adaptive AI, no spaced repetition |
-| **Boot.dev** | Gamified backend dev | Self-taught developers | "Learn backend in the right order" | Strong opinionated learning path, gamified, CS fundamentals focus | English-only, backend-specific, no career-goal mapping, no adaptive AI |
+| **Dicoding** | Local dev education | Indonesian developers | Structured coding path + certification | Largest Indonesian dev community (1.3M+ registered, 843K+ active learners), Bahasa Indonesia, industry-relevant tracks | Fixed learning paths, not personalized to career goal, no adaptive AI, no spaced repetition |
+| **Boot.dev** | Gamified backend dev | Self-taught developers | "Learn backend in the right order" | Strong opinionated learning path, gamified, CS fundamentals, Socratic AI ("Boots") with in-game penalty for over-reliance | English-only, backend-specific, no career-goal mapping, no Indonesian |
 | **DataCamp** | Data skills platform | Data practitioners | Hands-on data science/analytics | High-quality data curriculum, interactive exercises, skill tracks | English-first, one-size-fits-all tracks, no career goal decomposition, subscription cost |
 | **Khan Academy (Khanmigo)** | AI tutor | K-12 students | Socratic AI tutor | Research-backed pedagogy, Socratic method | English-only, K-12 focus, not career-switching context |
 | **LinkedIn Learning** | Corporate upskilling | Working professionals | Skills for work | Employer-linked, broad catalog | No goal decomposition, not adaptive, English-first |
@@ -60,18 +60,20 @@ OECD (2024) identifies a widening gap between tech skill demand and output from 
 
 ### Dicoding
 - **Positioning:** Indonesia's largest structured developer education platform. Certification-driven, industry partnerships (Google, AWS, IBM, Dicoding Academy).
-- **Strengths:** 800K+ registered developers, Bahasa Indonesia, industry-recognized certificates, project-based learning, active community forum.
-- **Weaknesses:** Fixed learning paths (not personal to career goal), no AI-adaptive layer, no forgetting curve / spaced repetition, no wellbeing support, progress = course completion ≠ career readiness.
+- **Strengths:** **1,327,000+ registered developers** from **523 cities** — Indonesia's largest developer education platform. 843,000+ active learners in Dicoding Academy. 213 programming classes. 42,000+ challenge participants. Gamification: Dicoding Points → rewards. Curriculum partners: Google, AWS, IBM. Industry-recognized certificates, project-based learning, active community.
+- **Weaknesses:** Fixed learning paths (not personal to career goal), no AI-adaptive layer, no forgetting curve / spaced repetition, no wellbeing support. Progress = course completion ≠ career readiness.
 - **Pricing:** Free (basic) + Dicoding Premium (~IDR 150K–500K/month).
-- **Market traction:** Dominant in Indonesian developer community; Google Developer Student Clubs integration.
+- **Market traction:** Dominant in Indonesian developer community; Google Developer Student Clubs integration; 4 pillars: Academy, Challenge, Event, Jobs.
 - **vs Serambi.ai:** Dicoding is *where you take the course*. Serambi.ai is *how you figure out which course to take, in what order, for your specific goal* — then stays with you to make sure the knowledge sticks. They're complementary, not substitutes.
 
 ### Boot.dev
-- **Positioning:** "Learn backend development by actually building things." Strong opinionated learning path: CS fundamentals → backend → system design, in the right order.
-- **Strengths:** Gamified, community-driven, CS-foundation-first (many bootcamp graduates lack this), projects are real, Discord community active.
-- **Weaknesses:** English-only, backend specialization only (not data, ML, cloud, etc.), no Bahasa Indonesia, fixed path not personalized to stated career goal, no adaptive AI, no spaced repetition.
+- **Positioning:** "Learn backend development by actually building things." Founded by Lane Wagner — originally built to help his wife switch careers (x-ray technician → software engineer). Strong opinionated learning path: CS fundamentals → backend → system design, in the right order.
+- **8 core beliefs (from about page):** CS fundamentals matter (degrees don't), coding is fun, no shortcuts (12+ months realistic), stay uncomfortable (Zone of Proximal Development), **"Avoid AI when learning"**, bite-sized lessons + full projects, go deeper, build and deploy.
+- **Boots (AI chatbot):** Boot.dev's AI tutor uses **Socratic method** and applies an **in-game XP penalty** when learners rely on it too much — philosophically the closest to Serambi.ai's scaffold-not-oracle principle among all competitors.
+- **Strengths:** Opinionated CS-foundation-first path, gamified (XP system), community-driven (Discord), Socratic AI prevents cognitive offloading.
+- **Weaknesses:** English-only, backend specialization only (not data, ML, cloud), no Bahasa Indonesia, fixed path not personalized to stated career goal, no spaced repetition outside exercises.
 - **Pricing:** Free (limited) + ~$29/month or $249/year.
-- **vs Serambi.ai:** Boot.dev owns "backend dev learning path" niche in English. Serambi.ai's Goal Agent can recommend Boot.dev as a resource *within* a milestone — they are potential integration partners, not head-on competitors for Indonesian users.
+- **vs Serambi.ai:** Boot.dev is philosophically the closest competitor — both believe in scaffold over oracle, both resist AI dependency. But Boot.dev is English-only and backend-specific. Serambi.ai owns the same scaffold philosophy for **all career paths in Bahasa Indonesia**. Boot.dev courses can be *milestones within a Serambi.ai roadmap* — integration partners, not substitutes.
 
 ### DataCamp
 - **Positioning:** "Learn data skills online." Skill tracks for data analyst, data scientist, ML engineer; interactive in-browser exercises; assessment tools.
