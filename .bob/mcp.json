@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "lf-lsa_ibm_hackathon": {
+    "lf-serambi_ai": {
       "command": "uvx",
       "args": [
         "--with",
@@ -11,7 +11,7 @@
         "--headers",
         "x-api-key",
         "${env:LANGFLOW_API_KEY}",
-        "http://localhost:7860/api/v1/mcp/project/4264a312-49f1-4286-9edc-366496ebc4f2/streamable"
+        "http://localhost:7860/api/v1/mcp/project/77726bb2-9137-4e8d-8491-c8daa87f9192/streamable"
       ]
     },
     "drawio": {

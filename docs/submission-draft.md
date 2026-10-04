@@ -6,6 +6,8 @@
 > Cara pakai: setiap bagian di bawah sudah disusun agar bisa langsung ditempel ke field yang bersesuaian di form. Field bertanda **[UPLOAD]** tidak bisa dijawab lewat teks — ada instruksi terpisah di akhir dokumen.
 >
 > Aturan kejujuran submission: ditulis sebagai *progress submission* — Goal Agent ditandai **✅ live/e2e verified**, agent lain ditandai **🔜 dalam pengembangan**. Jangan mengklaim semua agent sudah live.
+>
+> **Aturan antarmuka:** Bob TUI = **agent harness pengembangan** (build, test, verifikasi e2e). UI pengguna akhir = **web app** (`apps/`), dalam pengembangan. Jangan pernah menyebut Bob sebagai UI pengguna akhir di form.
 
 ---
 
@@ -29,16 +31,16 @@
 
 > Masalah yang ingin diselesaikan: career switcher yang belajar mandiri sering kehilangan arah. Materi dipelajari dari sumber acak seperti YouTube, Udemy, dan artikel, tanpa dipetakan ke skill gap yang benar-benar dibutuhkan oleh target role. Progres tidak terlacak, tidak ada feedback loop, dan banyak yang akhirnya burn out sebelum berhasil pindah karier. Kelompok ini paling merasakan dampaknya karena bootcamp dan mentor privat mahal, sedangkan kursus online umumnya memiliki kurikulum tetap yang tidak personal.
 
-> Solusi Serambi.ai menggunakan arsitektur multi-agent. Bob, AI agent harness dari IBM, menjadi lapisan percakapan dan reasoning. Bob memanggil agent-agent spesialis yang dibangun di IBM Langflow dan diekspos sebagai MCP tool, untuk memecah goal karier, menjelaskan konsep dengan teknik Feynman, membuat kuis adaptif dengan graduated hinting, menjadwalkan ulasan menggunakan spaced repetition, serta memantau motivasi dan wellbeing. Setiap keputusan pedagogis dilandasi riset ilmiah: AI berperan sebagai adaptive scaffold, bukan oracle yang langsung menjawab.
+> Solusi Serambi.ai menggunakan arsitektur multi-agent. Pengguna akhir berinteraksi melalui antarmuka web app, sementara agen-agen spesialis dibangun di IBM Langflow dan diekspos sebagai MCP tool: memecah goal karier, menjelaskan konsep dengan teknik Feynman, membuat kuis adaptif dengan graduated hinting, menjadwalkan ulasan menggunakan spaced repetition, serta memantau motivasi dan wellbeing. Bob — AI agent harness dari IBM — dipakai tim sebagai harness pengembangan: membangun, menguji, dan memverifikasi tiap agent secara end-to-end sebelum dihubungkan ke antarmuka. Setiap keputusan pedagogis dilandasi riset ilmiah: AI berperan sebagai adaptive scaffold, bukan oracle yang langsung menjawab.
 
-> Manfaat utamanya: pengguna memperoleh roadmap yang jelas dan personal, belajar lebih efisien karena dipandu berdasarkan gap skill, progres menjadi terukur, dan risiko burnout berkurang. Saat ini Goal Agent sudah terverifikasi end-to-end dari Bob melalui MCP ke Langflow; lima agent lainnya dikembangkan dengan pola arsitektur yang sama.
+> Manfaat utamanya: pengguna memperoleh roadmap yang jelas dan personal, belajar lebih efisien karena dipandu berdasarkan gap skill, progres menjadi terukur, dan risiko burnout berkurang. Saat ini Goal Agent sudah terverifikasi end-to-end melalui kontrak MCP (harness pengembangan Bob → Langflow); lima agent lainnya dikembangkan dengan pola arsitektur yang sama.
 
 *(Word count terverifikasi: 231 kata — di dalam rentang 150–300. Jika ingin satu paragraf utuh, pakai versi ringkas di bawah.)*
 
 <details>
 <summary>Versi ringkas 1 paragraf (191 kata) — jika editor form lebih suka tanpa heading internal</summary>
 
-Serambi.ai adalah asisten belajar adaptif berbasis multi-agent AI untuk career switcher Indonesia. Pengguna cukup menuliskan tujuan karier dalam bahasa natural, misalnya "jadi data analyst dalam 3 bulan", dan sistem menyusun roadmap belajar mingguan terstruktur dengan milestone dan deliverable. Masalah yang diselesaikan: career switcher belajar mandiri sering kehilangan arah — materi diambil dari sumber acak tanpa dipetakan ke skill gap target role, progres tidak terlacak, dan banyak yang burn out sebelum berhasil pindah karier; padahal bootcamp dan mentor privat mahal, sementara kursus online punya kurikulum tetap yang tidak personal. Solusinya adalah arsitektur multi-agent: Bob (AI agent harness IBM) menjadi lapisan percakapan dan reasoning, lalu memanggil agent spesialis yang dibangun di IBM Langflow dan diekspos sebagai MCP tool — untuk memecah goal karier, menjelaskan konsep dengan teknik Feynman, membuat kuis adaptif dengan graduated hinting, menjadwalkan ulasan spaced repetition, serta memantau motivasi dan wellbeing. Setiap desain pedagogis dilandasi riset: AI menjadi adaptive scaffold, bukan oracle. Manfaatnya: roadmap personal, belajar lebih efisien, progres terukur, dan risiko burnout berkurang. Goal Agent sudah terverifikasi end-to-end Bob → MCP → Langflow; lima agent lain dalam pengembangan.
+Serambi.ai adalah asisten belajar adaptif berbasis multi-agent AI untuk career switcher Indonesia. Pengguna cukup menuliskan tujuan karier dalam bahasa natural, misalnya "jadi data analyst dalam 3 bulan", dan sistem menyusun roadmap belajar mingguan terstruktur dengan milestone dan deliverable. Masalah yang diselesaikan: career switcher belajar mandiri sering kehilangan arah — materi diambil dari sumber acak tanpa dipetakan ke skill gap target role, progres tidak terlacak, dan banyak yang burn out sebelum berhasil pindah karier; padahal bootcamp dan mentor privat mahal, sementara kursus online punya kurikulum tetap yang tidak personal. Solusinya adalah arsitektur multi-agent: pengguna berinteraksi lewat web app, sementara agent spesialis dibangun di IBM Langflow dan diekspos sebagai MCP tool — untuk memecah goal karier, menjelaskan konsep dengan teknik Feynman, membuat kuis adaptif dengan graduated hinting, menjadwalkan ulasan spaced repetition, serta memantau motivasi dan wellbeing. Bob (AI agent harness IBM) dipakai sebagai harness pengembangan untuk membangun dan memverifikasi tiap agent end-to-end. Setiap desain pedagogis dilandasi riset: AI menjadi adaptive scaffold, bukan oracle. Manfaatnya: roadmap personal, belajar lebih efisien, progres terukur, dan risiko burnout berkurang. Goal Agent sudah terverifikasi end-to-end melalui MCP dari harness pengembangan Bob ke Langflow; lima agent lain dalam pengembangan.
 
 </details>
 
@@ -98,7 +100,7 @@ Karena cara yang digunakan saat ini memiliki kelemahan yang sama-sama tidak terp
 ## 7. Fitur Utama Project
 
 **1. Goal Decomposer Agent — memecah target karier menjadi roadmap mingguan ✅ live (e2e verified)**
-Menerima tujuan karier dalam bahasa natural ("jadi data analyst dalam 3 bulan"), lalu menghasilkan roadmap terstruktur berformat JSON: `deadline_weeks`, `milestones` (rentang minggu, fokus, deliverable), dan `first_action`. Terimplementasi sebagai MCP tool `goal_decomposer`; output asli telah diverifikasi dari Bob hingga Langflow (roadmap 12 minggu).
+Menerima tujuan karier dalam bahasa natural ("jadi data analyst dalam 3 bulan"), lalu menghasilkan roadmap terstruktur berformat JSON: `deadline_weeks`, `milestones` (rentang minggu, fokus, deliverable), dan `first_action`. Terimplementasi sebagai MCP tool `goal_decomposer`; output asli telah diverifikasi end-to-end dari harness pengembangan (Bob) hingga Langflow (roadmap 12 minggu).
 
 **2. Tutor Agent — penjelasan konsep teknik Feynman 🔜 dalam pengembangan**
 Menjelaskan konsep sesuai level pengguna dengan teknik Feynman: AI mengajukan probing questions untuk mengidentifikasi miskonsepsi alih-alih langsung menyodorkan jawaban.
@@ -114,6 +116,8 @@ Mengirim pengingat dengan langkah berikut yang konkret (bukan pesan generik) dan
 
 > Jika form hanya menerima fitur yang sudah live, isi fitur #1 saja sebagai "MVP live" dan sebutkan sisanya di bagian *Potensi Pengembangan*. Untuk submission progres, daftar di atas dengan penanda status sudah tepat.
 
+**Antarmuka pengguna.** Pengguna akhir akan memakai **web app** (`apps/` dalam repo, sedang dikembangkan). Bob TUI berperan sebagai **agent harness pengembangan** (build, test, verifikasi e2e) — bukan antarmuka pengguna akhir.
+
 ---
 
 ## 8. Alur Penggunaan Project
@@ -121,25 +125,26 @@ Mengirim pengingat dengan langkah berikut yang konkret (bukan pesan generik) dan
 **Alur MVP (terverifikasi end-to-end):**
 
 ```
-User Input            Bob (agent harness)          MCP                    Langflow              Output
-"Bantu saya buat  →   parse intent +    →  memanggil tool  →  menjalankan flow  →  roadmap JSON
- roadmap belajar       reasoning           mcp__lf-lsa...    goal_decomposer      12 minggu
- data analyst                                MCP tool call    (Chat Input →
- dalam 3 bulan"                            (SSE, x-api-key)   Prompt → LLM →
-                                                               Chat Output)
-                                                                        ↓
-User Action: simpan roadmap → kerjakan milestone 1 → kembali ke Bob
+User Input            Web App                 Backend                MCP                   Langflow                Output
+"jadi data    →      antarmuka        →   orkestrator agent  →   memanggil tool   →   menjalankan flow  →   roadmap JSON
+ analyst 3 bulan"     pengguna akhir           (pola diverifikasi     MCP tool call        goal_decomposer        12 minggu
+                       (roadmap,               di Bob: intent →      (SSE, x-api-key)      (Chat Input →
+                        progres,               pilih agent → call)                        Prompt → LLM →
+                        kuis)                                                              Chat Output)
+                                                                                         ↓
+User Action: simpan roadmap → kerjakan milestone 1 → kembali ke web app
               untuk penjelasan konsep / kuis / cek progres
 ```
 
 **Alur lengkap (target):**
 
-1. **User Input** — pengguna menuliskan goal karier dalam bahasa natural di Bob.
-2. **Bob (AI Agent Harness)** — memahami intent, memutuskan agent mana yang dibutuhkan, memanggil MCP tool yang sesuai.
-3. **MCP Bridge** — tool call dikirim ke Langflow (streamable HTTP + header `x-api-key`).
-4. **Langflow (Flow Engine)** — menjalankan flow agent: menyusun prompt, memanggil LLM, dan mengembalikan hasil terstruktur.
-5. **Output ke User** — Bob menyajikan roadmap mingguan beserta milestone dan deliverable.
-6. **User Action** — pengguna menyimpan roadmap, mengerjakan milestone, lalu kembali berinteraksi untuk penjelasan konsep (Feynman), kuis adaptif, cek progres, atau check-in wellbeing — menutup loop belajar berbuntut.
+1. **User Input** — pengguna menuliskan goal karier dalam bahasa natural di web app.
+2. **Web App (Antarmuka Pengguna)** — menampilkan roadmap, progres, milestone, dan sesi belajar; menjadi permukaan utama pengguna akhir.
+3. **Backend Orchestrator** — memahami intent, memutuskan agent mana yang dibutuhkan, dan memanggil MCP tool yang sesuai. Pola orkestrasi ini (intent → pemilihan agent → tool call) dibuktikan end-to-end lebih dulu di Bob, lalu direplikasi di backend web app.
+4. **MCP Bridge** — tool call dikirim ke Langflow (streamable HTTP + header `x-api-key`).
+5. **Langflow (Flow Engine)** — menjalankan flow agent: menyusun prompt, memanggil LLM, dan mengembalikan hasil terstruktur.
+6. **Output ke User** — web app menampilkan roadmap mingguan beserta milestone dan deliverable.
+7. **User Action** — pengguna menyimpan roadmap, mengerjakan milestone, lalu kembali berinteraksi untuk penjelasan konsep (Feynman), kuis adaptif, cek progres, atau check-in wellbeing — menutup loop belajar berbuntut.
 
 ---
 
@@ -164,50 +169,52 @@ Input: satu string tujuan karier dalam bahasa natural. Output: JSON terstruktur 
 Flow menerjemahkan goal bebas menjadi komponen terukur (waktu, urutan materi, deliverable per fase). Prompt dirancang dengan JSON schema ketat + temperature rendah sehingga keluaran dapat diandalkan untuk diproses lebih lanjut oleh agent lain — inilah kunci mengapa Langflow, bukan sekadar satu prompt di chat.
 
 **Fungsi Langflow dalam keseluruhan sistem.**
-Langflow adalah **mesin eksekusi domain** sistem: setiap agent spesialis hidup sebagai satu flow yang dapat diretas di canvas, diuji langsung di Playground, dan **di-expose sebagai named MCP tool**. Dengan begitu logika pedagogis tiap agent terisolasi, versionable, dan bisa diganti tanpa mengubah lapisan percakapan (Bob).
+Langflow adalah **mesin eksekusi domain** sistem: setiap agent spesialis hidup sebagai satu flow yang dapat diretas di canvas, diuji langsung di Playground, dan **di-expose sebagai named MCP tool**. Dengan begitu logika pedagogis tiap agent terisolasi, versionable, dan bisa diganti tanpa mengubah pemanggilnya. Karena diekspos lewat MCP, konsumennya bebas diganti: harness pengembangan (Bob) hari ini, web app besok — keduanya memakai kontrak tool yang identik.
 
 ---
 
 ## 10. Penggunaan IBM Bob
 
 **Fungsi IBM Bob.**
-Bob adalah **AI agent harness** sekaligus antar-muka utama pengguna: tempat percakapan berlangsung, reasoning dilakukan, dan keputusan memanggil tool diambil. Bob berjalan di dalam workspace proyek sehingga otomatis memakai konfigurasi proyek (`.bob/mcp.json`).
+Bob adalah **AI agent harness** yang dipakai tim sebagai **lingkungan pengembangan**: membangun flow, menguji integrasi, dan memverifikasi setiap agent secara end-to-end sebelum dihubungkan ke antarmuka pengguna. **Bob TUI bukan antarmuka pengguna akhir** — pengguna akhir memakai web app. Bob berjalan di dalam workspace proyek sehingga otomatis memakai konfigurasi proyek (`.bob/mcp.json`).
 
 **Proses/task yang dilakukan menggunakan Bob.**
 
-1. Menerima input bahasa natural dari pengguna.
-2. Melakukan intent parsing dan reasoning untuk menentukan agent yang tepat.
-3. Memanggil MCP tool Langflow secara langsung (mis. `mcp__lf-lsa_ibm_hackathon__goal_decomposer`) — **bukan** menjawab dari LLM-nya sendiri ketika sudah ada tool yang relevan.
-4. Menerima hasil JSON dari Langflow, menyusunnya menjadi respons percakapan yang enak dibaca, dan melanjutkan interaksi follow-up (menyimpan roadmap, menjelaskan milestone, dll).
-5. Memakai skill proyek (43 PM skills + custom `pitch-deck`, `drawio`) untuk workflow non-pengguna: analisis value proposition, north-star metric, pitch deck, dokumentasi submission.
+1. Menerima instruksi bahasa natural dari tim pengembang.
+2. Melakukan reasoning untuk menentukan flow/agent apa yang perlu dibangun atau diuji.
+3. Memanggil MCP tool Langflow secara langsung (mis. `mcp__lf-serambi_ai__goal_decomposer`) — membuktikan setiap agent benar-benar bekerja dan kontrak input/output-nya valid, bukan sekadar menjawab dari LLM-nya sendiri.
+4. Menguji keluaran agent (JSON roadmap 12 minggu), lalu menjadikannya spesifikasi untuk backend web app: struktur data, penanganan error, dan urutan orkestrasi.
+5. Memakai skill proyek (43 PM skills + custom `pitch-deck`, `drawio`) untuk value proposition, north-star metric, pitch deck, dan dokumentasi submission.
 
 **Bagaimana Bob berinteraksi dengan sistem.**
-Melalui konfigurasi MCP proyek: server MCP ber-Id `lf-lsa_ibm_hackathon` (menggunakan `mcp-proxy` dengan transport `streamablehttp`, header `x-api-key` berisi `LANGFLOW_API_KEY`) menghubungkan Bob ke MCP endpoint Langflow. Bob melakukan auto-discovery tool, sehingga flow Langflow otomatis muncul sebagai named tools yang bisa diajak tool-calling.
+Melalui konfigurasi MCP proyek: server MCP ber-Id `lf-serambi_ai` (menggunakan `mcp-proxy` dengan transport `streamablehttp`, header `x-api-key` berisi `LANGFLOW_API_KEY`) menghubungkan Bob ke MCP endpoint Langflow. Bob melakukan auto-discovery tool, sehingga flow Langflow otomatis muncul sebagai named tools yang bisa diajak tool-calling.
 
 **Output yang dihasilkan.**
-Roadmap belajar personal (JSON 12 minggu beserta milestone dan deliverable) yang disajikan sebagai percakapan; dapat langsung menjadi dasar langkah belajar berikutnya. Rantai Bob → MCP → Langflow → JSON response telah **terverifikasi end-to-end**.
+Verifikasi end-to-end bahwa kontrak MCP bekerja: Bob memanggil `goal_decomposer` → Langflow mengembalikan JSON roadmap 12 minggu dengan milestone dan deliverable. Kontrak inilah yang nantinya dipanggil oleh backend web app — tanpa perlu mengubah flow Langflow sama sekali.
 
 ---
 
 ## 11. Bagaimana IBM Langflow dan IBM Bob Terintegrasi?
 
-Keduanya saling melengkapi dalam satu rantai, bukan berjalan terpisah:
+Keduanya saling melengkapi dalam satu rantai, dan web app menjadi konsumen produksi dari kontrak yang sama:
 
 - **Yang dilakukan Langflow:** menjalankan *logika domain* sistem. Flow `goal_decomposer` adalah tempat instruksi pedagogik, prompt, dan panggilan LLM dieksekusi, dengan output terstruktur (JSON) yang konsisten dan dapat diuji di Playground.
-- **Yang dilakukan Bob:** bekerja sebagai *orkestrator dan permukaan percakapan*. Bob memahami pengguna, memutuskan kapan sebuah agent perlu dijalankan, memanggilnya sebagai tool, lalu menafsirkan dan menyajikan hasilnya.
+- **Yang dilakukan Bob:** bekerja sebagai **agent harness pengembangan**. Bob membangun flow, menguji named tool, dan membuktikan kontrak MCP bekerja end-to-end. Pola orkestrasi — intent parsing → pemilihan agent → tool call → penyajian hasil — dirancang dan divalidasi lebih dulu di sini.
+- **Yang dilakukan web app:** menjadi antarmuka pengguna akhir. Backend web app memanggil **MCP tool yang persis sama** seperti yang dipanggil Bob, lalu menampilkan hasilnya sebagai pengalaman belajar utuh (roadmap, progres, kuis, review).
 
 **Bagaimana data/informasi berpindah:**
 
 ```
-Bob  ──1. tool call (MCP, JSON-RPC via SSE streamable HTTP, header x-api-key)──▶  Langflow
-     ◀────────── 2. tool result: JSON roadmap (goal, deadline_weeks, milestones, first_action)
-     ──▶ 3. Bob merender & melanjutkan percakapan dengan pengguna
+Pengguna ──1. permintaan (web app UI)──▶ Web App Backend
+        ◀──── 4. tampilan roadmap ─────────┘
+Web App Backend ──2. MCP tool call (JSON-RPC via SSE streamable HTTP, header x-api-key)──▶ Langflow
+              ◀─────────── 3. tool result: JSON roadmap (goal, deadline_weeks, milestones, first_action)
 ```
 
-Setiap flow Langflow diekspos sebagai **named MCP tool** (kontrak: nama deskriptif seperti `goal_decomposer`, input/output terdefinisi). Itulah "lem" integrasinya: kontrak tool menjadi antarmuka resmi antara heap reasoning Bob dan heap eksekusi Langflow, sehingga keduanya bisa dikembangkan secara independen.
+Selama pengembangan, urutan yang sama sudah dijalankan dan diverifikasi di Bob: Bob → MCP → Langflow → JSON response. Setiap flow Langflow diekspos sebagai **named MCP tool** (kontrak: nama deskriptif seperti `goal_decomposer`, input/output terdefinisi). Itulah "lem" integrasinya: kontrak tool menjadi antarmuka resmi antara lapisan aplikasi dan lapisan eksekusi agent — sehingga mengganti pemanggil dari Bob (pengembangan) ke web app (produksi) **tidak mengubah satu pun baris di Langflow**.
 
 **Output akhir dari integrasi.**
-Pengguna, dalam satu percakapan bahasa natural, menerima **roadmap belajar mingguan yang personal dan terstruktur** — hasil kolaborasi Bob (pemahaman + penyajian) dan Langflow (eksekusi agent + panggilan LLM). Pola kontrak ini yang akan direplikasi untuk menambah lima agent berikutnya tanpa mengubah arsitektur integrasi.
+Pengguna, melalui web app, menerima **roadmap belajar mingguan yang personal dan terstruktur** — hasil kolaborasi web app (antarmuka + orkestrasi) dan Langflow (eksekusi agent + panggilan LLM). Integrasi Bob × Langflow yang terverifikasi hari ini menjadi fondasi kontrak yang dipakai web app besok.
 
 ---
 
@@ -239,7 +246,7 @@ Belum dibuat saat draft ini ditulis (tercatat sebagai **ISS-08**). Struktur yang
 2. Problem — career switcher belajar tanpa arah & burnout
 3. Solution — adaptive multi-agent learning assistant
 4. Target User — career switcher & upskiller Indonesia
-5. How It Works — alur Bob → MCP → Langflow
+5. How It Works — alur Web App → MCP → Langflow (kontrak tool yang sama dengan dev harness Bob)
 6. AI & Technology — arsitektur multi-agent, LLM, MCP, grounding riset
 7. Key Features — 6 agent + status
 8. Prototype/Demo — screenshot e2e Goal Agent
@@ -257,12 +264,14 @@ Empat screenshot yang ada sudah siap pakai; salinan dengan nama sesuai permintaa
 
 | Nama file untuk form | Isi | Sumber asli |
 |---|---|---|
-| `01-user-interface.png` | Antarmuka percakapan utama Bob (TUI) berisi struktur repo & sesi kerja | `Screenshot 2026-10-03 150309.png` |
+| `01-user-interface.png` | Agent harness pengembangan (Bob TUI): sesi kerja berisi struktur repo & pemanggilan MCP tool — **antarmuka pengembang, bukan UI pengguna akhir** | `Screenshot 2026-10-03 150309.png` |
 | `02-langflow-workflow.png` | Canvas Langflow: flow `goal_decomposer` lengkap dengan 4 node — Chat Input → Prompt Template → Language Model → Chat Output | `Screenshot 2026-10-03 124609.png` |
 | `03-langflow-endpoint.png` | Pengaturan endpoint Langflow: nama flow `goal_decomposer` + deskripsi agent | `Screenshot 2026-10-03 124806.png` |
-| `04-output.png` | Output nyata di Bob: JSON roadmap 12 minggu (goal karier data analytics) | `Screenshot 2026-10-03 113405.png` |
+| `04-output.png` | Output nyata: JSON roadmap 12 minggu (goal karier data analytics) yang dikembalikan flow `goal_decomposer` | `Screenshot 2026-10-03 113405.png` |
 
-**Rekomendasi tambahan (opsional ke-5):** tangkap momen Bob menampilkan tool call `mcp__lf-lsa_ibm_hackathon__goal_decomposer` sebelum hasil roadmap muncul — ini bukti paling kuat bahwa Bob benar-benar memanggil agent Langflow, bukan menjawab dari LLM-nya sendiri.
+**Rekomendasi tambahan (opsional ke-5):** tangkap momen agent call `mcp__lf-serambi_ai__goal_decomposer` sebelum hasil roadmap muncul — ini bukti paling kuat bahwa agent Langflow benar-benar dipanggil, bukan dijawab dari LLM-nya sendiri.
+
+> **Catatan kejujuran:** web app (UI pengguna akhir) masih dalam pengembangan sehingga belum ada screenshot-nya. Jelaskan ke juri bahwa `01` adalah harness pengembangan (Bob); `02`–`04` adalah workflow Langflow dan output agent yang nyata. Tambahkan screenshot web app begitu tersedia.
 
 ---
 
@@ -270,10 +279,10 @@ Empat screenshot yang ada sudah siap pakai; salinan dengan nama sesuai permintaa
 
 Target indikator terukur (guna menghindari klaim berlebihan: MVP sudah e2e verified; metrik produk diukur setelah rilis):
 
-- **Waktu penyusunan roadmap belajar personal: dari ±2–4 jam riset mandiri → <1 menit** — otomatis, telah terbukti pada alur Bob → MCP → Langflow.
+- **Waktu penyusunan roadmap belajar personal: dari ±2–4 jam riset mandiri → <1 menit** — otomatis, telah terbukti pada alur verifikasi pengembangan: Bob → MCP → Langflow.
 - **Career Goal Progress Rate (north star) ≥ 15%/minggu per pengguna aktif** — didefinisikan sebagai milestone selesai per minggu / total milestone di roadmap.
 - **Retensi belajar +15–20%** dibanding jadwal spaced repetition tetap (target berbasis riset Zaidi et al., arXiv 2004.11327) melalui Progress Agent.
-- **Target jangkauan: 1.000 pengguna/bulan** pada 6 bulan pertama setelah rilis publik (jalur Bob + integrasi komunitas hackathon).
+- **Target jangkauan: 1.000 pengguna/bulan** pada 6 bulan pertama setelah rilis publik (jalur web app + integrasi komunitas hackathon).
 - **Mengurangi pekerjaan manual** yang selama ini tidak terhitung: riset kurikulum, pencarian materi, dan perencanaan ulang belajar.
 - **Mengurangi risiko burnout/putus belajar** melalui Wellbeing & Motivator Agent (indikator: jumlah pengguna yang kembali belajar dalam 7 hari).
 
@@ -281,8 +290,8 @@ Target indikator terukur (guna menghindari klaim berlebihan: MVP sudah e2e verif
 
 ## 16. Potensi Pengembangan & Skalabilitas
 
-- **Melengkapi arsitektur.** Tutor, Assessment, Progress, Motivator, dan Wellbeing Agent mengikuti kontrak yang identik dengan Goal Agent (satu flow = satu named MCP tool) — bisa dikerjakan tanpa mengubah integrasi Bob × Langflow.
-- **Permukaan baru.** Aplikasi web/mobile (`apps/`) dan chatbot pesan instan sehingga tidak bergantung pada Bob TUI saja; state belajar tersimpan terpusat sehingga pengguna bisa berpindah perangkat tanpa kehilangan progres.
+- **Web app sebagai produksi.** Web app (`apps/`) adalah antarmuka pengguna akhir; backend-nya memakai kontrak MCP yang sama dengan yang sudah terverifikasi, sehingga agent yang sudah jadi langsung dapat dinikmati pengguna. Bob tetap menjadi harness pengembangan untuk mempercepat penambahan agent baru.
+- **Permukaan tambahan.** Chatbot pesan instan (mis. WhatsApp) di atas backend yang sama; state belajar tersimpan terpusat sehingga pengguna bisa berpindah perangkat tanpa kehilangan progres.
 - **Domain & bahasa.** Memperluas dari tech career ke domain sertifikasi lain (finance, kesehatan, pemerintahan) dan bahasa lain, cukup dengan mengganti prompt + dataset mapping tiap flow.
 - **B2B / institusional.** Model whitelabel untuk bootcamp, kampus, dan program reskilling (mis. alumni Hacktiv8, program Komdigi): satu instansi, ribuan peserta, biaya per pengguna rendah.
 - **Ekosistem integrasi.** Integrasi ke platform kursus (rekomendasi materi per milestone) dan job board (skill → lowongan relevan), menjadikan roadmap bernilai ganda sebagai peta kompetisi dan peta karier.
@@ -296,7 +305,7 @@ Target indikator terukur (guna menghindari klaim berlebihan: MVP sudah e2e verif
 Setiap fitur didasarkan pada paper dan angka: GenMentor (goal-to-skill mapping, FWCI 47.3), Feynman Bot (arXiv 2506.09055 — 80%+ peserta lebih memilih daripada membaca pasif), Protégé Effect (Chase et al. 2009), IntelliCode (graduated hinting, FWCI 23.5), Zaidi et al. (spaced repetition adaptif, +15–20% retensi), dan guardrail anti-cognitive-offloading dari BJET (cited 694). Seluruh 30+ referensi terarsip lengkap dengan abstract dan DOI di repo — sesuatu yang jarang dimiliki prototype hackathon.
 
 **2. Arsitektur integrasi Bob × Langflow × MCP yang benar-benar modular dan teruji.**
-Setiap agent hidup sebagai satu Langflow flow yang diekspos sebagai named MCP tool, sementara Bob menjadi orkestrator reasoning + percakapan. Kontrak tool membuat agent bisa dikembangkan, diuji, dan diganti secara independen — bukan monolit satu prompt raksasa. Rantai integrasinya sudah **terverifikasi end-to-end** (Bob memanggil `goal_decomposer` → Langflow mengembalikan JSON roadmap).
+Setiap agent hidup sebagai satu Langflow flow yang diekspos sebagai named MCP tool, sementara pemanggil — Bob saat pengembangan, backend web app di produksi — hanya berbicara lewat kontrak tool. Kontrak tool membuat agent bisa dikembangkan, diuji, dan diganti secara independen — bukan monolit satu prompt raksasa. Rantai integrasinya sudah **terverifikasi end-to-end** (Bob memanggil `goal_decomposer` → Langflow mengembalikan JSON roadmap).
 
 **3. Goal-first, Bahasa Indonesia, dan *scaffold bukan oracle*.**
 Produk dirancang untuk career switcher Indonesia: semua respons diarahkan ke target role nyata pengguna dan berbahasa Indonesia. Bedanya dari chatbot AI generik: AI sengaja tidak menjawab langsung — ia memakai graduated hinting dan probing questions agar pemikiran pengguna tetap bekerja (menghindari cognitive offloading yang diverifikasi berisiko pada pembelajaran).
@@ -307,11 +316,11 @@ Produk dirancang untuk career switcher Indonesia: semua respons diarahkan ke tar
 
 **Kemampuan agent yang sudah berjalan:**
 
-- **Goal Decomposer (Goal Agent) ✅** — dekomposisi otonom atas pernyataan goal bebas menjadi roadmap mingguan terstruktur (JSON dengan `deadline_weeks`, `milestones`, `first_action`), dengan prompt schema-ketat dan temperature rendah agar konsisten. Terverifikasi end-to-end dari percakapan pengguna di Bob.
+- **Goal Decomposer (Goal Agent) ✅** — dekomposisi otonom atas pernyataan goal bebas menjadi roadmap mingguan terstruktur (JSON dengan `deadline_weeks`, `milestones`, `first_action`), dengan prompt schema-ketat dan temperature rendah agar konsisten. Terverifikasi end-to-end lewat MCP dari harness pengembangan (Bob) ke Langflow.
 
 **Kemampuan orkestrasi (semi-otomatis):**
 
-- **Bob sebagai router agent otonom** — dari satu kalimat pengguna, Bob menentukan agent mana yang relevan, menyusun parameter, memanggil MCP tool, lalu menggabungkan beberapa hasil menjadi satu jawaban lintas-langkah (mis. roadmap → penjelasan konsep milestone 1 → kuis → jadwal review).
+- **Pola orkestrasi multi-agent (dev → produksi)** — dari satu kalimat pengguna, orkestrator menentukan agent relevan, menyusun parameter, memanggil MCP tool, lalu menggabungkan beberapa hasil menjadi satu jawaban lintas-langkah (mis. roadmap → penjelasan konsep milestone 1 → kuis → jadwal review). Pola ini diverifikasi end-to-end di Bob dan menjadi spesifikasi orkestrator di backend web app.
 - **Loop belajar berkelanjutan** — setelah roadmap jadi, agen-agen saling meneruskan konteks: Tutor menjelaskan konsep milestone ini → Assessment menguji → Progress menjadwalkan review → Motivator/Wellbeing menjaga keterlibatan.
 
 **Kemampuan agent dalam pengembangan:**
@@ -328,9 +337,10 @@ Produk dirancang untuk career switcher Indonesia: semua respons diarahkan ke tar
 ## Checklist Sebelum Submit
 
 - [ ] **Tema**: pilih *Education & Future of Work*.
-- [ ] **Deskripsi Singkat**: tempel versi 297 kata (atau 1-paragraf 195 kata).
+- [ ] **Deskripsi Singkat**: tempel versi 231 kata (atau versi ringkas 191 kata) — keduanya dalam rentang 150–300 kata.
 - [ ] **Project File/Link**: pastikan repo `https://github.com/mmuchsin/serambi-ai` public dan dapat diakses tanpa login.
 - [ ] **Pitching Deck**: susun 11 slide (lihat §13), export PPTX + PDF ke `slides/`, lalu upload.
-- [ ] **Screenshot**: upload 4 gambar bernama `01`–`04` dari [`submission/screenshots/`](submission/screenshots/); tambahkan tangkapan tool-call Bob bila memungkinkan.
+- [ ] **Screenshot**: upload 4 gambar bernama `01`–`04` dari [`submission/screenshots/`](submission/screenshots/); tambahkan tangkapan tool-call agent bila memungkinkan.
 - [ ] **Jujur soal status**: Goal Agent **live**, 5 agent lain **dalam pengembangan** — konsisten di semua field.
+- [ ] **Jujur soal antarmuka**: web app = UI pengguna akhir (dalam pengembangan); Bob TUI = harness pengembangan. Jangan tampilkan screenshot Bob sebagai UI pengguna akhir.
 - [ ] Setelah form terkirim: update `docs/ISSUES.md` (ISS-07 → `[x]`), commit `docs(submission): ...`, lanjut ISS-08 bila deck belum siap.

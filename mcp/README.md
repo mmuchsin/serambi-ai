@@ -25,7 +25,7 @@ File: [`.bob/mcp.json`](../.bob/mcp.json)
 ```json
 {
   "mcpServers": {
-    "lf-lsa_ibm_hackathon": {
+    "lf-serambi_ai": {
       "command": "uvx",
       "args": [
         "--with", "mcp<2.0.0",
@@ -50,12 +50,12 @@ File: [`.bob/mcp.json`](../.bob/mcp.json)
 
 | MCP Tool ID | Langflow Endpoint Name | Status |
 |-------------|----------------------|--------|
-| `mcp__lf-lsa_ibm_hackathon__goal_decomposer` | `goal_decomposer` | ✅ Live |
-| `mcp__lf-lsa_ibm_hackathon__explain_concept` | `explain_concept` | 🔜 Planned |
-| `mcp__lf-lsa_ibm_hackathon__generate_quiz` | `generate_quiz` | 🔜 Planned |
-| `mcp__lf-lsa_ibm_hackathon__check_progress` | `check_progress` | 🔜 Planned |
-| `mcp__lf-lsa_ibm_hackathon__send_reminder` | `send_reminder` | 🔜 Planned |
-| `mcp__lf-lsa_ibm_hackathon__check_wellbeing` | `check_wellbeing` | 🔜 Planned |
+| `mcp__lf-serambi_ai__goal_decomposer` | `goal_decomposer` | ✅ Live |
+| `mcp__lf-serambi_ai__explain_concept` | `explain_concept` | 🔜 Planned |
+| `mcp__lf-serambi_ai__generate_quiz` | `generate_quiz` | 🔜 Planned |
+| `mcp__lf-serambi_ai__check_progress` | `check_progress` | 🔜 Planned |
+| `mcp__lf-serambi_ai__send_reminder` | `send_reminder` | 🔜 Planned |
+| `mcp__lf-serambi_ai__check_wellbeing` | `check_wellbeing` | 🔜 Planned |
 
 ---
 
@@ -63,7 +63,7 @@ File: [`.bob/mcp.json`](../.bob/mcp.json)
 
 1. Build and verify the flow in Langflow Playground
 2. Open flow settings → set **Endpoint Name** (e.g. `explain_concept`) → Save
-3. The tool is immediately available as `mcp__lf-lsa_ibm_hackathon__explain_concept` in Bob
+3. The tool is immediately available as `mcp__lf-serambi_ai__explain_concept` in Bob
 4. No changes needed to `.bob/mcp.json` — project-level endpoint auto-discovers all flows
 
 ---

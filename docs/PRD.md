@@ -22,22 +22,28 @@ Career switchers / upskillers Indonesia (contoh: "jadi data analyst dalam 3 bula
 ## Architecture
 
 ```
-User (Bob TUI)
-    │  natural language
-    ▼
-Bob (AI agent harness)  ←── reasoning + tool-calling
-    │  MCP calls (by tool name)
-    ▼
-Langflow (via SSE MCP)  ←── flow execution engine
-    │
-    ▼
-NaraRouter / longcat-2.5  ←── LLM provider
+┌── Development (now) ───────────────────────┐  ┌── Production (target) ──────────────────┐
+Bob TUI (AI agent harness) ── dev UI          │  End user via Web App (apps/web)         │
+    │  natural language (developer)            │      │  natural language                       │
+    ▼                                          │      ▼                                       ▼
+Bob ── reasoning + tool-calling ──┐            │  Web App Backend ── orchestration ──┐
+    │  MCP calls (by tool name)    │ same MCP   │      │  MCP calls (same named tools)   │ same
+    ▼                              ▼ contract  ▼      ▼                               ▼ tools
+Langflow (via SSE MCP)  ◀────────── (MCP) ──── Langflow (via SSE MCP)
+    │                                (named            │
+    ▼                                tools)            ▼
+NaraRouter / longcat-2.5  ←── LLM provider   NaraRouter / longcat-2.5
 ```
+
+Bob TUI bukan antarmuka pengguna akhir — ia harness pengembangan untuk
+membangun, menguji, dan memverifikasi agent. Web app (apps/) adalah UI
+pengguna akhir dan memakai kontrak MCP tool yang identik.
 
 | Layer    | Role                                                      |
 |----------|-----------------------------------------------------------|
-| Bob      | AI agent harness — reasoning, tool-calling, user interaction |
-| MCP      | Bridge: Bob calls Langflow flows sebagai named tools      |
+| Web App  | UI pengguna akhir (apps/web) — produksi, memanggil MCP tool |
+| Bob      | AI agent harness — DEVELOPMENT: build, test, verifikasi agent |
+| MCP      | Bridge: pemanggil apa pun (Bob atau backend web) memanggil Langflow flows sebagai named tools |
 | Langflow | Flow execution engine — setiap flow = 1 MCP tool          |
 
 **Key rule:** MCP tool names harus spesifik & deskriptif (e.g., `decompose_learning_goal`, bukan "Flow 1").
@@ -46,14 +52,14 @@ NaraRouter / longcat-2.5  ←── LLM provider
 
 ## Agents (Langflow flows = MCP tools)
 
-| # | Agent | Endpoint Name (Langflow) | MCP Tool ID (Bob) | Status |
+| # | Agent | Endpoint Name (Langflow) | MCP Tool ID (caller) | Status |
 |---|-------|--------------------------|-------------------|--------|
-| 1 | Goal Agent | `goal_decomposer` | `mcp__lf-lsa_ibm_hackathon__goal_decomposer` | ✅ e2e verified |
-| 2 | Tutor Agent | `explain_concept` | `mcp__lf-lsa_ibm_hackathon__explain_concept` | ⬜ Not started |
-| 3 | Assessment Agent | `generate_quiz` | `mcp__lf-lsa_ibm_hackathon__generate_quiz` | ⬜ Not started |
-| 4 | Progress Agent | `check_progress` | `mcp__lf-lsa_ibm_hackathon__check_progress` | ⬜ Not started |
-| 5 | Motivator Agent | `send_reminder` | `mcp__lf-lsa_ibm_hackathon__send_reminder` | ⬜ Not started |
-| 6 | Wellbeing Agent | `check_wellbeing` | `mcp__lf-lsa_ibm_hackathon__check_wellbeing` | ⬜ Not started |
+| 1 | Goal Agent | `goal_decomposer` | `mcp__lf-serambi_ai__goal_decomposer` | ✅ e2e verified |
+| 2 | Tutor Agent | `explain_concept` | `mcp__lf-serambi_ai__explain_concept` | ⬜ Not started |
+| 3 | Assessment Agent | `generate_quiz` | `mcp__lf-serambi_ai__generate_quiz` | ⬜ Not started |
+| 4 | Progress Agent | `check_progress` | `mcp__lf-serambi_ai__check_progress` | ⬜ Not started |
+| 5 | Motivator Agent | `send_reminder` | `mcp__lf-serambi_ai__send_reminder` | ⬜ Not started |
+| 6 | Wellbeing Agent | `check_wellbeing` | `mcp__lf-serambi_ai__check_wellbeing` | ⬜ Not started |
 
 > **MVP scope:** Agent 1 (Goal Agent) is tracer bullet — **e2e proven**. Agents 2-6 are stretch goals.
 
@@ -174,7 +180,8 @@ Setiap agent Serambi.ai didukung oleh landasan riset:
 | OS | Linux WSL2 |
 | Node | v24.21.0 |
 | Langflow | v1.12.2 via Docker, http://localhost:7860 |
-| Bob | IBM Bob TUI v2.0.5 |
+| Bob | IBM Bob TUI v2.0.5 (development harness, bukan UI pengguna akhir) |
+| Web App | `apps/web/` — target UI pengguna akhir (dalam pengembangan) |
 | LLM (Bob) | Claude 3.7 Sonnet via IBM Bob |
 | LLM (Langflow) | longcat-2.5 via NaraRouter (https://router.bynara.id/v1) |
 | API Key | `LANGFLOW_API_KEY` di `~/.bashrc` — source sebelum start Bob |

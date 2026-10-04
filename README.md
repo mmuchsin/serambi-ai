@@ -23,22 +23,30 @@ Serambi.ai is an adaptive AI tutoring system for Indonesian career switchers. Te
 ## Architecture
 
 ```
-User (natural language)
-    │
-    ▼
-Bob (IBM AI agent harness) ── reasoning + tool-calling
-    │  MCP calls (by tool name)
-    ▼
+┌── Development (now) ────────┐   ┌── Production (target) ──────┐
+Bob TUI = agent harness       │   User                      │
+    │ natural language         │   │ natural language           │
+    ▼                          │   ▼                           ▼
+Bob — reasoning + tool-calling ┐   Web App Backend — orkestrasi
+    │  MCP calls (by tool name)│       │  MCP calls (same named tools)
+    └──────────────┬───────────┘       │
+                   └──── same MCP contract ─┘
+                   ▼
 Langflow (SSE MCP endpoint) ── flow execution engine
-    │
-    ▼
+                   │
+                   ▼
 longcat-2.5 via NaraRouter ── LLM provider
 ```
 
+Bob TUI is a **development harness** (build/test/verify agents), not the
+end-user UI. The web app (`apps/`) is the production user interface and
+calls the same MCP tools — no Langflow changes needed.
+
 | Layer | Role |
 |-------|------|
-| **Bob** | AI agent harness — conversation, reasoning, MCP tool dispatch |
-| **MCP** | Bridge — Bob invokes Langflow flows as named tools |
+| **Web App** | End-user UI (`apps/web`, in progress) — calls the same MCP tools |
+| **Bob** | AI agent harness — **development**: reasoning, tool-calling, agent verification |
+| **MCP** | Bridge — any caller (Bob or web backend) invokes Langflow flows as named tools |
 | **Langflow** | Flow execution engine — each flow = one specialized agent |
 
 ---
@@ -87,9 +95,9 @@ Open http://localhost:7860, import `flows/goal_decomposer.json`, and set its **E
 source ~/.bashrc   # or: export LANGFLOW_API_KEY=<your-key>
 ```
 
-### 4. Open Bob in this workspace
+### 4. Open Bob in this workspace  *(development verification)*
 
-Bob auto-loads `.bob/mcp.json` — the `lf-lsa_ibm_hackathon` MCP server connects to Langflow. No extra setup needed.
+Bob auto-loads `.bob/mcp.json` — the `lf-serambi_ai` MCP server connects to Langflow. No extra setup needed. This is the *development harness*: every agent is verified as a named MCP tool here before the web app consumes it.
 
 ### 5. Try it
 
@@ -112,7 +120,7 @@ serambi-ai/                monorepo root
 │   └── skills/             43 PM skills (pm-skills + custom pitch-deck)
 ├── flows/                  Langflow flow exports
 ├── agents/                 Agent configs / system prompts
-├── apps/web/               Future: web frontend
+├── apps/web/               Future: web frontend (target UI pengguna akhir)
 ├── packages/               Future: shared libraries
 ├── mcp/README.md           MCP integration details
 ├── docs/

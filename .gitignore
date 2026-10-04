@@ -1,4 +1,6 @@
 .env
 .bob/turn-counter.json
 .pi/
+.agents/
+skills-lock.json
 .handoff*

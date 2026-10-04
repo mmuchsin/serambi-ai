@@ -41,7 +41,7 @@ bb5670a chore(repo): initial commit — project scaffold and goal_decomposer flo
 - Endpoint Name `goal_decomposer` berhasil di-set di Langflow UI
 - Verified via API: `curl /api/v1/flows/` → `endpoint=goal_decomposer`
 - MCP endpoint `http://localhost:7860/api/v1/mcp/project/.../streamable` merespons HTTP 406 (benar — perlu SSE header)
-- Tool `mcp__lf-lsa_ibm_hackathon__goal_decomposer` muncul dan dapat dipanggil dari Bob
+- Tool `mcp__lf-serambi_ai__goal_decomposer` muncul dan dapat dipanggil dari Bob
 
 ---
 
@@ -50,7 +50,7 @@ bb5670a chore(repo): initial commit — project scaffold and goal_decomposer flo
 **Scope:** 1 session
 
 **What was done:**
-- Bob memanggil tool `mcp__lf-lsa_ibm_hackathon__goal_decomposer` secara langsung
+- Bob memanggil tool `mcp__lf-serambi_ai__goal_decomposer` secara langsung
 - Langflow merespons dengan structured JSON roadmap 12 minggu (data analytics)
 - e2e terbukti bekerja: Bob → MCP (mcp-proxy SSE) → Langflow → JSON response
 
@@ -101,8 +101,8 @@ bb5670a chore(repo): initial commit — project scaffold and goal_decomposer flo
 **What was done:**
 - Seluruh field form dijawab (17 field teks) dan disimpan ke [`submission-draft.md`](submission-draft.md) — Bahasa Indonesia, siap copy-paste
 - Deskripsi Singkat: 2 versi (231 kata / 191 kata) — keduanya di dalam rentang 150–300 kata
-- Semua klaim teknis diverifikasi ke repo: flow `goal_decomposer` (Chat Input → Prompt → LLM → Chat Output), MCP server `lf-lsa_ibm_hackathon`, tool `goal_decomposer`, angka riset (GenMentor FWCI 47.3, Feynman 80%+, Zaidi +15–20%, BJET cited 694)
-- Screenshot disalin ke `docs/submission/screenshots/` dengan nama sesuai form: `01-user-interface.png`, `02-langflow-workflow.png`, `03-langflow-endpoint.png`, `04-output.png`
+- Semua klaim teknis diverifikasi ke repo: flow `goal_decomposer` (Chat Input → Prompt → LLM → Chat Output), MCP server `lf-serambi_ai`, tool `goal_decomposer`, angka riset (GenMentor FWCI 47.3, Feynman 80%+, Zaidi +15–20%, BJET cited 694)
+- Screenshot disalin ke `assets/screenshots/` dengan nama sesuai form: `01-user-interface.png`, `02-langflow-workflow.png`, `03-langflow-endpoint.png`, `04-output.png`
 - Checklist sebelum submit ditambahkan di akhir draft
 
 **Remaining user actions (bukan issue):** paste jawaban ke form, pastikan repo public, selesaikan pitch deck (ISS-08), upload deck + screenshot
@@ -138,7 +138,7 @@ docs: add hackathon submission form draft (ISS-07)
 | 2026-10-03 | Monorepo structure diadopsi: `apps/`, `packages/`. ISS-06 complete — semua dir punya README. |
 | 2026-10-03 | 43 PM skills dari phuryn/pm-skills diinstall ke `.bob/skills/` (format SKILL.md per dir). |
 | 2026-10-03 | Custom `pitch-deck` skill dibuat karena tidak ada di pm-skills. |
-| 2026-10-03 | ISS-07 complete — `docs/submission-draft.md` berisi jawaban lengkap 17 field form + `docs/submission/screenshots/` (file 01–04 siap upload). Next: ISS-08 pitch deck. |
+| 2026-10-03 | ISS-07 complete — `docs/submission-draft.md` berisi jawaban lengkap 17 field form + `assets/screenshots/` (file 01–04 siap upload). Next: ISS-08 pitch deck. |
 
 ---
 

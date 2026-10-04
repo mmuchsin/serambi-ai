@@ -23,22 +23,30 @@ Serambi.ai adalah sistem tutoring AI adaptif untuk career switcher Indonesia. Ce
 ## Arsitektur
 
 ```
-Pengguna (bahasa natural)
-    │
-    ▼
-Bob (IBM AI agent harness) ── reasoning + tool-calling
-    │  panggilan MCP (by tool name)
-    ▼
+┌── Development (now) ────────┐   ┌── Production (target) ──────┐
+Bob TUI = agent harness       │   Pengguna                  │
+    │ bahasa natural           │   │ bahasa natural             │
+    ▼                          │   ▼                           ▼
+Bob — reasoning + tool-calling ┐   Web App Backend — orkestrasi
+    │  panggilan MCP (by tool name)│   │  panggilan MCP (named tools yang sama)
+    └──────────────┬───────────┘       │
+                   └──── kontrak MCP yang sama ─┘
+                   ▼
 Langflow (SSE MCP endpoint) ── mesin eksekusi flow
-    │
-    ▼
+                   │
+                   ▼
 longcat-2.5 via NaraRouter ── LLM provider
 ```
 
+Bob TUI adalah **harness pengembangan** (build/test/verifikasi agent), bukan
+antarmuka pengguna akhir. Web app (`apps/`) adalah UI pengguna akhir dan
+memanggil MCP tool yang sama — tanpa mengubah Langflow.
+
 | Layer | Peran |
 |-------|-------|
-| **Bob** | AI agent harness — percakapan, reasoning, dispatch tool MCP |
-| **MCP** | Jembatan — Bob memanggil Langflow flows sebagai named tools |
+| **Web App** | UI pengguna akhir (`apps/web`, dalam pengembangan) — memanggil MCP tool yang sama |
+| **Bob** | AI agent harness — **pengembangan**: reasoning, tool-calling, verifikasi agent |
+| **MCP** | Jembatan — pemanggil apa pun (Bob atau backend web) memanggil Langflow flows sebagai named tools |
 | **Langflow** | Mesin eksekusi flow — setiap flow = satu agent spesialis |
 
 ---
@@ -87,9 +95,9 @@ Buka http://localhost:7860, import `flows/goal_decomposer.json`, lalu set **Endp
 source ~/.bashrc   # atau: export LANGFLOW_API_KEY=<api-key-kamu>
 ```
 
-### 4. Buka Bob di workspace ini
+### 4. Buka Bob di workspace ini  *(verifikasi pengembangan)*
 
-Bob otomatis membaca `.bob/mcp.json` — server MCP `lf-lsa_ibm_hackathon` langsung terhubung ke Langflow. Tidak perlu setup tambahan.
+Bob otomatis membaca `.bob/mcp.json` — server MCP `lf-serambi_ai` langsung terhubung ke Langflow. Tidak perlu setup tambahan. Ini *harness pengembangan*: setiap agent diverifikasi sebagai named MCP tool di sini sebelum dikonsumsi web app.
 
 ### 5. Coba sekarang
 
@@ -112,7 +120,7 @@ serambi-ai/                monorepo root
 │   └── skills/             43 PM skills (pm-skills + custom pitch-deck)
 ├── flows/                  Export flow Langflow
 ├── agents/                 Konfigurasi agent / system prompt
-├── apps/web/               Future: frontend web
+├── apps/web/               Future: frontend web (target UI pengguna akhir)
 ├── packages/               Future: shared library
 ├── mcp/README.md           Detail integrasi MCP
 ├── docs/
