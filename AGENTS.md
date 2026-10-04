@@ -5,7 +5,7 @@ AI agent harness guide for this workspace. Read this before starting any session
 ## What is Serambi.ai
 
 An adaptive multi-agent learning assistant for Indonesian career switchers.
-Bob (AI agent harness) orchestrates Langflow flows via MCP as named tools.
+Bob (AI agent harness) is the **development harness** — it orchestrates Langflow flows via MCP as named tools, builds and verifies agents end-to-end. Production users interact through the **web app** (`apps/`), which calls the same MCP tools.
 
 ## Monorepo Layout
 

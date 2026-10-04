@@ -18,9 +18,10 @@ Screenshots demonstrating the working system. Used in:
 
 | File | Shows |
 |------|-------|
-| `Screenshot 2026-10-03 113405.png` | Langflow Playground — goal_decomposer output |
-| `Screenshot 2026-10-03 124609.png` | Bob calling MCP tool |
-| `Screenshot 2026-10-03 124806.png` | Structured JSON roadmap response |
+| `01-user-interface.png` | Web app user interface |
+| `02-langflow-workflow.png` | Langflow workflow (goal_decomposer) |
+| `03-langflow-endpoint.png` | Langflow MCP endpoint |
+| `04-output.png` | Structured JSON roadmap response |
 
 ## diagrams/
 
