@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Serambi.ai — Competitive Positioning</title>
+<style>
+  :root{
+    --paper:#f5f5f0; --paper-2:#ececec; --ink:#2d3142; --ink-strong:#111111;
+    --muted:#4f5d75; --soft:#5a6580; --accent:#bf4520; --accent-tint:rgba(191,69,32,.08);
+    --rule:rgba(45,49,66,.12); --link:#2e5aa8;
+  }
+  html,body{margin:0;padding:0;background:#fff}
+  body{font-family:Geist,system-ui,sans-serif;color:var(--ink)}
+  .wrap{max-width:1280px;margin:0 auto;padding:24px 0 8px}
+  .eyebrow{font-family:"Geist Mono",monospace;font-size:8px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  h1{font-family:"Instrument Serif",Georgia,serif;font-size:26px;font-weight:400;color:var(--ink-strong);margin:6px 0 2px}
+  .sub{font-family:"Geist Mono",monospace;font-size:10px;color:var(--soft)}
+  .frame{margin-top:18px;border:1px solid var(--rule);border-radius:10px;background:var(--paper);overflow:hidden}
+  .scroll{overflow-x:auto}
+  svg{display:block;min-width:1280px;width:100%;height:auto}
+  text{font-family:Geist,system-ui,sans-serif}
+  .mono{font-family:"Geist Mono",monospace}
+  .node-t{font-family:Geist,system-ui,sans-serif;font-size:12px;font-weight:600;fill:var(--ink)}
+  .node-s{font-family:"Geist Mono",monospace;font-size:9px;fill:var(--muted)}
+  .ax{font-family:"Geist Mono",monospace;font-size:9px;fill:var(--ink);letter-spacing:.18em;text-transform:uppercase}
+  .tag{font-family:"Geist Mono",monospace;font-size:8px;fill:var(--muted);letter-spacing:.18em;text-transform:uppercase}
+  .focal-tag{font-family:"Geist Mono",monospace;font-size:8px;fill:var(--accent);letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+  .cell-t{font-family:Geist,system-ui,sans-serif;font-size:16px;font-weight:600;fill:var(--ink)}
+  .cell-s{font-family:Geist,system-ui,sans-serif;font-size:11px;fill:var(--muted)}
+  .cell-body{font-family:Geist,system-ui,sans-serif;font-size:11px;fill:var(--muted)}
+  .dot{fill:var(--ink)}
+  .focal .dot{fill:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Competitive positioning</div>
+  <h1>Serambi.ai — who starts from your career goal</h1>
+  <div class="sub">9 direct competitors · Bahasa Indonesia × adaptivity · v4 2026-10-11</div>
+  <div class="frame"><div class="scroll">
+  <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pos-title pos-desc">
+    <title id="pos-title">Competitive positioning map for Serambi.ai</title>
+    <desc id="pos-desc">Two axes, adaptive learning and Bahasa Indonesia focus. Serambi.ai sits in the top left, the only player that starts from a career goal. Astra AI and Khanmigo are adaptive but not career-goal anchored for Indonesia.</desc>
+    <defs>
+      <marker id="pos-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#2d3142"/>
+      </marker>
+    </defs>
+
+    <!-- axes: double-ended, 1.2px ink -->
+    <path d="M400,340 L880,340" stroke="#2d3142" stroke-width="1.2" marker-start="url(#pos-arrow)" marker-end="url(#pos-arrow)"/>
+    <path d="M640,100 L640,580" stroke="#2d3142" stroke-width="1.2" marker-start="url(#pos-arrow)" marker-end="url(#pos-arrow)"/>
+
+    <!-- axis labels: one word per tip, 12px beyond -->
+    <text class="ax" x="404" y="332" text-anchor="start">ADAPTIVE</text>
+    <text class="ax" x="876" y="332" text-anchor="end">FIXED</text>
+    <text class="ax" x="628" y="112" text-anchor="end">BAHASA INDONESIA</text>
+    <text class="ax" x="652" y="572" text-anchor="start">ENGLISH</text>
+
+    <!-- top-left: FOCAL -->
+    <rect x="130" y="150" width="440" height="180" rx="6" fill="rgba(191,69,32,.04)"/>
+    <rect x="130" y="150" width="440" height="180" rx="6" fill="rgba(191,69,32,.08)" stroke="#bf4520" stroke-width="1.2"/>
+    <text class="focal-tag" x="146" y="174">01 · CAREER / INDONESIA</text>
+    <text class="cell-t" x="146" y="204">Serambi.ai</text>
+    <circle class="focal dot" cx="158" cy="228" r="4"/>
+    <text class="cell-body" x="172" y="232">Career goal → weekly roadmap, in Bahasa Indonesia</text>
+    <text class="cell-body" x="146" y="256">Scaffold-not-oracle: the agent refuses to answer directly</text>
+    <text class="cell-body" x="146" y="276">1 agent live e2e, 5 in development</text>
+
+    <!-- top-right: adaptive, English -->
+    <rect x="810" y="150" width="440" height="180" rx="6" fill="rgba(45,49,66,.04)" stroke="rgba(79,93,117,.28)" stroke-width="1"/>
+    <text class="tag" x="826" y="174">02 · ADAPTIVE / ENGLISH</text>
+    <text class="cell-t" x="826" y="204">Khanmigo</text>
+    <circle class="dot" cx="838" cy="228" r="4"/>
+    <text class="cell-body" x="852" y="232">Adaptive, Socratic, K-12 — English only</text>
+    <text class="cell-t" x="826" y="258">Astra AI</text>
+    <circle class="dot" cx="838" cy="282" r="4"/>
+    <text class="cell-body" x="852" y="286">15.2M users, adaptive, Bahasa Indonesia, exam-anchored</text>
+
+    <!-- bottom-left: Bahasa Indonesia, fixed -->
+    <rect x="130" y="400" width="440" height="180" rx="6" fill="rgba(45,49,66,.04)" stroke="rgba(79,93,117,.28)" stroke-width="1"/>
+    <text class="tag" x="146" y="424">03 · FIXED / INDONESIA</text>
+    <text class="cell-t" x="146" y="454">Dicoding · Ruangguru</text>
+    <text class="cell-body" x="146" y="480">Bahasa Indonesia, catalogue-first</text>
+    <text class="cell-t" x="146" y="512">Zenius · Cakap</text>
+    <text class="cell-body" x="146" y="538">Fixed curriculum, no goal decomposition</text>
+
+    <!-- bottom-right: fixed, English -->
+    <rect x="810" y="400" width="440" height="180" rx="6" fill="rgba(45,49,66,.04)" stroke="rgba(79,93,117,.28)" stroke-width="1"/>
+    <text class="tag" x="826" y="424">04 · FIXED / ENGLISH</text>
+    <text class="cell-t" x="826" y="454">Boot.dev</text>
+    <text class="cell-body" x="826" y="480">Opinionated path, $29/mo, English</text>
+    <text class="cell-t" x="826" y="512">DataCamp</text>
+    <text class="cell-body" x="826" y="538">Skill tracks, $25/mo, English</text>
+    <text class="cell-t" x="1100" y="454">ChatGPT</text>
+    <text class="cell-body" x="1100" y="480">Universal, low adapt</text>
+
+  </svg>
+  </div></div>
+</div>
+</body>
+</html>

@@ -31,5 +31,7 @@ Architecture and flow diagrams for the pitch deck and documentation.
 |------|-------|
 | `serambi-architecture.svg` | Bob / MCP / Langflow / LLM provider stack — dev harness vs production, one MCP contract |
 | `html/serambi-architecture.html` | Source of the architecture diagram (self-contained HTML + inline SVG) |
+| `competitive-positioning.svg` | Competitive positioning quadrant — Adaptive↔Fixed against Bahasa Indonesia↔English. Serambi.ai (adaptive, Indonesian) against Khanmigo/Astra AI, Dicoding/Ruangguru/Zenius/Cakap, and Boot.dev/DataCamp/ChatGPT |
+| `html/competitive-positioning.html` | Source of the positioning quadrant (self-contained HTML + inline SVG) |
 
 **Diagrams are authored with the `diagram-design` skill** — self-contained HTML with inline SVG, exported to `.svg` for embedding. Source HTML lives in `assets/diagrams/html/`; the `.svg` sibling is the embeddable artifact.
