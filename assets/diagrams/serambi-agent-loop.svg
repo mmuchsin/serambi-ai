@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 900 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="serambi-agent-loop-title serambi-agent-loop-desc" id="serambi-agent-loop-root">
+        <title id="serambi-agent-loop-title">Serambi.ai six agent loop</title>
+        <desc id="serambi-agent-loop-desc">Six specialized agents advance clockwise around one ring while each writes back to a shared career goal record in the center. The Goal Agent is the one verified live today.</desc>
+        <defs>
+      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
+      #serambi-agent-loop-root { --color-paper: #f5f5f0;
+      --color-ink: #2d3142;
+      --color-muted: #4f5d75;
+      --color-soft: #5a6580;
+      --color-accent: #bf4520;
+      --color-link: #2e5aa8;
+      --font-sans: 'Geist', system-ui, sans-serif;
+      --font-serif: 'Instrument Serif', Georgia, serif;
+      --font-mono: 'Geist Mono', ui-monospace, monospace; }
+      #serambi-agent-loop-root { font-family: var(--font-sans); color: var(--color-ink); }
+      #serambi-agent-loop-root .diagram-container { width: 100%; overflow-x: auto; }
+      #serambi-agent-loop-root .diagram-container { overflow-x: visible; }</style>
+          <marker id="serambi-agent-loop-loop-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
+          <marker id="serambi-agent-loop-loop-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker>
+          <marker id="serambi-agent-loop-loop-arrow-soft" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5a6580"/></marker>
+        </defs>
+
+        <rect width="100%" height="100%" fill="#f5f5f0"/>
+
+        <!-- ===== RING (draw order: arrows before boxes) ===== -->
+        <path d="M 600.00 113.73 A 240 240 0 0 1 704.97 187.07" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#serambi-agent-loop-loop-arrow)"/>
+        <path d="M 743.28 252.00 A 240 240 0 0 1 743.72 426.88" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#serambi-agent-loop-loop-arrow)"/>
+        <path d="M 705.73 492.00 A 240 240 0 0 1 601.13 565.87" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#serambi-agent-loop-loop-arrow)"/>
+        <path d="M 440.00 566.27 A 240 240 0 0 1 335.03 492.93" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#serambi-agent-loop-loop-arrow)"/>
+        <path d="M 296.72 428.00 A 240 240 0 0 1 296.28 253.12" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#serambi-agent-loop-loop-arrow)"/>
+        <path d="M 334.27 188.00 A 240 240 0 0 1 438.87 114.13" fill="none" stroke="#bf4520" stroke-width="1.2" marker-end="url(#serambi-agent-loop-loop-arrow-accent)"/>
+
+        <!-- ===== WRITE-BACK SPOKES ===== -->
+        <path d="M 520.00 132.00 L 520.00 282.00" fill="none" stroke="#5a6580" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#serambi-agent-loop-loop-arrow-soft)"/>
+        <path d="M 672.42 252.00 L 615.26 285.00" fill="none" stroke="#5a6580" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#serambi-agent-loop-loop-arrow-soft)"/>
+        <path d="M 672.42 428.00 L 615.26 395.00" fill="none" stroke="#5a6580" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#serambi-agent-loop-loop-arrow-soft)"/>
+        <path d="M 520.00 548.00 L 520.00 398.00" fill="none" stroke="#5a6580" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#serambi-agent-loop-loop-arrow-soft)"/>
+        <path d="M 367.58 428.00 L 424.74 395.00" fill="none" stroke="#5a6580" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#serambi-agent-loop-loop-arrow-soft)"/>
+        <path d="M 367.58 252.00 L 424.74 285.00" fill="none" stroke="#5a6580" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#serambi-agent-loop-loop-arrow-soft)"/>
+
+        <!-- ===== SPOKE LABELS (subset, mask + gap) ===== -->
+        <rect x="528" y="200" width="58" height="12" rx="2" fill="#f5f5f0"/>
+        <text x="534" y="209" fill="#5a6580" font-size="8" font-family="var(--font-mono)" letter-spacing="0.06em">ROADMAP</text>
+
+        <rect x="632" y="316" width="52" height="12" rx="2" fill="#f5f5f0"/>
+        <text x="638" y="325" fill="#5a6580" font-size="8" font-family="var(--font-mono)" letter-spacing="0.06em">PROOF</text>
+
+        <rect x="440" y="452" width="46" height="12" rx="2" fill="#f5f5f0"/>
+        <text x="446" y="461" fill="#5a6580" font-size="8" font-family="var(--font-mono)" letter-spacing="0.06em">RISK</text>
+
+        <!-- ===== HUB ===== -->
+        <rect x="420" y="288" width="200" height="104" rx="6" fill="#2d3142"/>
+        <text x="520" y="328" fill="#f5f5f0" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">Career goal record</text>
+        <text x="520" y="346" fill="#f5f5f0" font-size="9" font-family="var(--font-mono)" text-anchor="middle" opacity="0.75">one record, every loop</text>
+        <text x="520" y="366" fill="#f5f5f0" font-size="9" font-family="var(--font-mono)" text-anchor="middle" opacity="0.75">milestones · evidence · streaks</text>
+
+        <!-- ===== STATIONS ===== -->
+        <!-- 0 Goal Agent (focal) -->
+        <rect x="440" y="68" width="160" height="64" rx="6" fill="#bf4520" fill-opacity="0.08" stroke="#bf4520" stroke-width="1.2"/>
+        <rect x="448" y="76" width="32" height="12" rx="2" fill="none" stroke="#bf4520" stroke-opacity="0.40" stroke-width="0.8"/>
+        <text x="464" y="85" fill="#bf4520" fill-opacity="0.85" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">LIVE</text>
+        <text x="520" y="108" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">Goal Agent</text>
+        <text x="520" y="124" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">goal_decomposer</text>
+
+        <!-- 1 Tutor Agent -->
+        <rect x="648" y="188" width="160" height="64" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <rect x="656" y="196" width="52" height="12" rx="2" fill="none" stroke="#2d3142" stroke-opacity="0.40" stroke-width="0.8"/>
+        <text x="682" y="205" fill="#2d3142" fill-opacity="0.80" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">PLANNED</text>
+        <text x="728" y="228" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">Tutor Agent</text>
+        <text x="728" y="244" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">explain_concept</text>
+
+        <!-- 2 Assessment Agent -->
+        <rect x="648" y="428" width="160" height="64" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <rect x="656" y="436" width="52" height="12" rx="2" fill="none" stroke="#2d3142" stroke-opacity="0.40" stroke-width="0.8"/>
+        <text x="682" y="445" fill="#2d3142" fill-opacity="0.80" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">PLANNED</text>
+        <text x="728" y="468" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">Assessment Agent</text>
+        <text x="728" y="484" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">generate_quiz</text>
+
+        <!-- 3 Progress Agent -->
+        <rect x="440" y="548" width="160" height="64" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <rect x="448" y="556" width="52" height="12" rx="2" fill="none" stroke="#2d3142" stroke-opacity="0.40" stroke-width="0.8"/>
+        <text x="474" y="565" fill="#2d3142" fill-opacity="0.80" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">PLANNED</text>
+        <text x="520" y="588" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">Progress Agent</text>
+        <text x="520" y="604" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">check_progress</text>
+
+        <!-- 4 Motivator Agent -->
+        <rect x="232" y="428" width="160" height="64" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <rect x="240" y="436" width="52" height="12" rx="2" fill="none" stroke="#2d3142" stroke-opacity="0.40" stroke-width="0.8"/>
+        <text x="266" y="445" fill="#2d3142" fill-opacity="0.80" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">PLANNED</text>
+        <text x="312" y="468" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">Motivator Agent</text>
+        <text x="312" y="484" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">send_reminder</text>
+
+        <!-- 5 Wellbeing Agent -->
+        <rect x="232" y="188" width="160" height="64" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <rect x="240" y="196" width="52" height="12" rx="2" fill="none" stroke="#2d3142" stroke-opacity="0.40" stroke-width="0.8"/>
+        <text x="266" y="205" fill="#2d3142" fill-opacity="0.80" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">PLANNED</text>
+        <text x="312" y="228" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">Wellbeing Agent</text>
+        <text x="312" y="244" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">check_wellbeing</text>
+
+        <!-- ===== LEGEND ===== -->
+        <line x1="40" y1="672" x2="860" y2="672" stroke="#2d3142" stroke-opacity="0.12" stroke-width="0.8"/>
+        <text x="40" y="692" fill="#4f5d75" font-size="8" font-family="var(--font-mono)" letter-spacing="0.14em">LEGEND</text>
+        <rect x="40" y="704" width="12" height="12" rx="2" fill="#bf4520" fill-opacity="0.08" stroke="#bf4520" stroke-width="1"/>
+        <text x="60" y="713" fill="#4f5d75" font-size="9" font-family="var(--font-mono)">focal · verified live</text>
+        <rect x="232" y="704" width="12" height="12" rx="2" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <text x="252" y="713" fill="#4f5d75" font-size="9" font-family="var(--font-mono)">agent · planned</text>
+        <rect x="392" y="704" width="12" height="12" rx="2" fill="#2d3142"/>
+        <text x="412" y="713" fill="#4f5d75" font-size="9" font-family="var(--font-mono)">shared state</text>
+        <line x1="536" y1="710" x2="568" y2="710" stroke="#4f5d75" stroke-width="1.2"/>
+        <polygon points="570,710 564,708 564,712" fill="#4f5d75"/>
+        <text x="578" y="713" fill="#4f5d75" font-size="9" font-family="var(--font-mono)">loop step</text>
+        <line x1="672" y1="710" x2="704" y2="710" stroke="#5a6580" stroke-width="1" stroke-dasharray="5,4"/>
+        <polygon points="706,710 700,708 700,712" fill="#5a6580"/>
+        <text x="714" y="713" fill="#4f5d75" font-size="9" font-family="var(--font-mono)">write-back</text>
+      </svg>

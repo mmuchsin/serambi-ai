@@ -61,31 +61,7 @@ Full competitive analysis with 11 competitors: [`docs/business/competitive-analy
 
 Six agents, each an independent Langflow flow exposed as a named MCP tool.
 
-```
-Learner states a goal
-      │
-      ▼
-┌──────────────────────┐
-│ 1. Goal Agent       │  goal to weekly roadmap + first action
-└──────────────────────┘
-      │
-      ▼
-┌──────────────────────┐     ┌──────────────────────┐     ┌──────────────────────┐
-│ 2. Tutor Agent      │────▶│ 3. Assessment Agent │────▶│ 4. Progress Agent    │
-│ Feynman-style       │     │ adaptive quiz +      │     │ spaced repetition    │
-│ probing questions   │     │ graduated hints      │     │ from forgetting curve│
-└──────────────────────┘     └──────────────────────┘     └──────────────────────┘
-                                                                    │
-                            ┌──────────────────────┐               │
-                            │ 5. Motivator Agent   │◀──────────────┘
-                            │ contextual nudge     │
-                            └──────────────────────┘
-                                                                    │
-                            ┌──────────────────────┐               │
-                            │ 6. Wellbeing Agent   │◀──────────────┘
-                            │ burnout detection    │
-                            └──────────────────────┘
-```
+![Diagram enam agent Serambi.ai](assets/diagrams/serambi-agent-loop.svg)
 
 The loop is the product. A learner who drops out at week 4 never reaches the milestone, so the Progress, Motivator, and Wellbeing agents carry as much weight as the Tutor.
 
@@ -96,7 +72,7 @@ One MCP contract, two harnesses. IBM Bob is the development harness where each a
 ![Serambi.ai system architecture](assets/diagrams/serambi-architecture.svg)
 
 | Component | Role |
-|---|---|
+| --- | --- |
 | IBM Bob | Development harness. Reasoning, tool-calling, agent verification. Not the end-user UI |
 | Web app (`apps/web`) | Production user interface, in development. Calls the same MCP tools |
 | MCP | Bridge over streamable HTTP. Any caller resolves Langflow flows to named tools |
@@ -106,7 +82,7 @@ One MCP contract, two harnesses. IBM Bob is the development harness where each a
 ## Agents
 
 | Agent | Tool Name | Status |
-|-------|-----------|--------|
+| --- | --- | --- |
 | Goal Agent | `goal_decomposer` | Live, e2e verified |
 | Tutor Agent | `explain_concept` | Planned |
 | Assessment Agent | `generate_quiz` | Planned |
