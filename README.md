@@ -122,13 +122,23 @@ Agent 1 is the tracer bullet and is proven end to end. Agents 2 through 6 are st
 
 ### Prerequisites
 
-| Requirement | Version |
-|---|---|
-| IBM Bob | v2.0+ |
-| Langflow | v1.12+ (Docker recommended) |
-| Node.js | v20+ |
-| Python | 3.11+ |
-| `uvx` | `pip install uv` |
+| Requirement | Version | Needed for |
+| --- | --- | --- |
+| IBM Bob | v2.0+ | running the agents through MCP |
+| Langflow | v1.12+ | flow engine (Docker recommended) |
+| Node.js | v20+ | Bob |
+| Python | 3.11+ | only the bootstrap/verify scripts |
+| `uvx` | `pip install uv` | Bob spawns `mcp-proxy` through it |
+| `jq` + `curl` | any | `scripts/*.sh` parse JSON and call the MCP endpoint |
+
+No Python dependencies need installing. The scripts in `scripts/` run on
+the standard library (`json`, `urllib`), so there is no `requirements.txt`
+and nothing to `pip install`.
+
+The repository also contains a `.venv/` directory from building the pitch
+deck (`python-pptx`, `cairosvg`, `pillow`). It is gitignored, it never
+enters the Docker image, and no runtime path reads it. Delete it freely if
+you do not build decks locally.
 
 ### 1. Clone and configure
 
