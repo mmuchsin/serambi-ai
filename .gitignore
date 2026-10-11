@@ -11,3 +11,4 @@ docs/ai-engineering-best-practices.md
 .firecrawl
 .bob/skills/
 .bob/tmp/
+*.log

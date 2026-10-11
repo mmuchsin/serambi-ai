@@ -13,14 +13,32 @@
 Serambi.ai is an adaptive AI tutoring system for Indonesian career switchers. Tell it your goal ("become a data analyst in 3 months") and it builds a personalized weekly roadmap, explains concepts Feynman-style, quizzes you with graduated hints, and tracks your progress using spaced repetition — all through a conversational interface powered by IBM Bob.
 
 **Research-backed design:**
-- 📚 Goal-to-skill mapping (GenMentor, FWCI 47.3)
-- 🧠 Feynman technique + Protégé Effect (80%+ prefer over passive re-reading)
-- 🔁 Adaptive spaced repetition (15-20% retention improvement vs fixed schedule)
-- 🚫 Anti-cognitive-offloading: AI guides, not answers (BJET, cited 694)
+- 📚 Goal-to-skill mapping (GenMentor, 2025 — DOI 10.1145/3701716.3715244)
+- 🧠 Feynman technique + Protégé Effect — learning gains vs passive learners (Feynman Bot, IEEE TALE 2024 — arXiv 2506.09055)
+- 🔁 Adaptive spaced repetition via forgetting-curve model (Zaidi et al., AIED 2020 — arXiv 2004.11327)
+- 🚫 Anti-cognitive-offloading: AI guides, not answers (Fan et al., BJET 2024 — cited 700+)
+
+**Verified live today:** `goal_decomposer` — set a career goal, get a weekly roadmap in Bahasa Indonesia. Flow verified end-to-end (`bash scripts/verify-flow.sh` → exit 0); live MCP round-trip verified when a Langflow server is running (`bash scripts/verify-e2e.sh`).
 
 ---
 
-## Architecture
+## Why This Is Different (competitive position)
+
+Indonesian AI tutors are strong at **school exams** and local platforms are strong at **fixed curriculum** — nobody starts from a **career goal**.
+
+| Landscape | Where they start | Bahasa Indonesia | Adaptive to a career goal |
+|-----------|------------------|:----------------:|:-------------------------:|
+| Dicoding (1,3M dev, 843K aktif) | Course catalog | ✅ | ❌ fixed paths |
+| Ruangguru / Zenius | Kurikulum sekolah | ✅ | ❌ |
+| Astra AI (15,2 juta pelajar, Rp 115rb/bln) | Catatan & ujian sekolah | ✅ | ❌ |
+| Boot.dev / DataCamp | Kurikulum tetap | ❌ | ❌ |
+| ChatGPT | Apa pun yang kamu tanya | ⚠️ | ❌ oracle — justru merusak retensi |
+| **Serambi.ai** | **Goal karier kamu** | ✅ | ✅ roadmap mingguan dari natural language |
+
+Two structural advantages: (1) **scaffold, not oracle** — the AI refuses to hand over answers (Boot.dev's Boots and Astra's Solver Mode both eventually cave; Astra offers both Socratic *and* Solver mode); (2) **modular agents via MCP** — each agent is an independent flow, so the adaptive layer can white-label inside existing platforms (bootcamp, kampus, Komdigi).
+
+Full analysis: [`docs/business/competitive-analysis.md`](docs/business/competitive-analysis.md) (11 competitors, battlecards, positioning map) · metrics: [`docs/business/north-star.md`](docs/business/north-star.md) · positioning: [`docs/business/value-proposition.md`](docs/business/value-proposition.md)
+
 
 ```
 ┌── Development (now) ────────┐   ┌── Production (target) ──────┐
@@ -117,7 +135,8 @@ Bob will call the `goal_decomposer` tool and return a structured 12-week roadmap
 serambi-ai/                monorepo root
 ├── .bob/
 │   ├── mcp.json            MCP server config
-│   └── skills/             43 PM skills (pm-skills + custom pitch-deck)
+│   ├── settings.json      Turn-counter hook (session discipline)
+│   └── skills/             83 agent skills (PM + engineering + diagram + custom pitch-deck)
 ├── flows/                  Langflow flow exports
 ├── agents/                 Agent configs / system prompts
 ├── apps/web/               Future: web frontend (target UI pengguna akhir)
@@ -126,12 +145,14 @@ serambi-ai/                monorepo root
 ├── docs/
 │   ├── PRD.md
 │   ├── ISSUES.md
+│   ├── business/           Competitive analysis, north-star, value proposition
 │   └── adr/                Architecture decision records (0001–0005)
 ├── research/               Riset: papers (multi-agent tutoring, feedback loop)
 │   ├── research-papers-and-abstracts.md
 │   └── feedback-loop-papers-additional.md
-├── slides/                 Pitch deck
-└── assets/screenshots/     Demo screenshots
+├── slides/                 Pitch deck (v2: 11 native DrawingML slides + speaker notes)
+├── projects/serambi-pitch-deck-v2_20261004/exports/   Pitch deck v2 build artifacts (PPTX 4.4MB + PDF 750KB)
+└── assets/screenshots/     Demo screenshots (01 UI · 02 Langflow workflow · 03 Langflow endpoint · 04 output)
 ```
 
 ---
@@ -156,7 +177,7 @@ This project uses **Bob** (IBM AI Agent Harness) with structured skills that gui
 | `ai-coding-best-practices` | Deep modules, TDD/red-green-refactor, feedback loops, module awareness |
 
 ### Product Management Skills
-> Source: [phuryn/pm-skills](https://github.com/phuryn/pm-skills) — 43 PM skills
+> Source: [phuryn/pm-skills](https://github.com/phuryn/pm-skills) (subset) + project skills — **83 skills total** tersedia di `.bob/skills/`
 
 | Skill | Purpose |
 |-------|---------|

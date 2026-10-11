@@ -74,7 +74,7 @@ $configure-mcp        # MCP troubleshooting
 $conventional-commits # before any commit
 ```
 
-**Project PM skills** (43 skills in `.bob/skills/`):
+**Project PM skills** (83 skills in `.bob/skills/`):
 ```
 $value-proposition    # submission form: why this solution
 $competitive-analysis # differentiation vs competitors
@@ -85,4 +85,4 @@ $business-model       # lean canvas / monetization
 $plan-launch          # GTM / beachhead segment
 $strategy             # product strategy canvas
 ```
-Full list: `.bob/skills/` — source: github.com/phuryn/pm-skills
+Full list: `.bob/skills/` — sumber: github.com/phuryn/pm-skills + mattpocock engineering skills + custom project skills

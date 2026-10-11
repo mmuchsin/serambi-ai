@@ -12,7 +12,7 @@ masing-masing issue §What was done.
 | Brand: **Serambi.ai** | Nama unik, tidak bentrok dengan contoh materi hackathon | "EduFlow" (nama proyek contoh Team Aurora) |
 | `docs/PRD.md` + `docs/ISSUES.md` sebagai sistem planning | Session continuity untuk agent: PRD = destination, ISSUES = journey (pola "AI Coding for Real Engineers" §035) | Planning hanya di memori session |
 | Monorepo: `apps/`, `packages/`, `flows/`, `agents/`, `mcp/`, `docs/` | Semua sub-proyek satu repo; README per direktori; AGENTS.md root + link (progressive disclosure) | Multi-repo (overkill untuk 1 dev + 6 agent) |
-| 43 PM skills dari phuryn/pm-skills di `.bob/skills/` | Skill = progressive disclosure untuk tugas PM (pitch deck, competitive analysis, dll) | Menulis prompt PM dari nol tiap session |
+| 83 agent skills di `.bob/skills/` (PM dari phuryn/pm-skills + engineering + diagram + custom) | Skill = progressive disclosure untuk tugas PM (pitch deck, competitive analysis, dll) | Menulis prompt PM dari nol tiap session |
 | Skill custom `pitch-deck` | Tidak ada di pm-skills; struktur 11-slide sudah di-require di PRD | — |
 | Config MCP project-scope (`.bob/mcp.json`), config global Bob dikosongkan | Isolation: repo self-contained; tidak memengaruhi proyek lain di mesin yang sama | Config global (berisiko konflik antar proyek) |
 | Turn counter hook (`.bob/hooks/turn-counter.mjs`) | Feedback loop untuk limit 100 turn/session (pola context visibility §021) | Hitung manual |

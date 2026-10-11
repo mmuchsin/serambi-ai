@@ -1,10 +1,10 @@
 # Competitive Analysis — Serambi.ai
 
-**Tanggal:** 2026-10-04 (v3 — verified scraped data: Dicoding 1.3M+, Boot.dev Socratic AI)
+**Tanggal:** 2026-10-11 (v4 — ditambahkan Astra AI: kompetitor AI-tutor lokal berskala 15,2 juta pelajar, data harga & fitur terverifikasi dari App Store ID + landing page)
 **Framework:** Competitive Landscape Analysis + Battlecard framing
 **Skills applied:** `competitive-analysis`, `battlecard`, `value-proposition`
 **Lens:** Hackathon pitch + investor positioning
-**Competitors:** 8 direct + 2 indirect (10 total)
+**Competitors:** 9 direct + 2 indirect (11 total)
 
 ---
 
@@ -15,6 +15,8 @@ The global EdTech & upskilling market grows at 11–14% CAGR, but growth is conc
 OECD (2024) identifies a widening gap between tech skill demand and output from traditional educational institutions. Reskilling independently is increasingly the primary solution, but lacks adaptive support infrastructure — the exact gap Serambi.ai fills.
 
 **Key market signal:** Dicoding has **1,327,000+ registered developers** from **523 cities** across Indonesia, with 843,000+ active learners in Dicoding Academy — proof that Indonesian developers will use structured online learning at scale. The gap is that none of these platforms are *adaptive to the individual's career goal*.
+
+**Kill-shot market signal (Okt 2026):** **Astra AI** — AI tutor yang dibangun di Slovenia (Astra AI d.o.o.), sudah melayani **15.206.000+ pelajar** di 40+ negara dengan 37+ bahasa (termasuk bahasa Indonesia), rating **4,9/5 dari 442 rating** di App Store Indonesia dan peringkat **No. 8 Top Free Education** ID. Ini bukti dua hal sekaligus: (a) pasar Indonesia sudah *membayar* untuk AI tutor — Astra AI Plus **Rp 115.000/bulan**, Sigma **Rp 385.000/bulan**, credit pack Rp 299.000–1.999.000 (App Store ID, Okt 2026); (b) permintaan itu terpusat di **tujuan ujian sekolah (SMP/SMA/kuliah)**, bukan **tujuan karier**. Positioning Astra sendiri adalah "ganti guru les privat" dan "hadapi ujian 2x lebih cepat" — *career goal decomposition* sama sekali belum ada di sana.
 
 ---
 
@@ -32,31 +34,44 @@ OECD (2024) identifies a widening gap between tech skill demand and output from 
 | **LinkedIn Learning** | Corporate upskilling | Working professionals | Skills for work | Employer-linked, broad catalog | No goal decomposition, not adaptive, English-first |
 | **Duolingo** | Spaced rep app | Language learners | Gamified spaced repetition | Habit loop design, proven retention | Single domain (language), no career roadmap |
 | **Cakap** | Local online course | Indonesian professionals | Live classes + certification | Local focus, Bahasa Indonesia | Instructor-dependent, not AI-adaptive, fixed schedule |
+| **Astra AI** | AI tutor (mobile-first, global — Astra AI d.o.o., Slovenia) | Pelajar SMP/SMA/kuliah, 40+ negara | "Ganti guru les privat — hadapi ujian 2x lebih cepat" | **15.206.000+ pelajar**, 37+ bahasa (incl. Indonesia), rating 4,9/5 (442 rating ID), multi-modal (video, podcast, 3D simulasi, flashcards, kuis), Socratic Mode + Solver Mode + Exam Prep, gamifikasi streak | Fokus **ujian sekolah**, bukan karier — tanpa career-goal decomposition, tanpa roadmap karier, tanpa wellbeing check untuk profesional, konten = kurikulum sekolah |
 
 ---
 
 ## Feature Comparison Matrix
 
-| Capability | **Serambi.ai** | ChatGPT | Ruangguru | Dicoding | Boot.dev | DataCamp | Khanmigo |
-|-----------|:-----------:|:-------:|:---------:|:--------:|:--------:|:--------:|:--------:|
-| Goal → personal roadmap | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Bahasa Indonesia native | ✅ | ⚠️ | ✅ | ✅ | ❌ | ❌ | ❌ |
-| Scaffold (not oracle) | ✅ | ❌ | ⚠️ | ❌ | ⚠️ partial | ❌ | ✅ |
-| Feynman / probing questions | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| Graduated hinting | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| Adaptive spaced repetition | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Burnout / wellbeing check | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Career goal anchoring | ✅ | ❌ | ❌ | ⚠️ tracks | ⚠️ path | ⚠️ tracks | ❌ |
-| Interactive coding exercises | 🔜 | ❌ | ⚠️ | ✅ | ✅ | ✅ | ❌ |
-| Structured curriculum depth | 🔜 | ❌ | ✅ | ✅ | ✅ | ✅ | ⚠️ |
-| Research-backed pedagogy | ✅ 30+ papers | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| Modular agent architecture | ✅ MCP | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Available now (MVP) | ✅ Goal Agent | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Free tier | 🔜 | ✅ | ⚠️ | ✅ | ✅ | ❌ | ✅ |
+| Capability | **Serambi.ai** | ChatGPT | Ruangguru | Dicoding | Boot.dev | DataCamp | Khanmigo | Astra AI |
+|-----------|:-----------:|:-------:|:---------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+| Goal → personal roadmap | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Career-goal anchoring** | ✅ | ❌ | ❌ | ⚠️ tracks | ⚠️ path | ⚠️ tracks | ❌ | ❌ |
+| Bahasa Indonesia native | ✅ | ⚠️ | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ |
+| Scaffold (not oracle) | ✅ | ❌ | ⚠️ | ❌ | ⚠️ partial | ❌ | ✅ | ⚠️ Socratic Mode, tapi Solver Mode ada |
+| Feynman / probing questions | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
+| Graduated hinting | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
+| Adaptive spaced repetition | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ flashcards |
+| Burnout / wellbeing check | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Interactive coding exercises | 🔜 | ❌ | ⚠️ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Multi-modal (video/podcast/3D sim) | 🔜 | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ |
+| Structured curriculum depth | 🔜 | ❌ | ✅ | ✅ | ✅ | ✅ | ⚠️ | ✅ |
+| Mobile-native consumer scale | 🔜 | ⚠️ | ✅ | ⚠️ | ❌ | ⚠️ | ⚠️ | ✅ 15,2 juta |
+| Research-backed pedagogy | ✅ 30+ papers | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ⚠️ internal dataset |
+| Modular agent architecture | ✅ MCP | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Available now (MVP) | ✅ Goal Agent | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Free tier | 🔜 | ✅ | ⚠️ | ✅ | ✅ | ❌ | ✅ | ⚠️ trial |
+| Consumer price anchor (ID) | TBD | gratis | terjangkau | ±Rp 150–500rb/bln | $29/bln | ±$25/bln | gratis | **Rp 115rb/bln Plus · Rp 385rb/bln Sigma** |
 
 ---
 
 ## Competitor Profiles — New Entrants
+
+### Astra AI *(baru di v4 — kompetitor paling berbahaya di pasar Indonesia)*
+- **Positioning:** "Siap hadapi ujian 2x lebih cepat dengan AI" — "ganti guru les privat". Dibangun di Slovenia (Astra AI d.o.o.), kini 40+ negara dan 37+ bahasa termasuk bahasa Indonesia. Tagline pasar: *"Meet your tutor, free"* + "better than my tutor, for less".
+- **Skala & traction:** **15.206.000+ pelajar** (halaman resmi), rating **4,9/5 dari 442 rating** App Store Indonesia (Okt 2026), **No. 8 Top Free Education** Indonesia. App 27,7 MB, iOS 15+, age rating 9+.
+- **Fitur inti:** (1) unggah catatan/slide/soal tahun lalu → rencana belajar personal; (2) **Socratic Mode** (eksplorasi konsep) + **Solver Mode** (bantuan PR instan) + **Exam Prep** (revisi terarah); (3) multi-modal: video interaktif, podcast, simulasi 3D per mata pelajaran; (4) gamifikasi streak; (5) flashcards & kuis; (6) mastery gating — *"nggak lanjut sebelum kamu paham"*.
+- **Model harga (App Store ID, Okt 2026 — data riil, bukan estimasi):** Free + IAP: Astra AI Plus **Rp 115.000/bulan** atau **Rp 575.000/tahun**, Weekly Rp 119.000; Astra AI Sigma **Rp 385.000/bulan**; Credit Pack 2x Rp 299.000 · 3x Rp 599.000 · 5x Rp 999.000 · 10x Rp 1.999.000.
+- **Kekuatan:** mobile-native consumer distribution 15 juta user; multi-modal engagement (video/3D/podcast — Serambi belum punya); bahasa Indonesia lokal; harga rupiah yang terjangkau vs bimbel; testimoni konkret ("naik dua tingkat nilai dalam 4 minggu", "7/20 → 16-20").
+- **Kelemahan (peluang Serambi):** (1) **tanpa career-goal decomposition** — targetnya ujian sekolah, bukan jalur karier; (2) dua mode kontradiktif (Socratic *dan* Solver Mode) — justru membuka pintu cognitive offloading yang BJET tunjukkan merusak learning motivation & performance; (3) tanpa spaced repetition yang berbasis forgetting curve adaptif; (4) tanpa wellbeing/burnout check — kritis untuk profesional yang tetap kerja; (5) **tanpa research-grounded pedagogy** yang terpublikasi; (6) tanpa arsitektur modular/B2B white-label.
+- **vs Serambi.ai:** Astra menjawab *"bagaimana lulus ujian berikutnya"*. Serambi menjawab *"bagaimana pindah karier dalam 6 bulan sambil tetap kerja"* — target, horizon, dan stakeholder berbeda (pelajar vs profesional), dan Serambi selaras dengan Boot.dev dalam menolak oracle mode. **Integrasi, bukan substitusi:** kursus Dicoding/Boot.dev/DataCamp bisa jadi milestone di roadmap Serambi, sementara Astra adalah kanal distribusi dan kanal riset perilaku (mastery gating, streak, multi-modal) yang layak dipelajari — bukan ditiru total.
 
 ### Dicoding
 - **Positioning:** Indonesia's largest structured developer education platform. Certification-driven, industry partnerships (Google, AWS, IBM, Dicoding Academy).
@@ -118,6 +133,20 @@ OECD (2024) identifies a widening gap between tech skill demand and output from 
 **Objection handling:** *"DataCamp sudah punya skill tracks untuk data analyst."*
 > "DataCamp punya konten yang bagus. Tapi dia mulai dari kurikulum, bukan dari goal kamu. Serambi.ai mulai dari 'dalam 3 bulan kamu mau jadi data analyst' — lalu baru pilihkan materi apa, kapan, dan pastikan kamu tidak lupa sebelum wawancara."
 
+### vs Astra AI *(baru di v4)*
+| When Serambi.ai **wins** | When Serambi.ai **loses** |
+|--------------------------|--------------------------|
+| User wants a *career switch*, not the next exam — 22–35-year-old professional who keeps working | User is a 13–19-year-old student preparing for school/university exams |
+| User needs Bahasa Indonesia *and* local career context (which role, which timeline, what salary band) | User wants the polished multi-modal experience (video, podcast, 3D sim, app 27MB) Astra already ships |
+| User needs spaced repetition tied to a forgetting curve for long-arc skill retention | User values streak gamification and viral consumer marketing |
+| User is an adult learner at burnout risk — needs wellbeing checks | User is fine with an oracle: Astra ships **Solver Mode** next to Socratic Mode |
+| User is an institution (bootcamp/kampus) wanting white-label adaptive layer | User (consumer) prefers paying Rp 115rb/bulan for a polished mobile app |
+
+**Objection handling:** *"Astra AI sudah 15 juta user dan bahasanya bagus, kenapa bukan itu?"*
+> "Astra luar biasa untuk ujian sekolah — dan itu memang masalahnya: dia dirancang untuk 'lulus ujian berikutnya', bukan 'ganti karier dalam 6 bulan sambil tetap kerja'. Serambi mulai dari goal karier: role apa, sampai kapan, apa yang harus dikuasai tiap minggu. Dan Serambi mematikan oracle: AI-nya sengaja tidak menjawab langsung, karena riset BJET (cited 700+) menunjukkan jawaban instan justru menurunkan motivasi dan performa belajar — Astra sendiri menawarkan Solver Mode yang kebalikannya."
+
+**Integrasi yang realistis (bukan head-on):** Astra adalah kompetitor di segmen *pelajar*, bukan *profesional*. Strategi: pelajari mekanika retensi mereka (streak, unggah-catatan → rencana belajar, mastery gating "nggak lanjut sebelum kamu paham") dan jadikan Serambi dapat diakses mobile-first dengan price anchor serupa (Rp 115rb/bln = benchmark pasar riil, bukan tebakan).
+
 ---
 
 ## Positioning Map
@@ -129,8 +158,9 @@ Two axes: **Adaptivity** (goal-anchored, AI-personal) vs **Indonesia focus** (Ba
                          |
           Serambi.ai ●   |   ← unclaimed quadrant
         (goal-first,     |
-         scaffold,       |         ● Khanmigo
-         BahasaIndo)     |           (high adapt, English)
+         scaffold,       |         ● Khanmigo      ● Astra AI
+         BahasaIndo)     |           (high adapt,   (high adapt, exams,
+                         |            English)       Bahasa ID, 15M users)
                          |
 BAHASA ──────────────────┼────────────────────── ENGLISH /
 INDONESIA                |                       GLOBAL
@@ -141,6 +171,8 @@ INDONESIA                |                       GLOBAL
                          |    ● ChatGPT (universal, low adapt)
                     LOW ADAPTIVITY
 ```
+
+**v4 update:** Astra AI naik ke kuadran high-adaptivity (personal study plan + Socratic Mode + 15 juta user) — jadi "unclaimed quadrant" tidak lagi 100% kosong. Yang tetap kosong: **goal karier** sebagai sumbu masuk. Astra mulai dari *catatan & ujian kamu*; Serambi mulai dari *karier yang kamu tuju*. Perbarui framing pitch: bukan "kuadran kosong", tapi **"satu-satunya yang memulai dari tujuanku"** (job-based, like JJJ framework).
 
 **Serambi.ai occupies the unclaimed top-left quadrant.**
 Dicoding and Ruangguru are Bahasa Indonesia but low adaptivity.
