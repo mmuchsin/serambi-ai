@@ -1,0 +1,87 @@
+# Serambi.ai — jury sandbox (single-command isolated environment)
+#
+#   docker compose up -d            # start Langflow + auto-verify
+#   bash scripts/bootstrap-langflow.sh   # (one-time) import flow, print MCP URL
+#   docker compose run --rm serambi verify-e2e
+#
+# What this stack proves to a reviewer: the repo contains a flow export, a
+# verify pipeline, and an MCP wiring path that works on a *clean* Langflow
+# instance with no local project UUID baked in.
+
+name: serambi-ai
+
+services:
+  # --------------------------------------------------------------------------
+  # Langflow 1.12.2 — the flow engine. Same version as the dev environment
+  # (docs/PRD.md), pinned so the flow export and the MCP surface match.
+  #
+  # Auth is ON by default in the official image (LANGFLOW_AUTO_LOGIN=false),
+  # which is what we want: the jury path exercises the real keyed MCP call
+  # instead of a local-only auto-login shortcut.
+  # --------------------------------------------------------------------------
+  langflow:
+    image: langflowai/langflow:1.12.2
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${LANGFLOW_PORT:-7860}:7860"
+    environment:
+      LANGFLOW_AUTO_LOGIN: "false"
+      # The official image always creates the login `langflow` (the
+      # LANGFLOW_SUPERUSER variable only relabels the display name). The jury
+      # logs in once at ${LANGFLOW_BASE_URL} with this password and creates an
+      # API key in Settings; that key goes into .env as LANGFLOW_API_KEY.
+      LANGFLOW_SUPERUSER: ${LANGFLOW_SUPERUSER:-serambi}
+      # Required. Compose refuses to start without it — fail-loud on purpose.
+      LANGFLOW_SUPERUSER_PASSWORD:
+        ${LANGFLOW_SUPERUSER_PASSWORD:?set LANGFLOW_SUPERUSER_PASSWORD in .env}
+      LANGFLOW_SECRET_KEY: ${LANGFLOW_SECRET_KEY:-change-me-in-production}
+      # Point the flow's LLM node at any OpenAI-compatible provider.
+      # Empty by default: the jury can inspect the flow without calling a model.
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-}
+    volumes:
+      - langflow-data:/app/langflow
+    healthcheck:
+      test:
+        - CMD
+        - python3
+        - -c
+        - |
+            import sys, urllib.request
+            url = 'http://localhost:7860/health'
+            r = urllib.request.urlopen(url, timeout=3)
+            sys.exit(0 if r.status == 200 else 1)
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+
+  # --------------------------------------------------------------------------
+  # serambi — verification + flow bootstrap. Builds from the repo Dockerfile.
+  # --------------------------------------------------------------------------
+  serambi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: "no"
+    depends_on:
+      langflow:
+        condition: service_healthy
+    environment:
+      LANGFLOW_BASE_URL: http://langflow:7860
+      LANGFLOW_API_KEY: ${LANGFLOW_API_KEY:-}
+      LANGFLOW_SUPERUSER: ${LANGFLOW_SUPERUSER:-serambi}
+      # Login note: the image creates the user `langflow`, not this value.
+      LANGFLOW_SUPERUSER_LOGIN: langflow
+      LANGFLOW_SUPERUSER_PASSWORD:
+        ${LANGFLOW_SUPERUSER_PASSWORD:?set LANGFLOW_SUPERUSER_PASSWORD in .env}
+      LANGFLOW_PROJECT_ID: ${LANGFLOW_PROJECT_ID:-}
+    volumes:
+      # Read-only repo mount so a reviewer can edit flows on the host and
+      # re-run verification without rebuilding the image.
+      - ./:/workspace:ro
+    profiles:
+      - verify
+
+volumes:
+  langflow-data:

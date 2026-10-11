@@ -30,6 +30,13 @@ if [ -z "$url" ]; then
   exit 2
 fi
 
+# Inside the docker sandbox the repo is mounted read-only and .bob/mcp.json
+# still points at localhost:7860 — the author's machine. Rewrite the host to
+# the compose service name so the same script works in both contexts.
+if [ "${LANGFLOW_REWRITE_HOST:-0}" = "1" ]; then
+  url=$(printf '%s' "$url" | sed -E "s#https?://[^/]+#${LANGFLOW_BASE_URL:-http://langflow:7860}#")
+fi
+
 # --- JSON-RPC tools/list ---
 body=$(curl -sS -m 15 -X POST "$url" \
   -H "Authorization: Bearer $LANGFLOW_API_KEY" \

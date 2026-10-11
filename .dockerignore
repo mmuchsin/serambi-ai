@@ -1,0 +1,42 @@
+# Docker build context excludes — Serambi.ai
+# Never ship host artifacts into the image/build context.
+
+# Host secrets (never in git, never in context)
+.env
+.env.*
+!.env.example
+.envrc
+.firecrawl
+.bob/turn-counter.json
+
+# Local agent runtime (host-scoped, not for juries)
+.pi/
+.agents/
+.bob/skills/
+.bob/tmp/
+skills-lock.json
+.handoff*
+
+# Private audit artifacts
+.audit/
+
+# Node / Python / OS noise
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+*.log
+*.log.*
+
+# Deck build scratch (large binaries live in projects/, kept out of the image)
+projects/*/live_preview/
+
+# Docs scratch
+docs/ai-engineering-best-practices.md
+
+# VCS
+.git/
+.gitignore
