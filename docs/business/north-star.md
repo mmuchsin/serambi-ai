@@ -101,6 +101,6 @@ Career Goal Progress Rate (North Star)
 
 | Klaim | Riset |
 |-------|-------|
-| Goal-anchored learning meningkatkan progress | GenMentor (FWCI 47.3) — goal decomposition ke milestones |
-| Spaced repetition personal > fixed schedule 15-20% | Zaidi et al. (arXiv 2004.11327) |
-| Burnout tracking kritis untuk retention | Metacognitive Laziness (BJET, cited 694) |
+| Goal-anchored learning meningkatkan progress | GenMentor, 2025 (DOI 10.1145/3701716.3715244) — goal decomposition ke milestones |
+| Spaced repetition memanfaatkan forgetting curve per konsep | Zaidi et al., AIED 2020 (arXiv 2004.11327) — model, bukan angka perbaikan |
+| Burnout tracking kritis untuk retention | Metacognitive Laziness (BJET, DOI 10.1111/bjet.13544, sitasi 700+) |

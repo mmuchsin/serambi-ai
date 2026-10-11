@@ -6,6 +6,8 @@ Serambi.ai takes a career goal ("become a data analyst in 3 months") and produce
 
 [What it does](#what-it-does) · [Why it exists](#problem-statement-and-market-gap) · [How it works](#how-it-works) · [Architecture](#architecture) · [Agents](#agents) · [Install](#install) · [Usage](#usage) · [Business model](#business-model) · [Guardrails](#guardrails) · [Roadmap](#roadmap) · [Repository structure](#repository-structure) · [MCP integration](#mcp-integration) · [AI agent skills](#ai-agent-skills) · [Development tools](#development-tools) · [Maintainers](#maintainers) · [License](#license)
 
+> The Indonesian version lives in [`README.id.md`](README.id.md).
+
 **IBM SkillsBuild University Education National Hackathon** · Hacktiv8 × IBM × Komdigi
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
@@ -57,6 +59,14 @@ Three gaps, in order of how much they cost the learner:
 
 Full competitive analysis with 11 competitors: [`docs/business/competitive-analysis.md`](docs/business/competitive-analysis.md).
 
+### The Indonesian market opportunity
+
+The talent gap is what makes this market worth entering. Indonesia sits near the top of the world for AI *use* and near the bottom for AI *development*. The Communications and Digital Ministry projects 9 million digital professionals needed by 2030 with about a third of that met, and the Deputy Minister for Communication and Digital Affairs has named the AI talent gap as one of the most critical constraints. Talent working in AI grew from roughly 28,000 in 2019 to 96,000 in 2024 (Kompas), while the National AI Roadmap white paper targets 100,000 AI talents per year.
+
+Demand is not the obstacle. AWS research published in August 2025 records AI adoption by Indonesian businesses up 47% year on year to 28% of businesses (18 million), with 57% naming the lack of digital skills as the main barrier to expanding use. The constraint is supply of the skill, which places Serambi.ai on the supply side of a problem the market already agrees exists.
+
+**Standards alignment.** The work maps to two Sustainable Development Goals, which Indonesia reviewed in its 2025 Voluntary National Review: SDG target 4.3 (affordable technical and vocational education, including non-formal learning) and 4.4 (relevant technical skills for employment), plus SDG 8.2 and 8.6. The mapping, the evidence behind it, and the figures deliberately not claimed are in [`docs/business/sdg-alignment.md`](docs/business/sdg-alignment.md).
+
 ## How it works
 
 Six agents, each an independent Langflow flow exposed as a named MCP tool.
@@ -64,6 +74,20 @@ Six agents, each an independent Langflow flow exposed as a named MCP tool.
 ![Diagram enam agent Serambi.ai](assets/diagrams/serambi-agent-loop.svg)
 
 The loop is the product. A learner who drops out at week 4 never reaches the milestone, so the Progress, Motivator, and Wellbeing agents carry as much weight as the Tutor.
+
+## Capability
+
+Seven capabilities carried this project from a vague idea to a working system, each with a traceable artifact:
+
+| Capability | What it did | Where to look |
+| --- | --- | --- |
+| Analytical | Ranked 11 competitors by threat, pulled Astra AI's real App Store prices (Rp 115.000/month Plus, Rp 385.000/month Sigma) into a price anchor, and placed Serambi.ai on a positioning map | [`docs/business/competitive-analysis.md`](docs/business/competitive-analysis.md) |
+| Critical | Caught and corrected three unverifiable research claims (\"80%+ prefer Feynman\", \"15-20% retention\", BJET \"cited 694\") and fixed the deck and docs so every claim now carries a DOI or arXiv ID | [`README.md`](#what-it-does) research table, `git log` |
+| Systematic | Ran a research, audit, execution sequence; kept every decision as an ADR; enforced feedback-loop verification scripts with explicit exit codes before every commit | [`docs/adr/`](docs/adr/), [`scripts/verify-flow.sh`](scripts/verify-flow.sh) |
+| Creative | Built the \"veranda\" metaphor into the brand and the positioning line \"the only one that starts from your goal\" | [Brand assets](assets/), positioning map in competitive analysis |
+| Innovative | Combined a scaffold-not-oracle pedagogy with spaced repetition and burnout detection, drawn from separate literature | [`research/`](research/), Guardrails below |
+| Problem solving | Started from the metacognitive-laziness problem rather than the chatbot trend: the answer is a guide, not an oracle | [Problem statement](#problem-statement-and-market-gap), BJET DOI above |
+| Technical | Shipped a working Langflow flow exposed as an MCP tool, verified by script, independent of any single LLM provider | [Architecture](#architecture), [`.bob/mcp.json`](.bob/mcp.json) |
 
 ## Architecture
 

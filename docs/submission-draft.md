@@ -54,17 +54,18 @@ Career switcher Indonesia yang ingin pindah ke role teknologi belajar secara man
 
 - **Tidak ada roadmap personal.** Materi diambil dari sumber acak — video YouTube, kursus Udemy, artikel — tanpa dipetakan ke skill gap yang benar-benar dibutuhkan oleh target role. Banyak waktu terbuang untuk topik yang tidak relevan dengan tujuan karier.
 - **Progres tidak terlacak.** Tidak ada mekanisme untuk menjawab "sudah sejauh mana saya dan harus lanjut ke apa", sehingga motivasi dan momentum belajar hilang.
-- **Tidak ada feedback loop pedagogis.** Belajar menjadi pasif membaca/menonton. Riset menunjukkan AI generik malah memicu *cognitive offloading* — pengguna terbiasa langsung diberi jawaban (Metacognitive Laziness, BJET, dikutip 694 kali) — sehingga pemahaman tidak benar-benar terbentuk.
+- **Tidak ada feedback loop pedagogis.** Belajar menjadi pasif membaca/menonton. Riset menunjukkan AI generik malah memicu *cognitive offloading* — pengguna terbiasa langsung diberi jawaban (Metacognitive Laziness, BJET, DOI 10.1111/bjet.13544, dikutip 700+ kali) — sehingga pemahaman tidak benar-benar terbentuk.
 - **Alternatif mahal atau tidak scalable.** Bootcamp dan mentor privat menelan biaya besar dan tidak menjangkau seluruh Indonesia; kursus online menawarkan kurikulum sama untuk semua orang.
 
 **Mengapa masalah ini penting untuk diselesaikan.**
 
 OECD mengidentifikasi kesenjangan yang terus melebar antara permintaan keterampilan teknologi dan output institusi pendidikan tradisional; reskilling mandiri menjadi salah satu solusi utama, tetapi nyatanya minim dukungan adaptif. Pasar bergerak searah — market upskilling global tumbuh 11–14% CAGR, tetapi sebagian besar pertumbuhannya B2B/korporasi: career switcher individu secara eksplisit terlewat dari cakupan riset market utama. Akibatnya, transisi karier tertunda, waktu belajar terbuang, dan burnout menurunkan jumlah profesional yang berhasil menyelesaikan perpindahan karier — memperkuh kesenjangan talent digital nasional.
 
+**Skala masalah, dengan angka.** Kementerian Komunikasi dan Digital memproyeksikan kebutuhan 9 juta talenta digital sampai 2030 dan baru sekitar sepertiga terpenuhi. Talent gap AI disebut Wakil Menteri Komdigi sebagai salah satu hambatan paling kritis: Indonesia termasuk negara dengan jumlah pengguna AI tertinggi di dunia namun jauh tertinggal di sisi pengembangan. Jumlah talenta AI tumbuh dari sekitar 28.000 orang pada 2019 menjadi 96.000 pada 2024 (Kompas), sementara white paper Peta Jalan AI Nasional menargetkan produksi 100.000 talenta AI per tahun. Di sisi permintaan, riset AWS yang terbit Agustus 2025 mencatat adopsi AI pada bisnis Indonesia naik 47% tahun ke tahun sampai 28% pelaku usaha (18 juta), dan 57% menyebut kurangnya keterampilan digital sebagai hambatan utama untuk memperluas penggunaan AI. Sumber: Bloomberg Technoz (data Komdigi), Kompas, The Jakarta Post, press release AWS, OECD.AI.
+
 **Versi paragraf siap copy-paste:**
 
 Career switcher Indonesia yang ingin pindah ke role teknologi belajar secara mandiri, tetapi menghadapi empat masalah utama. Pertama, tidak ada roadmap personal — materi diambil dari sumber acak seperti video YouTube, kursus Udemy, dan artikel tanpa dipetakan ke skill gap yang benar-benar dibutuhkan oleh target role, sehingga banyak waktu terbuang untuk topik yang tidak relevan. Kedua, progres tidak terlacak — tidak ada mekanisme untuk menjawab "sudah sejauh mana saya dan harus lanjut ke apa", sehingga motivasi dan momentum belajar hilang. Ketiga, tidak ada feedback loop pedagogis — belajar menjadi pasif membaca atau menonton, dan riset menunjukkan AI generik malah memicu cognitive offloading (Metacognitive Laziness, BJET, dikutip 694 kali) sehingga pemahaman tidak benar-benar terbentuk. Keempat, alternatif mahal atau tidak scalable — bootcamp dan mentor privat menelan biaya besar dan tidak menjangkau seluruh Indonesia, sementara kursus online menawarkan kurikulum sama untuk semua orang. Masalah ini penting untuk diselesaikan karena OECD mengidentifikasi kesenjangan yang terus melebar antara permintaan keterampilan teknologi dan output institusi pendidikan tradisional; reskilling mandiri menjadi salah satu solusi utama, tetapi nyatanya minim dukungan adaptif. Pasar bergerak searah — market upskilling global tumbuh 11–14% CAGR, tetapi sebagian besar pertumbuhannya B2B/korporasi, sehingga career switcher individu secara eksplisit terlewat. Akibatnya, transisi karier tertunda, waktu belajar terbuang, dan burnout menurunkan jumlah profesional yang berhasil menyelesaikan perpindahan karier — memperkuh kesenjangan talent digital nasional.
-
 ---
 
 ## 5. Target User
@@ -341,6 +342,7 @@ Target indikator terukur (guna menghindari klaim berlebihan: MVP sudah e2e verif
 - **Target jangkauan: 1.000 pengguna/bulan** pada 6 bulan pertama setelah rilis publik (jalur web app + integrasi komunitas hackathon). *(Sumber: target bisnis, diukur setelah rilis — belum terukur saat ini)*
 - **Mengurangi pekerjaan manual** yang selama ini tidak terhitung: riset kurikulum, pencarian materi, dan perencanaan ulang belajar. *(Sumber: estimasi dari alur manual career switcher, belum terukur secara kuantitatif)*
 - **Mengurangi risiko burnout/putus belajar** melalui Wellbeing & Motivator Agent (indikator: jumlah pengguna yang kembali belajar dalam 7 hari). *(Sumber: target produk, diukur setelah rilis — belum terukur saat ini)*
+- **Keterkaitan dengan agenda nasional.** Posisi produk memetakan diri ke target 4.3 dan 4.4 SDG (pendidikan teknis/vokasi terjangkau termasuk non-formal; keterampilan teknis relevan untuk pekerjaan) serta target 8.2 dan 8.6 (produktivitas dan pengurangan pemuda NEET), yang Indonesia tinjau pada Voluntary National Review 2025. *(Sumber: teks target SDG di sdgs.un.org; pemetaan dan batasan klaim di docs/business/sdg-alignment.md. Catatan jujur: metrik produk bukan indikator statistik resmi SDG, dan pengukuran target SDG tetap menjadi tugas negara.)*
 
 ---
 
@@ -391,6 +393,15 @@ Produk dirancang untuk career switcher Indonesia: semua respons diarahkan ke tar
 - **Motivator/Wellbeing Agent** — nudge kontekstual yang proporsional ke progres terkini, bukan pesan generik.
 
 **Guardrail kemampuan:** setiap agent terikat aturan pedagogis proyek — *scaffold, not oracle*; graduated hinting; probing question; tanpa cognitive offloading; selalu goal-first — sehingga agent membantu pengguna berpikir, bukan berpikir untuk pengguna.
+
+**Kemabilitas analitis, kritis, dan sistematis (mendukung seluruh kemampuan di atas):**
+
+- **Analitis** — 11 kompetitor dipetakan lengkap dengan harga riil (Astra AI Plus Rp 115.000/bulan, Sigma Rp 385.000/bulan, diambil dari App Store Indonesia) dan peta positioning; talent gap nasional diukur dari data Komdigi, Kompas, dan riset AWS.
+- **Kritis** — tiga klaim riset yang tidak bisa diverifikasi ("80%+ memilih Feynman", "retensi 15-20%", BJET "cited 694") ditemukan dan dikoreksi; setiap klaim kini membawa DOI atau arXiv ID.
+- **Sistematis** — riset, audit, dan eksekusi berurutan; setiap keputusan arsitektur disimpan sebagai ADR (0001–0005); `verify-flow.sh` dan `verify-e2e.sh` berjalan sebelum setiap commit dengan kode exit eksplisit.
+- **Kreatif & inovatif** — metafora "serambi" menjadi brand dan positioning; pedagogi memandu-bukan-jawab digabung dengan spaced repetition dan deteksi burnout, yang sumbernya terpisah-pisah.
+- **Problem solving** — masalah dipilih dari temuan metacognitive laziness, bukan dari tren chatbot.
+- **Tech** — flow Langflow berjalan sebagai MCP tool bernama, terverifikasi skrip, dan tidak terikat penyedia LLM tertentu (endpoint OpenAI-compatible).
 
 ---
 

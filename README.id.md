@@ -6,6 +6,8 @@ Pengguna menuliskan tujuan karier ("jadi data analyst dalam 3 bulan") dan Seramb
 
 [Apa yang dilakukan](#apa-yang-dilakukan) · [Masalah dan peluang](#masalah-dan-peluang) · [Cara kerja](#cara-kerja) · [Arsitektur](#arsitektur) · [Agent](#agent) · [Instalasi](#instalasi) · [Penggunaan](#penggunaan) · [Model bisnis](#model-bisnis) · [Guardrail](#guardrail) · [Roadmap](#roadmap) · [Struktur repo](#struktur-repo) · [Integrasi MCP](#integrasi-mcp) · [Skill agent](#skill-agent) · [Alat pengembangan](#alat-pengembangan) · [Maintainer](#maintainer) · [Lisensi](#lisensi)
 
+> Versi Bahasa Inggris-nya di [`README.md`](README.md).
+
 **IBM SkillsBuild University Education National Hackathon** · Hacktiv8 × IBM × Komdigi
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
@@ -57,37 +59,35 @@ Tiga celah, urut dari yang paling merugikan:
 
 Analisis kompetitor lengkap, 11 kompetitor: [`docs/business/competitive-analysis.md`](docs/business/competitive-analysis.md).
 
+### Peluang pasar Indonesia
+
+Celah talenta inilah yang membuat pasar ini layak dimasuki. Indonesia berada di barat terdepan dunia dalam hal *pakai* AI, dan dekat pada posisi terakhir dalam hal *membangun* AI. Kementerian Komunikasi dan Digital memproyeksikan kebutuhan 9 juta talenta digital sampai 2030 dengan hanya sekitar sepertiga terpenuhi, dan Wakil Menteri Komdigi menyebut talent gap AI sebagai salah satu hambatan paling kritis. Talenta AI tumbuh dari sekitar 28.000 orang pada 2019 menjadi 96.000 pada 2024 (Kompas), sementara white paper Peta Jalan AI Nasional menargetkan 100.000 talenta AI per tahun.
+
+Permintaannya bukan kendala. Riset AWS yang terbit Agustus 2025 mencatat adopsi AI pada bisnis Indonesia naik 47% tahun ke tahun sampai 28% pelaku usaha (18 juta), dengan 57% menyebut kurangnya keterampilan digital sebagai hambatan utama ekspansi. Kendalanya ada di pasokan keterampilan, dan itu menempatkan Serambi.ai di sisi pasokan dari masalah yang sudah diakui pasar.
+
+**Keterkaitan dengan standar.** Pekerjaan ini memetakan diri ke dua Tujuan Pembangunan Berkelanjutan, yang Indonesia tinjau pada Voluntary National Review 2025: target 4.3 (pendidikan teknik dan vokasi terjangkau, termasuk pembelajaran non-formal) dan 4.4 (keterampilan teknis relevan untuk pekerjaan), plus SDG 8.2 dan 8.6. Pemetaan, bukti yang dipakai, dan angka yang sengaja tidak diklaim ada di [`docs/business/sdg-alignment.md`](docs/business/sdg-alignment.md).
+
 ## Cara kerja
 
 Enam agent, masing-masing sebuah Langflow flow independen yang diekspos sebagai MCP tool bernama.
 
-```
-Pengguna menulis tujuan
-      │
-      ▼
-┌──────────────────────┐
-│ 1. Goal Agent       │  goal → roadmap mingguan + aksi pertama
-└──────────────────────┘
-      │
-      ▼
-┌──────────────────────┐     ┌──────────────────────┐     ┌──────────────────────┐
-│ 2. Tutor Agent      │────▶│ 3. Assessment Agent │────▶│ 4. Progress Agent    │
-│ gaya Feynman,       │     │ kuis adaptif +       │     │ spaced repetition    │
-│ pertanyaan memancing │     │ hint bertahap        │     │ dari forgetting curve│
-└──────────────────────┘     └──────────────────────┘     └──────────────────────┘
-                                                                    │
-                            ┌──────────────────────┐               │
-                            │ 5. Motivator Agent   │◀──────────────┘
-                            │ nudge sesuai konteks │
-                            └──────────────────────┘
-                                                                    │
-                            ┌──────────────────────┐               │
-                            │ 6. Wellbeing Agent   │◀──────────────┘
-                            │ deteksi burnout      │
-                            └──────────────────────┘
-```
+![Diagram enam agent Serambi.ai](assets/diagrams/serambi-agent-loop.svg)
 
 Loop inilah produknya. Pengguna yang putus di minggu 4 tidak pernah sampai ke milestone berikutnya, jadi agent Progress, Motivator, dan Wellbeing seberat agent Tutor.
+
+## Kapabilitas
+
+Tujuh kapabilitas membawa proyek ini dari ide samar sampai sistem yang jalan, masing-masing dengan artefak yang bisa diperiksa:
+
+| Kapabilitas | Apa yang dilakukan | Lihat di |
+| --- | --- | --- |
+| Analitis | Peringkat 11 kompetitor berdasarkan ancaman, menarik harga riil App Store Astra AI (Plus Rp 115.000/bulan, Sigma Rp 385.000/bulan) sebagai anchor harga, dan menempatkan Serambi.ai pada peta positioning | [`docs/business/competitive-analysis.md`](docs/business/competitive-analysis.md) |
+| Kritis | Menemukan dan memperbaiki tiga klaim riset yang tidak bisa diverifikasi (\"80%+ memilih Feynman\", \"retensi 15-20%\", BJET \"cited 694\") dan memperbaiki deck serta dokumen supaya setiap klaim membawa DOI atau arXiv ID | Tabel riset di [Apa yang dilakukan](#apa-yang-dilakukan), `git log` |
+| Sistematis | Menjalankan urutan riset, audit, eksekusi; menyimpan setiap keputusan sebagai ADR; memakai skrip verifikasi dengan kode exit eksplisit sebelum setiap commit | [`docs/adr/`](docs/adr/), [`scripts/verify-flow.sh`](scripts/verify-flow.sh) |
+| Kreatif | Memakai metafora \"serambi\" sebagai brand dan positioning \"satu-satunya yang memulai dari tujuanku\" | [Aset brand](assets/), peta positioning di analisis kompetitor |
+| Inovatif | Menggabungkan pedagogi memandu-bukan-jawab dengan spaced repetition dan deteksi burnout, yang sumbernya terpisah-pisah | [`research/`](research/), bagian Guardrail di bawah |
+| Problem solving | Berangkat dari masalah metacognitive laziness, bukan dari tren chatbot: jawabannya adalah pendamping, bukan mesin jawaban | [Masalah dan peluang](#masalah-dan-peluang), DOI BJET di atas |
+| Teknis | Merilis flow Langflow yang jalan sebagai MCP tool, terverifikasi skrip, dan tidak terikat satu penyedia LLM tertentu | [Arsitektur](#arsitektur), [`.bob/mcp.json`](.bob/mcp.json) |
 
 ## Arsitektur
 
