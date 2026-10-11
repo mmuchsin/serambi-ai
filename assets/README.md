@@ -29,13 +29,7 @@ Architecture and flow diagrams for the pitch deck and documentation.
 
 | File | Shows |
 |------|-------|
-| `architecture.drawio` | Bob/MCP/Langflow/LLM stack — dev harness vs production (identical MCP contract) |
-| `agent-flow.drawio` | 6-agent interaction flow — how Goal → Tutor → Assessment → Progress → Motivator → Wellbeing hand off context |
-| `user-journey.drawio` | Career switcher learning loop — swimlane: user actions × agents × support loop |
+| `serambi-architecture.svg` | Bob / MCP / Langflow / LLM provider stack — dev harness vs production, one MCP contract |
+| `html/serambi-architecture.html` | Source of the architecture diagram (self-contained HTML + inline SVG) |
 
-**Usage in pitch deck:**
-- Open `.drawio` files in draw.io desktop or https://app.diagrams.net
-- Export as PNG (File → Export as → PNG, 2× scale) → save to `assets/diagrams/`
-- Insert PNG into `slides/serambi-pitch-deck.pptx` slide 05 (How It Works) and slide 06 (AI & Technology)
-
-**WSL2 export gotcha:** draw.io desktop may not open directly from WSL path. Use `xdg-open assets/diagrams/architecture.drawio` or copy file to Windows side first, then export from there.
+**Diagrams are authored with the `diagram-design` skill** — self-contained HTML with inline SVG, exported to `.svg` for embedding. Source HTML lives in `assets/diagrams/html/`; the `.svg` sibling is the embeddable artifact.

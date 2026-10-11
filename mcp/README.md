@@ -44,10 +44,6 @@ File: [`.bob/mcp.json`](../.bob/mcp.json)
 - `${env:LANGFLOW_API_KEY}` is read from the shell environment — never stored in the file
 - All Langflow flows in the project with an Endpoint Name set are exposed as MCP tools
 
-> The same file also defines a second, unrelated server: `drawio`
-> (`npx -y @drawio/mcp`, stdio) — a diagramming tool for agent sessions, not
-> part of the Serambi.ai flow bridge.
-
 ---
 
 ## Tools

@@ -13,12 +13,6 @@
         "${env:LANGFLOW_API_KEY}",
         "http://localhost:7860/api/v1/mcp/project/77726bb2-9137-4e8d-8491-c8daa87f9192/streamable"
       ]
-    },
-    "drawio": {
-         "command": "npx",
-         "args": ["-y", "@drawio/mcp"],
-         "disabled": false,
-         "alwaysAllow": []
-       }
+    }
   }
 }

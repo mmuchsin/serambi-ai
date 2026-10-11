@@ -32,9 +32,8 @@ Bob ── reasoning + tool-calling ──┐            │  Web App Backend �
 Langflow (via SSE MCP)  ◀────────── (MCP) ──── Langflow (via SSE MCP)
     │                                (named            │
     ▼                                tools)            ▼
-NaraRouter / longcat-2.5  ←── LLM provider   NaraRouter / longcat-2.5
+LLM provider (OpenAI-compatible)  ←── LLM   LLM provider (OpenAI-compatible)
 ```
-
 Bob TUI bukan antarmuka pengguna akhir — ia harness pengembangan untuk
 membangun, menguji, dan memverifikasi agent. Web app (apps/) adalah UI
 pengguna akhir dan memakai kontrak MCP tool yang identik.
@@ -160,6 +159,23 @@ Setiap agent Serambi.ai didukung oleh landasan riset. Detail lengkap + abstract 
 
 > *Multimodal & real-time feedback (video, voice) sengaja tidak masuk scope MVP — direncanakan di Future Development setelah web app rilis.*
 
+### Stage 2 — Retrieval-Augmented Generation (RAG) over the research corpus
+
+Setelah enam agent stabil, Tutor Agent (`explain_concept`) dan Assessment Agent (`generate_quiz`)
+diupayakan memakai **RAG di atas `research/`** — korpus riset proyek sendiri, bukan data eksternal.
+Tujuannya menjaga jawaban dan soal tetap berlandaskan bukti pedagogi yang sudah dikumpulkan
+(scaffold-not-oracle, graduated hinting, Feynman technique, spaced repetition) alih-alih
+bergantung pada ingatan model.
+
+- **Sumber:** `research/research-papers-and-abstracts.md`,
+  `research/feedback-loop-papers-additional.md`, dan ADR di `docs/adr/`
+- **Alur:** pertanyaan user → retrieval potongan relevan → prompt grounded → jawab dengan sitasi
+- **Manfaat:** anti-halusinasi pada klaim pedagogi, jawaban konsisten antar agent, dan audit
+  trail (setiap klaim bisa dilacak ke baris risetnya)
+- **Di luar scope:** data pengguna, ujian, atau konten berbayar. Korpus hanya bahan bacaan proyek.
+
+RAG tidak jadi tracer bullet: Agent 1 tetap satu-satunya bukti e2e sampai Stage 1 tutup.
+
 ---
 
 ## Guardrails
@@ -195,5 +211,5 @@ Setiap agent Serambi.ai didukung oleh landasan riset. Detail lengkap + abstract 
 | Bob | IBM Bob TUI v2.0.5 (development harness, bukan UI pengguna akhir) |
 | Web App | `apps/web/` — target UI pengguna akhir (dalam pengembangan) |
 | LLM (Bob) | Claude 3.7 Sonnet via IBM Bob |
-| LLM (Langflow) | longcat-2.5 via NaraRouter (https://router.bynara.id/v1) |
+| LLM (Langflow) | endpoint OpenAI-compatible (base URL, model, API key diisi di environment) |
 | API Key | `LANGFLOW_API_KEY` di `~/.bashrc` — source sebelum start Bob |

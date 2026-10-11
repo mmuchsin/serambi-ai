@@ -88,7 +88,7 @@ Cara Kerja Serambi.ai
 Web App → MCP tool → Langflow agent flow → LLM → Roadmap Mingguan
 
 - Stack integrasi:
-- IBM Bob → MCP (streamable HTTP) → Langflow flow engine → NaraRouter / longcat-2.5
+- IBM Bob → MCP (streamable HTTP) → Langflow flow engine → LLM provider OpenAI-compatible
 - Kontrak MCP identik saat dev (Bob) dan produksi (Web App backend) — tanpa ubah flow Langflow.
 
 ✅ VERIFIED: Bob → goal_decomposer MCP tool → JSON roadmap 12 minggu
@@ -108,7 +108,7 @@ Stack Utama:
 - IBM Bob — AI agent harness: build, test, verifikasi agent e2e
 - IBM Langflow — Flow execution engine: setiap agent = 1 flow = 1 MCP tool
 - MCP (Model Context Protocol) — Bridge pemanggil ↔ agent Langflow
-- NaraRouter / longcat-2.5 — LLM backbone (temperature 0.3)
+- LLM provider OpenAI-compatible — LLM backbone (temperature 0.3)
 - Arsitektur: Web App → [MCP streamable HTTP] → Langflow → LLM
 - Named MCP tool per agent — pemanggil bisa diganti tanpa ubah flow.
 
@@ -116,7 +116,7 @@ Stack Utama:
 
 ### Speaker Notes
 
-Slide 6 -- AI & Technology. Stack: Bob (harness), Langflow (flow engine), MCP (bridge), NaraRouter/longcat-2.5 (LLM). Setiap keputusan desain dilandasi paper dengan FWCI tinggi.
+Slide 6 -- AI & Technology. Stack: Bob (harness), Langflow (flow engine), MCP (bridge), LLM provider OpenAI-compatible (LLM). Setiap keputusan desain dilandasi paper dengan FWCI tinggi.
 
 ## Slide 7
 
@@ -235,7 +235,7 @@ M. Muchsin — Solo Founder & Engineer
 - 🎓 Pedagogi berbasis bukti — setiap fitur terhubung ke paper dengan FWCI tinggi
 
 - 🔗 github.com/mmuchsin/serambi-ai
-- Stack: IBM Bob × IBM Langflow × MCP × NaraRouter
+- Stack: IBM Bob × IBM Langflow × MCP × LLM provider OpenAI-compatible
 
 ### Speaker Notes
 

@@ -374,9 +374,7 @@ Only the tools actually invoked during this session to produce this file.
 - **Path:** `~/.bashrc`
 
 ### 10. Model
-- **Model:** `nararouter: longcat-2.5`
-- **Provider:** Nararouter
-- **Role:** LLM backend for the Pi agent session that generated this document
+- **Model:** endpoint OpenAI-compatible (peran: LLM backend sesi Pi agent yang menghasilkan dokumen ini)
 
 ---
 

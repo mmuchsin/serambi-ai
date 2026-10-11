@@ -13,7 +13,7 @@ Pitch deck assets for the IBM SkillsBuild Hackathon submission.
 | 3 | Solution | AI that scaffolds, not answers — research-backed |
 | 4 | Target User | Indonesian career switchers / upskillers |
 | 5 | How It Works | Bob → MCP → Langflow → 6 specialized agents |
-| 6 | AI & Technology | IBM Bob + Langflow + MCP + longcat-2.5 |
+| 6 | AI & Technology | IBM Bob + Langflow + MCP + LLM provider OpenAI-compatible |
 | 7 | Key Features | Goal decomposition, Feynman tutoring, adaptive quiz, spaced repetition |
 | 8 | Prototype / Demo | Screenshots of working Goal Agent |
 | 9 | Impact & Value | Research citations + market gap (OECD) |

@@ -55,7 +55,7 @@ Setelah form terkirim → buka ISS-04 (Tutor Agent / `explain_concept`).
 | [`submission/screenshots/`](submission/screenshots/) | 4 screenshot nyata untuk form (Bob TUI, Langflow canvas, endpoint, JSON output) |
 | [`research/research-papers-and-abstracts.md`](research/research-papers-and-abstracts.md) | 30+ papers: research grounding tiap agent |
 | [`flows/goal_decomposer.json`](flows/goal_decomposer.json) | Langflow flow Agent 1 (e2e verified) |
-| [`.bob/mcp.json`](.bob/mcp.json) | MCP config: `lf-serambi_ai` SSE + `drawio` stdio |
+| [`.bob/mcp.json`](.bob/mcp.json) | MCP config: `lf-serambi_ai` streamable HTTP bridge |
 | [`.bob/skills/`](.bob/skills/) | 83 agent skills (PM phuryn/pm-skills + engineering + diagram + custom pitch-deck) — gitignored, ter-install lokal |
 | [`AGENTS.md`](AGENTS.md) | Agent harness guide — tools, constraints, session rules |
 

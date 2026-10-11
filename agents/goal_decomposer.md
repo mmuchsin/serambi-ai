@@ -39,8 +39,8 @@ Respond ONLY with valid JSON in this exact format (no markdown, no explanation):
 }
 ```
 
-**LLM config:** provider = NaraRouter · model = longcat-2.5 · temperature = 0.3  
-Low temperature keeps decomposition output deterministic and structurally consistent across calls.
+**LLM config:** provider = endpoint OpenAI-compatible · temperature = 0.3  
+Base URL, nama model, dan API key diisi di environment saat runtime (lihat `docs/adr/0004-llm-providers.md`). Low temperature keeps decomposition output deterministic and structurally consistent across calls.
 
 ---
 
@@ -141,5 +141,5 @@ Both scripts were passing as of ISS-09 (commit `7409ccf`).
 |---|---|---|
 | Chat Input | Input | Receives `user_goal` string from caller |
 | Prompt Template | Prompt | Injects `{user_goal}` into system prompt; enforces JSON-only output |
-| Language Model | LanguageModelComponent | NaraRouter/longcat-2.5, temperature 0.3 |
+| Language Model | LanguageModelComponent | endpoint OpenAI-compatible, temperature 0.3 |
 | Chat Output | Output | Returns structured JSON roadmap to MCP caller |

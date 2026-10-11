@@ -72,6 +72,26 @@ bb5670a chore(repo): initial commit — project scaffold and goal_decomposer flo
 
 ---
 
+## Phase 8 — Stage 2 (post Stage 1)
+
+### ISS-12 — RAG layer over `research/` for Tutor + Assessment agents
+**Status:** `[ ]` not started — Stage 2, tidak blockers untuk Stage 1  
+**Scope:** 1–2 session  
+**Description:** Tutor Agent (`explain_concept`) dan Assessment Agent (`generate_quiz`) memakai
+retrieval atas korpus `research/` supaya penjelasan, hints, dan soal berlandaskan bukti
+pedagogi proyek, bukan ingatan model. Detail rancangan ada di
+[`docs/PRD.md`](PRD.md) §Research Grounding → "Stage 2 — Retrieval-Augmented Generation".
+
+**Acceptance:**
+- Retrieval dipilih (embeddings lokal vs Langflow built-in) dan dicatat sebagai ADR
+- Tutor Agent memberi jawaban yang bisa dilacak ke potongan `research/*.md`
+- Assessment Agent tidak mengarang konsep di luar korpus
+- Guardrail tetap dipatuhi: scaffold, graduated hinting, probing questions
+
+**Catatan:** korpus hanya bahan bacaan proyek. Tidak ada data pengguna atau konten berbayar.
+
+---
+
 ## Phase 7 — Submission Materials
 
 ### ISS-06 — README.md + mcp/README.md
@@ -168,7 +188,7 @@ chore(repo): add flow + e2e verification scripts (ISS-09)
 ### ISS-10 — ADRs untuk keputusan arsitektur mayor
 **Status:** `[x]` DONE
 **Scope:** 1 session
-**Motivation:** audit P0-2 — keputusan "kenapa Langflow/MCP/Bob/NaraRouter" tidak terdokumentasi (framework §085)
+**Motivation:** audit P0-2 — keputusan "kenapa Langflow/MCP/Bob/LLM provider" tidak terdokumentasi (framework §085)
 
 **What was done:**
 - `docs/adr/README.md` — index + aturan penulisan ADR

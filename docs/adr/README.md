@@ -9,7 +9,7 @@ pertanyaan yang tidak bisa dijawab agent hanya dari codebase.
 | [0001](0001-langflow-as-flow-engine.md) | Langflow sebagai flow engine agent | Accepted |
 | [0002](0002-mcp-streamablehttp-via-mcp-proxy.md) | MCP streamable HTTP via `mcp-proxy` | Accepted |
 | [0003](0003-bob-tui-as-dev-harness.md) | Bob TUI sebagai dev harness (bukan UI akhir) | Accepted |
-| [0004](0004-llm-providers.md) | LLM: longcat-2.5 via NaraRouter (flows), Claude (Bob) | Accepted |
+| [0004](0004-llm-providers.md) | LLM: endpoint OpenAI-compatible (flows), Claude (Bob) | Accepted |
 | [0005](0005-project-decisions-log.md) | Keputusan proyek lain (brand, monorepo, skills) | Accepted |
 
 **Aturan:** keputusan arsitektur baru → buat ADR baru (nomor berikutnya) SEBELUM implementasi.
