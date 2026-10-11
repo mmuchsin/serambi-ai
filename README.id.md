@@ -220,7 +220,7 @@ Dua jenis berlaku: pedagogi dan operasional.
 - Setiap flow bisa diverifikasi sendiri, dan `verify-flow.sh` dijalankan sebelum setiap commit.
 - Output terstruktur dengan `temperature = 0.3` membuat dekomposisi cukup deterministik untuk diandalkan agent lain di hilirnya.
 - Konfigurasi node mengikuti fungsi NIST AI Risk Management Framework (govern, map, measure, manage) pada level yang sesuai untuk prototipe.
-- Konteks regulasi Indonesia tercatat di [`docs/`](docs/): Surat Edaran Etika AI Komdigi (2023) dan konsultasi publik Roadmap AI Nasional Komdigi (Agustus 2025). Serambi.ai menargetkan Indonesia lebih dulu.
+- Konteks regulasi Indonesia tercatat di [`docs/`](docs/): Surat Edaran Etika AI (Kominfo, 2023, diterbitkan saat kementerian masih bernama Kemenkominfo; resmi berganti nama menjadi Komdigi pada 2024) dan konsultasi publik Roadmap AI Nasional Komdigi (Agustus 2025). Serambi.ai menargetkan Indonesia lebih dulu.
 - Korpus riset yang dipakai untuk grounding adalah materi proyek. Tidak ada data pengguna dan tidak ada konten berbayar di dalam retrieval set.
 
 ## Roadmap
