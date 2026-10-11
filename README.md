@@ -220,7 +220,7 @@ Two kinds apply: pedagogical and operational.
 - Each flow is separately verifiable, and `verify-flow.sh` runs before every commit.
 - Structured output with `temperature = 0.3` keeps decomposition deterministic enough for downstream agents to rely on.
 - Node configurations follow the NIST AI Risk Management Framework functions (govern, map, measure, manage) at a level appropriate to a prototype.
-- Indonesian regulatory context is tracked in [`docs/`](docs/): the Kominfo Circular on AI Ethics (2023) and the Komdigi National AI Roadmap public consultation (August 2025). Serambi.ai targets Indonesia first.
+- Indonesian regulatory context is tracked in [`docs/`](docs/): the Komdigi Circular on AI Ethics (2023) and the Komdigi National AI Roadmap public consultation (August 2025). Serambi.ai targets Indonesia first.
 - The research corpus used for grounding is project material. No learner data and no paid content enter the retrieval set.
 
 ## Roadmap

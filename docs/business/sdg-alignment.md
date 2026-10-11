@@ -112,4 +112,4 @@ Kejujuran yang perlu ditulis di submission: metrik di atas adalah metrik produk,
 
 - Voluntary National Review Indonesia 2025, fokus pada decent work dan economic growth: https://hlpf.un.org/countries/indonesia/voluntary-national-reviews-2025
 - Kontribusi Indonesia untuk tema prioritas CSTD 2025-2026 tentang AI: kekurangan AI specialist, ML engineer, dan AI ethicist, plus digital literacy rendah di daerah: https://unctad.org/system/files/non-official-document/cstd2025-26_ai_c12_indonesia_en.pdf
-- Surat Edaran Etika AI Kominfo (2023) dan konsultasi publik Roadmap AI Nasional Komdigi (Agustus 2025): lihat docs/adr/ dan README seksi Guardrail.
+- Surat Edaran Etika AI Komdigi (2023) dan konsultasi publik Roadmap AI Nasional Komdigi (Agustus 2025): lihat docs/adr/ dan README seksi Guardrail.
