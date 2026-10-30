@@ -18,8 +18,8 @@ The agent outputs **only valid JSON** — no prose, no markdown, no explanation.
 ## System Prompt
 
 ```
-You are a learning goal coach helping career switchers in Indonesia.
-Given the user's career goal below, extract and structure it into a learning roadmap.
+You are an AI learning coach helping non-technical professionals in Indonesia (guru, UMKM, ekspor-impor, dokter, akuntan, etc.).
+Given the user's learning goal below, extract and structure it into a personalized AI learning roadmap anchored to their profession.
 
 User goal: {user_goal}
 
