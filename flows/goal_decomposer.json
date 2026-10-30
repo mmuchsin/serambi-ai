@@ -373,7 +373,7 @@
                 "tool_mode": false,
                 "trace_as_input": true,
                 "type": "prompt",
-                "value": "You are an AI learning coach helping non-technical professionals in Indonesia.\nGiven the user's profession, hobbies, current AI understanding level, and weekly schedule,\ncreate a personalized weekly AI learning plan that fits their life.\n\nUser profile:\n- Profession: {profession}\n- Hobbies/Interests: {hobbies}\n- Current AI understanding: {level}  (values: \"pemula\" | \"sedikit tahu\" | \"cukup paham\")\n- Weekly learning hours available: {weekly_hours}\n- Curated resources for this profession: {resources_json}\n\nRespond ONLY with valid JSON in this exact format (no markdown, no explanation):\n{\n  \"goal\": \"<cleaned goal statement in Bahasa Indonesia, e.g. 'Menguasai AI untuk mengajar sebagai guru SD>'\",\n  \"deadline_weeks\": <number, default 12>,\n  \"milestones\": [\n    { \"week_range\": \"1-2\", \"focus\": \"<AI topic for this period>\", \"deliverable\": \"<concrete outcome>\", \"resources\": [\"<url1>\", \"<url2>\"] },\n    { \"week_range\": \"3-4\", \"focus\": \"<AI topic>\", \"deliverable\": \"<concrete outcome>\", \"resources\": [\"<url1>\", \"<url2>\"] },\n    { \"week_range\": \"5-6\", \"focus\": \"<AI topic>\", \"deliverable\": \"<concrete outcome>\", \"resources\": [\"<url1>\", \"<url2>\"] },\n    { \"week_range\": \"7-8\", \"focus\": \"<AI topic>\", \"deliverable\": \"<concrete outcome>\", \"resources\": [\"<url1>\", \"<url2>\"] },\n    { \"week_range\": \"9-10\", \"focus\": \"<AI topic>\", \"deliverable\": \"<concrete outcome>\", \"resources\": [\"<url1>\", \"<url2>\"] },\n    { \"week_range\": \"11-12\", \"focus\": \"<AI topic>\", \"deliverable\": \"<concrete outcome>\", \"resources\": [\"<url1>\", \"<url2>\"] }\n  ],\n  \"first_action\": \"<one concrete thing the user can do TODAY to start learning AI>\"\n}"
+                "value": "You are a learning goal coach helping career switchers in Indonesia.\nGiven the user's career goal below, extract and structure it into a learning roadmap.\n\nUser goal: {{user_goal}}\n\nRespond ONLY with valid JSON in this exact format (no markdown, no explanation):\n{\n  \"goal\": \"<cleaned goal statement in Bahasa Indonesia>\",\n  \"deadline_weeks\": <number>,\n  \"milestones\": [\n    { \"week_range\": \"1-2\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" },\n    { \"week_range\": \"3-4\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" },\n    { \"week_range\": \"5-6\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" },\n    { \"week_range\": \"7-8\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" },\n    { \"week_range\": \"9-10\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" },\n    { \"week_range\": \"11-12\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" }\n  ],\n  \"first_action\": \"<one concrete thing the user can do TODAY to start>\"\n}"
               },
               "tool_placeholder": {
                 "_input_type": "MessageTextInput",
@@ -416,7 +416,7 @@
                 "trace_as_metadata": true,
                 "track_in_telemetry": true,
                 "type": "bool",
-                "value": false
+                "value": true
               },
               "profession": {
                 "_input_type": "MessageTextInput",
