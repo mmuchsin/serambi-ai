@@ -1,152 +1,155 @@
 # Serambi.ai
 
-An adaptive multi-agent learning assistant for Indonesian career switchers.
+**AI Literacy Navigator untuk Profesional Non-Teknis Indonesia**
 
-Serambi.ai takes a career goal ("become a data analyst in 3 months") and produces a weekly roadmap, then walks the learner through it: concepts explained Feynman-style, adaptive quizzes with graduated hints, spaced-repetition review, and check-ins that watch for burnout. The conversational interface runs in Bahasa Indonesia.
+Serambi.ai membantu profesional non-teknis (guru, pemilik UMKM, staf ekspor-impor, dokter, akuntan, admin, HR, content creator, pemasaran digital, aparatur publik) yang sadar AI penting tapi **bingung mau belajar apa dan mulai dari mana**.
 
-[What it does](#what-it-does) · [Why it exists](#problem-statement-and-market-gap) · [How it works](#how-it-works) · [Architecture](#architecture) · [Agents](#agents) · [Install](#install) · [Usage](#usage) · [Business model](#business-model) · [Guardrails](#guardrails) · [Roadmap](#roadmap) · [Repository structure](#repository-structure) · [MCP integration](#mcp-integration) · [AI agent skills](#ai-agent-skills) · [Development tools](#development-tools) · [Maintainers](#maintainers) · [License](#license)
+Input: **profesi + hobi + level + jam belajar/minggu** → Output: **roadmap belajar AI personal 12 minggu** dengan sumber kredibel per milestone, disesuaikan konteks kerja mereka.
 
-> The Indonesian version lives in [`README.id.md`](README.id.md).
+Bahasa Indonesia native, mobile-first (PWA), berjalan di Nuxt 4.
 
-**IBM SkillsBuild University Education National Hackathon** · Hacktiv8 × IBM × Komdigi
+> *Serambi* (Indonesia): serambi depan rumah. Tempat percakapan dimulai.
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-
-> *Serambi* (Indonesian): a veranda or front porch. A place where conversation starts.
+---
 
 ## What it does
 
-One flow is live end to end today: `goal_decomposer`. A learner states a career goal in natural language and receives a structured weekly roadmap in Indonesian, with milestones and a first concrete action.
+Satu flow sudah live end-to-end: **`goal_decomposer`**. Professional menjawab 4 pertanyaan singkat dan menerima roadmap AI literacy 12 minggu terstruktur dalam Bahasa Indonesia.
 
-```
-$ Bantu saya buat roadmap belajar data analyst dalam 3 bulan
-→ {
-    "goal": "Data analyst",
-    "deadline_weeks": 12,
-    "milestones": [ ... ],
-    "first_action": "..."
-  }
+```json
+// Input
+{
+  "profession": "guru",
+  "hobbies": ["membaca", "fotografi"],
+  "level": "pemula",
+  "weekly_hours": 5
+}
+
+// Output (ringkas)
+{
+  "profession": "guru",
+  "level": "pemula",
+  "weekly_hours": 5,
+  "roadmap": [
+    {
+      "week": "1-2",
+      "theme": "Dasar AI & Prompt Engineering untuk Guru",
+      "objectives": ["Memahami LLM", "Membuat prompt efektif untuk tugas guru"],
+      "key_concepts": ["LLM", "Prompt Engineering", "Zero-shot vs Few-shot"],
+      "practice": "Buat 5 prompt untuk: rencana pelajaran, soal ujian, surat orang tua, feedback siswa, newsletter kelas",
+      "resources": [
+        {"title": "Panduan Prompt Engineering untuk Pendidik", "url": "https://belajar.kemdikbud.go.id/...", "type": "official"},
+        {"title": "Video: Menggunakan AI di Kelas", "url": "https://youtube.com/...", "type": "video"}
+      ],
+      "estimated_hours": 5
+    }
+    // ... 11 milestone lagi
+  ]
+}
 ```
 
-Verification:
+**Verifikasi:**
 
 ```bash
-bash scripts/verify-flow.sh    # exit 0: flow structure valid
-bash scripts/verify-e2e.sh     # exit 0 when a Langflow server is running; exit 2 when it is not
+bash scripts/verify-flow.sh    # exit 0: struktur flow valid
+bash scripts/verify-e2e.sh     # exit 0 saat Langflow jalan; exit 2 saat server tidak reachable
 ```
 
-**Research grounding.** Design decisions follow published work rather than intuition:
+---
+
+## Problem Statement & Market Gap
+
+**9 juta talenta digital dibutuhkan Indonesia hingga 2030** (Komdigi), ~30% terpenuhi. Indonesia top dunia **pengguna AI**, tapi jauh tertinggal **pengembang AI** (Jakarta Post, Juli 2025). Hambatan utama: **kurang keterampilan digital** (57% pelaku usaha, AWS Agustus 2025).
+
+Tiga gap yang Serambi.ai tutup:
+
+1. **Platform belajar mulai dari kurikulum, bukan dari profesi.** Kursus AI umumnya teknis (coding, ML). Profesional non-teknis butuh AI *untuk profesi mereka*: guru butuh buat soal otomatis, UMKM butuh konten marketing, ekspor-impor butuh baca dokumen bahasa asing.
+2. **AI tutor umum adalah oracle, dan itu masalahnya.** ChatGPT jawab langsung. Riset BJET (DOI 10.1111/bjet.13544, sitasi 700+): *metacognitive laziness* — saat model yang berpikir, learner retensi minim.
+3. **Passar reskilling tumbuh 11-14% CAGR tapi fokus B2B/korporat.** Professional individu yang mau adopsi AI sendirian tertinggal di antara keduanya.
+
+---
+
+## How It Works: 6 Agents (MCP Tools)
+
+Masing-masing agent = 1 Langflow flow → 1 MCP tool bernama.
+
+| # | Agent | MCP Tool | Fungsi | Status |
+|---|-------|----------|--------|--------|
+| 1 | **Goal Decomposer** | `goal_decomposer` | Profesi+hobi+level+jadwal → roadmap 12 minggu + sumber kredibel | ✅ Live, e2e verified |
+| 2 | **Tutor** | `explain_concept` | Jelaskan konsep AI pakai teknik Feynman (analogi profesi user), graduated hinting | ⬜ Planned |
+| 3 | **Assessment** | `generate_quiz` | Quiz adaptif per milestone, hint bertahap, self-assessment confidence | ⬜ Planned |
+| 4 | **Progress** | `check_progress` | Spaced repetition review scheduler berbasis forgetting curve personal | ⬜ Planned |
+| 5 | **Motivator** | `send_reminder` | Nudge motivational + next action berbasis jadwal & progress | ⬜ Planned |
+| 6 | **Wellbeing** | `check_wellbeing` | Burnout/engagement check-in mingguan, adjust beban belajar | ⬜ Planned |
+
+**MVP Hackathon:** Agent 1 saja.
+
+---
+
+## Research Grounding
 
 | Decision | Source |
 |---|---|
-| Goal-to-skill mapping | GenMentor, 2025. [DOI 10.1145/3701716.3715244](https://doi.org/10.1145/3701716.3715244) |
-| Feynman technique, learning gains over passive reading | Feynman Bot, IEEE TALE 2024. [arXiv 2506.09055](https://arxiv.org/abs/2506.09055) |
-| Spaced repetition from a forgetting-curve model | Zaidi et al., AIED 2020. [arXiv 2004.11327](https://arxiv.org/abs/2004.11327) |
-| Guide instead of answering (anti-offloading) | Fan et al., British Journal of Educational Technology 56(2), 2024. [DOI 10.1111/bjet.13544](https://doi.org/10.1111/bjet.13544), cited 700+ |
-| Multi-agent architecture: one learner model, specialized agents | IntelliCode (multi-agent tutoring) |
+| Goal-to-skill mapping + efficient learning path | GenMentor, 2025. [DOI 10.1145/3701716.3715244](https://doi.org/10.1145/3701716.3715244) |
+| Feynman technique > passive reading | Feynman Bot, IEEE TALE 2024. [arXiv 2506.09055](https://arxiv.org/abs/2506.09055) |
+| Spaced repetition from forgetting-curve model | Zaidi et al., AIED 2020. [arXiv 2004.11327](https://arxiv.org/abs/2004.11327) |
+| Scaffold not oracle (anti-offloading) | Fan et al., BJET 56(2), 2024. [DOI 10.1111/bjet.13544](https://doi.org/10.1111/bjet.13544), cited 700+ |
+| Multi-agent: one learner model, specialized agents | IntelliCode (multi-agent tutoring) |
 
-The same reasoning is written out at length in [`research/`](research/).
+Full papers: [`research/`](research/)
 
-## Problem statement and market gap
-
-Indonesia's career switchers are adults with a job who need a new skill set: an admin officer moving into data analysis, a teacher moving into backend work. They study at night, on a limited budget, in Bahasa Indonesia, and they cannot answer "what should I learn this week" from a course catalog.
-
-Three gaps, in order of how much they cost the learner:
-
-1. **Learning platforms start from a curriculum, not from a goal.** Dicoding, Ruangguru, and Zenius all organize by subject. None of them takes "I want to become a data analyst in 6 months" and returns a week-by-week plan.
-2. **General AI tutors are oracles, and that is the problem.** ChatGPT answers. BJET's metacognitive-laziness finding ([DOI 10.1111/bjet.13544](https://doi.org/10.1111/bjet.13544), cited 700+) shows the cost: when the model does the thinking, the learner keeps less.
-3. **The upskilling market is growing and almost entirely corporate.** Global figures run 11–14% CAGR, concentrated in B2B and corporate programs. The individual adult learner who is switching careers is left between the two.
-
-Full competitive analysis with 11 competitors: [`docs/business/competitive-analysis.md`](docs/business/competitive-analysis.md).
-
-### The Indonesian market opportunity
-
-The talent gap is what makes this market worth entering. Indonesia sits near the top of the world for AI *use* and near the bottom for AI *development*. The Communications and Digital Ministry projects 9 million digital professionals needed by 2030 with about a third of that met, and the Deputy Minister for Communication and Digital Affairs has named the AI talent gap as one of the most critical constraints. Talent working in AI grew from roughly 28,000 in 2019 to 96,000 in 2024 (Kompas), while the National AI Roadmap white paper targets 100,000 AI talents per year.
-
-Demand is not the obstacle. AWS research published in August 2025 records AI adoption by Indonesian businesses up 47% year on year to 28% of businesses (18 million), with 57% naming the lack of digital skills as the main barrier to expanding use. The constraint is supply of the skill, which places Serambi.ai on the supply side of a problem the market already agrees exists.
-
-**Standards alignment.** The work maps to two Sustainable Development Goals, which Indonesia reviewed in its 2025 Voluntary National Review: SDG target 4.3 (affordable technical and vocational education, including non-formal learning) and 4.4 (relevant technical skills for employment), plus SDG 8.2 and 8.6. The mapping, the evidence behind it, and the figures deliberately not claimed are in [`docs/business/sdg-alignment.md`](docs/business/sdg-alignment.md).
-
-## How it works
-
-Six agents, each an independent Langflow flow exposed as a named MCP tool.
-
-![Diagram enam agent Serambi.ai](assets/diagrams/serambi-agent-loop.svg)
-
-The loop is the product. A learner who drops out at week 4 never reaches the milestone, so the Progress, Motivator, and Wellbeing agents carry as much weight as the Tutor.
-
-## Capability
-
-Seven capabilities carried this project from a vague idea to a working system, each with a traceable artifact:
-
-| Capability | What it did | Where to look |
-| --- | --- | --- |
-| Analytical | Ranked 11 competitors by threat, pulled Astra AI's real App Store prices (Rp 115.000/month Plus, Rp 385.000/month Sigma) into a price anchor, and placed Serambi.ai on a positioning map | [`docs/business/competitive-analysis.md`](docs/business/competitive-analysis.md) |
-| Critical | Caught and corrected three unverifiable research claims (\"80%+ prefer Feynman\", \"15-20% retention\", BJET \"cited 694\") and fixed the deck and docs so every claim now carries a DOI or arXiv ID | [`README.md`](#what-it-does) research table, `git log` |
-| Systematic | Ran a research, audit, execution sequence; kept every decision as an ADR; enforced feedback-loop verification scripts with explicit exit codes before every commit | [`docs/adr/`](docs/adr/), [`scripts/verify-flow.sh`](scripts/verify-flow.sh) |
-| Creative | Built the \"veranda\" metaphor into the brand and the positioning line \"the only one that starts from your goal\" | [Brand assets](assets/), positioning map in competitive analysis |
-| Innovative | Combined a scaffold-not-oracle pedagogy with spaced repetition and burnout detection, drawn from separate literature | [`research/`](research/), Guardrails below |
-| Problem solving | Started from the metacognitive-laziness problem rather than the chatbot trend: the answer is a guide, not an oracle | [Problem statement](#problem-statement-and-market-gap), BJET DOI above |
-| Technical | Shipped a working Langflow flow exposed as an MCP tool, verified by script, independent of any single LLM provider | [Architecture](#architecture), [`.bob/mcp.json`](.bob/mcp.json) |
+---
 
 ## Architecture
 
-One MCP contract, two harnesses. IBM Bob is the development harness where each agent is built and verified end to end. The web app is the production interface, and it calls the same named MCP tools.
+**Satu MCP contract, dua harness.** IBM Bob = development harness (build & verify agents). Web app Nuxt 4 = production interface (memanggil MCP tools yang sama).
 
-![Serambi.ai system architecture](assets/diagrams/serambi-architecture.svg)
+```
+┌─────────────┐     MCP (streamable HTTP)     ┌──────────────────┐
+│   IBM Bob   │ ◄─────────────────────────────► │   Langflow       │
+│ (dev harness)│      uvx mcp-proxy             │   v1.12.2        │
+└─────────────┘                                 │ (flow engine)    │
+                                                └────────┬─────────┘
+                                                         │
+                              ┌──────────────────────────┼──────────────────────────┐
+                              ▼                          ▼                          ▼
+                       ┌─────────────┐            ┌─────────────┐            ┌─────────────┐
+                       │ LLM Provider│            │  Resources  │            │  Web App    │
+                       │ (Watsonx/   │            │  JSON       │            │  (Nuxt 4    │
+                       │  OpenAI-compat)           │  (curated)  │            │  + PWA)     │
+                       └─────────────┘            └─────────────┘            └─────────────┘
+```
 
-| Component | Role |
-| --- | --- |
-| IBM Bob | Development harness. Reasoning, tool-calling, agent verification. Not the end-user UI |
-| Web app (`apps/web`) | Production user interface, in development. Calls the same MCP tools |
-| MCP | Bridge over streamable HTTP. Any caller resolves Langflow flows to named tools |
-| IBM Langflow | Flow execution engine. Each flow is one specialized agent |
-| LLM provider | OpenAI-compatible endpoint, temperature 0.3, so structured output stays stable |
+| Komponen | Peran |
+|---|---|
+| **IBM Bob** | Development harness. Reasoning, tool-calling, agent verification. BUKAN end-user UI |
+| **Web app (`apps/web`)** | Production user interface (Nuxt 4 + PWA). Memanggil MCP tools yang sama |
+| **MCP** | Bridge over streamable HTTP. Caller resolve Langflow flows → named tools |
+| **Langflow** | Flow execution engine. 1 flow = 1 specialized agent |
+| **LLM Provider** | OpenAI-compatible endpoint, temperature 0.3 untuk structured output stabil |
 
-## Agents
+---
 
-| Agent | Tool Name | Status |
-| --- | --- | --- |
-| Goal Agent | `goal_decomposer` | Live, e2e verified |
-| Tutor Agent | `explain_concept` | Planned |
-| Assessment Agent | `generate_quiz` | Planned |
-| Progress Agent | `check_progress` | Planned |
-| Motivator Agent | `send_reminder` | Planned |
-| Wellbeing Agent | `check_wellbeing` | Planned |
-
-Agent 1 is the tracer bullet and is proven end to end. Agents 2 through 6 are stretch goals for the current phase.
-
-**Stage 2, after the six agents:** a retrieval layer over the project's own research corpus (`research/`), so the Tutor and Assessment agents ground explanations, hints, and questions in the cited evidence rather than in model recall. Scope and rationale in [`docs/PRD.md`](docs/PRD.md); tracked as ISS-12.
-
-## Install
+## Install & Run (Development)
 
 ### Prerequisites
 
-| Requirement | Version | Needed for |
-| --- | --- | --- |
-| IBM Bob | v2.0+ | running the agents through MCP |
-| Langflow | v1.12+ | flow engine (Docker recommended) |
-| Node.js | v20+ | Bob |
-| Python | 3.11+ | only the bootstrap/verify scripts |
-| `uvx` | `pip install uv` | Bob spawns `mcp-proxy` through it |
-| `jq` + `curl` | any | `scripts/*.sh` parse JSON and call the MCP endpoint |
+| Requirement | Version | Untuk |
+|---|---|---|
+| IBM Bob | v2.0+ | Running agents via MCP |
+| Langflow | v1.12+ | Flow engine (Docker recommended) |
+| Node.js | v20+ | Bob, Nuxt 4 |
+| Python | 3.11+ | Bootstrap/verify scripts |
+| `uvx` | `pip install uv` | Bob spawns `mcp-proxy` |
+| `jq` + `curl` | any | `scripts/*.sh` parse JSON & call MCP |
 
-No Python dependencies need installing. The scripts in `scripts/` run on
-the standard library (`json`, `urllib`), so there is no `requirements.txt`
-and nothing to `pip install`.
-
-The repository also contains a `.venv/` directory from building the pitch
-deck (`python-pptx`, `cairosvg`, `pillow`). It is gitignored, it never
-enters the Docker image, and no runtime path reads it. Delete it freely if
-you do not build decks locally.
-
-### 1. Clone and configure
+### 1. Clone & Configure
 
 ```bash
 git clone https://github.com/mmuchsin/serambi-ai.git
 cd serambi-ai
 cp .env.example .env
-# edit .env: set LANGFLOW_API_KEY
+# Edit .env: set LANGFLOW_API_KEY
 ```
 
 ### 2. Start Langflow
@@ -155,120 +158,144 @@ cp .env.example .env
 docker run -p 7860:7860 langflowai/langflow:1.12.2
 ```
 
-Open http://localhost:7860, import `flows/goal_decomposer.json`, and set its Endpoint Name to `goal_decomposer`.
+Buka http://localhost:7860, import `flows/goal_decomposer.json`, set Endpoint Name = `goal_decomposer`.
 
-### 3. Load the API key
+### 3. Load API Key
 
 ```bash
-source ~/.bashrc   # or: export LANGFLOW_API_KEY=<your-key>
+source ~/.bashrc   # atau: export LANGFLOW_API_KEY=<your-key>
 ```
 
-### 4. Open Bob in this workspace
+### 4. Open Bob
 
-Bob loads `.bob/mcp.json` on start. The `lf-serambi_ai` server connects to Langflow over streamable HTTP, and every Langflow flow with an Endpoint Name surfaces as a named tool. No further setup.
+Bob load `.bob/mcp.json` on start. Server `lf-serambi_ai` connect ke Langflow via streamable HTTP. Setiap flow dengan Endpoint Name jadi named tool. No further setup.
+
+### 5. Run Web App (Production Frontend)
+
+```bash
+cd apps/web
+npm install
+npm run dev
+# Buka http://localhost:3000
+```
+
+---
 
 ## Usage
 
-In Bob:
+Di Bob (dev harness):
 
 ```
-Bantu saya buat roadmap belajar data analyst dalam 3 bulan
+Saya guru SD, suka membaca, level pemula, 5 jam/minggu. Buatkan roadmap AI literacy 12 minggu.
 ```
 
-Bob calls `goal_decomposer`, Langflow runs the flow, and the response is a structured 12-week roadmap: deadline in weeks, milestones with focus and deliverable, and a first action.
+Bob call `goal_decomposer`, Langflow jalankan flow, response = roadmap 12 minggu terstruktur.
 
-To verify without a live server:
+Verifikasi tanpa server live:
 
 ```bash
 bash scripts/verify-flow.sh
 ```
 
-Exit codes: 0 means the flow structure is valid. Exit 2 from `verify-e2e.sh` means no Langflow server is reachable, not that the flow is broken.
+Exit codes: 0 = flow valid. Exit 2 dari `verify-e2e.sh` = Langflow tidak reachable (bukan flow broken).
 
-Configuration reference: [`mcp/README.md`](mcp/README.md).
+---
 
-## Business model
+## Business Model
 
-The project is filed under Education and Future of Work. It has to work as a business, not only as a demo, and the cost shape of an LLM product is what decides that.
+**Filed under:** Education & Future of Work
 
-### Why AI unit economics need a decision up front
+### AI Unit Economics
 
-Published figures put AI product gross margin near 45% in 2025, rising toward the low 50s in 2026, against 60–80% for traditional SaaS ([1752vc + ICONIQ, State of AI 2026](https://www.iconiqcapital.com/insights/2026-state-of-ai)). Inference cost scales with usage, so margin has to be managed per user rather than assumed. Serambi.ai's cost per user is one decomposition per goal, plus review and quiz calls, so the roadmap is short (one prompt cycle) while the loop is long. Plan for usage-based or hybrid pricing from the start, and keep the North Star metric on learning progress rather than revenue, since revenue lags several months behind.
+AI product gross margin ~45% (2025) → low 50s (2026) vs 60-80% SaaS tradisional (1752vc + ICONIQ, State of AI 2026). Inference cost scales dengan usage → margin managed per user. Serambi.ai cost/user = 1 dekomposisi per goal + review + quiz calls. Roadmap singkat (1 prompt cycle), loop panjang. Plan usage-based/hybrid pricing dari awal. North Star = learning progress, bukan revenue (revenue lag beberapa bulan).
 
-### Willingness to pay
+### Willingness to Pay
 
-The nearest consumer anchor is Astra AI at Rp 115.000 per month ([App Store ID](https://apps.apple.com/id/app/id6751030141)) for school-exam preparation. Career switching carries a higher willingness to pay than exam prep: the buyer is paying for an outcome, a job, rather than a grade. Serambi.ai avoids matching that price point and instead sells the outcome.
+Consumer anchor: Astra AI Rp 115rb/bln (App Store) untuk ujian sekolah. Career switching = higher WTP (bayar outcome: pekerjaan, bukan nilai). Serambi.ai avoid price match, sell outcome.
 
-### Revenue paths, ranked by time to first revenue
+### Revenue Paths (Ranked by Time to Revenue)
 
-| Path | Who pays | Market size | Notes |
+| Path | Bayar Siapa | Market Size | Catatan |
 |---|---|---|---|
-| B2B white-label | Bootcamps, campuses, Komdigi reskilling programs | Thousands of learners per institution, low cost per learner | Fastest to revenue. The flow already runs behind an MCP endpoint |
-| Institutional licensing | Vocational schools and universities | Recurring, per-cohort | Requires multi-tenant work on Langflow |
-| Consumer subscription | Individual career switchers | Largest, most competitive | Astra AI already holds this price band |
+| **B2B White-label** | Bootcamp, kampus, Komdigi reskilling | Ribuan learner/instansi, cost/learner rendah | **Fastest to revenue**. Flow sudah jalan behind MCP endpoint |
+| **Institutional Licensing** | SMK, vokasi, universitas | Recurring, per-kohort | Butuh multi-tenant di Langflow |
+| **Consumer Subscription** | Professional individu | Terbesar, paling kompetitif | Astra AI sudah pegang price band ini |
 
-Anonymized forgetting-curve data across learners becomes a defensible asset: the aggregate review schedule is the moat, while the source material stays out of the product.
+Data forgetting-curve anonim jadi asset defensible: aggregate review schedule = moat, source material stay out of product.
 
-Business documents: [`docs/business/north-star.md`](docs/business/north-star.md) · [`docs/business/value-proposition.md`](docs/business/value-proposition.md) · [`docs/business/competitive-analysis.md`](docs/business/competitive-analysis.md)
+Business docs: [`docs/business/north-star.md`](docs/business/north-star.md) · [`docs/business/value-proposition.md`](docs/business/value-proposition.md) · [`docs/business/competitive-analysis.md`](docs/business/competitive-analysis.md)
+
+---
 
 ## Guardrails
 
-Two kinds apply: pedagogical and operational.
-
-**Pedagogical, from research:**
+### Pedagogical (dari riset)
 
 | Constraint | Effect |
 |---|---|
-| Scaffold, not oracle | The agent guides instead of answering. A learner who is stuck gets the smallest useful hint, not the solution |
-| Graduated hinting | Hints escalate only when the smaller one fails |
-| Probing questions | "Why" and "how" surface a gap sooner than an explanation does |
-| No cognitive offloading | The agent refuses to do the learner's thinking for them |
-| Goal-first | Every response points back to the stated career goal |
+| **Scaffold, not oracle** | Agent guide, bukan jawab. Stuck → smallest useful hint, bukan solusi |
+| **Graduated hinting** | Hint escalate hanya kalau yang kecil gagal |
+| **Probing questions** | "Why" & "how" surface gap lebih cepat dari explain |
+| **No cognitive offloading** | Agent refuse do learner's thinking |
+| **Goal-first** | Setiap response point back ke profesi + konteks user |
 
-**Operational:**
+### Operational
 
-- Each flow is separately verifiable, and `verify-flow.sh` runs before every commit.
-- Structured output with `temperature = 0.3` keeps decomposition deterministic enough for downstream agents to rely on.
-- Node configurations follow the NIST AI Risk Management Framework functions (govern, map, measure, manage) at a level appropriate to a prototype.
-- Indonesian regulatory context is tracked in [`docs/`](docs/): the Circular on AI Ethics (Kominfo, 2023, issued under the ministry's former name; renamed Komdigi in 2024) and the Komdigi National AI Roadmap public consultation (August 2025). Serambi.ai targets Indonesia first.
-- The research corpus used for grounding is project material. No learner data and no paid content enter the retrieval set.
+- Setiap flow separately verifiable, `verify-flow.sh` jalan sebelum setiap commit
+- Structured output, `temperature = 0.3` → decomposition deterministic untuk downstream agents
+- Node configs follow NIST AI RMF (govern, map, measure, manage) level prototype
+- Regulatory context Indonesia tracked di [`docs/`](docs/): Surat Edaran Etika AI (Kominfo 2023, renamed Komdigi 2024), Komdigi National AI Roadmap consultation (Agustus 2025)
+- Research corpus = project material. No learner data, no paid content di retrieval set
+
+### Security & Misuse Prevention
+
+**Enforced today:**
+
+| Guardrail | Effect |
+|---|---|
+| Credentials stay out of repo | API keys di env vars (`.env`, `.envrc`), gitignored. MCP reject unauthenticated (403 tanpa `x-api-key`) |
+| Schema-validated output | Setiap agent return JSON checked against fixed schema. Model output parsed as data, never executed |
+| Learning-coach scope | Agent stay in learning role, decline general assistant / hand over graded work (academic integrity) |
+
+**Committed untuk web app:**
+
+- Free-text goals treated as data inside fixed system prompt, input length & content bounds → blunt prompt injection
+- Public endpoints require auth + rate limiting before learner data retained
+- Data minimization: learning state limited to progress signals needed, forgetting-curve data aggregated & anonymized before secondary use
+
+---
 
 ## Roadmap
 
-### Delivered
+### Delivered (Phase 1-7)
 
-- `goal_decomposer` flow, verified end to end through Bob, MCP, and Langflow
-- Verification scripts with explicit exit codes
-- Five ADRs covering the architecture
-- Competitive analysis (11 competitors), value proposition, and North Star metric
-- Pitch deck, 11 slides, with speaker notes
+- `goal_decomposer` flow, verified end-to-end via Bob, MCP, Langflow
+- Verification scripts dengan explicit exit codes
+- 5 ADRs covering architecture
+- Competitive analysis (12 competitors), value proposition, North Star metric
+- Pitch deck 11 slides + speaker notes
+- Nuxt 4 PWA initialized di `apps/web` dengan 7 modules
 
-### Stage 1, remaining
+### Stage 1 (Hackathon Submission - Deadline 31 Okt 2026)
 
-- Agent 2, `explain_concept`: Feynman-style tutoring with probing questions
-- Agent 3, `generate_quiz`: adaptive quiz with graduated hints
-- Web app UI in [`apps/web`](apps/web) calling the same MCP tools
-- Demo video, 2 to 3 minutes
+- [ ] Deploy `apps/web` ke Vercel untuk prototype link
+- [ ] Record 3-min demo video (onboarding → roadmap → resources)
+- [ ] Submit hackathon form dengan materials updated
 
-### Stage 2
+### Stage 2 (Post-Hackathon)
 
-- Agents 4 through 6: Progress, Motivator, Wellbeing
-- Retrieval layer over `research/` for the Tutor and Assessment agents (ISS-12)
-- B2B white-label integration with one bootcamp or campus
-- Usage tracking against the North Star metric: Career Goal Progress Rate, target 15% per week per active learner
+- **Agent 2:** `explain_concept` — Feynman-style tutoring dengan probing questions + RAG
+- **Agent 3:** `generate_quiz` — Adaptive quiz dengan graduated hints + RAG
+- **Agent 4:** `check_progress` — Spaced repetition berbasis forgetting curve personal
+- **Agent 5:** `send_reminder` — Nudge engine berbasis behavioral timing
+- **Agent 6:** `check_wellbeing` — Burnout prevention, workload adjustment
+- **RAG Layer** over `research/` untuk Tutor + Assessment (ISS-12)
+- **Auth + Persistence** (Nuxt + Nitro + Turso/libSQL)
+- **PWA Polish** — offline support, push notifications, install prompt
 
-Hackathon calendar (IBM SkillsBuild University Education National Hackathon, Hacktiv8 × IBM × Komdigi):
+---
 
-| Date | Milestone |
-|---|---|
-| 4 Oct 2026 | Stage 1 submission deadline, extended by the committee to 11 Oct 2026 |
-| 13 Oct 2026 | Top 25 semifinal announced |
-| 14–31 Oct 2026 | Stage 2 submission |
-| 6 Nov 2026 | Top 7 final announced |
-| 14 Nov 2026 | Online final and awarding |
-| Jan 2027 | IBM Day showcase |
-
-## Repository structure
+## Repository Structure
 
 ```
 serambi-ai/                          monorepo root
@@ -277,59 +304,76 @@ serambi-ai/                          monorepo root
 │   ├── settings.json                Turn-counter hook, session discipline
 │   └── skills/                      83 agent skills
 ├── flows/                          Langflow flow exports
-├── agents/                         Agent configs and system prompts
-├── apps/web/                       Web frontend, target user interface
-├── packages/                       Shared libraries
+│   └── goal_decomposer.json        ✅ e2e verified
+├── agents/                         Agent configs & system prompts
+│   └── goal_decomposer.md
+├── apps/web/                       Nuxt 4 + PWA (production frontend)
+├── packages/                       Shared libraries (future)
 ├── docs/
-│   ├── PRD.md                      Product requirements, including Stage 2 RAG
-│   ├── ISSUES.md                   Issue tracker, ISS-01 to ISS-12
-│   ├── business/                   Competitive analysis, north-star, value proposition
-│   └── adr/                        Architecture decision records 0001–0005
+│   ├── PRD.md                      Product requirements (v2.0 AI literacy pivot)
+│   ├── ISSUES.md                   Issue tracker
+│   ├── submission-draft.md         Hackathon form answers
+│   ├── business/                   Competitive analysis, north-star, value proposition, GTM, SDG
+│   └── adr/                        ADR 0001–0005
+├── resources/
+│   └── ai-learning-resources.json  Curated credible URLs per profession/topic
 ├── mcp/README.md                   MCP integration details
-├── research/                       Papers and abstracts (multi-agent tutoring, feedback loop)
-├── scripts/                        verify-flow.sh, verify-e2e.sh
-├── slides/                         Pitch deck v2, 11 slides plus speaker notes
-├── submission/                     Screenshots for the submission form
-└── assets/
-    ├── screenshots/                Demo screenshots 01–04
-    └── diagrams/                   Architecture diagram, source HTML included
+├── research/                       30+ papers (grounding per agent)
+├── scripts/                        verify-flow.sh, verify-e2e.sh, bootstrap-langflow.sh
+├── slides/                         Pitch deck v2 (PPTX + PDF)
+├── submission/                     4 screenshots untuk submission form
+├── assets/
+│   ├── screenshots/                Demo screenshots
+│   └── diagrams/                   Architecture, agent loop, competitive (HTML source included)
+├── DESIGN.md                       Design system (from mockup, adapted for Nuxt 4 + @nuxt/ui)
+├── HANDOFF.md                      Session handoff
+├── SPEC.md                         Implementation spec (Goal Decomposer prompt swap)
+└── AGENTS.md                       Session rules, pedagogical constraints, MCP table
 ```
 
-## MCP integration
+---
 
-Bob connects to Langflow through mcp-proxy over streamable HTTP. Configuration in [`.bob/mcp.json`](.bob/mcp.json); the API key is read from the environment and never committed. Every Langflow flow with an Endpoint Name becomes a callable tool, so `mcp__lf-serambi_ai__goal_decomposer` resolves to the live flow. Details and troubleshooting: [`mcp/README.md`](mcp/README.md).
+## MCP Integration
 
-## AI agent skills
+Bob connect ke Langflow via mcp-proxy over streamable HTTP. Config di [`.bob/mcp.json`](.bob/mcp.json); API key dari environment, never committed. Setiap Langflow flow dengan Endpoint Name jadi callable tool: `mcp__lf-serambi_ai__goal_decomposer` resolve ke live flow. Details: [`mcp/README.md`](mcp/README.md).
 
-The project runs inside IBM Bob and uses skills loaded on demand with `$skill-name`.
+---
+
+## AI Agent Skills (83 skills di `.bob/skills/`)
 
 | Skill | Purpose |
 |---|---|
-| `diagram-design` | Architecture, flow, journey, and chart diagrams as HTML/SVG |
-| `pitch-deck` | 11-slide pitch deck structure (custom skill for this project) |
+| `diagram-design` | Architecture, flow, journey, chart diagrams as HTML/SVG |
+| `pitch-deck` | 11-slide pitch deck structure |
 | `value-proposition` | Jobs-to-be-done template |
-| `north-star` | North Star metric and input metrics |
-| `competitive-analysis` | Competitor mapping and differentiation |
-| `business-model` | Canvas-based business model work |
-| `plan-launch` | Go-to-market and beachhead segment |
-| `ai-engineering-workflow` | Seven-phase engineering workflow |
-| `ai-coding-best-practices` | Deep modules, TDD, feedback loops |
+| `north-star` | North Star metric + input metrics |
+| `competitive-analysis` | Competitor mapping & differentiation |
+| `business-model` | Canvas-based business model |
+| `plan-launch` | Go-to-market & beachhead segment |
+| `ai-engineering-workflow` | 7-phase engineering workflow |
+| `code-review` | Standards + Spec review axes |
+| `agentic-engineering-workflow` | Grill → Research → Prototype → Spec → Tickets → Implement → Review |
 
-The full set is 83 skills. Sources: [phuryn/pm-skills](https://github.com/phuryn/pm-skills), [mattpocock/skills](https://github.com/mattpocock/skills), and project custom skills, all under [`.bob/skills/`](.bob/skills/).
+Sources: [phuryn/pm-skills](https://github.com/phuryn/pm-skills), [mattpocock/skills](https://github.com/mattpocock/skills), project custom skills.
 
-## Development tools
+---
 
-Bob covers agent orchestration, MCP tool-calling, and flow verification. Two tasks sit outside it:
+## Development Tools
 
 | Tool | Purpose |
 |---|---|
-| [pi agent](https://pi.dev/) with the [feynman extension](https://pi.dev/packages/@companion-ai/feynman) | Academic research and paper search |
+| IBM Bob | Agent orchestration, MCP tool-calling, flow verification |
+| pi agent + feynman extension | Academic research & paper search |
 | Qwen3.8-27B | Research reasoning |
-| Qwen-Image-2.1 | Image assets for slides and diagrams |
+| Qwen-Image-2.1 | Image assets untuk slides & diagrams |
+
+---
 
 ## Maintainers
 
 **M. Muchsin**, [github.com/mmuchsin](https://github.com/mmuchsin)
+
+---
 
 ## License
 
