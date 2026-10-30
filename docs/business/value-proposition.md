@@ -1,54 +1,69 @@
 # Value Proposition — Serambi.ai
 
-**Tanggal:** 2025-10-03  
+**Tanggal:** 2025-10-30 (Updated for AI Literacy Pivot)  
 **Framework:** 6-part JTBD Template
 
 ---
 
-## Segmen 1: Career Switcher Aktif (Primary)
+## Segmen 1: Profesional Non-Teknis yang Ingin Adopsi AI (Primary)
 
-> "Saya mau jadi data analyst dalam 3 bulan — sudah mulai belajar tapi nggak tahu sudah di mana dan harus ngapain selanjutnya."
+> "Saya guru SD, suka membaca, level pemula, 5 jam/minggu. Bantu saya belajar AI untuk bikin soal otomatis, rencana pelajaran, dan newsletter kelas — nggak mau coding, mau yang langsung pakai di kerja."
 
 | # | Dimensi | Detail |
 |---|---------|--------|
-| 1 | **Who** | Profesional usia 22–35, sudah bekerja di bidang lain (admin, marketing, guru), ingin pindah ke tech role (data analyst, backend dev, ML engineer). Belajar mandiri, tidak mampu/tidak mau bayar bootcamp mahal. Koneksi internet terbatas. Bahasa utama: Indonesia. |
-| 2 | **Why** | Ingin berhasil pindah karier ke tech role dalam waktu tertentu (1–6 bulan) tanpa resign dulu. Job-to-be-done: "Bantu saya belajar secara efisien sesuai target karier saya, tanpa saya harus tahu sendiri harus mulai dari mana." |
-| 3 | **What Before** | Belajar dari YouTube acak, Udemy tanpa roadmap, Google yang tidak personal. Progress tidak terlacak. Tidak tahu gap skill mana yang paling kritis. Burn out karena tidak ada feedback loop. Waktu terbuang untuk topik yang tidak relevan dengan target role. |
-| 4 | **How** | Serambi.ai memetakan goal karier → breakdown roadmap mingguan → tutor adaptif yang jelaskan konsep dengan teknik Feynman → quiz adaptif dengan graduated hinting (bukan langsung jawab) → progress tracking berbasis spaced repetition → motivator + wellbeing check-in mencegah burnout. |
-| 5 | **What After** | Punya roadmap yang jelas dan personal. Tahu persis skill apa yang harus dipelajari minggu ini. Belajar lebih efisien karena AI tidak beri jawaban langsung — pancing refleksi. Progress terukur. Burn out berkurang karena ada dukungan wellbeing. |
-| 6 | **Alternatives** | Ruangguru / Zenius (kurikulum tetap, bukan personal), ChatGPT (oracle — langsung jawab, tanpa scaffold), Coursera (bukan career-goal-anchored), Mentor manusia (mahal, tidak scalable). |
+| 1 | **Who** | Profesional non-teknis Indonesia: guru, pemilik UMKM, staf ekspor-impor, dokter/paramedik, akuntan/keuangan, admin/sekretaris, HR/rekrutmen, content creator, pemasaran digital, aparatur publik. Usia 25–50. Teknis minimal (bisa pakai WhatsApp, email, browser). Bahasa utama: Indonesia. Device: mobile-first. Waktu: 3–10 jam/minggu di luar jam kerja. |
+| 2 | **Why** | Ingin mengadopsi AI untuk profesi mereka **sekarang** — bukan beralih karier ke tech. Job-to-be-done: "Bantu saya belajar AI yang langsung relevan dengan kerja saya, tanpa saya harus belajar coding atau ML, dan tanpa saya harus cari tahu sendiri mulai dari mana." |
+| 3 | **What Before** | Kursus AI umumnya teknis (coding, ML, data science) — tidak relevan. ChatGPT jadi oracle — langsung jawab tanpa struktur belajar, tanpa memori progres, memicu ketergantungan. Belajar sendiri YouTube/blog tidak terstruktur, progres tidak terukur, sumber tidak terverifikasi. Workshop 1-2 hari/webinar terlalu singkat, tidak ada follow-up, tidak personal. |
+| 4 | **How** | Serambi.ai memetakan **profesi + hobi + level + jadwal** → roadmap AI literacy 12 minggu personal dengan sumber kredibel per milestone. Tutor Agent (Feynman + analogi profesi), Assessment (quiz adaptif + graduated hinting), Progress (spaced repetition personal), Motivator (nudge konkret), Wellbeing (burnout check-in). Semua scaffold, bukan oracle. |
+| 5 | **What After** | Punya roadmap AI literacy yang jelas, personal, dan actionable untuk profesi mereka. Tahu persis apa yang dipelajari minggu ini. Belajar efisien karena AI tidak beri jawaban langsung — pancing refleksi. Progress terukur. Burnout berkurang karena ada dukungan wellbeing. Sumber kredibel curated (resmi + komunitas terpercaya). |
+| 6 | **Alternatives** | Kursus AI teknis (Dicoding, bootcamp AI, Coursera ML) — terlalu teknis, tidak relevan. Chatbot AI generik (ChatGPT, Gemini, Copilot) — oracle, tidak scaffold. Belajar sendiri YouTube/blog — tidak terstruktur, tidak terukur. Workshop/webinar — terlalu singkat, tidak personal, tidak follow-up. |
 
 ### Value Proposition Statement
 
-> Untuk career switchers Indonesia yang ingin pindah ke tech role secara mandiri, **Serambi.ai** adalah adaptive learning assistant yang memecah goal karier menjadi roadmap mingguan dan mendampingi belajar dengan teknik scaffold — bukan oracle. Tidak seperti platform kursus biasa, Serambi.ai tidak hanya beri konten, tapi pancing pemikiran kritis dan lacak progress menuju target role nyata.
+> Untuk profesional non-teknis Indonesia yang ingin mengadopsi AI untuk profesi mereka, **Serambi.ai** adalah adaptive AI learning navigator yang memetakan profesi + konteks personal menjadi roadmap belajar 12 minggu — didampingi agent specialist yang menerapkan scaffold (bukan oracle), dilandasi riset pedagogis, dan menyediakan sumber kredibel per profesi. Tidak seperti kursus AI teknis atau chatbot generik, Serambi.ai tidak hanya beri konten/jawaban, tapi pancing pemikiran kritis, lacak progres adaptif, dan menyesuaikan beban belajar agar berkelanjutan.
 
 ---
 
-## Segmen 2: Upskiller Dalam Pekerjaan (Secondary)
+## Segmen 2: Pekerja Entry-Level Tech yang Ingin AI Literacy (Secondary)
 
-> "Saya sudah jadi data analyst tapi ingin belajar machine learning — susah cari waktu dan tidak tahu mulai dari mana."
+> "Saya junior developer, mau paham AI buat fitur produk tapi nggak punya waktu belajar ML dari nol — butuh yang cepat, praktis, langsung apply ke kerja."
 
 | # | Dimensi | Detail |
 |---|---------|--------|
-| 1 | **Who** | Tech worker junior–mid level, ingin naik ke peran lebih senior atau pivot ke domain baru (ML, cloud, cybersec). Waktu terbatas karena masih bekerja full-time. |
-| 2 | **Why** | Ingin mendapat promosi atau pindah ke role baru dalam 6–12 bulan. Butuh belajar efisien di sela-sela pekerjaan. |
-| 3 | **What Before** | Belajar sporadis, tidak konsisten. Mulai course lalu berhenti di tengah jalan. Tidak ada struktur yang sesuai jadwal kerja. |
-| 4 | **How** | Goal Agent menyesuaikan roadmap ke jadwal tersedia. Progress Agent melacak forgetting curve individual. Motivator Agent kirim nudge di waktu yang tepat. |
-| 5 | **What After** | Belajar konsisten meski waktu terbatas. Progress tidak hilang karena ada spaced repetition personal. |
-| 6 | **Alternatives** | LinkedIn Learning (tidak personal), Udemy (tidak adaptif), Medium/blog (tidak terstruktur). |
+| 1 | **Who** | Pekerja entry-level tech (junior dev, QA, PM junior, designer) yang ingin AI literacy untuk fitur produk/kerja. Sudah punya dasar teknis tapi tidak punya waktu/motivasi belajar ML teori mendalam. Waktu terbatas karena full-time. |
+| 2 | **Why** | Ingin paham konsep AI (prompt engineering, RAG, agent, eval) untuk membangun fitur produk. Butuh belajar efisien di sela-sela kerja. |
+| 3 | **What Before** | Belajar sporadis dari artikel teknis, dokumentasi library, YouTube coding. Tidak ada struktur yang sesuai konteks produk. Sering stuck di teori tanpa apply ke kasus nyata. |
+| 4 | **How** | Goal Agent menyesuaikan roadmap ke jadwal & konteks produk. Tutor Agent analogi dari konteks engineering. Progress Agent melacak forgetting curve. Motivator Agent nudge timing tepat. |
+| 5 | **What After** | Paham konsep AI yang dibutuhkan produk. Bisa implementasikan fitur AI tanpa belajar ML dari nol. Progress tidak hilang karena spaced repetition personal. |
+| 6 | **Alternatives** | Dokumentasi library (tidak pedagogis), kursus ML akademik (terlalu teori), Medium/blog (tidak terstruktur), LinkedIn Learning (tidak personal). |
+
+---
+
+## Segmen 3: Institusi / Program Reskilling (B2B — Fase Berikutnya)
+
+> "Kami program reskilling Komdigi/Kemendikbud, butuh platform yang bisa handle ribuan peserta non-teknis dengan kurikulum AI literacy yang sama tapi personal per profesi — cost/learner harus rendah."
+
+| # | Dimensi | Detail |
+|---|---------|--------|
+| 1 | **Who** | Kampus, bootcamp, program reskilling Komdigi/Kemendikbud, korporat yang mau upskill karyawan non-teknis massal. |
+| 2 | **Why** | Butuh skala: ribuan peserta, kurikulum standar tapi personal per profesi, analytics progress, cost/learner rendah. |
+| 3 | **What Before** | LMS konvensional (Moodle, Canvas) — tidak adaptif, tidak AI-native. Custom build — mahal, lama. Platform kursus (Ruangguru, Skill Academy) — tidak AI literacy focus. |
+| 4 | **How** | Whitelabel Serambi.ai: 1 instansi, ribuan peserta, kurikulum core sama + personalisasi per profesi. Dashboard analytics (progress, tingkat kesulitan, retensi). Backend sama (Langflow + MCP), multi-tenant. |
+| 5 | **What After** | Ribuan peserta terlayani dengan biaya marginal rendah. Data anonim kurva lupa per domain jadi moat jangka panjang. |
+| 6 | **Alternatives** | Custom LMS build (mahal, lama), LMS off-the-shelf (tidak AI-native), platform kursus existing (tidak adaptif per profesi). |
 
 ---
 
 ## Reusable Statements
 
 **Marketing (tagline):**  
-> "Belajar mandiri, tapi nggak sendirian."
+> "Belajar AI untuk profesi Anda — personal, terstruktur, berkelanjutan."
 
 **Sales / Submission:**  
-> "Serambi.ai adalah multi-agent AI learning assistant yang mengubah career goal menjadi roadmap belajar personal — didukung riset pendidikan dan dijalankan lewat Bob × Langflow."
+> "Serambi.ai adalah multi-agent AI learning navigator yang mengubah profesi + konteks personal menjadi roadmap AI literacy 12 minggu — didukung riset pendidikan dan dijalankan lewat Bob × Langflow × MCP."
 
 **Onboarding:**  
-> "Ceritakan target karier kamu — Serambi.ai akan buat roadmap minggu ini dan dampingi setiap langkahnya."
+> "Ceritakan profesi, hobi, level, dan jam belajar Anda — Serambi.ai akan buat roadmap AI literacy minggu ini dan dampingi setiap langkahnya."
 
 ---
 
@@ -56,8 +71,25 @@
 
 | Klaim | Riset Pendukung |
 |-------|----------------|
-| Goal-to-roadmap mapping meningkatkan efisiensi belajar | GenMentor (FWCI 47.3) |
-| Scaffold > oracle: AI tidak langsung jawab | Metacognitive Laziness (BJET, cited 694) |
-| Feynman technique: explain to learn | Feynman Bot (arXiv 2506.09055) |
-| Graduated hinting lebih efektif dari direct answer | IntelliCode (FWCI 23.5) |
-| Spaced repetition personal > fixed schedule | Zaidi et al. (arXiv 2004.11327) |
+| Goal/Profession-to-roadmap mapping meningkatkan efisiensi belajar | GenMentor (FWCI 47.3) — goal-to-skill mapping + efficient learning path scheduling |
+| Scaffold > oracle: AI tidak langsung jawab | Metacognitive Laziness (BJET, DOI 10.1111/bjet.13544, cited 700+) — cognitive offloading risk |
+| Feynman technique: explain to learn | Feynman Bot (arXiv 2506.09055) — 80%+ prefer AI Feynman technique over passive re-reading; Protégé Effect (Chase et al. 2009) |
+| Graduated hinting lebih efektif dari direct answer | IntelliCode (FWCI 23.5) — graduated hinting outperforms direct answers |
+| Spaced repetition personal > fixed schedule | Zaidi et al. (arXiv 2004.11327) — adaptive spaced repetition: 15-20% retention improvement via forgetting-curve model |
+| Burnout tracking kritis untuk retention | BJET 2024 (Metacognitive Laziness) — AI must scaffold, not offload |
+
+---
+
+## Differentiation vs Competitors (AI Literacy Pivot)
+
+| Kompetitor | Focus | Kelemahan vs Serambi.ai |
+|---|---|---|
+| **Astra AI** (15M users, Rp115k/bln) | Kursus AI umum + komunitas | Tidak personal per profesi, terlalu teknis, tidak ada scaffold pedagogis |
+| **ailene.id** (17K members, bayar sekali) | Komunitas + workshop AI | Tidak ada roadmap personal, tidak ada progress tracking, tidak ada agent pendamping |
+| **Ruangguru / Zenius** | Kurikulum sekolah tetap | Bukan AI literacy, bukan personal, bukan profession-first |
+| **ChatGPT / Gemini / Copilot** | Oracle chatbot | Langsung jawab tanpa struktur, tidak ada memori progres, memicu cognitive offloading |
+| **Coursera / edX / Dicoding** | Kursus online standar | Tidak personal per profesi + jadwal, tidak ada graduated hinting/Feynman |
+| **LinkedIn Learning** | Video library | Tidak adaptif, tidak ada feedback loop pedagogis |
+| **Workshop 1-2 hari / webinar** | Singkat, inspirasional | Tidak ada follow-up, tidak personal, tidak terukur |
+
+**Moat Serambi.ai:** Kombinasi unik **profession-first roadmap** + **pedagogical scaffold agents** (Feynman, graduated hinting, spaced repetition, wellbeing) + **arsitektur modular MCP** yang memungkinkan agent dikembangkan/diganti independen + **sumber kredibel curated per profesi Indonesia**.
