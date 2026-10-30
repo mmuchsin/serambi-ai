@@ -1,0 +1,95 @@
+{
+  "guru": {
+    "prompt_engineering": [
+      "https://platform.openai.com/docs/guides/prompt-engineering",
+      "https://www.promptingguide.ai/"
+    ],
+    "lesson_plan_ai": [
+      "https://education.microsoft.com/en-us/resources/ai-in-education",
+      "https://teachai.org/"
+    ],
+    "assessment_ai": [
+      "https://www.edutopia.org/article/ai-tools-formative-assessment"
+    ],
+    "differentiation_ai": [
+      "https://www.iste.org/areas-of-focus/ai-in-education"
+    ],
+    "student_engagement_ai": [
+      "https://www.commonsense.org/education/ai-tools-for-student-engagement"
+    ],
+    "admin_ai": [
+      "https://www.edsurge.com/news/2024-01-15-how-teachers-are-using-ai-to-save-time"
+    ]
+  },
+  "umkm": {
+    "marketing_ai": [
+      "https://www.canva.com/ai-tools/",
+      "https://business.facebook.com/ads/ai-tools"
+    ],
+    "content_creation": [
+      "https://www.capcut.com/ai-video-generator",
+      "https://www.copy.ai/"
+    ],
+    "customer_service_ai": [
+      "https://www.tidio.com/ai-chatbot/",
+      "https://www.intercom.com/features/fin-ai-agent"
+    ],
+    "inventory_pricing_ai": [
+      "https://www.shopify.com/ai",
+      "https://www.tradegecko.com/"
+    ],
+    "financial_ai": [
+      "https://www.xero.com/ai-accounting/",
+      "https://quickbooks.intuit.com/ai/"
+    ]
+  },
+  "ekspor_impor": {
+    "documentation_ai": [
+      "https://www.trade.gov/export-documents",
+      "https://iccwbo.org/resources-library/incoterms-2020/"
+    ],
+    "market_research_ai": [
+      "https://www.statista.com/",
+      "https://www.trademap.org/"
+    ],
+    "negotiation_ai": [
+      "https://www.deepl.com/en/write",
+      "https://www.grammarly.com/business/"
+    ],
+    "compliance_ai": [
+      "https://www.wto.org/english/tratop_e/serv_e/serv_e.htm",
+      "https://www.beacukai.go.id/"
+    ]
+  },
+  "dokter": {
+    "medical_ai_basics": [
+      "https://www.nature.com/collections/ai-medicine",
+      "https://www.thelancet.com/digital-health"
+    ],
+    "clinical_decision_ai": [
+      "https://www.uptodate.com/",
+      "https://www.ncbi.nlm.nih.gov/books/NBK557493/"
+    ],
+    "patient_comm_ai": [
+      "https://www.ama-assn.org/delivering-care/ai-health-care"
+    ],
+    "research_ai": [
+      "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9838856/"
+    ]
+  },
+  "akuntan": {
+    "accounting_ai": [
+      "https://www.aicpa.org/technology/artificial-intelligence",
+      "https://www.xero.com/ai-accounting/"
+    ],
+    "audit_ai": [
+      "https://www.deloitte.com/insights/us/en/focus/technology/artificial-intelligence-in-audit.html"
+    ],
+    "tax_ai": [
+      "https://www.thomsonreuters.com/en/artificial-intelligence.html"
+    ],
+    "financial_analysis_ai": [
+      "https://www.cfainstitute.org/en/research/technology/ai-investment-management"
+    ]
+  }
+}
