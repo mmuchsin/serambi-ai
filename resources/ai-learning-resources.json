@@ -91,5 +91,45 @@
     "financial_analysis_ai": [
       "https://www.cfainstitute.org/en/research/technology/ai-investment-management"
     ]
+  },
+  "_shared": {
+    "ai_basics": [
+      "https://www.promptingguide.ai/",
+      "https://platform.openai.com/docs/guides/prompt-engineering"
+    ]
+  },
+  "materials": {
+    "guru": [
+      "materials/guru/01-prompt-engineering.md",
+      "materials/guru/02-lesson-plan-ai.md",
+      "materials/guru/03-assessment-ai.md",
+      "materials/guru/04-admin-ai.md",
+      "materials/guru/05-diferensiasi-ai.md"
+    ],
+    "umkm": [
+      "materials/umkm/01-marketing-ai.md",
+      "materials/umkm/02-content-ai.md",
+      "materials/umkm/03-customer-service-ai.md",
+      "materials/umkm/04-operations-ai.md"
+    ],
+    "ekspor_impor": [
+      "materials/ekspor-impor/01-dokumen-ai.md",
+      "materials/ekspor-impor/02-market-research-ai.md",
+      "materials/ekspor-impor/03-komunikasi-ai.md",
+      "materials/ekspor-impor/04-compliance-ai.md"
+    ],
+    "dokter": [
+      "materials/dokter/01-medical-ai-basics.md",
+      "materials/dokter/02-clinical-decision-ai.md",
+      "materials/dokter/03-patient-comm-ai.md"
+    ],
+    "akuntan": [
+      "materials/akuntan/01-accounting-ai.md",
+      "materials/akuntan/02-audit-ai.md",
+      "materials/akuntan/03-tax-analysis-ai.md"
+    ],
+    "shared": [
+      "materials/00-dasar-ai.md"
+    ]
   }
 }

@@ -28,6 +28,8 @@ User profile:
 - Current AI understanding: {level}  (values: "pemula" | "sedikit tahu" | "cukup paham")
 - Weekly learning hours available: {weekly_hours}
 - Curated resources for this profession: {resources_json}
+- Learning materials for this profession: {materials_json}
+  (JSON array of module file paths from materials/ directory, e.g. ["materials/guru/01-prompt-engineering.md", ...])
 
 Respond ONLY with valid JSON in this exact format (no markdown, no explanation):
 {
@@ -75,6 +77,7 @@ The other constraints (graduated hinting, probing questions) apply primarily to 
 | `level` | `string` | Current AI understanding: `"pemula"` \| `"sedikit tahu"` \| `"cukup paham"` |
 | `weekly_hours` | `integer` | Hours available per week for learning AI (1-40) |
 | `resources_json` | `string` | Curated resources for the profession (injected by backend from `resources/ai-learning-resources.json`) |
+| `materials_json` | `string` | Learning materials for the profession (injected by backend from `resources/ai-learning-resources.json` → `materials` key). JSON array of module file paths (e.g., `["materials/guru/01-prompt-engineering.md"]`) |
 
 **Example:**
 ```json
@@ -112,7 +115,7 @@ JSON object with the following schema:
   "goal": "Menguasai AI untuk mengajar sebagai guru SD",
   "deadline_weeks": 12,
   "milestones": [
-    { "week_range": "1-2", "focus": "Dasar AI & Prompt Engineering untuk guru", "deliverable": "Mampu membuat prompt lesson plan efektif", "resources": ["https://platform.openai.com/docs/guides/prompt-engineering", "https://www.promptingguide.ai/"] },
+    { "week_range": "1-2", "focus": "Dasar AI & Prompt Engineering untuk guru", "deliverable": "Mampu membuat prompt lesson plan efektif", "resources": ["https://platform.openai.com/docs/guides/prompt-engineering", "https://www.promptingguide.ai/"], "materials": ["materials/00-dasar-ai.md", "materials/guru/01-prompt-engineering.md"] },
     { "week_range": "3-4", "focus": "AI untuk materi ajar & soal", "deliverable": "Membuat 1 set soal + kunci jawaban dengan AI", "resources": ["https://education.microsoft.com/en-us/resources/ai-in-education", "https://teachai.org/"] },
     { "week_range": "5-6", "focus": "AI untuk penilaian & diferensiasi", "deliverable": "Mampu membuat rubrik penilaian & soal diferensiasi", "resources": ["https://www.edutopia.org/article/ai-tools-formative-assessment", "https://www.iste.org/areas-of-focus/ai-in-education"] },
     { "week_range": "7-8", "focus": "AI untuk keterlibatan siswa", "deliverable": "Mendesain aktivitas kelas interaktif dengan AI", "resources": ["https://www.commonsense.org/education/ai-tools-for-student-engagement"] },
@@ -184,3 +187,4 @@ Both scripts were passing as of ISS-09 (commit `7409ccf`).
 | `level` | Chat Input / MCP caller | AI understanding level (pemula/sedikit tahu/cukup paham) |
 | `weekly_hours` | Chat Input / MCP caller | Available learning hours per week |
 | `resources_json` | Backend injection | Curated resources subset for the profession |
+| `materials_json` | Backend injection | Learning materials subset for the profession (module file paths from materials/) |
