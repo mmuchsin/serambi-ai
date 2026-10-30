@@ -285,7 +285,11 @@
             "conditional_paths": [],
             "custom_fields": {
               "template": [
-                "user_goal"
+                "profession",
+                "hobbies",
+                "level",
+                "weekly_hours",
+                "resources_json"
               ]
             },
             "description": "Create a prompt template with dynamic variables.",
@@ -369,7 +373,7 @@
                 "tool_mode": false,
                 "trace_as_input": true,
                 "type": "prompt",
-                "value": "You are a learning goal coach helping career switchers in Indonesia.\nGiven the user's career goal below, extract and structure it into a learning roadmap.\n\nUser goal: {user_goal}\n\nRespond ONLY with valid JSON in this exact format (no markdown, no explanation):\n{{\n  \"goal\": \"<cleaned goal statement in Bahasa Indonesia>\",\n  \"deadline_weeks\": <number>,\n  \"milestones\": [\n    {{ \"week_range\": \"1-2\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" }},\n    {{ \"week_range\": \"3-4\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" }},\n    {{ \"week_range\": \"5-6\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" }},\n    {{ \"week_range\": \"7-8\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" }},\n    {{ \"week_range\": \"9-10\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" }},\n    {{ \"week_range\": \"11-12\", \"focus\": \"<topic>\", \"deliverable\": \"<what they can do after this>\" }}\n  ],\n  \"first_action\": \"<one concrete thing the user can do TODAY to start>\"\n}}"
+                "value": "You are an AI learning coach helping non-technical professionals in Indonesia.\nGiven the user's profession, hobbies, current AI understanding level, and weekly schedule,\ncreate a personalized weekly AI learning plan that fits their life.\n\nUser profile:\n- Profession: {profession}\n- Hobbies/Interests: {hobbies}\n- Current AI understanding: {level}  (values: \"pemula\" | \"sedikit tahu\" | \"cukup paham\")\n- Weekly learning hours available: {weekly_hours}\n- Curated resources for this profession: {resources_json}\n\nRespond ONLY with valid JSON in this exact format (no markdown, no explanation):\n{\n  \"goal\": \"<cleaned goal statement in Bahasa Indonesia, e.g. 'Menguasai AI untuk mengajar sebagai guru SD>'\",\n  \"deadline_weeks\": <number, default 12>,\n  \"milestones\": [\n    { \"week_range\": \"1-2\", \"focus\": \"<AI topic for this period>\", \"deliverable\": \"<concrete outcome>\", \"resources\": [\"<url1>\", \"<url2>\"] },\n    { \"week_range\": \"3-4\", \"focus\": \"<AI topic>\", \"deliverable\": \"<concrete outcome>\", \"resources\": [\"<url1>\", \"<url2>\"] },\n    { \"week_range\": \"5-6\", \"focus\": \"<AI topic>\", \"deliverable\": \"<concrete outcome>\", \"resources\": [\"<url1>\", \"<url2>\"] },\n    { \"week_range\": \"7-8\", \"focus\": \"<AI topic>\", \"deliverable\": \"<concrete outcome>\", \"resources\": [\"<url1>\", \"<url2>\"] },\n    { \"week_range\": \"9-10\", \"focus\": \"<AI topic>\", \"deliverable\": \"<concrete outcome>\", \"resources\": [\"<url1>\", \"<url2>\"] },\n    { \"week_range\": \"11-12\", \"focus\": \"<AI topic>\", \"deliverable\": \"<concrete outcome>\", \"resources\": [\"<url1>\", \"<url2>\"] }\n  ],\n  \"first_action\": \"<one concrete thing the user can do TODAY to start learning AI>\"\n}"
               },
               "tool_placeholder": {
                 "_input_type": "MessageTextInput",
@@ -414,22 +418,125 @@
                 "type": "bool",
                 "value": false
               },
-              "user_goal": {
+              "profession": {
                 "_input_type": "MessageTextInput",
                 "advanced": false,
-                "display_name": "user_goal",
+                "display_name": "Profession",
                 "dynamic": false,
-                "info": "",
+                "info": "User's profession (e.g., guru SD, pemilik UMKM, staff ekspor-impor)",
                 "input_types": [
                   "Message"
                 ],
                 "list": false,
                 "list_add_label": "Add More",
                 "load_from_db": false,
-                "name": "user_goal",
+                "name": "profession",
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "hobbies": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Hobbies/Interests",
+                "dynamic": false,
+                "info": "User's hobbies or interests (e.g., membaca, masak, travel)",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "hobbies",
                 "placeholder": "",
                 "required": false,
                 "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "level": {
+                "_input_type": "DropdownInput",
+                "advanced": false,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "AI Understanding Level",
+                "dynamic": false,
+                "external_options": {},
+                "info": "Current AI understanding level",
+                "name": "level",
+                "options": [
+                  "pemula",
+                  "sedikit tahu",
+                  "cukup paham"
+                ],
+                "options_metadata": [],
+                "override_skip": false,
+                "placeholder": "",
+                "real_time_refresh": false,
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "str",
+                "value": "pemula"
+              },
+              "weekly_hours": {
+                "_input_type": "IntInput",
+                "advanced": false,
+                "display_name": "Weekly Learning Hours",
+                "dynamic": false,
+                "info": "Hours available per week for learning AI",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "weekly_hours",
+                "override_skip": false,
+                "placeholder": "",
+                "range_spec": {
+                  "max": 40,
+                  "min": 1,
+                  "step": 1,
+                  "step_type": "int"
+                },
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "track_in_telemetry": true,
+                "type": "int",
+                "value": 5
+              },
+              "resources_json": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Resources JSON",
+                "dynamic": false,
+                "info": "Curated resources for the profession (injected by backend)",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "resources_json",
+                "placeholder": "",
+                "required": false,
+                "show": false,
                 "title_case": false,
                 "tool_mode": false,
                 "trace_as_input": true,
