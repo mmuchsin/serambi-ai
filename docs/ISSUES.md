@@ -1,238 +1,163 @@
-# ISSUES — Serambi.ai Work Tracker
+# Issues Tracker — Serambi.ai
 
-Setiap issue dirancang untuk **1 context window / 1 session** (≤ 100 turns).
-Format: `[STATUS] ISS-XX — Judul`
-
-Status legend:
-- `[ ]` pending
-- `[-]` in progress
-- `[x]` done
-- `[~]` blocked (lihat note)
-- `[>]` deferred / stretch goal
+**Aturan:** Satu issue per sesi. Cari `[-]` atau `[ ]` paling atas untuk lanjutkan.  
+**Commit:** Conventional commits (`feat(flow):`, `feat(mcp):`, `docs:`, `fix:`).  
+**Verifikasi wajib sebelum commit:**
+- `bash scripts/verify-flow.sh` — selalu wajib, exit 0
+- `bash scripts/verify-e2e.sh` — wajib jika Langflow server hidup (exit 0/1; exit 2 = server mati, catat di issue)
 
 ---
 
-## Phase 6 — Implementation
+## Phase 8: AI Literacy Pivot Implementation (Current)
 
-### ISS-01 — Verify Langflow goal_decomposer flow ✅
-**Status:** `[x]` DONE  
-**Scope:** 1 session  
-**What was done:**
-- Rebuilt flow dengan Langflow 1.12 compatible format
-- Fix escape curly braces di prompt JSON example
-- Register `user_goal` sebagai explicit Prompt template variable
-- Verified output: structured JSON roadmap di Playground
+### ISS-13: Update all docs for AI literacy pivot (non-technical professionals)
+- [x] PRD.md updated with new target users (guru, UMKM, ekspor-impor, dll.)
+- [ ] ISSUES.md updated (this file)
+- [ ] README.md updated
+- [ ] submission-draft.md updated
+- [ ] business/value-proposition.md updated (new JTBD segments)
+- [ ] business/north-star.md updated (new north star metric)
+- [ ] business/go-to-market.md updated (new GTM hypotheses)
+- [ ] business/sdg-alignment.md updated (refined alignment)
+- [ ] business/competitive-analysis.md updated (new competitors for AI literacy)
+- [ ] AGENTS.md updated (pedagogical constraints still apply)
 
-**Commits:**
-```
-f25c10e fix(flow): register user_goal as explicit Prompt template variable
-e0552ab fix(flow): escape curly braces in prompt JSON example
-97ac0f8 feat(flow): rebuild goal_decomposer with Langflow 1.12 compatible format
-bb5670a chore(repo): initial commit — project scaffold and goal_decomposer flow
-```
+### ISS-14: Deploy Nuxt 4 PWA (apps/web) to Vercel for prototype link
+- [ ] Configure Vercel deployment
+- [ ] Add environment variables (MCP endpoint, API keys)
+- [ ] Deploy and verify prototype URL works
+- [ ] Test Goal Decomposer via web app
 
----
+### ISS-15: Record 3-minute demo video for hackathon submission
+- [ ] Script demo flow (onboarding → roadmap → resources)
+- [ ] Record screen + voiceover (Indonesian)
+- [ ] Upload to YouTube/Drive, get shareable link
 
-### ISS-02 — Set Langflow Endpoint Name + verify MCP tool discovery
-**Status:** `[x]` DONE
-**Scope:** ~5 turns
-
-**What was done:**
-- Endpoint Name `goal_decomposer` berhasil di-set di Langflow UI
-- Verified via API: `curl /api/v1/flows/` → `endpoint=goal_decomposer`
-- MCP endpoint `http://localhost:7860/api/v1/mcp/project/.../streamable` merespons HTTP 406 (benar — perlu SSE header)
-- Tool `mcp__lf-serambi_ai__goal_decomposer` muncul dan dapat dipanggil dari Bob
-
----
-
-### ISS-03 — End-to-end test: Bob → MCP → Langflow → response
-**Status:** `[x]` DONE
-**Scope:** 1 session
-
-**What was done:**
-- Bob memanggil tool `mcp__lf-serambi_ai__goal_decomposer` secara langsung
-- Langflow merespons dengan structured JSON roadmap 12 minggu (data analytics)
-- e2e terbukti bekerja: Bob → MCP (mcp-proxy SSE) → Langflow → JSON response
-
-**Commit:** `feat(mcp): verified langflow mcp integration with goal_decomposer`
+### ISS-16: Submit hackathon form (Deadline: 2026-10-31 23:59)
+- [ ] Paste submission-draft.md to form
+- [ ] Upload pitch deck (slides/serambi-ai-pitch-deck.pptx + PDF)
+- [ ] Upload 4 screenshots (submission/1-goal-setup.png ... 4-progress.png)
+- [ ] Push 11 commits to GitHub repo
+- [ ] Submit form before deadline
 
 ---
 
-### ISS-04 — Tutor Agent (`explain_concept`) — Langflow flow
-**Status:** `[>]` deferred — setelah ISS-03 done  
-**Scope:** 1 session  
-**Description:** Flow yang menerima `concept` dan `user_level`, output penjelasan Feynman-style dalam Bahasa Indonesia.
+## Phase 6: Goal Decomposer (Agent 1) — COMPLETED
+
+### ISS-01: Create Goal Decomposer flow in Langflow
+- [x] Flow created: `flows/goal_decomposer.json`
+- [x] 4 nodes: ChatInput → Prompt Template → LanguageModel → ChatOutput
+- [x] JSON output enforced, temperature 0.3
+
+### ISS-02: Register flow as MCP tool
+- [x] `.bob/mcp.json` configured with `uvx mcp-proxy` to Langflow
+- [x] Tool exposed as `mcp__lf-serambi_ai__goal_decomposer`
+
+### ISS-03: End-to-end verification
+- [x] `verify-flow.sh` passes (JSON valid, required fields, unique endpoint_name)
+- [x] `verify-e2e.sh` passes (MCP tools/list + goal_decomposer exposed)
 
 ---
 
-### ISS-05 — Assessment Agent (`generate_quiz`) — Langflow flow
-**Status:** `[>]` deferred — setelah ISS-04 done  
-**Scope:** 1 session  
-**Description:** Flow yang generate adaptive quiz berdasarkan concept yang sudah dipelajari, output pertanyaan + jawaban + penjelasan.
+## Phase 7: Submission Materials — COMPLETED
+
+### ISS-04: README.md created (repo root)
+- [x] Project overview, architecture, 6 agents table, research grounding
+
+### ISS-05: docs/README.md created
+- [x] Reading order, file index, research summary table
+
+### ISS-06: Hackathon submission draft written
+- [x] `docs/submission-draft.md` — 17-field form answers
+
+### ISS-07: Pitch deck created
+- [x] `slides/serambi-ai-pitch-deck.pptx` (11 slides)
+- [x] `slides/serambi-ai-pitch-deck.pdf`
+
+### ISS-08: Screenshots captured
+- [x] `submission/1-goal-setup.png`
+- [x] `submission/2-roadmap.png`
+- [x] `submission/3-learning.png`
+- [x] `submission/4-progress.png`
+
+### ISS-09: Verification scripts created
+- [x] `scripts/verify-flow.sh` (static validation)
+- [x] `scripts/verify-e2e.sh` (live MCP validation)
+
+### ISS-10: ADRs documented
+- [x] `docs/adr/0001-langflow-engine.md`
+- [x] `docs/adr/0002-mcp-streamable-http.md`
+- [x] `docs/adr/0003-bob-dev-harness.md`
+- [x] `docs/adr/0004-llm-providers.md`
+- [x] `docs/adr/0005-brand-monorepo-skills.md`
+
+### ISS-11: Handoff doc created
+- [x] `HANDOFF.md` — 1-page status + next action
 
 ---
 
-## Phase 8 — Stage 2 (post Stage 1)
+## Phase 8+: Post-Hackathon Roadmap
 
-### ISS-12 — RAG layer over `research/` for Tutor + Assessment agents
-**Status:** `[ ]` not started — Stage 2, tidak blockers untuk Stage 1  
-**Scope:** 1–2 session  
-**Description:** Tutor Agent (`explain_concept`) dan Assessment Agent (`generate_quiz`) memakai
-retrieval atas korpus `research/` supaya penjelasan, hints, dan soal berlandaskan bukti
-pedagogi proyek, bukan ingatan model. Detail rancangan ada di
-[`docs/PRD.md`](PRD.md) §Research Grounding → "Stage 2 — Retrieval-Augmented Generation".
+### ISS-17: Tutor Agent (`explain_concept`) with RAG
+- [ ] Research: Feynman technique + RAG for profession-specific analogies
+- [ ] Create `flows/explain_concept.json`
+- [ ] Create `agents/explain_concept.md`
+- [ ] Register as MCP tool
+- [ ] Verify flow + e2e
 
-**Acceptance:**
-- Retrieval dipilih (embeddings lokal vs Langflow built-in) dan dicatat sebagai ADR
-- Tutor Agent memberi jawaban yang bisa dilacak ke potongan `research/*.md`
-- Assessment Agent tidak mengarang konsep di luar korpus
-- Guardrail tetap dipatuhi: scaffold, graduated hinting, probing questions
+### ISS-18: Assessment Agent (`generate_quiz`) with RAG
+- [ ] Research: Graduated hinting + adaptive quiz generation
+- [ ] Create `flows/generate_quiz.json`
+- [ ] Create `agents/generate_quiz.md`
+- [ ] Register as MCP tool
+- [ ] Verify flow + e2e
 
-**Catatan:** korpus hanya bahan bacaan proyek. Tidak ada data pengguna atau konten berbayar.
+### ISS-19: Progress Agent (`check_progress`) — Spaced Repetition
+- [ ] Research: Forgetting curve per concept, adaptive scheduling
+- [ ] Create flow + agent + MCP registration
 
----
+### ISS-20: Motivator Agent (`send_reminder`) — Nudge Engine
+- [ ] Research: Behavioral nudge timing, personalization
+- [ ] Create flow + agent + MCP registration
 
-## Phase 7 — Submission Materials
+### ISS-21: Wellbeing Agent (`check_wellbeing`) — Burnout Prevention
+- [ ] Research: Engagement check-in, workload adjustment
+- [ ] Create flow + agent + MCP registration
 
-### ISS-06 — README.md + mcp/README.md
-**Status:** `[x]` DONE
-**Scope:** 1 session
+### ISS-22: RAG Layer for Tutor + Assessment
+- [ ] Vector DB setup (Chroma/Pinecone)
+- [ ] Ingest profession-specific content (curated docs, videos)
+- [ ] Integrate with `explain_concept` and `generate_quiz` flows
 
-**What was done:**
-- `README.md` (English) — quick start, architecture, agents, repo structure
-- `README.id.md` (Bahasa Indonesia) — full translation
-- `mcp/README.md` — config detail, tools table, env setup, troubleshooting
-- `flows/README.md` — flow export convention, endpoint name guide
-- `agents/README.md` — planned system prompts, pedagogical constraints
-- `apps/README.md` — monorepo surfaces, web placeholder
-- `packages/README.md` — shared lib conventions
-- `docs/README.md` — reading order + research summary table
-- `assets/README.md` — screenshot inventory + diagram suggestions
-- `slides/README.md` — 11-slide structure + generate guide
-- `AGENTS.md` — lean agent harness guide with PM skills section
-- `docs/PRD.md` — added Research Grounding table + monorepo module map
+### ISS-23: User Auth + Data Persistence (Nuxt + Nitro)
+- [ ] nuxt-auth-utils setup (email/password + guest mode)
+- [ ] Database (Turso/libSQL) for user profiles, roadmaps, progress
+- [ ] Sync roadmap progress across devices
 
----
-
-### ISS-07 — Submission form fill
-**Status:** `[x]` DONE (draft siap; upload ke form = aksi user)
-**Scope:** 1 session
-
-**What was done:**
-- Seluruh field form dijawab (17 field teks) dan disimpan ke [`submission-draft.md`](submission-draft.md) — Bahasa Indonesia, siap copy-paste
-- Deskripsi Singkat: 2 versi (231 kata / 191 kata) — keduanya di dalam rentang 150–300 kata
-- Semua klaim teknis diverifikasi ke repo: flow `goal_decomposer` (Chat Input → Prompt → LLM → Chat Output), MCP server `lf-serambi_ai`, tool `goal_decomposer`, angka riset (GenMentor FWCI 47.3, Feynman 80%+, Zaidi +15–20%, BJET cited 694)
-- Screenshot disalin ke `assets/screenshots/` dengan nama sesuai form: `01-user-interface.png`, `02-langflow-workflow.png`, `03-langflow-endpoint.png`, `04-output.png`
-- Checklist sebelum submit ditambahkan di akhir draft
-
-**Remaining user actions (bukan issue):** paste jawaban ke form, pastikan repo public, selesaikan pitch deck (ISS-08), upload deck + screenshot
-
-**Commit:**
-```
-docs: add hackathon submission form draft (ISS-07)
-```
+### ISS-24: PWA Polish + Offline Support
+- [ ] Service worker caching strategies
+- [ ] Offline fallback (cached last roadmap)
+- [ ] Install prompt optimization
+- [ ] Push notifications (motivator nudge)
 
 ---
 
-### ISS-08 — Pitch deck (11 slides)
-**Status:** `[x]` DONE
-**Scope:** 1 session
-**Structure:** Cover → Problem → Solution → Target User → How It Works → AI & Technology → Key Features → Prototype/Demo → Impact/Value → Future Development → Team
-**Format:** PowerPoint — simpan di `slides/`
+## Archive: Pre-Pivot Issues (Reference Only)
 
-**What was done:**
-- `slides/serambi-pitch-deck.pptx` — 11 slide, validated (no OpenXML errors)
-- Content sourced dari: `docs/submission-draft.md`, `research/research-papers-and-abstracts.md`, `docs/PRD.md`
-- Setiap slide punya speaker notes
-- Competitive analysis baked in ke slide 09 (Impact/Value)
-- Slide 08 (Demo) berisi placeholder untuk insert 4 screenshot dari `submission/screenshots/`
-- Slide 11 (Team) berisi placeholder nama anggota tim — **isi sebelum submit**
-- Color scheme: `#1E2761` (IBM Blue dark) alternating dengan putih
-- `bash scripts/verify-flow.sh` ✅ | `bash scripts/verify-e2e.sh` ✅
-
-**Remaining user actions:**
-- Isi nama tim di slide 11
-- Insert 4 screenshot ke slide 08 (dari `submission/screenshots/`)
-- Export PDF: buka PPTX di PowerPoint/LibreOffice → File → Export as PDF → `slides/serambi-pitch-deck.pdf`
-
-**Commit:**
-```
-feat(slides): add 11-slide pitch deck PPTX (ISS-08)
-```
+### Old ISS-04 to ISS-05: Career Switcher Flow (Superseded by Pivot)
+- Original target: career switcher (admin → data analyst)
+- Pivoted to: AI literacy for professionals in their current profession
+- All work preserved in git history (commits up to 09a2c15)
 
 ---
 
-### ISS-09 — Verification scripts (flow + e2e)
-**Status:** `[x]` DONE
-**Scope:** 1 session
-**Motivation:** audit `docs/audit-ai-engineering-best-practices.md` P0-1 — feedback loop (046–054) tidak ada; "e2e verified" sebelumnya hanya klaim manual
+## Quick Reference: Current Sprint
 
-**What was done:**
-- `scripts/verify-flow.sh` — validasi statis `flows/*.json`: JSON valid, field wajib (`id`, `endpoint_name`, `data.nodes` non-kosong), `endpoint_name` unik antar flow
-- `scripts/verify-e2e.sh` — cek live: MCP streamable endpoint terjangkau + auth valid (JSON-RPC `tools/list`), lalu assert tiap `endpoint_name` di `flows/*` terekspos sebagai MCP tool; URL dibaca dari `.bob/mcp.json` (single source of truth)
-- 2026-10-04: kedua script PASS (Langflow 1.12 live, tool `goal_decomposer` terekspos)
-- Steering rule ditambahkan ke `AGENTS.md` §Session Rules
+| Issue | Description | Status | Blocker |
+|-------|-------------|--------|---------|
+| **ISS-13** | Update all docs for AI literacy pivot | **IN PROGRESS** | — |
+| **ISS-14** | Deploy Nuxt 4 PWA to Vercel | `[ ]` | ISS-13 |
+| **ISS-15** | Record 3-min demo video | `[ ]` | ISS-14 |
+| **ISS-16** | Submit hackathon form | `[ ]` | ISS-15 |
 
-**Definition of Done (terpenuhi):**
-- [x] `bash scripts/verify-flow.sh` exit 0
-- [x] `bash scripts/verify-e2e.sh` exit 0 (dengan Langflow hidup)
-- [x] Rule verifikasi ada di AGENTS.md
-
-**Commit:**
-```
-chore(repo): add flow + e2e verification scripts (ISS-09)
-```
-
----
-
-### ISS-10 — ADRs untuk keputusan arsitektur mayor
-**Status:** `[x]` DONE
-**Scope:** 1 session
-**Motivation:** audit P0-2 — keputusan "kenapa Langflow/MCP/Bob/LLM provider" tidak terdokumentasi (framework §085)
-
-**What was done:**
-- `docs/adr/README.md` — index + aturan penulisan ADR
-- `docs/adr/0001-langflow-as-flow-engine.md`
-- `docs/adr/0002-mcp-streamablehttp-via-mcp-proxy.md`
-- `docs/adr/0003-bob-tui-as-dev-harness.md`
-- `docs/adr/0004-llm-providers.md`
-- `docs/adr/0005-project-decisions-log.md` — keputusan non-arsitektur (brand, monorepo, skills, tooling), dipindah dari tabel lama di file ini
-- Tabel Notes & Decisions Log di file ini diganti link ke `docs/adr/`
-
-**Commit:**
-```
-docs(adr): add architecture decision records 0001-0005 (ISS-10)
-```
-
----
-
-### ISS-11 — Fix stale mcp/README.md
-**Status:** `[x]` DONE
-**Scope:** < 1 session (follow-up ISS-06)
-**Motivation:** audit P0-3 — README bilang "SSE" padahal transport `streamablehttp`; server `drawio` tidak terdokumentasi
-
-**What was done:**
-- `mcp/README.md` §Overview + §Configuration + Troubleshooting: "SSE" → "streamable HTTP" (sesuai `.bob/mcp.json` actual)
-- §Configuration: note server `drawio` (`npx -y @drawio/mcp`) — diagramming tool, bukan bagian flow bridge
-- §Verification (baru): `scripts/verify-flow.sh` + `scripts/verify-e2e.sh` dengan exit codes
-
-**Commit:**
-```
-docs(mcp): correct streamablehttp transport, document drawio server + verification (ISS-11)
-```
-
----
-
-## Notes & Decisions Log
-
-> Dipindah ke [`docs/adr/0005-project-decisions-log.md`](adr/0005-project-decisions-log.md) (2026-10-04, ISS-10).
-> Keputusan arsitektur mayor: [`docs/adr/`](adr/README.md).
-
----
-
-## How to Start a New Session
-
-1. Baca `HANDOFF.md` di root repo — 1 halaman, berisi status terkini + next action
-2. Baca `docs/ISSUES.md` ini — cari issue `[-]` atau `[ ]` paling atas
-3. Load skills yang relevan (lihat HANDOFF.md bagian "Skills")
-4. Mulai dari step pertama issue tersebut
+**Next session starts at:** ISS-13 (continue updating remaining docs)

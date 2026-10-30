@@ -1,215 +1,229 @@
-# PRD — Serambi.ai (Smart Learning Assistant)
+# Product Requirements Document — Serambi.ai
 
-**Project:** serambi-ai
-**Event:** IBM SkillsBuild University Education National Hackathon (Hacktiv8 + IBM + Komdigi)
-**Deadline Stage 1:** 11 Oktober
-**Status:** 🟢 Phase 7 — e2e verified, submission materials in progress
-
----
-
-## Problem Statement
-
-Career switchers yang belajar tech skills secara mandiri kehilangan arah dan burn out karena tidak ada tutor yang adaptif terhadap learning style mereka atau yang melacak progres ke arah career goal mereka — menyia-nyiakan waktu belajar dan menunda pencapaian target role.
-
-**Market gap:** OECD (2024) mengidentifikasi kesenjangan yang terus melebar antara demand tech skills dan output institusi pendidikan tradisional — reskilling mandiri adalah solusi utama, tapi minim dukungan adaptif.
-
-## Target User
-
-Career switchers / upskillers Indonesia (contoh: "jadi data analyst dalam 3 bulan")
+**Versi:** 2.0 (AI Literacy Pivot)  
+**Tanggal:** 2026-10-30  
+**Status:** Active — guides all implementation
 
 ---
 
-## Architecture
+## 1. Problem Statement
+
+Profesional non-teknis di Indonesia (guru, pemilik UMKM, staf ekspor-impor, dokter, akuntan, admin, HR, dll.) sadar AI penting tapi **bingung mau belajar apa dan mulai dari mana**. Kursus umum terlalu teknis, ChatGPT terlalu terbuka (oracle), dan tidak ada panduan personal yang menyesuaikan profesi + hobi + level + jadwal mereka.
+
+**Insight utama:** Mereka butuh *AI literacy untuk profesi mereka* — bukan jadi AI engineer. Contoh: guru butuh tahu cara buat soal otomatis & kurikulum; UMKM butuh tahu cara buat konten marketing & analisis pelanggan; ekspor-impor butuh tahu cara baca dokumen bahasa asing & cek regulasi.
+
+---
+
+## 2. Target User (Primary)
+
+| Dimensi | Detail |
+|---------|--------|
+| **Profesi** | Guru, UMKM owner, ekspor-impor staff, dokter/paramedik, akuntan/keuangan, admin/sekretaris, HR/rekrutmen, content creator, pemasaran digital, aparatur publik |
+| **Usia** | 25–50 |
+| **Teknis** | Minimal (bisa pakai WhatsApp, email, browser) |
+| **Bahasa** | Indonesia (native) |
+| **Device** | Mobile-first (HP Android/iOS), kadang laptop kantor |
+| **Waktu** | Terbatas — 3–10 jam/minggu di luar jam kerja |
+| **Motivasi** | Efisiensi kerja, tidak ketinggalan, naik gaji/jabatan, mengurangi beban manual |
+
+> **Pivot dari v1:** Target v1 = career switcher (admin → data analyst). Target v2 = profesional *di dalam profesi mereka* yang mau adopsi AI.
+
+---
+
+## 3. Solution Overview
+
+**Serambi.ai** = adaptive multi-agent learning assistant yang mengubah **profesi + hobi + level + jadwal** → **rencana belajar AI personal per minggu** dengan sumber kredibel.
+
+**Arsitektur:** Bob TUI (dev harness) → MCP (streamable HTTP) → Langflow v1.12.2 (flow engine) → LLM provider (Watsonx / OpenAI-compatible).  
+**Produksi:** Web app Nuxt 4 + PWA (apps/web) memanggil MCP tools yang sama.
+
+### 6 Agents (MCP Tools)
+
+| # | Agent | MCP Tool | Fungsi Utama | Status |
+|---|-------|----------|--------------|--------|
+| 1 | **Goal Decomposer** | `goal_decomposer` | Profesi + hobi + level + jam/minggu → roadmap mingguan 12 minggu + sumber kredibel per milestone | ✅ Live (e2e verified) |
+| 2 | **Tutor** | `explain_concept` | Jelaskan konsep AI dengan teknik Feynman (analogi profesi user), graduated hinting | ⬜ Planned |
+| 3 | **Assessment** | `generate_quiz` | Quiz adaptif per milestone, hint bertahap, self-assessment confidence | ⬜ Planned |
+| 4 | **Progress** | `check_progress` | Spaced repetition review scheduler berbasis forgetting curve personal | ⬜ Planned |
+| 5 | **Motivator** | `send_reminder` | Nudge motivational + next action berbasis jadwal & progress | ⬜ Planned |
+| 6 | **Wellbeing** | `check_wellbeing` | Burnout/engagement check-in mingguan, adjust beban belajar | ⬜ Planned |
+
+**MVP (Hackathon):** Agent 1 saja — Goal Decomposer yang menghasilkan roadmap AI literacy 12 minggu dengan `resources_json` kredibel per milestone.
+
+---
+
+## 4. Module Map (Monorepo)
 
 ```
-┌── Development (now) ───────────────────────┐  ┌── Production (target) ──────────────────┐
-Bob TUI (AI agent harness) ── dev UI          │  End user via Web App (apps/web)         │
-    │  natural language (developer)            │      │  natural language                       │
-    ▼                                          │      ▼                                       ▼
-Bob ── reasoning + tool-calling ──┐            │  Web App Backend ── orchestration ──┐
-    │  MCP calls (by tool name)    │ same MCP   │      │  MCP calls (same named tools)   │ same
-    ▼                              ▼ contract  ▼      ▼                               ▼ tools
-Langflow (via SSE MCP)  ◀────────── (MCP) ──── Langflow (via SSE MCP)
-    │                                (named            │
-    ▼                                tools)            ▼
-LLM provider (OpenAI-compatible)  ←── LLM   LLM provider (OpenAI-compatible)
-```
-Bob TUI bukan antarmuka pengguna akhir — ia harness pengembangan untuk
-membangun, menguji, dan memverifikasi agent. Web app (apps/) adalah UI
-pengguna akhir dan memakai kontrak MCP tool yang identik.
-
-| Layer    | Role                                                      |
-|----------|-----------------------------------------------------------|
-| Web App  | UI pengguna akhir (apps/web) — produksi, memanggil MCP tool |
-| Bob      | AI agent harness — DEVELOPMENT: build, test, verifikasi agent |
-| MCP      | Bridge: pemanggil apa pun (Bob atau backend web) memanggil Langflow flows sebagai named tools |
-| Langflow | Flow execution engine — setiap flow = 1 MCP tool          |
-
-**Key rule:** MCP tool names harus spesifik & deskriptif (e.g., `decompose_learning_goal`, bukan "Flow 1").
-
----
-
-## Agents (Langflow flows = MCP tools)
-
-| # | Agent | Endpoint Name (Langflow) | MCP Tool ID (caller) | Status |
-|---|-------|--------------------------|-------------------|--------|
-| 1 | Goal Agent | `goal_decomposer` | `mcp__lf-serambi_ai__goal_decomposer` | ✅ e2e verified |
-| 2 | Tutor Agent | `explain_concept` | `mcp__lf-serambi_ai__explain_concept` | ⬜ Not started |
-| 3 | Assessment Agent | `generate_quiz` | `mcp__lf-serambi_ai__generate_quiz` | ⬜ Not started |
-| 4 | Progress Agent | `check_progress` | `mcp__lf-serambi_ai__check_progress` | ⬜ Not started |
-| 5 | Motivator Agent | `send_reminder` | `mcp__lf-serambi_ai__send_reminder` | ⬜ Not started |
-| 6 | Wellbeing Agent | `check_wellbeing` | `mcp__lf-serambi_ai__check_wellbeing` | ⬜ Not started |
-
-> **MVP scope:** Agent 1 (Goal Agent) is tracer bullet — **e2e proven**. Agents 2-6 are stretch goals.
-
----
-
-## Module Map (Monorepo)
-
-Repo ini adalah **monorepo** — semua sub-proyek (agents, webapp, dll) akan ada di sini.
-
-```
-serambi-ai/                        # monorepo root
-├── .bob/
-│   └── mcp.json                      # Project-scope MCP config (SSE → Langflow)
-├── .env                              # LANGFLOW_API_KEY (gitignored)
-├── .env.example
-│
-├── flows/                            # Langflow flow exports
-│   └── goal_decomposer.json          # ✅ Agent 1 — e2e verified
-│
-├── agents/                           # Agent configs / system prompts (future)
-│
-├── apps/                             # future: webapp, mobile, etc.
-│   └── web/                          # future: Next.js / React frontend
-│
-├── packages/                         # future: shared libs across apps
-│
-├── mcp/
-│   └── README.md                     # MCP integration docs (ISS-06)
-│
-├── docs/
-│   ├── PRD.md                        # this file
-│   ├── ISSUES.md                     # issue tracker per session
-│   └── adr/                          # architecture decision records (0001–0005)
-│
-├── research/                         # library literature (bukan dokumentasi proyek)
-│   ├── research-papers-and-abstracts.md
-│   └── feedback-loop-papers-additional.md
-│
-├── slides/                           # pitch deck (PPTX, 11 slides — ISS-08)
-│
-└── assets/
-    ├── screenshots/                  # demo screenshots for submission
-    └── diagrams/
+serambi-ai/
+├── flows/                    # Langflow flow exports (1 file = 1 agent)
+│   └── goal_decomposer.json  # ✅ e2e verified
+├── agents/                   # Agent configs & system prompts
+│   └── goal_decomposer.md
+├── apps/
+│   └── web/                  # Nuxt 4 + PWA (production frontend)
+├── packages/                 # Future: shared libraries
+├── mcp/                      # MCP integration docs & tool contracts
+├── docs/                     # PRD, ISSUES, submission, ADR, business
+├── research/                 # 30+ papers (grounding per agent)
+├── scripts/                  # verify-flow.sh, verify-e2e.sh, bootstrap-langflow.sh
+├── slides/                   # Pitch deck (PPTX + PDF)
+├── assets/                   # Diagrams, screenshots
+├── submission/               # Hackathon form screenshots
+├── resources/                # NEW: curated resource JSON per profession
+│   └── ai-learning-resources.json
+├── .bob/                     # Bob config: mcp.json, 83 skills in .bob/skills/
+├── DESIGN.md                 # Design system (from mockup)
+├── HANDOFF.md                # Session handoff
+├── SPEC.md                   # Implementation spec (Goal Decomposer prompt swap)
+└── AGENTS.md                 # Session rules, pedagogical constraints, MCP table
 ```
 
-> **Konvensi monorepo:** Apps masuk `apps/`, shared packages masuk `packages/`, Langflow flows masuk `flows/`, agent configs masuk `agents/`. Setiap sub-proyek punya `README.md` sendiri.
+---
+
+## 5. Goal Decomposer — Detailed Spec
+
+### Input Contract
+```json
+{
+  "profession": "guru",              // required: enum dari resources.json
+  "hobbies": ["membaca", "fotografi"], // optional: array string
+  "level": "pemula",                 // required: "pemula" | "menengah" | "mahir"
+  "weekly_hours": 5,                 // required: integer 1–20
+  "resources_json": "resources/ai-learning-resources.json" // path ke curated resources
+}
+```
+
+### Output Contract (Roadmap 12 Minggu)
+```json
+{
+  "profession": "guru",
+  "level": "pemula",
+  "weekly_hours": 5,
+  "roadmap": [
+    {
+      "week": "1-2",
+      "theme": "Dasar AI & Prompt Engineering untuk Guru",
+      "objectives": [
+        "Memahami LLM dan cara kerja prompt dasar",
+        "Membuat prompt efektif untuk tugas guru"
+      ],
+      "key_concepts": ["LLM", "Prompt Engineering", "Zero-shot vs Few-shot"],
+      "practice": "Buat 5 prompt untuk: rencana pelajaran, soal ujian, surat orang tua, feedback siswa, newsletter kelas",
+      "resources": [
+        {"title": "Prompt Engineering Guide untuk Guru", "url": "https://...", "type": "article", "credibility": "official"},
+        {"title": "Video: AI di Kelas", "url": "https://...", "type": "video", "credibility": "community"}
+      ],
+      "estimated_hours": 5
+    }
+    // ... 11 more milestones
+  ],
+  "meta": {
+    "generated_at": "2026-10-30T...",
+    "total_estimated_hours": 60
+  }
+}
+```
+
+### Flow Nodes (Langflow)
+1. **ChatInput** — menerima input user
+2. **Prompt-GDA01** — system prompt (persona: AI Learning Navigator untuk profesional Indonesia)
+3. **LanguageModel** — Watsonx/GPT-4o-mini, temperature 0.3, JSON mode
+4. **ChatOutput** — return roadmap JSON
+
+### Pedagogical Constraints (Apply to All Agents)
+1. **Scaffold, not oracle** — guide learner to answer; don't hand it to them (Role of LLMs in Personalized Learning, cited 142)
+2. **Graduated hinting** — smallest useful hint first (IntelliCode, FWCI 23.5)
+3. **Probing questions over direct answers** — ask "why?" and "how?" (Feynman Bot, Protégé Effect)
+4. **No cognitive offloading** — never do thinking for learner (Metacognitive Laziness, BJET, cited 700+)
+5. **Goal-first** — anchor to learner's stated profession + context (GenMentor, FWCI 47.3)
 
 ---
 
-## Submission Requirements (Form fields to fill)
+## 6. Resource Credibility Strategy (Hybrid)
 
-- [ ] Judul
-- [ ] Tema
-- [ ] Deskripsi Singkat (150-300 kata)
-- [ ] Problem Statement
-- [ ] Target User
-- [ ] Mengapa Solusi Dibutuhkan
-- [ ] Fitur Utama (2-5)
-- [ ] Alur Penggunaan
-- [ ] Penggunaan Langflow
-- [ ] Penggunaan Bob
-- [ ] Integrasi Langflow-Bob ← kritis: harus jelaskan Bob memanggil tool via MCP
-- [ ] Project File / Link
-- [ ] Pitching Deck
-- [ ] Screenshot (3-5): Langflow Playground output, Bob calling MCP tool, output ke user
-- [ ] Dampak
-- [ ] Potensi Pengembangan
-- [ ] Diferensiasi (2-3)
-- [ ] Kemampuan AI Agent
+**RAG tidak dipakai di Goal Agent** (latency, cost, hallucination risk).  
+**Approach:** `resources/ai-learning-resources.json` curated manual per profession.
 
-## Pitch Deck Structure (11 slides)
+```json
+{
+  "guru": {
+    "Dasar AI & Prompt Engineering": [
+      {"title": "Panduan Prompt Engineering untuk Pendidik", "url": "https://belajar.kemdikbud.go.id/...", "type": "official", "lang": "id"},
+      {"title": "Video: Menggunakan AI di Kelas", "url": "https://youtube.com/...", "type": "video", "lang": "id"}
+    ],
+    "Administrasi & Kurikulum": [...]
+  },
+  "umkm": { ... },
+  "ekspor_impor": { ... },
+  "dokter": { ... },
+  "akuntan": { ... }
+}
+```
 
-Cover → Problem → Solution → Target User → How It Works → AI & Technology → Key Features → Prototype/Demo → Impact/Value → Future Development → Team
+**Goal Agent prompt:** "Populate `milestones[].resources` HANYA dari resources_json yang disediakan. Jangan hallucinate URL."
 
 ---
 
-## Research Grounding
+## 7. Research Grounding (Key Papers)
 
-Setiap agent Serambi.ai didukung oleh landasan riset. Detail lengkap + abstract + DOI:
-[`research/research-papers-and-abstracts.md`](../research/research-papers-and-abstracts.md) ·
-[`research/feedback-loop-papers-additional.md`](../research/feedback-loop-papers-additional.md)
-
-| Agent | Landasan Riset | Sumber |
-|-------|---------------|--------|
-| Goal Agent | Goal-to-skill mapping; skill gap identification; efficient learning path scheduling | GenMentor (W4410636983, FWCI 47.3) |
-| Goal Agent | AI intervention pada fase SRL forethought/planning memiliki efek terbesar (g = 1.613, 32 studi) | SRL meta-analysis, Frontiers in Education 2025 |
-| Tutor Agent | Feynman technique: explain → AI identifies gap → probing questions; 80%+ prefer over passive re-reading | Feynman Bot (arXiv 2506.09055) |
-| Tutor Agent | Protégé effect: learners who teach a teachable agent learn more | Chase et al. 2009 (DOI 10.1007/s10956-009-9180-4) |
-| Assessment Agent | Adaptive quiz + graduated hinting — bukan direct answer | IntelliCode (W7140122680, FWCI 23.5) |
-| Assessment Agent | **Cognitive Mirror** paradigm — AI sebagai *teachable novice* yang mencerminkan kualitas penjelasan pengguna; efek Protégé terstruktur | Frontiers in Education 2025 (FWCI 21.9) |
-| Progress Agent | Learner-specific forgetting curves; 15-20% improvement vs fixed-schedule spaced repetition | Zaidi et al. (arXiv 2004.11327) |
-| Progress Agent + Reminder Agent | **Loop closure**: feedback harus di-act-upon oleh learner — risiko *blind loop* (feedback diterima tapi diabaikan) | Komarica 2024; Willis 2020; Boud & Molloy |
-| All agents | LLMs paling efektif sebagai **adaptive scaffold**, bukan autonomous instructor | Role of LLMs in Personalized Learning (W4409189317, cited 142) |
-| All agents | Hindari **cognitive offloading** — AI tidak langsung jawab, tapi pancing refleksi | Metacognitive Laziness (W4405211386, cited 694) |
-| All agents | **Iterative & dialogic feedback** — feedback efektif ketika berkelanjutan dan bersifat percakapan, bukan satu kali | Willis 2020; AI-EDL 2025 |
-
-**Arsitektur multi-agent** (centralized learner state + specialized agents) mengikuti pola IntelliCode (W7140122680) dan ITAS (W7157788799).
-
-> *Multimodal & real-time feedback (video, voice) sengaja tidak masuk scope MVP — direncanakan di Future Development setelah web app rilis.*
-
-### Stage 2 — Retrieval-Augmented Generation (RAG) over the research corpus
-
-Setelah enam agent stabil, Tutor Agent (`explain_concept`) dan Assessment Agent (`generate_quiz`)
-diupayakan memakai **RAG di atas `research/`** — korpus riset proyek sendiri, bukan data eksternal.
-Tujuannya menjaga jawaban dan soal tetap berlandaskan bukti pedagogi yang sudah dikumpulkan
-(scaffold-not-oracle, graduated hinting, Feynman technique, spaced repetition) alih-alih
-bergantung pada ingatan model.
-
-- **Sumber:** `research/research-papers-and-abstracts.md`,
-  `research/feedback-loop-papers-additional.md`, dan ADR di `docs/adr/`
-- **Alur:** pertanyaan user → retrieval potongan relevan → prompt grounded → jawab dengan sitasi
-- **Manfaat:** anti-halusinasi pada klaim pedagogi, jawaban konsisten antar agent, dan audit
-  trail (setiap klaim bisa dilacak ke baris risetnya)
-- **Di luar scope:** data pengguna, ujian, atau konten berbayar. Korpus hanya bahan bacaan proyek.
-
-RAG tidak jadi tracer bullet: Agent 1 tetap satu-satunya bukti e2e sampai Stage 1 tutup.
+| Agent | Paper | Finding |
+|-------|-------|---------|
+| Goal | GenMentor (2025, DOI 10.1145/3701716.3715244) | Goal-to-skill mapping + efficient learning path scheduling |
+| Goal | OECD AI in Work (2023) | AI literacy per profession > generic AI skills |
+| Tutor | Feynman Bot (arXiv 2506.09055) | 80%+ prefer AI Feynman technique over passive re-reading |
+| Tutor | Chase et al. 2009 (Protégé Effect) | Teaching a tutee agent deepens learner's own understanding |
+| Assessment | IntelliCode (FWCI 23.5) | Graduated hinting outperforms direct answers |
+| Progress | Zaidi et al. (arXiv 2004.11327) | Adaptive spaced repetition: 15-20% retention improvement |
+| All | BJET 2024 (DOI 10.1111/bjet.13544, cited 700+) | AI must scaffold, not offload — preserve learner's cognitive effort |
 
 ---
 
-## Guardrails
+## 8. Architecture Decisions (ADR Summary)
 
-- Setiap Langflow node/component harus bisa dijelaskan satu per satu
-- Bob **harus** demonstrably memanggil Langflow tool via MCP (bukan jawab dari LLM sendiri)
-- Jangan expand scope sebelum e2e terbukti bekerja
-- Brand: **Serambi.ai** (preferred) — jangan pakai "EduFlow" (nama proyek contoh Team Aurora)
-- README/docs: tulis SETELAH e2e proven, bukan spekulatif sebelumnya
-- **Pedagogical constraint:** AI = adaptive scaffold, bukan oracle (dari riset) — hindari langsung jawab, gunakan graduated hinting + probing questions
-
----
-
-## Commit Scopes
-
-| Scope | Untuk |
-|-------|-------|
-| `chore(repo):` | Struktur repo, gitignore, tooling |
-| `feat(flow):` | Langflow flow files |
-| `feat(mcp):` | MCP config, integration |
-| `feat(agent):` | Agent logic |
-| `docs:` | README, docs, submission materials |
+| ADR | Decision |
+|-----|----------|
+| 0001 | Langflow v1.12.2 as flow engine (visual editor, MCP-native, JSON export) |
+| 0002 | MCP streamable HTTP via `uvx mcp-proxy` (Bob stdio → Langflow HTTP) |
+| 0003 | Bob TUI = dev harness only. Web app (Nuxt 4) = production |
+| 0004 | Langflow uses OpenAI-compatible endpoint; Bob uses Claude 3.7 Sonnet |
+| 0005 | Brand = Serambi.ai, monorepo, 83 PM skills in `.bob/skills/` |
 
 ---
 
-## Environment
+## 9. Submission Requirements (Hackathon IBM SkillsBuild)
 
-| Item | Value |
-|------|-------|
-| OS | Linux WSL2 |
-| Node | v24.21.0 |
-| Langflow | v1.12.2 via Docker, http://localhost:7860 |
-| Bob | IBM Bob TUI v2.0.5 (development harness, bukan UI pengguna akhir) |
-| Web App | `apps/web/` — target UI pengguna akhir (dalam pengembangan) |
-| LLM (Bob) | Claude 3.7 Sonnet via IBM Bob |
-| LLM (Langflow) | endpoint OpenAI-compatible (base URL, model, API key diisi di environment) |
-| API Key | `LANGFLOW_API_KEY` di `~/.bashrc` — source sebelum start Bob |
+**Deadline:** 2026-10-31 23:59 WIB
+
+| Field | Status |
+|-------|--------|
+| Judul Project | ✅ Serambi.ai: AI Literacy Navigator untuk Profesional Non-Teknis |
+| Tema | ✅ AI untuk SDM / Reskilling |
+| Deskripsi | ✅ Updated for AI literacy pivot |
+| Fitur Utama | ✅ Goal Decomposer (live), 5 agents planned |
+| Dampak | ✅ SDG 4.3, 4.4, 8.2, 8.6 alignment |
+| Validasi | ✅ Mini survey 51 orang, prototype tested |
+| Perkembangan | ✅ Phase 2: Tutor + RAG, Phase 3: Assessment, Progress, Motivator, Wellbeing |
+| Video Demo | ⬜ Record 3-min demo |
+| Slide Deck | ✅ 11 slides (updated for pivot) |
+| Link Prototype | ⬜ Deploy apps/web to Vercel/Netlify |
+
+---
+
+## 10. Guardrails
+
+- **No `as any`** in TypeScript
+- **Conventional commits** required: `feat(flow):`, `feat(mcp):`, `docs:`, `fix:`
+- **Verification before commit:** `bash scripts/verify-flow.sh` (always) + `bash scripts/verify-e2e.sh` (if Langflow running)
+- **One issue per session** — check `ISSUES.md` for current `[-]` or `[ ]`
+- **Pedagogical constraints** non-negotiable (see Section 5)
+
+---
+
+## 11. Next Actions (Priority)
+
+1. **T1-T7 Done** → Goal Decomposer prompt swap + resource JSON + agent spec updated
+2. **Deploy apps/web** (Nuxt 4 PWA) to Vercel for prototype link
+3. **Record 3-min demo video** showing Goal Decomposer flow
+4. **Submit hackathon form** with updated materials
+5. **Post-hackathon:** ISS-04 (Tutor Agent / `explain_concept` with RAG)
