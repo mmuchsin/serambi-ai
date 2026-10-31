@@ -307,13 +307,11 @@ Seluruhnya 83 skill. Sumber: [phuryn/pm-skills](https://github.com/phuryn/pm-ski
 
 ## Alat pengembangan
 
-Bob menangani orkestrasi agent, MCP tool-calling, dan verifikasi flow. Dua tugas di luar cakupannya:
+Bob menangani orkestrasi agent, MCP tool-calling, dan verifikasi flow. Satu tugas di luar cakupannya:
 
 | Alat | Tujuan |
 |---|---|
 | [pi agent](https://pi.dev/) dengan [feynman extension](https://pi.dev/packages/@companion-ai/feynman) | Riset akademik dan pencarian paper |
-| Qwen3.8-27B | Reasoning riset |
-| Qwen-Image-2.1 | Aset gambar untuk slide dan diagram |
 
 ## Maintainer
 

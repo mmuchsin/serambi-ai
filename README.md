@@ -347,8 +347,6 @@ Sources: [phuryn/pm-skills](https://github.com/phuryn/pm-skills), [mattpocock/sk
 |---|---|
 | IBM Bob | Agent orchestration, MCP tool-calling, flow verification |
 | pi agent + feynman extension | Academic research & paper search |
-| Qwen3.8-27B | Research reasoning |
-| Qwen-Image-2.1 | Image assets untuk slides & diagrams |
 
 ---
 
