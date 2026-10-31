@@ -22,6 +22,12 @@ OpenAI-compatible, siapa pun bisa menjalankan repo ini dengan provider lain
 (proxy lokal, gateway kantor, atau API langsung) tanpa mengubah flow, prompt, atau
 kontrak MCP.
 
+**Catatan (2026-10-31):** IBM watsonx adalah LLM yang **dituju** untuk produk
+(rencana). Flow belum pernah dijalankan dengan watsonx; semua verifikasi sejauh
+ini memakai endpoint OpenAI-compatible di atas. Karena kontraknya sama, beralih
+ke watsonx hanya perlu mengganti node LLM, tetapi kompatibilitasnya belum
+terbukti (lihat ISS-25).
+
 ## Alternatives
 
 - **Satu provider untuk keduanya** — menyederhanakan konfigurasi, tapi Bob adalah

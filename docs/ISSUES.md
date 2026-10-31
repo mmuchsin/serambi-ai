@@ -35,7 +35,7 @@
 
 ### ISS-16: Submit hackathon form (Deadline: 2026-10-31 23:59)
 - [ ] Paste submission-draft.md to form
-- [ ] Upload pitch deck (slides/serambi-ai-pitch-deck.pptx + PDF)
+- [ ] Upload pitch deck (slides/serambi-pitch-deck.pptx + PDF)
 - [ ] Upload 4 screenshots (submission/1-goal-setup.png ... 4-progress.png)
 - [ ] Push 11 commits to GitHub repo
 - [ ] Submit form before deadline
@@ -71,8 +71,8 @@
 - [x] `docs/submission-draft.md` — 17-field form answers
 
 ### ISS-07: Pitch deck created
-- [x] `slides/serambi-ai-pitch-deck.pptx` (11 slides)
-- [x] `slides/serambi-ai-pitch-deck.pdf`
+- [x] `slides/serambi-pitch-deck.pptx` (11 slides)
+- [x] `slides/serambi-pitch-deck.pdf`
 
 ### ISS-08: Screenshots captured
 - [x] `submission/1-goal-setup.png`
@@ -89,7 +89,7 @@
 - [x] `docs/adr/0002-mcp-streamable-http.md`
 - [x] `docs/adr/0003-bob-dev-harness.md`
 - [x] `docs/adr/0004-llm-providers.md`
-- [x] `docs/adr/0005-brand-monorepo-skills.md`
+- [x] `docs/adr/0005-project-decisions-log.md`
 
 ### ISS-11: Handoff doc created
 - [x] `HANDOFF.md` — 1-page status + next action
@@ -97,6 +97,18 @@
 ---
 
 ## Phase 8+: Post-Hackathon Roadmap
+
+### ISS-25: Sejajarkan roadmap `goal_decomposer` ke 6 minggu
+- [ ] Ubah prompt/flow ke rencana 6 minggu, sesi 10-30 menit
+- [ ] Update `agents/goal_decomposer.md` dan PRD kontrak output
+- [ ] Verifikasi `verify-flow.sh` + `verify-e2e.sh` (Langflow harus hidup)
+- [ ] Jalankan flow dengan watsonx (saat ini belum pernah)
+
+### ISS-26: Scheduler Agent + sinkron Google Calendar
+- [ ] Flow Langflow penjadwal (dari jam kosong), diekspos sebagai MCP tool
+- [ ] Integrasi Google Calendar (hanya jam sibuk/kosong)
+
+### ISS-27: Hubungkan prototipe (`apps/prototype/`) ke backend / migrasi Nuxt 4 PWA
 
 ### ISS-17: Tutor Agent (`explain_concept`) with RAG
 - [ ] Research: Feynman technique + RAG for profession-specific analogies

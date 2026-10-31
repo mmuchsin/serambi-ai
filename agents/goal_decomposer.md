@@ -5,6 +5,8 @@
 **Endpoint name:** `goal_decomposer`  
 **Status:** ✅ e2e verified (ISS-01 → ISS-03) — updated for AI literacy pivot
 
+> **Catatan penyelarasan (ISS-25):** output flow saat ini = 12 minggu (6 milestone @ 2 minggu). Target produk dan prototipe (`apps/prototype/`) = rencana 6 minggu dengan sesi 10-30 menit. Flow belum diubah dan belum diverifikasi ulang untuk 6 minggu. LLM yang dituju: watsonx (rencana); flow belum pernah dijalankan dengan watsonx.
+
 ---
 
 ## Persona
@@ -136,7 +138,7 @@ The agent receives the relevant subset via `{resources_json}` and embeds appropr
 
 | Finding | Source | Implication for this agent |
 |---|---|---|
-| Goal-to-skill mapping + learning path scheduling improves career transition outcomes | GenMentor (W4410636983, FWCI 47.3) | Core rationale: structured decomposition from profession → AI skills roadmap |
+| Goal-to-skill mapping + learning path scheduling improves career transition outcomes | GenMentor (DOI 10.1145/3701716.3715244) | Core rationale: structured decomposition from profession → AI skills roadmap |
 | AI intervention on Self-Regulated Learning forethought/planning phase has largest effect (g = 1.613 across 32 studies) | SRL meta-analysis, Frontiers in Education 2025 | This agent operates entirely in the SRL forethought/planning phase — the phase with the highest measured impact |
 | Structured weekly roadmap reduces cognitive load vs. open-ended self-study | OECD 2024 + market gap context | Professionals without a plan fail not from lack of effort but from lack of structure |
 | Professionals need domain-specific AI applications, not generic AI courses | IBM SkillsBuild mentor feedback | This pivot targets "AI untuk profesi X" not "jadi AI engineer" |

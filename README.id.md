@@ -1,8 +1,10 @@
 # Serambi.ai
 
-Asisten belajar multi-agent yang adaptif untuk profesional Indonesia yang ingin pindah karier.
+Belajar literasi AI yang menyesuaikan profesi, hobi, dan jam kosong, untuk profesional non-teknis Indonesia.
 
-Pengguna menuliskan tujuan karier ("jadi data analyst dalam 3 bulan") dan Serambi.ai menyusun roadmap mingguan, lalu mendampingi eksekusinya: konsep dijelaskan ala Feynman, kuis adaptif dengan bertahap, review memakai spaced repetition, dan check-in untuk mendeteksi burnout. Antarmuka percakapan berbahasa Indonesia.
+Input: **profesi + hobi + jam kosong**. Output (target produk): **rencana belajar AI 6 minggu** dengan sesi 10-30 menit, contoh dari pekerjaan, dan analogi dari hobi. Spaced repetition (hari 1, 3, 7, 14, 30) dan Tanya AI adalah fitur aplikasi.
+
+> **Status jujur:** prototipe di [`apps/prototype/`](apps/prototype/) adalah mockup statis dengan data contoh (tanpa akun, database, atau backend). Flow `goal_decomposer` di repo saat ini masih menghasilkan roadmap **12 minggu**, belum terhubung ke prototipe, dan belum diselaraskan ke 6 minggu (ISS-25). LLM yang dituju adalah IBM watsonx (rencana, belum pernah dijalankan); flow saat ini memakai endpoint OpenAI-compatible.
 
 [Apa yang dilakukan](#apa-yang-dilakukan) · [Masalah dan peluang](#masalah-dan-peluang) · [Cara kerja](#cara-kerja) · [Arsitektur](#arsitektur) · [Agent](#agent) · [Instalasi](#instalasi) · [Penggunaan](#penggunaan) · [Model bisnis](#model-bisnis) · [Guardrail](#guardrail) · [Roadmap](#roadmap) · [Struktur repo](#struktur-repo) · [Integrasi MCP](#integrasi-mcp) · [Skill agent](#skill-agent) · [Alat pengembangan](#alat-pengembangan) · [Maintainer](#maintainer) · [Lisensi](#lisensi)
 
@@ -16,7 +18,7 @@ Pengguna menuliskan tujuan karier ("jadi data analyst dalam 3 bulan") dan Seramb
 
 ## Apa yang dilakukan
 
-Satu flow sudah jalan ujung ke ujung sampai hari ini: `goal_decomposer`. Pengguna menulis tujuan karier dalam bahasa natural dan menerima roadmap mingguan terstruktur dalam bahasa Indonesia, lengkap dengan milestone dan aksi pertama yang konkret.
+Satu flow sudah ada di repo dan terverifikasi e2e sebelumnya: `goal_decomposer`. Pengguna menulis tujuan dalam bahasa natural dan menerima roadmap mingguan terstruktur dalam bahasa Indonesia (saat ini 12 minggu; target produk 6 minggu), lengkap dengan milestone dan aksi pertama yang konkret.
 
 ```
 $ Bantu saya buat roadmap belajar data analyst dalam 3 bulan
@@ -69,11 +71,11 @@ Permintaannya bukan kendala. Riset AWS yang terbit Agustus 2025 mencatat adopsi 
 
 ## Cara kerja
 
-Enam agent, masing-masing sebuah Langflow flow independen yang diekspos sebagai MCP tool bernama.
+Dua agent inti, masing-masing sebuah Langflow flow independen yang diekspos sebagai MCP tool bernama: Goal Agent (`goal_decomposer`, sudah ada) dan Scheduler (rencana, belum ada). Spaced repetition, latihan, dan Tanya AI adalah fitur aplikasi, bukan agent terpisah.
 
-![Diagram enam agent Serambi.ai](assets/diagrams/serambi-agent-loop.svg)
+![Diagram loop agent Serambi.ai (konsep awal enam agent, kini ide lanjutan)](assets/diagrams/serambi-agent-loop.svg)
 
-Loop inilah produknya. Pengguna yang putus di minggu 4 tidak pernah sampai ke milestone berikutnya, jadi agent Progress, Motivator, dan Wellbeing seberat agent Tutor.
+Diagram di atas adalah konsep awal enam agent. Hanya Goal Agent yang ada di repo; sisanya menjadi ide lanjutan.
 
 ## Kapabilitas
 
@@ -107,16 +109,12 @@ Satu kontrak MCP, dua pemakai. IBM Bob adalah development harness tempat setiap 
 
 | Agent | Nama Tool | Status |
 |-------|-----------|--------|
-| Goal Agent | `goal_decomposer` | Live, terverifikasi e2e |
-| Tutor Agent | `explain_concept` | Planned |
-| Assessment Agent | `generate_quiz` | Planned |
-| Progress Agent | `check_progress` | Planned |
-| Motivator Agent | `send_reminder` | Planned |
-| Wellbeing Agent | `check_wellbeing` | Planned |
+| Goal Agent | `goal_decomposer` | Ada di repo (output saat ini 12 minggu, target 6 minggu) |
+| Scheduler | (belum dinamai) | Rencana (ISS-26) |
 
-Agent 1 adalah tracer bullet dan sudah terbukti ujung ke ujung. Agent 2 sampai 6 adalah stretch goal fase ini.
+**Ide lanjutan (bukan bagian prototipe):** `explain_concept` dan `generate_quiz` (draf di [`agents/`](agents/)), `check_progress`, `send_reminder`, `check_wellbeing`.
 
-**Stage 2, setelah enam agent jalan:** lapisan retrieval di atas korpus riset proyek sendiri (`research/`), supaya agent Tutor dan Assessment menjelaskan, memberi hint, dan menyusun soal berdasarkan bukti yang sudah dikutip, bukan dari ingatan model. Scope dan alasannya di [`docs/PRD.md`](docs/PRD.md), tercatat sebagai ISS-12.
+**Tahap lanjutan:** lapisan retrieval di atas korpus riset proyek sendiri (`research/`), supaya penjelasan dan soal berdasarkan bukti yang sudah dikutip, bukan dari ingatan model. Scope dan alasannya di [`docs/PRD.md`](docs/PRD.md), tercatat sebagai ISS-12.
 
 ## Instalasi
 
@@ -165,7 +163,7 @@ Di Bob:
 Bantu saya buat roadmap belajar data analyst dalam 3 bulan
 ```
 
-Bob memanggil `goal_decomposer`, Langflow menjalankan flow, dan hasilnya roadmap 12 minggu: deadline dalam hitungan minggu, milestone dengan fokus dan deliverable, plus aksi pertama.
+Bob memanggil `goal_decomposer`, Langflow menjalankan flow, dan hasilnya roadmap (saat ini 12 minggu, target produk 6 minggu): deadline dalam hitungan minggu, milestone dengan fokus dan deliverable, plus aksi pertama.
 
 Untuk verifikasi tanpa server hidup:
 

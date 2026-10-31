@@ -264,7 +264,7 @@ IBM Langflow dan IBM Bob terintegrasi dalam satu rantai, web app jadi konsumen p
 
 **Status: ✅ Selesai (2026-10-30 updated for AI literacy pivot)** — dibangun dengan skill `ppt-master` (Default route), 11 slide native DrawingML (editable), include speaker notes.
 
-**File:** `slides/serambi-ai-pitch-deck.pptx` + `slides/serambi-ai-pitch-deck.pdf`
+**File:** `slides/serambi-pitch-deck.pptx` + `slides/serambi-pitch-deck.pdf`
 
 **Struktur 11 slide (updated for pivot):**
 

@@ -28,12 +28,9 @@ Full structure → see [`docs/PRD.md`](docs/PRD.md#module-map-monorepo).
 
 | Tool | What it does |
 |------|-------------|
-| `goal_decomposer` | Maps a career goal → weekly roadmap with milestones |
-| `explain_concept` | Feynman-style concept explanation *(planned)* |
-| `generate_quiz` | Adaptive quiz with graduated hints *(planned)* |
-| `check_progress` | Spaced repetition review scheduler *(planned)* |
-| `send_reminder` | Motivational nudge with next action *(planned)* |
-| `check_wellbeing` | Burnout/engagement check-in *(planned)* |
+| `goal_decomposer` | Goal Agent: goal/profession → weekly learning plan (flow outputs 12 weeks today; product target 6 weeks, ISS-25) |
+| Scheduler *(planned, unnamed, ISS-26)* | Study schedule from free time / Google Calendar |
+| `explain_concept`, `generate_quiz`, `check_progress`, `send_reminder`, `check_wellbeing` | *Follow-up ideas*, not part of the prototype; only draft specs exist for the first two |
 
 Always call the MCP tool. Never answer from LLM alone when a tool covers the intent.
 
@@ -54,7 +51,7 @@ These apply to all agents and any prompt written for this project:
    *Source: "Metacognitive Laziness" (BJET, cited 694)*
 
 5. **Goal-first** — always anchor responses to the learner's stated career goal.
-   *Source: GenMentor (FWCI 47.3)*
+   *Source: GenMentor (DOI 10.1145/3701716.3715244)*
 
 ## Session Rules
 

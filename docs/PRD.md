@@ -37,7 +37,9 @@ Profesional non-teknis di Indonesia (guru, pemilik UMKM, staf ekspor-impor, dokt
 **Arsitektur:** Bob TUI (dev harness) → MCP (streamable HTTP) → Langflow v1.12.2 (flow engine) → LLM provider (Watsonx / OpenAI-compatible).  
 **Produksi:** Web app Nuxt 4 + PWA (apps/web) memanggil MCP tools yang sama.
 
-### 6 Agents (MCP Tools)
+> **Pivot final (31 Okt 2026):** target produk = rencana 6 minggu, sesi 10-30 menit; agent inti = Goal Agent + Scheduler (rencana). Tabel di bawah dipertahankan sebagai ide lanjutan. Flow saat ini masih 12 minggu (lihat ISS-25).
+
+### 6 Agents (MCP Tools) — ide lanjutan
 
 | # | Agent | MCP Tool | Fungsi Utama | Status |
 |---|-------|----------|--------------|--------|
@@ -136,7 +138,7 @@ serambi-ai/
 2. **Graduated hinting** — smallest useful hint first (IntelliCode, FWCI 23.5)
 3. **Probing questions over direct answers** — ask "why?" and "how?" (Feynman Bot, Protégé Effect)
 4. **No cognitive offloading** — never do thinking for learner (Metacognitive Laziness, BJET, cited 700+)
-5. **Goal-first** — anchor to learner's stated profession + context (GenMentor, FWCI 47.3)
+5. **Goal-first** — anchor to learner's stated profession + context (GenMentor, DOI 10.1145/3701716.3715244)
 
 ---
 
@@ -226,4 +228,4 @@ serambi-ai/
 2. **Deploy apps/web** (Nuxt 4 PWA) to Vercel for prototype link
 3. **Record 3-min demo video** showing Goal Decomposer flow
 4. **Submit hackathon form** with updated materials
-5. **Post-hackathon:** ISS-04 (Tutor Agent / `explain_concept` with RAG)
+5. **Post-hackathon:** ISS-17 (Tutor Agent / `explain_concept` with RAG, ide lanjutan)

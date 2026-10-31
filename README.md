@@ -4,7 +4,9 @@
 
 Serambi.ai membantu profesional non-teknis (guru, pemilik UMKM, staf ekspor-impor, dokter, akuntan, admin, HR, content creator, pemasaran digital, aparatur publik) yang sadar AI penting tapi **bingung mau belajar apa dan mulai dari mana**.
 
-Input: **profesi + hobi + level + jam belajar/minggu** → Output: **roadmap belajar AI personal 12 minggu** dengan sumber kredibel per milestone, disesuaikan konteks kerja mereka.
+Input: **profesi + hobi + jam kosong** → Output: **rencana belajar AI 6 minggu** (target produk) dengan sesi 10-30 menit, contoh dari pekerjaan, dan analogi dari hobi.
+
+> **Status jujur:** prototipe di [`apps/prototype/`](apps/prototype/) adalah mockup statis dengan data contoh (tanpa akun, database, atau backend). Flow `goal_decomposer` di repo saat ini masih menghasilkan roadmap **12 minggu** dan belum terhubung ke prototipe. Penyelarasan ke 6 minggu ada di future works (ISS-25).
 
 Bahasa Indonesia native, mobile-first (PWA), berjalan di Nuxt 4.
 
@@ -14,7 +16,7 @@ Bahasa Indonesia native, mobile-first (PWA), berjalan di Nuxt 4.
 
 ## What it does
 
-Satu flow sudah live end-to-end: **`goal_decomposer`**. Professional menjawab 4 pertanyaan singkat dan menerima roadmap AI literacy 12 minggu terstruktur dalam Bahasa Indonesia.
+Satu flow sudah ada di repo: **`goal_decomposer`** (Langflow, terverifikasi e2e sebelumnya). Output flow saat ini berupa roadmap AI literacy 12 minggu terstruktur dalam Bahasa Indonesia; target produk adalah 6 minggu.
 
 ```json
 // Input
@@ -69,20 +71,18 @@ Tiga gap yang Serambi.ai tutup:
 
 ---
 
-## How It Works: 6 Agents (MCP Tools)
+## How It Works: 2 Agents (MCP Tools) + Fitur Aplikasi
 
-Masing-masing agent = 1 Langflow flow → 1 MCP tool bernama.
+Masing-masing agent = 1 Langflow flow → 1 MCP tool bernama. Spaced repetition (hari 1, 3, 7, 14, 30), latihan, dan Tanya AI adalah fitur aplikasi, bukan agent terpisah. LLM yang dituju: IBM watsonx (rencana; flow belum pernah dijalankan dengan watsonx).
 
 | # | Agent | MCP Tool | Fungsi | Status |
 |---|-------|----------|--------|--------|
-| 1 | **Goal Decomposer** | `goal_decomposer` | Profesi+hobi+level+jadwal → roadmap 12 minggu + sumber kredibel | ✅ Live, e2e verified |
-| 2 | **Tutor** | `explain_concept` | Jelaskan konsep AI pakai teknik Feynman (analogi profesi user), graduated hinting | ⬜ Planned |
-| 3 | **Assessment** | `generate_quiz` | Quiz adaptif per milestone, hint bertahap, self-assessment confidence | ⬜ Planned |
-| 4 | **Progress** | `check_progress` | Spaced repetition review scheduler berbasis forgetting curve personal | ⬜ Planned |
-| 5 | **Motivator** | `send_reminder` | Nudge motivational + next action berbasis jadwal & progress | ⬜ Planned |
-| 6 | **Wellbeing** | `check_wellbeing` | Burnout/engagement check-in mingguan, adjust beban belajar | ⬜ Planned |
+| 1 | **Goal Agent** | `goal_decomposer` | Profesi+hobi+jadwal → rencana belajar + sumber kredibel | ✅ Ada di repo (output saat ini 12 minggu, target 6 minggu) |
+| 2 | **Scheduler** | (belum dinamai) | Jadwal belajar adaptif dari jam kosong / Google Calendar | ⬜ Rencana |
 
-**MVP Hackathon:** Agent 1 saja.
+**Ide lanjutan (bukan bagian prototipe):** `explain_concept` dan `generate_quiz` (draf di [`agents/`](agents/)), `check_progress`, `send_reminder`, `check_wellbeing`.
+
+**MVP Hackathon:** Goal Agent saja; prototipe UI statis terpisah dan belum terhubung.
 
 ---
 
