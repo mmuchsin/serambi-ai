@@ -35,7 +35,7 @@ Profesional non-teknis di Indonesia (guru, pemilik UMKM, staf ekspor-impor, dokt
 **Serambi.ai** = adaptive multi-agent learning assistant yang mengubah **profesi + hobi + level + jadwal** → **rencana belajar AI personal per minggu** dengan sumber kredibel.
 
 **Arsitektur:** Bob TUI (dev harness) → MCP (streamable HTTP) → Langflow v1.12.2 (flow engine) → LLM provider (Watsonx / OpenAI-compatible).  
-**Produksi:** Web app Nuxt 4 + PWA (apps/web) memanggil MCP tools yang sama.
+**Produksi (future works):** frontend Nuxt 4 PWA (apps/web) + backend Nuxt Nitro sebagai MCP client + database (SQLite/libSQL atau Postgres, belum diputuskan) memanggil MCP tools yang sama. LLM target: IBM watsonx (belum pernah dijalankan).
 
 > **Pivot final (31 Okt 2026):** target produk = rencana 6 minggu, sesi 10-30 menit; agent inti = Goal Agent + Scheduler (rencana). Tabel di bawah dipertahankan sebagai ide lanjutan. Flow saat ini masih 12 minggu (lihat ISS-25).
 
@@ -208,7 +208,7 @@ serambi-ai/
 | Perkembangan | ✅ Phase 2: Tutor + RAG, Phase 3: Assessment, Progress, Motivator, Wellbeing |
 | Video Demo | ⬜ Record 3-min demo |
 | Slide Deck | ✅ 11 slides (updated for pivot) |
-| Link Prototype | ⬜ Deploy apps/web to Vercel/Netlify |
+| Link Prototype | ✅ Prototipe statis (apps/prototype) live di https://serambi-ai.netlify.app |
 
 ---
 
@@ -225,7 +225,7 @@ serambi-ai/
 ## 11. Next Actions (Priority)
 
 1. **T1-T7 Done** → Goal Decomposer prompt swap + resource JSON + agent spec updated
-2. **Deploy apps/web** (Nuxt 4 PWA) to Vercel for prototype link
+2. ~~Deploy prototype link~~ Done: prototipe statis di Netlify (Nuxt 4 PWA = future works)
 3. **Record 3-min demo video** showing Goal Decomposer flow
 4. **Submit hackathon form** with updated materials
 5. **Post-hackathon:** ISS-17 (Tutor Agent / `explain_concept` with RAG, ide lanjutan)

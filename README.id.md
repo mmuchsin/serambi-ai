@@ -8,7 +8,7 @@ Input: **profesi + hobi + jam kosong**. Output (target produk): **rencana belaja
 
 [Apa yang dilakukan](#apa-yang-dilakukan) · [Masalah dan peluang](#masalah-dan-peluang) · [Cara kerja](#cara-kerja) · [Arsitektur](#arsitektur) · [Agent](#agent) · [Instalasi](#instalasi) · [Penggunaan](#penggunaan) · [Model bisnis](#model-bisnis) · [Guardrail](#guardrail) · [Roadmap](#roadmap) · [Struktur repo](#struktur-repo) · [Integrasi MCP](#integrasi-mcp) · [Skill agent](#skill-agent) · [Alat pengembangan](#alat-pengembangan) · [Maintainer](#maintainer) · [Lisensi](#lisensi)
 
-> Versi Bahasa Inggris-nya di [`README.md`](README.md).
+> Ringkasan bahasa Indonesia ini dapat tertinggal dari [`README.md`](README.md), yang menjadi acuan utama.
 
 **IBM SkillsBuild University Education National Hackathon** · Hacktiv8 × IBM × Komdigi
 
@@ -93,17 +93,17 @@ Tujuh kapabilitas membawa proyek ini dari ide samar sampai sistem yang jalan, ma
 
 ## Arsitektur
 
-Satu kontrak MCP, dua pemakai. IBM Bob adalah development harness tempat setiap agent dibangun dan diverifikasi ujung ke ujung. Web app adalah antarmuka produksi, dan ia memakai MCP tool bernama yang sama.
+Satu kontrak MCP, dua pemanggil. IBM Bob (coding agent harness) membangun dan memverifikasi setiap agent. Di masa depan (future works), backend Nuxt Nitro memanggil MCP tool bernama yang sama sebagai MCP client, di belakang frontend Nuxt 4 PWA dan database.
 
 ![Diagram arsitektur sistem Serambi.ai](assets/diagrams/serambi-architecture.svg)
 
 | Komponen | Peran |
 |---|---|
 | IBM Bob | Development harness. Reasoning, tool-calling, verifikasi agent. Bukan UI pengguna akhir |
-| Web app (`apps/web`) | Antarmuka pengguna produksi, masih dikembangkan. Memakai MCP tool yang sama |
+| Nuxt 4 PWA + Nitro backend + database | Future works (`apps/web` baru scaffold). Nitro = API + MCP client; database SQLite/libSQL atau Postgres, belum diputuskan |
 | MCP | Jembatan melalui streamable HTTP. Pemakai mana pun bisa memetakan flow Langflow ke named tool |
 | IBM Langflow | Flow execution engine. Satu flow adalah satu agent terspesialisasi |
-| LLM provider | Endpoint OpenAI-compatible, temperature 0.3, supaya output terstruktur tetap stabil |
+| LLM provider | Target: IBM watsonx (belum pernah dijalankan). Flow saat ini: endpoint OpenAI-compatible, temperature 0.3 |
 
 ## Agent
 

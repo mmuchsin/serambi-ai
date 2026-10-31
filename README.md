@@ -8,7 +8,7 @@ Input: **profesi + hobi + jam kosong** → Output: **rencana belajar AI 6 minggu
 
 > **Status jujur:** prototipe di [`apps/prototype/`](apps/prototype/) adalah mockup statis dengan data contoh (tanpa akun, database, atau backend). Flow `goal_decomposer` di repo saat ini masih menghasilkan roadmap **12 minggu** dan belum terhubung ke prototipe. Penyelarasan ke 6 minggu ada di future works (ISS-25).
 
-Bahasa Indonesia native, mobile-first (PWA), berjalan di Nuxt 4.
+Bahasa Indonesia native, mobile-first. Frontend produksi (Nuxt 4 PWA + backend Nuxt Nitro) adalah **future works**; yang live sekarang hanya prototipe statis.
 
 > *Serambi* (Indonesia): serambi depan rumah. Tempat percakapan dimulai.
 
@@ -102,31 +102,19 @@ Full papers: [`research/`](research/)
 
 ## Architecture
 
-**Satu MCP contract, dua harness.** IBM Bob = development harness (build & verify agents). Web app Nuxt 4 = production interface (memanggil MCP tools yang sama).
+**Satu MCP contract, dua pemanggil.** IBM Bob (coding agent harness) membangun dan memverifikasi flow Langflow. Di masa depan, backend Nuxt Nitro memanggil MCP server yang sama sebagai MCP client.
 
-```
-┌─────────────┐     MCP (streamable HTTP)     ┌──────────────────┐
-│   IBM Bob   │ ◄─────────────────────────────► │   Langflow       │
-│ (dev harness)│      uvx mcp-proxy             │   v1.12.2        │
-└─────────────┘                                 │ (flow engine)    │
-                                                └────────┬─────────┘
-                                                         │
-                              ┌──────────────────────────┼──────────────────────────┐
-                              ▼                          ▼                          ▼
-                       ┌─────────────┐            ┌─────────────┐            ┌─────────────┐
-                       │ LLM Provider│            │  Resources  │            │  Web App    │
-                       │ (Watsonx/   │            │  JSON       │            │  (Nuxt 4    │
-                       │  OpenAI-compat)           │  (curated)  │            │  + PWA)     │
-                       └─────────────┘            └─────────────┘            └─────────────┘
-```
+![Diagram arsitektur sistem Serambi.ai](assets/diagrams/serambi-architecture.svg)
 
-| Komponen | Peran |
-|---|---|
-| **IBM Bob** | Development harness. Reasoning, tool-calling, agent verification. BUKAN end-user UI |
-| **Web app (`apps/web`)** | Production user interface (Nuxt 4 + PWA). Memanggil MCP tools yang sama |
-| **MCP** | Bridge over streamable HTTP. Caller resolve Langflow flows → named tools |
-| **Langflow** | Flow execution engine. 1 flow = 1 specialized agent |
-| **LLM Provider** | OpenAI-compatible endpoint, temperature 0.3 untuk structured output stabil |
+| Komponen | Peran | Status |
+|---|---|---|
+| **IBM Bob** | Coding agent harness. Membangun dan memverifikasi agent. Bukan UI pengguna | Dipakai |
+| **Langflow MCP server** | Flow engine. 1 flow = 1 named MCP tool (streamable HTTP via `mcp-proxy`) | Ada di repo (`goal_decomposer`) |
+| **LLM provider** | Target: IBM watsonx. Flow saat ini memakai endpoint OpenAI-compatible, temperature 0.3 | watsonx belum pernah dijalankan |
+| **Prototipe statis** (`apps/prototype/`) | Mockup UI di Netlify, data contoh, tanpa backend | Live |
+| **Nuxt 4 PWA frontend** (`apps/web`) | Antarmuka pengguna produksi | Future works (baru scaffold) |
+| **Nuxt Nitro backend** | API + MCP client yang memanggil tool Langflow | Future works |
+| **Database** | SQLite/libSQL (Turso) atau Postgres, belum diputuskan | Future works |
 
 ---
 
@@ -170,14 +158,9 @@ source ~/.bashrc   # atau: export LANGFLOW_API_KEY=<your-key>
 
 Bob load `.bob/mcp.json` on start. Server `lf-serambi_ai` connect ke Langflow via streamable HTTP. Setiap flow dengan Endpoint Name jadi named tool. No further setup.
 
-### 5. Run Web App (Production Frontend)
+### 5. Lihat prototipe (opsional)
 
-```bash
-cd apps/web
-npm install
-npm run dev
-# Buka http://localhost:3000
-```
+Prototipe statis tanpa build step: buka `apps/prototype/index.html` di browser, atau lihat versi live di https://serambi-ai.netlify.app. Frontend Nuxt 4 di `apps/web` masih scaffold (future works) dan belum terhubung ke Langflow.
 
 ---
 
@@ -274,23 +257,22 @@ Business docs: [`docs/business/north-star.md`](docs/business/north-star.md) · [
 - 5 ADRs covering architecture
 - Competitive analysis (12 competitors), value proposition, North Star metric
 - Pitch deck 11 slides + speaker notes
-- Nuxt 4 PWA initialized di `apps/web` dengan 7 modules
+- Prototipe statis (landing + `/app/`) di `apps/prototype/`, dideploy ke Netlify
+- Scaffold Nuxt 4 di `apps/web` (future works, belum dipakai)
 
 ### Stage 1 (Hackathon Submission - Deadline 31 Okt 2026)
 
-- [ ] Deploy `apps/web` ke Vercel untuk prototype link
+- [x] Deploy prototipe statis ke Netlify (https://serambi-ai.netlify.app)
 - [ ] Record 3-min demo video (onboarding → roadmap → resources)
 - [ ] Submit hackathon form dengan materials updated
 
 ### Stage 2 (Post-Hackathon)
 
-- **Agent 2:** `explain_concept` — Feynman-style tutoring dengan probing questions + RAG
-- **Agent 3:** `generate_quiz` — Adaptive quiz dengan graduated hints + RAG
-- **Agent 4:** `check_progress` — Spaced repetition berbasis forgetting curve personal
-- **Agent 5:** `send_reminder` — Nudge engine berbasis behavioral timing
-- **Agent 6:** `check_wellbeing` — Burnout prevention, workload adjustment
+- **Scheduler Agent** + sinkron Google Calendar (ISS-26)
+- **Ide lanjutan:** `explain_concept` (Feynman-style + RAG), `generate_quiz` (graduated hints + RAG), `check_progress`, `send_reminder`, `check_wellbeing`
+- **Selaraskan flow ke 6 minggu** dan jalankan dengan IBM watsonx (ISS-25)
 - **RAG Layer** over `research/` untuk Tutor + Assessment (ISS-12)
-- **Auth + Persistence** (Nuxt + Nitro + Turso/libSQL)
+- **Nuxt 4 PWA + Nitro backend (MCP client)**, auth, dan database (SQLite/libSQL atau Postgres, belum diputuskan) (ISS-27)
 - **PWA Polish** — offline support, push notifications, install prompt
 
 ---
@@ -307,7 +289,8 @@ serambi-ai/                          monorepo root
 │   └── goal_decomposer.json        ✅ e2e verified
 ├── agents/                         Agent configs & system prompts
 │   └── goal_decomposer.md
-├── apps/web/                       Nuxt 4 + PWA (production frontend)
+├── apps/prototype/                 Prototipe statis (live di Netlify)
+├── apps/web/                       Nuxt 4 + PWA (future works, baru scaffold)
 ├── packages/                       Shared libraries (future)
 ├── docs/
 │   ├── PRD.md                      Product requirements (v2.0 AI literacy pivot)

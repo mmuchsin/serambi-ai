@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="serambi-architecture-title serambi-architecture-desc" id="serambi-architecture-root">
         <title id="serambi-architecture-title">Serambi.ai system architecture</title>
-        <desc id="serambi-architecture-desc">The Bob development harness and the target web app both call one MCP endpoint that exposes IBM Langflow flows as named tools, and Langflow calls an OpenAI-compatible LLM provider.</desc>
+        <desc id="serambi-architecture-desc">Bob, a coding agent harness, builds and verifies Langflow flows exposed as an MCP server. In future works, a Nuxt 4 PWA frontend talks to a Nuxt Nitro backend that acts as MCP client and stores data in a database. The target LLM provider is IBM watsonx; flows today use an OpenAI-compatible endpoint.</desc>
         <defs>
-      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
+      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap');
       #serambi-architecture-root { --color-paper: #f5f5f0;
       --color-ink: #2d3142;
       --color-muted: #4f5d75;
@@ -13,9 +13,7 @@
       --font-sans: 'Geist', system-ui, sans-serif;
       --font-serif: 'Instrument Serif', Georgia, serif;
       --font-mono: 'Geist Mono', ui-monospace, monospace; }
-      #serambi-architecture-root { font-family: var(--font-sans); color: var(--color-ink); }
-      #serambi-architecture-root .diagram-container { width: 100%; overflow-x: auto; }
-      #serambi-architecture-root .diagram-container { overflow-x: visible; }</style>
+      #serambi-architecture-root { font-family: var(--font-sans); color: var(--color-ink); }</style>
           <marker id="serambi-architecture-arch-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
           <marker id="serambi-architecture-arch-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker>
           <marker id="serambi-architecture-arch-arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2e5aa8"/></marker>
@@ -24,89 +22,113 @@
         <rect width="100%" height="100%" fill="#f5f5f0"/>
 
         <!-- ===== ZONES ===== -->
-        <rect x="72" y="104" width="400" height="132" rx="8" fill="#2d3142" fill-opacity="0.02" stroke="#2d3142" stroke-opacity="0.10" stroke-width="0.8"/>
-        <rect x="84" y="108" width="132" height="12" rx="2" fill="#f5f5f0"/>
-        <text x="150" y="117" fill="#5a6580" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.14em">DEVELOPMENT HARNESS</text>
+        <rect x="72" y="264" width="320" height="116" rx="8" fill="#2d3142" fill-opacity="0.02" stroke="#2d3142" stroke-opacity="0.10" stroke-width="0.8"/>
+        <rect x="84" y="258" width="132" height="12" rx="2" fill="#f5f5f0"/>
+        <text x="150" y="267" fill="#5a6580" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.14em">DEVELOPMENT HARNESS</text>
 
-        <rect x="808" y="104" width="400" height="132" rx="8" fill="#2d3142" fill-opacity="0.02" stroke="#2d3142" stroke-opacity="0.10" stroke-width="0.8"/>
-        <rect x="820" y="108" width="88" height="12" rx="2" fill="#f5f5f0"/>
-        <text x="864" y="117" fill="#5a6580" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.14em">PRODUCTION</text>
+        <rect x="888" y="104" width="320" height="416" rx="8" fill="#2d3142" fill-opacity="0.02" stroke="#2d3142" stroke-opacity="0.30" stroke-width="0.8" stroke-dasharray="6,4"/>
+        <rect x="900" y="98" width="190" height="12" rx="2" fill="#f5f5f0"/>
+        <text x="995" y="107" fill="#5a6580" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.14em">PRODUCTION · FUTURE WORKS</text>
 
         <!-- ===== CONNECTORS ===== -->
-        <line x1="448" y1="178" x2="504" y2="178" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#serambi-architecture-arch-arrow)"/>
-        <line x1="832" y1="178" x2="776" y2="178" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#serambi-architecture-arch-arrow)"/>
-        <line x1="640" y1="212" x2="640" y2="352" stroke="#bf4520" stroke-width="1.2" marker-end="url(#serambi-architecture-arch-arrow-accent)"/>
-        <line x1="640" y1="428" x2="640" y2="512" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#serambi-architecture-arch-arrow-link)"/>
+        <!-- Bob -> MCP server -->
+        <line x1="368" y1="322" x2="504" y2="322" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#serambi-architecture-arch-arrow)"/>
+        <!-- Nitro -> MCP server -->
+        <line x1="912" y1="322" x2="776" y2="322" stroke="#4f5d75" stroke-width="1.2" stroke-dasharray="6,4" marker-end="url(#serambi-architecture-arch-arrow)"/>
+        <!-- PWA -> Nitro -->
+        <line x1="1048" y1="212" x2="1048" y2="288" stroke="#4f5d75" stroke-width="1.2" stroke-dasharray="6,4" marker-end="url(#serambi-architecture-arch-arrow)"/>
+        <!-- Nitro -> DB -->
+        <line x1="1048" y1="356" x2="1048" y2="432" stroke="#4f5d75" stroke-width="1.2" stroke-dasharray="6,4" marker-end="url(#serambi-architecture-arch-arrow)"/>
+        <!-- MCP server -> LLM -->
+        <line x1="640" y1="364" x2="640" y2="432" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#serambi-architecture-arch-arrow-link)"/>
 
         <!-- ===== NODES ===== -->
-        <!-- Bob TUI -->
-        <rect x="96" y="144" width="352" height="68" rx="6" fill="#f5f5f0"/>
-        <rect x="96" y="144" width="352" height="68" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
-        <rect x="104" y="150" width="40" height="12" rx="2" fill="none" stroke="#2d3142" stroke-opacity="0.40" stroke-width="0.8"/>
-        <text x="124" y="159" fill="#2d3142" fill-opacity="0.80" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">DEV</text>
-        <text x="272" y="184" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">Bob TUI</text>
-        <text x="272" y="200" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">agent harness · build and verify</text>
+        <!-- Bob -->
+        <rect x="96" y="288" width="272" height="68" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <rect x="104" y="294" width="40" height="12" rx="2" fill="none" stroke="#2d3142" stroke-opacity="0.40" stroke-width="0.8"/>
+        <text x="124" y="303" fill="#2d3142" fill-opacity="0.80" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">DEV</text>
+        <text x="232" y="328" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">IBM Bob</text>
+        <text x="232" y="344" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">coding agent harness · build and verify</text>
 
-        <!-- Web app -->
-        <rect x="832" y="144" width="352" height="68" rx="6" fill="#f5f5f0"/>
-        <rect x="832" y="144" width="352" height="68" rx="6" fill="#2d3142" fill-opacity="0.03" stroke="#2d3142" stroke-opacity="0.30" stroke-width="1"/>
-        <rect x="840" y="150" width="32" height="12" rx="2" fill="none" stroke="#2d3142" stroke-opacity="0.30" stroke-width="0.8"/>
-        <text x="856" y="159" fill="#2d3142" fill-opacity="0.80" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">UI</text>
-        <text x="1008" y="184" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">Web app</text>
-        <text x="1008" y="200" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">end-user interface · in development</text>
-
-        <!-- MCP endpoint (focal 1) -->
-        <rect x="504" y="144" width="272" height="68" rx="6" fill="#f5f5f0"/>
-        <rect x="504" y="144" width="272" height="68" rx="6" fill="#bf4520" fill-opacity="0.08" stroke="#bf4520" stroke-width="1"/>
-        <rect x="512" y="150" width="32" height="12" rx="2" fill="none" stroke="#bf4520" stroke-opacity="0.40" stroke-width="0.8"/>
-        <text x="528" y="159" fill="#bf4520" fill-opacity="0.85" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">MCP</text>
-        <text x="640" y="184" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">MCP endpoint</text>
-        <text x="640" y="200" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">streamable HTTP + api key</text>
-
-        <!-- Langflow (focal 2) -->
-        <rect x="440" y="352" width="400" height="76" rx="6" fill="#f5f5f0"/>
-        <rect x="440" y="352" width="400" height="76" rx="6" fill="#bf4520" fill-opacity="0.08" stroke="#bf4520" stroke-width="1"/>
-        <rect x="448" y="358" width="52" height="12" rx="2" fill="none" stroke="#bf4520" stroke-opacity="0.40" stroke-width="0.8"/>
-        <text x="474" y="367" fill="#bf4520" fill-opacity="0.85" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">ENGINE</text>
-        <text x="640" y="392" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">IBM Langflow</text>
-        <text x="640" y="408" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">one flow = one named MCP tool</text>
+        <!-- Langflow MCP server (focal) -->
+        <rect x="504" y="288" width="272" height="76" rx="6" fill="#f5f5f0"/>
+        <rect x="504" y="288" width="272" height="76" rx="6" fill="#bf4520" fill-opacity="0.08" stroke="#bf4520" stroke-width="1"/>
+        <rect x="512" y="294" width="32" height="12" rx="2" fill="none" stroke="#bf4520" stroke-opacity="0.40" stroke-width="0.8"/>
+        <text x="528" y="303" fill="#bf4520" fill-opacity="0.85" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">MCP</text>
+        <text x="640" y="328" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">Langflow MCP server</text>
+        <text x="640" y="346" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">one flow = one named tool · streamable HTTP</text>
 
         <!-- LLM provider -->
-        <rect x="440" y="512" width="400" height="68" rx="6" fill="#f5f5f0"/>
-        <rect x="440" y="512" width="400" height="68" rx="6" fill="#2d3142" fill-opacity="0.03" stroke="#2d3142" stroke-opacity="0.30" stroke-width="1"/>
-        <rect x="448" y="518" width="68" height="12" rx="2" fill="none" stroke="#2d3142" stroke-opacity="0.30" stroke-width="0.8"/>
-        <text x="482" y="527" fill="#2d3142" fill-opacity="0.80" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">EXTERNAL</text>
-        <text x="640" y="552" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">LLM provider</text>
-        <text x="640" y="568" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">openai-compatible · temp 0.3</text>
+        <rect x="504" y="432" width="272" height="84" rx="6" fill="#f5f5f0"/>
+        <rect x="504" y="432" width="272" height="84" rx="6" fill="#2d3142" fill-opacity="0.03" stroke="#2d3142" stroke-opacity="0.30" stroke-width="1"/>
+        <rect x="512" y="438" width="68" height="12" rx="2" fill="none" stroke="#2d3142" stroke-opacity="0.30" stroke-width="0.8"/>
+        <text x="546" y="447" fill="#2d3142" fill-opacity="0.80" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">EXTERNAL</text>
+        <text x="640" y="472" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">LLM provider</text>
+        <text x="640" y="488" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">target: IBM watsonx (not yet run)</text>
+        <text x="640" y="502" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">today: OpenAI-compatible</text>
+
+        <!-- Nuxt PWA -->
+        <rect x="912" y="144" width="272" height="68" rx="6" fill="#f5f5f0"/>
+        <rect x="912" y="144" width="272" height="68" rx="6" fill="#2d3142" fill-opacity="0.03" stroke="#2d3142" stroke-opacity="0.30" stroke-width="1" stroke-dasharray="6,4"/>
+        <rect x="920" y="150" width="56" height="12" rx="2" fill="none" stroke="#2d3142" stroke-opacity="0.30" stroke-width="0.8"/>
+        <text x="948" y="159" fill="#2d3142" fill-opacity="0.80" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">FUTURE</text>
+        <text x="1048" y="184" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">Nuxt 4 PWA frontend</text>
+        <text x="1048" y="200" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">end-user interface</text>
+
+        <!-- Nitro -->
+        <rect x="912" y="288" width="272" height="68" rx="6" fill="#f5f5f0"/>
+        <rect x="912" y="288" width="272" height="68" rx="6" fill="#2d3142" fill-opacity="0.03" stroke="#2d3142" stroke-opacity="0.30" stroke-width="1" stroke-dasharray="6,4"/>
+        <rect x="920" y="294" width="56" height="12" rx="2" fill="none" stroke="#2d3142" stroke-opacity="0.30" stroke-width="0.8"/>
+        <text x="948" y="303" fill="#2d3142" fill-opacity="0.80" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">FUTURE</text>
+        <text x="1048" y="328" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">Nuxt Nitro backend</text>
+        <text x="1048" y="344" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">API + MCP client</text>
+
+        <!-- Database -->
+        <rect x="912" y="432" width="272" height="68" rx="6" fill="#f5f5f0"/>
+        <rect x="912" y="432" width="272" height="68" rx="6" fill="#2d3142" fill-opacity="0.03" stroke="#2d3142" stroke-opacity="0.30" stroke-width="1" stroke-dasharray="6,4"/>
+        <rect x="920" y="438" width="56" height="12" rx="2" fill="none" stroke="#2d3142" stroke-opacity="0.30" stroke-width="0.8"/>
+        <text x="948" y="447" fill="#2d3142" fill-opacity="0.80" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">FUTURE</text>
+        <text x="1048" y="472" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">Database</text>
+        <text x="1048" y="488" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">SQLite/libSQL or Postgres (undecided)</text>
+
+        <!-- Static prototype (exists) -->
+        <rect x="96" y="144" width="272" height="68" rx="6" fill="#f5f5f0"/>
+        <rect x="96" y="144" width="272" height="68" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <rect x="104" y="150" width="68" height="12" rx="2" fill="none" stroke="#2d3142" stroke-opacity="0.40" stroke-width="0.8"/>
+        <text x="138" y="159" fill="#2d3142" fill-opacity="0.80" font-size="7" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.08em">MOCKUP</text>
+        <text x="232" y="184" fill="#2d3142" font-size="12" font-weight="600" font-family="var(--font-sans)" text-anchor="middle">Static prototype</text>
+        <text x="232" y="200" fill="#4f5d75" font-size="9" font-family="var(--font-mono)" text-anchor="middle">Netlify · sample data · no backend</text>
 
         <!-- ===== ARROW LABELS ===== -->
-        <rect x="654" y="272" width="60" height="12" rx="2" fill="#f5f5f0"/>
-        <text x="684" y="281" fill="#5a6580" font-size="8" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.06em">TOOL CALL</text>
+        <rect x="408" y="304" width="62" height="12" rx="2" fill="#f5f5f0"/>
+        <text x="439" y="313" fill="#5a6580" font-size="8" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.06em">TOOL CALL</text>
 
-        <rect x="654" y="460" width="50" height="12" rx="2" fill="#f5f5f0"/>
-        <text x="679" y="469" fill="#5a6580" font-size="8" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.06em">INFER</text>
+        <rect x="820" y="304" width="62" height="12" rx="2" fill="#f5f5f0"/>
+        <text x="851" y="313" fill="#5a6580" font-size="8" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.06em">TOOL CALL</text>
+
+        <rect x="654" y="392" width="50" height="12" rx="2" fill="#f5f5f0"/>
+        <text x="679" y="401" fill="#5a6580" font-size="8" font-family="var(--font-mono)" text-anchor="middle" letter-spacing="0.06em">INFER</text>
 
         <!-- ===== CALLOUTS ===== -->
-        <text x="700" y="252" fill="#2d3142" font-size="14" font-style="italic" font-family="var(--font-serif)">one MCP contract</text>
-        <path d="M 694 248 Q 740 240 770 216" fill="none" stroke="#2d3142" stroke-opacity="0.40" stroke-width="1" stroke-dasharray="4,3"/>
-        <circle cx="770" cy="216" r="2" fill="#2d3142"/>
+        <text x="540" y="252" fill="#2d3142" font-size="14" font-style="italic" font-family="var(--font-serif)">one MCP contract, two callers</text>
+        <path d="M 640 258 Q 640 272 640 284" fill="none" stroke="#2d3142" stroke-opacity="0.40" stroke-width="1" stroke-dasharray="4,3"/>
+        <circle cx="640" cy="286" r="2" fill="#2d3142"/>
 
-        <text x="1224" y="390" fill="#2d3142" font-size="14" font-style="italic" font-family="var(--font-serif)" text-anchor="end">goal_decomposer verified live</text>
-        <path d="M 1020 386 Q 940 392 844 390" fill="none" stroke="#2d3142" stroke-opacity="0.40" stroke-width="1" stroke-dasharray="4,3"/>
-        <circle cx="844" cy="390" r="2" fill="#2d3142"/>
+        <text x="540" y="570" fill="#2d3142" font-size="14" font-style="italic" font-family="var(--font-serif)">goal_decomposer: e2e verified earlier</text>
+        <path d="M 640 556 Q 640 548 640 520" fill="none" stroke="#2d3142" stroke-opacity="0.40" stroke-width="1" stroke-dasharray="4,3"/>
 
         <!-- ===== LEGEND ===== -->
         <line x1="56" y1="624" x2="1224" y2="624" stroke="#2d3142" stroke-opacity="0.12" stroke-width="0.8"/>
         <text x="56" y="644" fill="#4f5d75" font-size="8" font-family="var(--font-mono)" letter-spacing="0.14em">LEGEND</text>
         <rect x="56" y="656" width="12" height="12" rx="2" fill="#bf4520" fill-opacity="0.08" stroke="#bf4520" stroke-width="1"/>
-        <text x="76" y="665" fill="#4f5d75" font-size="9" font-family="var(--font-mono)">focal · live</text>
-        <rect x="220" y="656" width="12" height="12" rx="2" fill="#2d3142" fill-opacity="0.05" stroke="#4f5d75" stroke-width="1"/>
-        <text x="240" y="665" fill="#4f5d75" font-size="9" font-family="var(--font-mono)">shared component</text>
-        <rect x="420" y="656" width="12" height="12" rx="2" fill="#2d3142" fill-opacity="0.03" stroke="#2d3142" stroke-opacity="0.30" stroke-width="1"/>
-        <text x="440" y="665" fill="#4f5d75" font-size="9" font-family="var(--font-mono)">external or target</text>
-        <line x1="620" y1="662" x2="652" y2="662" stroke="#2e5aa8" stroke-width="1.2"/>
-        <polygon points="654,662 648,660 648,664" fill="#2e5aa8"/>
-        <text x="662" y="665" fill="#4f5d75" font-size="9" font-family="var(--font-mono)">external API call</text>
-        <line x1="860" y1="662" x2="892" y2="662" stroke="#2d3142" stroke-opacity="0.40" stroke-width="1" stroke-dasharray="4,3"/>
-        <text x="900" y="665" fill="#4f5d75" font-size="9" font-family="var(--font-mono)">editorial note</text>
+        <text x="76" y="665" fill="#4f5d75" font-size="9" font-family="var(--font-mono)">in repo</text>
+        <rect x="190" y="656" width="12" height="12" rx="2" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <text x="210" y="665" fill="#4f5d75" font-size="9" font-family="var(--font-mono)">dev tool / mockup</text>
+        <rect x="400" y="656" width="12" height="12" rx="2" fill="#2d3142" fill-opacity="0.03" stroke="#2d3142" stroke-opacity="0.30" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="420" y="665" fill="#4f5d75" font-size="9" font-family="var(--font-mono)">future works</text>
+        <line x1="580" y1="662" x2="612" y2="662" stroke="#2e5aa8" stroke-width="1.2"/>
+        <polygon points="614,662 608,660 608,664" fill="#2e5aa8"/>
+        <text x="622" y="665" fill="#4f5d75" font-size="9" font-family="var(--font-mono)">external API call</text>
+        <line x1="820" y1="662" x2="852" y2="662" stroke="#2d3142" stroke-opacity="0.40" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="860" y="665" fill="#4f5d75" font-size="9" font-family="var(--font-mono)">editorial note</text>
       </svg>
