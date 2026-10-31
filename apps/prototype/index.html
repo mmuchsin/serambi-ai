@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>serambi.ai · Belajar AI di sela kesibukan Anda</title>
+<meta name="description" content="Belajar AI dengan materi singkat dan contoh dari pekerjaan serta hobi Anda. Prototipe dapat dicoba tanpa akun.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#2F5D8A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F8FB;--surf:#fff;--ink:#16202B;--mut:#2C3946;--acc:#2F5D8A;--accd:#1F4468;--onacc:#fff;--soft:#E3ECF5;--mint:#DCEFE8;--mintink:#174A3D;--field:#1F4468;--onfield:#fff;--onfieldm:#E1EAF3;--serif:"Newsreader",Georgia,serif;--sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1720;--surf:#16212D;--ink:#E8EEF4;--mut:#B2C1D1;--acc:#7FB0E0;--accd:#A9CCEE;--onacc:#0F1720;--soft:#1B2B3C;--mint:#16342C;--mintink:#8FD5BE;--field:#16283A;--onfield:#E8EEF4;--onfieldm:#C3D2E1;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1720;--surf:#16212D;--ink:#E8EEF4;--mut:#B2C1D1;--acc:#7FB0E0;--accd:#A9CCEE;--onacc:#0F1720;--soft:#1B2B3C;--mint:#16342C;--mintink:#8FD5BE;--field:#16283A;--onfield:#E8EEF4;--onfieldm:#C3D2E1;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:18px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--acc)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:6px}
+.w{max-width:1120px;margin:0 auto;padding:0 22px}
+h1,h2{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;line-height:1.08;text-wrap:balance}
+h1{font-size:clamp(42px,6.6vw,76px)}h2{font-size:clamp(30px,4.4vw,48px)}
+.lead{font-size:22px;max-width:26em;margin-top:18px;color:var(--mut)}
+header{position:sticky;top:0;z-index:5;background:var(--bg);display:flex;align-items:center;gap:22px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);margin-right:auto}
+.mark{width:34px;height:34px;border-radius:11px;background:var(--acc);color:var(--onacc);display:grid;place-items:center;font:600 23px/1 var(--serif);padding-bottom:3px}
+.wm{font:600 24px/1 var(--serif);letter-spacing:-.02em}.wm em{font-style:normal;color:var(--acc)}
+nav{display:none;gap:26px}nav a{color:var(--ink);text-decoration:none;font-weight:500}nav a:hover{color:var(--acc)}
+@media(min-width:800px){nav{display:flex}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 26px;border-radius:12px;font:600 16px var(--sans);text-decoration:none;border:1.5px solid var(--acc);background:var(--acc);color:var(--onacc);transition:background .2s,transform .2s}
+.btn:hover{background:var(--accd);border-color:var(--accd);transform:translateY(-1px)}
+.btn.o{background:transparent;color:var(--acc)}.btn.o:hover{background:var(--soft);border-color:var(--acc)}
+.btn svg{width:20px;height:20px;fill:currentColor}
+header .btn{min-height:44px;padding:0 18px}
+.hero{display:grid;gap:44px;padding:36px 0 88px;align-items:center}
+@media(min-width:900px){.hero{grid-template-columns:1.1fr 1fr;gap:48px;padding-top:56px}}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.note{font-size:16px;color:var(--mut);margin-top:16px}
+.phones{position:relative;display:flex;justify-content:center;align-items:flex-start;padding-bottom:8px}
+.ph{width:min(260px,62vw);border:9px solid #101922;border-radius:38px;background:#101922;overflow:hidden}
+.ph img{display:block;width:100%;height:auto;border-radius:29px}
+.phones .ph+.ph{display:none}@media(min-width:560px){.phones{justify-content:flex-end}}@keyframes fl{50%{translate:0 -8px}}.phones .ph{animation:fl 7s ease-in-out infinite}.phones .ph+.ph{animation-delay:-3.5s}
+@media(min-width:560px){.phones .ph+.ph{display:block;margin:56px 0 0 -34px}.phones .ph:first-child{transform:rotate(-2deg)}.phones .ph+.ph{transform:rotate(2deg)}}
+.field{background:var(--field);color:var(--onfield);padding:84px 0}
+.field h2{color:var(--onfield)}
+.field .lead{color:var(--onfieldm)}
+.demo{display:grid;gap:36px;margin-top:8px}
+@media(min-width:900px){.demo{grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}
+.chips+.lbl{margin-top:26px}
+.lbl{font-weight:600;font-size:16px;color:var(--onfieldm)}
+.chips button{min-height:48px;padding:0 20px;border-radius:999px;border:0;background:rgba(255,255,255,.12);color:var(--onfield);font:500 16px var(--sans);cursor:pointer;transition:background .2s}
+.chips button:hover{background:rgba(255,255,255,.22)}
+.chips button[aria-pressed=true]{background:#fff;color:#1F4468;font-weight:600}
+.out{border-radius:18px;padding:22px 24px}
+.out b{display:block;font-size:16px;margin-bottom:6px}
+.q{background:var(--surf);color:var(--ink)}.q p{font:500 22px/1.35 var(--serif)}
+.an{background:var(--mint);color:var(--mintink);margin-top:14px}.an p{font-size:18px}
+.sec{padding:96px 0}
+.nums{display:grid;gap:48px;margin-top:48px}
+@media(min-width:700px){.nums{grid-template-columns:repeat(3,1fr);gap:32px}}
+.big{font:600 clamp(64px,9vw,96px)/1 var(--serif);letter-spacing:-.03em;color:var(--acc)}
+.nums p{margin-top:10px;max-width:15em}
+.nums a{white-space:nowrap}
+.steps{list-style:none;padding:0;margin-top:56px;display:grid;gap:56px}
+@media(min-width:800px){.steps{grid-template-columns:repeat(3,1fr);gap:40px}}
+.steps li{display:grid;gap:22px;justify-items:center;text-align:center}
+.steps .ph{width:min(230px,60vw)}
+.steps h3{font:600 24px/1.2 var(--serif)}.steps p{color:var(--mut);margin-top:6px;max-width:15em}
+.n{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--acc);color:var(--onacc);font:700 16px var(--sans);margin-bottom:10px}
+.soft{background:var(--soft)}
+.two{display:grid;gap:48px}
+@media(min-width:860px){.two{grid-template-columns:1fr 1fr;gap:72px;align-items:start}}
+.refs{margin-top:22px;font-size:16px;color:var(--mut)}.refs a{white-space:nowrap}
+ul.t{list-style:none;padding:0;margin-top:6px;display:grid;gap:14px}
+ul.t li{display:flex;gap:14px;align-items:baseline;font-size:18px}
+.tag{flex:none;min-width:86px;text-align:center;font-size:16px;font-weight:700;padding:2px 12px;border-radius:999px;background:var(--mint);color:var(--mintink)}
+.tag.s{background:var(--surf);color:var(--mut)}
+.end{text-align:center;padding:96px 22px 72px}
+.end .lead{margin-left:auto;margin-right:auto}.end .cta{justify-content:center}
+footer{padding:0 0 40px;font-size:16px;color:var(--mut)}footer p:not(.fw){max-width:60ch}
+.fw{font:600 clamp(64px,17vw,220px)/.9 var(--serif);letter-spacing:-.04em;color:var(--ink);margin:0 0 28px;white-space:nowrap}.fw em{font-style:normal;color:var(--acc)}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}.nums .rv:nth-child(2),.steps .rv:nth-child(2){transition-delay:.12s}.nums .rv:nth-child(3),.steps .rv:nth-child(3){transition-delay:.24s}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.js .rv{opacity:1;transform:none}.ph{transform:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="w">
+<header>
+  <a class="brand" href="#top" aria-label="serambi.ai, ke atas"><span class="mark">s</span><span class="wm">serambi<em>.ai</em></span></a>
+  <nav aria-label="Bagian halaman"><a href="#masalah">Masalah</a><a href="#cara">Cara belajar</a><a href="#materi">Materi</a></nav>
+  <a class="btn o" href="https://github.com/mmuchsin/serambi-ai" target="_blank" rel="noopener">GitHub</a>
+</header>
+<main id="top">
+<div class="hero">
+  <div>
+    <h1>Belajar AI di sela kesibukan Anda</h1>
+    <p class="lead">Materi singkat dengan contoh dari pekerjaan dan hobi Anda.</p>
+    <div class="cta">
+      <a class="btn" href="/app/">Coba prototipe</a>
+      <a class="btn o" href="https://github.com/mmuchsin/serambi-ai" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Lihat kode</a>
+    </div>
+    <p class="note">Tanpa akun. Data dan jawaban di dalamnya masih contoh.</p>
+  </div>
+  <div class="phones">
+    <div class="ph"><img src="assets/app-beranda.webp" width="520" height="973" alt="Beranda aplikasi: tujuan belajar, kemajuan 14%, dan jadwal hari ini"></div>
+    <div class="ph"><img src="assets/app-tanya-ai.webp" width="520" height="973" alt="Layar Tanya AI dengan contoh pertanyaan" loading="lazy"></div>
+  </div>
+</div>
+</main>
+</div>
+
+<section class="field" aria-labelledby="dt">
+<div class="w demo">
+  <div class="rv">
+    <h2 id="dt">Satu materi, contoh sesuai Anda</h2>
+    <p class="lbl" style="margin-top:28px">Profesi</p>
+    <div class="chips" id="pc" role="group" aria-label="Profesi"></div>
+    <p class="lbl chips-l" style="margin-top:26px">Hobi</p>
+    <div class="chips" id="hc" role="group" aria-label="Hobi"></div>
+  </div>
+  <div class="rv">
+    <div class="out q" aria-live="polite"><b>Contoh instruksi untuk AI</b><p id="ex"></p></div>
+    <div class="out an" aria-live="polite"><b id="ht"></b><p id="hp"></p></div>
+  </div>
+</div>
+</section>
+
+<section class="sec" id="masalah" aria-labelledby="s1"><div class="w">
+  <h2 id="s1" class="rv">Ingin belajar AI, bingung mulai dari mana</h2>
+  <div class="nums">
+    <div class="rv"><div class="big">37%</div><p>pekerja berbasis pengetahuan di Indonesia ingin tahu keterampilan apa yang perlu dikembangkan di era AI, sementara hanya 33% yang perusahaannya melatih mereka memakai agen AI.</p></div>
+    <div class="rv"><div class="big">21%</div><p>pelaku usaha merasa tenaga kerjanya siap, padahal 48% pekerjaan masa depan membutuhkan literasi AI.</p></div>
+    <div class="rv"><div class="big">21,7%</div><p>pekerja Indonesia berada di pekerjaan yang berpotensi terpapar AI generatif.</p></div>
+  </div>
+  <p class="refs rv" style="margin-top:40px">Sumber: <a href="https://www.salesforce.com/ap/news/press-releases/2026/04/24/salesforce-tunjukkan-bagaimana-perusahaan-indonesia-dapat-membangun-agentic-future-di-agentforce-world-tour-jakarta/" target="_blank" rel="noopener">Salesforce/YouGov (2026)</a>, <a href="https://press.aboutamazon.com/aws/2025/8/new-aws-research-shows-strong-ai-adoption-momentum-in-indonesia-with-startups-outpacing-large-enterprises-in-innovation" target="_blank" rel="noopener">riset AWS (2025)</a>, <a href="https://bernama.com/en/news.php?id=2578498" target="_blank" rel="noopener">laporan ILO (2026)</a>.</p>
+</div></section>
+
+<section class="sec soft" id="cara" aria-labelledby="s2"><div class="w">
+  <h2 id="s2" class="rv" style="text-align:center">Cara belajarnya</h2>
+  <ol class="steps">
+    <li class="rv"><div class="ph"><img src="assets/app-beranda.webp" width="520" height="973" alt="Beranda dengan rencana belajar 6 minggu" loading="lazy"></div><div><span class="n">1</span><h3>Dapatkan rencana</h3><p>Rencana 6 minggu sesuai profesi dan hobi Anda.</p></div></li>
+    <li class="rv"><div class="ph"><img src="assets/app-belajar.webp" width="520" height="973" alt="Layar belajar minggu 1 dengan analogi dari hobi" loading="lazy"></div><div><span class="n">2</span><h3>Belajar 20 menit</h3><p>Ide inti yang singkat, dengan contoh dari keseharian Anda.</p></div></li>
+    <li class="rv"><div class="ph"><img src="assets/app-tanya-ai.webp" width="520" height="973" alt="Layar Tanya AI" loading="lazy"></div><div><span class="n">3</span><h3>Tanya AI</h3><p>Tanyakan apa pun yang belum jelas.</p></div></li>
+  </ol>
+</div></section>
+
+<section class="sec" id="materi" aria-labelledby="s3"><div class="w two">
+  <div class="rv">
+    <h2 id="s3">14 materi, 10 dengan rujukan makalah</h2>
+    <p class="lead">Dari menulis instruksi hingga memeriksa jawaban AI yang keliru.</p>
+    <p class="refs">Contoh rujukan: <a href="https://doi.org/10.48550/arxiv.2005.14165" target="_blank" rel="noopener">Brown dkk. 2020</a>, <a href="https://doi.org/10.1162/tacl_a_00638" target="_blank" rel="noopener">Liu dkk. 2024</a>, <a href="https://doi.org/10.1145/3571730" target="_blank" rel="noopener">Ji dkk. 2023</a>, <a href="https://doi.org/10.1038/s42256-019-0088-2" target="_blank" rel="noopener">Jobin dkk. 2019</a></p>
+  </div>
+  <div class="rv">
+    <h2 style="font-size:24px">Sudah ada dan belum</h2>
+    <ul class="t" style="margin-top:22px">
+      <li><span class="tag">Prototipe</span>Rencana 6 minggu dan tes awal</li>
+      <li><span class="tag">Prototipe</span>14 materi, latihan, dan Tanya AI</li>
+      <li><span class="tag s">Belum</span>Sinkron Google Calendar</li>
+      <li><span class="tag s">Belum</span>Kelas per profesi dan akun sungguhan</li>
+    </ul>
+  </div>
+</div></section>
+
+<section class="soft" aria-labelledby="s4"><div class="w end rv">
+  <h2 id="s4">Coba satu sesi 20 menit</h2>
+  <p class="lead">Tanpa akun. Pilih profesi dan hobi Anda.</p>
+  <div class="cta"><a class="btn" href="/app/">Coba prototipe</a><a class="btn o" href="https://github.com/mmuchsin/serambi-ai" target="_blank" rel="noopener">Lihat kode</a></div>
+</div></section>
+
+<footer><div class="w" style="padding-top:56px">
+  <p class="fw" aria-hidden="true">serambi<em>.ai</em></p>
+  <p>Proyek yang sedang dikembangkan. Semifinalis IBM SkillsBuild University Education National Hackathon.</p>
+</div></footer>
+
+<script>
+document.documentElement.classList.add('js');
+const P=[['Admin dan data','Rapikan daftar kehadiran ini jadi tabel per divisi, urut nama, karena akan dikirim ke HRD.'],['Guru dan dosen','Buatkan 5 soal pilihan ganda tentang pecahan untuk kelas 5, tingkat mudah, karena untuk kuis pembuka.'],['Pemasaran','Tulis 3 caption promo akhir bulan, nada santai, maksimal 20 kata, karena target pembelinya ibu muda.'],['Keuangan','Ringkas selisih kas bulan Oktober jadi 5 poin untuk manajer, karena dibaca sebelum rapat.']];
+const H=[['Memasak','Seperti resep untuk juru masak baru: sebut takaran, urutan, dan alasannya.'],['Olahraga','Seperti program latihan untuk atlet baru: sebut target, takaran, dan alasannya.'],['Game','Seperti panduan misi untuk pemain baru: sebut tujuan, aturan, dan batasnya.']];
+let pi=1,hi=0;
+const $=id=>document.getElementById(id);
+function draw(){
+ $('pc').innerHTML=P.map((p,i)=>`<button aria-pressed="${i==pi}" data-p="${i}">${p[0]}</button>`).join('');
+ $('hc').innerHTML=H.map((h,i)=>`<button aria-pressed="${i==hi}" data-h="${i}">${h[0]}</button>`).join('');
+ $('ex').textContent='“'+P[pi][1]+'”';
+ $('ht').textContent='Analogi dari hobi: '+H[hi][0].toLowerCase();
+ $('hp').textContent=H[hi][1];
+}
+document.querySelector('.demo').addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b)return;
+ const k=b.dataset.p!==undefined?'p':'h',v=b.dataset.p??b.dataset.h;
+ if(k=='p')pi=+v;else hi=+v;
+ draw();const n=document.querySelector(`[data-${k}="${v}"]`);if(n)n.focus()});
+draw();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
